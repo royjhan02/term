@@ -231,107 +231,110 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
                     vd.nam = varName; // Name of the variable added to the vector
                     vd.typ = t_typ;   // Type of the variable added to the vector
                     vd.lin = lineNum; // Line number of the variable added to the vector
-
-                    if (av_map.find(varName) != av_map.end())
-                    {
-                        freopen(visitor_OutFile, "a+", stderr);
-                        std::cerr << "Variable " << varName << " already exists in the map " << std::endl;
-                        fclose(stderr);
-                    }
-                    else
-                    {
-                        freopen(visitor_OutFile, "a+", stderr);
-                        std::cerr << "Adding Variable " << varName << " to map " << std::endl;
-                        fclose(stderr);
-                        av_pair = std::make_pair(varName, vd);
-                        av_map.insert(av_pair);
-                    }
-
-                    // clang::SourceLocation v_srcloc = decl->getSourceRange().getBegin().getLocWithOffset(1);
-                    //  clang::SourceLocation v_srcloc = decl->getSourceRange().getEnd().getLocWithOffset(1);
-                    // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(decl->getBeginLoc());
-                    // colNum=visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(s->getBeginLoc());
-                    // insertStr = insertStr + "Instrument Here" + varName;
-
-                    // Construct insertStr for instrumentation with printf for each variable in map
-                    insertStr = insertStr + "printf(\"DirNT State @ line" + std::to_string(lineNum) + ": <\");";
-                    for (auto it = av_map.begin(); it != av_map.end(); ++it)
-                    {
-                        std::string t_typ = it->second.typ;
-                        std::string instvarName = it->second.nam;
-                        // if (it->second.nam == varName)
-                        // {
-                        if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
-                            insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
-                        else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
-                            // std::cout << "Float or Double variable found: " << varName << std::endl;
-                            insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
-                        else if (t_typ == "char")
-                            insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
-                        // }
-                        // else
-                        // {
-                        //     insertStr = insertStr + "printf(\"" + it->second.nam + "=?,\");";
-                        // }
-                    }
-                    insertStr = insertStr + "printf(\">\\n\");";
+                    clang::SourceLocation stmtEndloc = v_binop->getRHS()->getEndLoc();
+                    av_map_contains(varName, vd, stmtEndloc);
                 }
 
-                clang::SourceManager &v_srcMgr = visitor_CompilerInstance->getSourceManager();
-                clang::SourceLocation stmtEndloc = v_binop->getRHS()->getEndLoc();
-                const char *ptr = v_srcMgr.getCharacterData(stmtEndloc);
-                const char *end = v_srcMgr.getCharacterData(v_srcMgr.getLocForEndOfFile(v_srcMgr.getMainFileID()));
-                clang::Token tok;
-                clang::Lexer lexer(stmtEndloc, visitor_CompilerInstance->getLangOpts(), v_srcMgr.getCharacterData(stmtEndloc), ptr, end);
-                // std::cout << "End = " << *end << "\n";
-                int counter = 0;
-                // lexer.SetKeepWhitespaceMode(true);
-                // if (lexer.isKeepWhitespaceMode())
-                //     std::cout << "Lexer is in KeepWhitespaceMode" << std::endl;
-                // else
-                // {
-                //     std::cout << "Lexer is not in KeepWhitespaceMode" << std::endl;
-                //     lexer.SetKeepWhitespaceMode(true);
-                //     if (lexer.isKeepWhitespaceMode())
+                //     if (av_map.find(varName) != av_map.end())
                 //     {
-                //         std::cout << "Lexer is now in KeepWhitespaceMode" << std::endl;
+                //         freopen(visitor_OutFile, "a+", stderr);
+                //         std::cerr << "Variable " << varName << " already exists in the map " << std::endl;
+                //         fclose(stderr);
                 //     }
+                //     else
+                //     {
+                //         freopen(visitor_OutFile, "a+", stderr);
+                //         std::cerr << "Adding Variable " << varName << " to map " << std::endl;
+                //         fclose(stderr);
+                //         av_pair = std::make_pair(varName, vd);
+                //         av_map.insert(av_pair);
+                //     }
+
+                //     // clang::SourceLocation v_srcloc = decl->getSourceRange().getBegin().getLocWithOffset(1);
+                //     //  clang::SourceLocation v_srcloc = decl->getSourceRange().getEnd().getLocWithOffset(1);
+                //     // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(decl->getBeginLoc());
+                //     // colNum=visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(s->getBeginLoc());
+                //     // insertStr = insertStr + "Instrument Here" + varName;
+
+                //     // Construct insertStr for instrumentation with printf for each variable in map
+                //     insertStr = insertStr + "printf(\"DirNT State @ line" + std::to_string(lineNum) + ": <\");";
+                //     for (auto it = av_map.begin(); it != av_map.end(); ++it)
+                //     {
+                //         std::string t_typ = it->second.typ;
+                //         std::string instvarName = it->second.nam;
+                //         // if (it->second.nam == varName)
+                //         // {
+                //         if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
+                //             insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
+                //         else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
+                //             // std::cout << "Float or Double variable found: " << varName << std::endl;
+                //             insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
+                //         else if (t_typ == "char")
+                //             insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
+                //         // }
+                //         // else
+                //         // {
+                //         //     insertStr = insertStr + "printf(\"" + it->second.nam + "=?,\");";
+                //         // }
+                //     }
+                //     insertStr = insertStr + "printf(\">\\n\");";
                 // }
 
-                while (ptr != end)
-                {
-                    // freopen(visitor_OutFile, "a+", stderr);
-                    // std::cerr << "Current stmtEndLoc " << stmtEndloc.printToString(v_srcMgr) << "\n";
-                    // fclose(stderr);
+                // clang::SourceManager &v_srcMgr = visitor_CompilerInstance->getSourceManager();
+                // clang::SourceLocation stmtEndloc = v_binop->getRHS()->getEndLoc();
+                // const char *ptr = v_srcMgr.getCharacterData(stmtEndloc);
+                // const char *end = v_srcMgr.getCharacterData(v_srcMgr.getLocForEndOfFile(v_srcMgr.getMainFileID()));
+                // clang::Token tok;
+                // clang::Lexer lexer(stmtEndloc, visitor_CompilerInstance->getLangOpts(), v_srcMgr.getCharacterData(stmtEndloc), ptr, end);
+                // // std::cout << "End = " << *end << "\n";
+                // int counter = 0;
+                // // lexer.SetKeepWhitespaceMode(true);
+                // // if (lexer.isKeepWhitespaceMode())
+                // //     std::cout << "Lexer is in KeepWhitespaceMode" << std::endl;
+                // // else
+                // // {
+                // //     std::cout << "Lexer is not in KeepWhitespaceMode" << std::endl;
+                // //     lexer.SetKeepWhitespaceMode(true);
+                // //     if (lexer.isKeepWhitespaceMode())
+                // //     {
+                // //         std::cout << "Lexer is now in KeepWhitespaceMode" << std::endl;
+                // //     }
+                // // }
 
-                    if (lexer.getRawToken(stmtEndloc, tok, v_srcMgr, visitor_CompilerInstance->getLangOpts()))
-                    {
-                        // std::cout << tok.getName() << "\n";
-                        // std::cout << "Error in finding token at " << stmtEndloc.printToString(v_srcMgr) << "\n";
-                        stmtEndloc = stmtEndloc.getLocWithOffset(1);
-                        break;
-                    }
-                    // std::cout << tok.getName() << "\n";
-                    // std::cout << "Finding ; at " << tok.getName() << " " << counter << "\n";
-                    // if (*ptr == ';')
-                    if (tok.is(clang::tok::semi))
-                    {
-                        // std::cout << "Found ; at " << stmtEndloc.printToString(v_srcMgr) << "\n";
-                        // std::cout << counter << "\n";
-                        // clang::SourceLocation nextSourceLoc = stmtEndloc.getLocWithOffset(2);
-                        clang::SourceLocation nextSourceLoc = stmtEndloc;
-                        vRewriter.InsertTextAfterToken(nextSourceLoc, insertStr);
-                        break;
-                    }
-                    stmtEndloc = tok.getLocation().getLocWithOffset(tok.getLength());
-                    ptr = v_srcMgr.getCharacterData(stmtEndloc);
-                    //++ptr;
-                }
+                // while (ptr != end)
+                // {
+                //     // freopen(visitor_OutFile, "a+", stderr);
+                //     // std::cerr << "Current stmtEndLoc " << stmtEndloc.printToString(v_srcMgr) << "\n";
+                //     // fclose(stderr);
 
-                // clang::SourceLocation nextLexerLoc = clang::Lexer::getLocForEndOfToken(nextSourceLoc, 0, visitor_CompilerInstance->getSourceManager(), visitor_CompilerInstance->getLangOpts());
-                // clang::SourceLocation nextSourceLoc = s->getSourceRange().getEnd().getLocWithOffset(2);
-                //  s->getSourceRange().getEnd().print(llvm::errs(), visitor_CompilerInstance->getSourceManager());
-                // vRewriter.InsertTextAfterToken(nextSourceLoc, insertStr);
+                //     if (lexer.getRawToken(stmtEndloc, tok, v_srcMgr, visitor_CompilerInstance->getLangOpts()))
+                //     {
+                //         // std::cout << tok.getName() << "\n";
+                //         // std::cout << "Error in finding token at " << stmtEndloc.printToString(v_srcMgr) << "\n";
+                //         stmtEndloc = stmtEndloc.getLocWithOffset(1);
+                //         break;
+                //     }
+                //     // std::cout << tok.getName() << "\n";
+                //     // std::cout << "Finding ; at " << tok.getName() << " " << counter << "\n";
+                //     // if (*ptr == ';')
+                //     if (tok.is(clang::tok::semi))
+                //     {
+                //         // std::cout << "Found ; at " << stmtEndloc.printToString(v_srcMgr) << "\n";
+                //         // std::cout << counter << "\n";
+                //         // clang::SourceLocation nextSourceLoc = stmtEndloc.getLocWithOffset(2);
+                //         clang::SourceLocation nextSourceLoc = stmtEndloc;
+                //         vRewriter.InsertTextAfterToken(nextSourceLoc, insertStr);
+                //         break;
+                //     }
+                //     stmtEndloc = tok.getLocation().getLocWithOffset(tok.getLength());
+                //     ptr = v_srcMgr.getCharacterData(stmtEndloc);
+                //     //++ptr;
+                // }
+
+                // // clang::SourceLocation nextLexerLoc = clang::Lexer::getLocForEndOfToken(nextSourceLoc, 0, visitor_CompilerInstance->getSourceManager(), visitor_CompilerInstance->getLangOpts());
+                // // clang::SourceLocation nextSourceLoc = s->getSourceRange().getEnd().getLocWithOffset(2);
+                // //  s->getSourceRange().getEnd().print(llvm::errs(), visitor_CompilerInstance->getSourceManager());
+                // // vRewriter.InsertTextAfterToken(nextSourceLoc, insertStr);
             }
         }
     }

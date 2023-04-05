@@ -1,5 +1,5 @@
 
-Found Input File To Parse on disk = input/Problem01_label00.c
+Found Input File To Parse on disk = input/Problem03_label12.c
 Output File = OutFile.txt
 
 Found VarDecl at line = 9
@@ -20,1162 +20,5480 @@ Found VarDecl at line = 27
 Found VarDecl at line = 28
 Found VarDecl at line = 29
 Found VarDecl at line = 30
-Found VarDecl at line = 32
 Found VarDecl at line = 33
 Found VarDecl at line = 34
 Found VarDecl at line = 35
 Found VarDecl at line = 36
 Found VarDecl at line = 37
 Found VarDecl at line = 38
+Found VarDecl at line = 39
 Found VarDecl at line = 40
-Statement String : a16 = 5
-Line Number of Binary Assignment : 42
-Name, Type of LHS : a16,int
+Found VarDecl at line = 41
+Found VarDecl at line = 42
+Found VarDecl at line = 43
+Found VarDecl at line = 44
+Found VarDecl at line = 45
+Found VarDecl at line = 46
+Found VarDecl at line = 47
+Found VarDecl at line = 48
+Found VarDecl at line = 49
+Found VarDecl at line = 50
+Found VarDecl at line = 51
+Found VarDecl at line = 52
+Found VarDecl at line = 53
+Found VarDecl at line = 54
+Found VarDecl at line = 55
+Found VarDecl at line = 56
+Found VarDecl at line = 57
+Found VarDecl at line = 58
+Found VarDecl at line = 59
+Found VarDecl at line = 60
+Found VarDecl at line = 61
+Found VarDecl at line = 62
+Found VarDecl at line = 64
+Statement String : a2 = 0
+Line Number of Binary Assignment : 67
+Name, Type of LHS : a2,int
 
-Adding Variable a16 to map 
-Statement String : a20 = 0
-Line Number of Binary Assignment : 43
-Name, Type of LHS : a20,int
+Adding Variable a2 to map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 68
+Name, Type of LHS : a27,int
 
-Adding Variable a20 to map 
-Statement String : a20 = 0
-Line Number of Binary Assignment : 46
-Name, Type of LHS : a20,int
+Adding Variable a27 to map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 69
+Name, Type of LHS : a25,int
 
-Variable a20 already exists in the map 
-Statement String : a16 = 6
-Line Number of Binary Assignment : 47
-Name, Type of LHS : a16,int
+Adding Variable a25 to map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 70
+Name, Type of LHS : a19,int
 
-Variable a16 already exists in the map 
-Statement String : a17 = 0
-Line Number of Binary Assignment : 48
+Adding Variable a19 to map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 71
+Name, Type of LHS : a26,int
+
+Adding Variable a26 to map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 72
+Name, Type of LHS : a11,int
+
+Adding Variable a11 to map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 73
+Name, Type of LHS : a12,int
+
+Adding Variable a12 to map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 75
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 76
+Name, Type of LHS : a29,int
+
+Adding Variable a29 to map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 77
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 78
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 79
+Name, Type of LHS : a6,int
+
+Adding Variable a6 to map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 80
+Name, Type of LHS : a1,int
+
+Adding Variable a1 to map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 84
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 85
+Name, Type of LHS : a3,int
+
+Adding Variable a3 to map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 86
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a17 = 1
+Line Number of Binary Assignment : 87
 Name, Type of LHS : a17,int
 
 Adding Variable a17 to map 
-Statement String : a8 = 15
-Line Number of Binary Assignment : 49
-Name, Type of LHS : a8,int
-
-Adding Variable a8 to map 
-Statement String : a7 = 0
-Line Number of Binary Assignment : 50
-Name, Type of LHS : a7,int
-
-Adding Variable a7 to map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 51
-Name, Type of LHS : a21,int
-
-Adding Variable a21 to map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 54
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 55
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 56
-Name, Type of LHS : a7,int
-
-Variable a7 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 57
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 60
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 61
-Name, Type of LHS : a7,int
-
-Variable a7 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 62
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a7 = 0
-Line Number of Binary Assignment : 65
-Name, Type of LHS : a7,int
-
-Variable a7 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 66
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 67
-Name, Type of LHS : a21,int
-
-Variable a21 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 68
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 69
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 70
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a17 = 0
-Line Number of Binary Assignment : 73
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 76
-Name, Type of LHS : a7,int
-
-Variable a7 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 77
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 78
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 79
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 80
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 83
-Name, Type of LHS : a7,int
-
-Variable a7 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 84
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a21 = 0
-Line Number of Binary Assignment : 85
-Name, Type of LHS : a21,int
-
-Variable a21 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 86
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 87
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a16 = 5
+Statement String : a25 = 1
 Line Number of Binary Assignment : 88
-Name, Type of LHS : a16,int
+Name, Type of LHS : a25,int
 
-Variable a16 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 91
-Name, Type of LHS : a17,int
+Variable a25 already exists in the map 
+Statement String : a19 = 1
+Line Number of Binary Assignment : 89
+Name, Type of LHS : a19,int
 
-Variable a17 already exists in the map 
-Statement String : a16 = 5
-Line Number of Binary Assignment : 92
-Name, Type of LHS : a16,int
+Variable a19 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 90
+Name, Type of LHS : a11,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 0
+Variable a11 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 93
+Name, Type of LHS : a4,int
+
+Adding Variable a4 to map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 94
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a25 = 0
 Line Number of Binary Assignment : 95
-Name, Type of LHS : a7,int
+Name, Type of LHS : a25,int
 
-Variable a7 already exists in the map 
-Statement String : a20 = 1
+Variable a25 already exists in the map 
+Statement String : a2 = 0
 Line Number of Binary Assignment : 96
-Name, Type of LHS : a20,int
+Name, Type of LHS : a2,int
 
-Variable a20 already exists in the map 
-Statement String : a8 = 14
+Variable a2 already exists in the map 
+Statement String : a27 = 1
 Line Number of Binary Assignment : 97
-Name, Type of LHS : a8,int
+Name, Type of LHS : a27,int
 
-Variable a8 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 98
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 99
-Name, Type of LHS : a21,int
-
-Variable a21 already exists in the map 
+Variable a27 already exists in the map 
 Statement String : a17 = 0
 Line Number of Binary Assignment : 100
 Name, Type of LHS : a17,int
 
 Variable a17 already exists in the map 
-Statement String : a16 = 4
+Statement String : a1 = 1
+Line Number of Binary Assignment : 101
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 102
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a27 = 0
 Line Number of Binary Assignment : 103
-Name, Type of LHS : a16,int
+Name, Type of LHS : a27,int
 
-Variable a16 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 104
-Name, Type of LHS : a17,int
+Variable a27 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 106
+Name, Type of LHS : a26,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 105
-Name, Type of LHS : a20,int
+Variable a26 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 107
+Name, Type of LHS : a11,int
 
-Variable a20 already exists in the map 
-Statement String : a16 = 6
+Variable a11 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 108
-Name, Type of LHS : a16,int
+Name, Type of LHS : a3,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 1
+Variable a3 already exists in the map 
+Statement String : a27 = 1
 Line Number of Binary Assignment : 109
-Name, Type of LHS : a20,int
+Name, Type of LHS : a27,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 0
+Variable a27 already exists in the map 
+Statement String : a6 = 1
 Line Number of Binary Assignment : 110
-Name, Type of LHS : a17,int
+Name, Type of LHS : a6,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 0
+Variable a6 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 111
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 112
+Name, Type of LHS : a15,int
+
+Adding Variable a15 to map 
+Statement String : a4 = 1
 Line Number of Binary Assignment : 113
-Name, Type of LHS : a20,int
+Name, Type of LHS : a4,int
 
-Variable a20 already exists in the map 
-Statement String : a8 = 15
-Line Number of Binary Assignment : 114
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a17 = 0
-Line Number of Binary Assignment : 115
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 116
-Name, Type of LHS : a21,int
-
-Variable a21 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 119
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 120
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 121
-Name, Type of LHS : a7,int
-
-Variable a7 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 122
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 125
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 126
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 127
-Name, Type of LHS : a7,int
-
-Variable a7 already exists in the map 
-Statement String : a16 = 6
-Line Number of Binary Assignment : 130
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 131
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a17 = 0
-Line Number of Binary Assignment : 132
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 135
-Name, Type of LHS : a7,int
-
-Variable a7 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 136
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 137
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a8 = 15
-Line Number of Binary Assignment : 140
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a17 = 0
-Line Number of Binary Assignment : 141
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 142
-Name, Type of LHS : a21,int
-
-Variable a21 already exists in the map 
-Statement String : a20 = 0
-Line Number of Binary Assignment : 143
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 144
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 147
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 148
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 151
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a16 = 5
-Line Number of Binary Assignment : 152
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 155
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a16 = 6
-Line Number of Binary Assignment : 156
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 159
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a17 = 0
-Line Number of Binary Assignment : 160
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a8 = 15
-Line Number of Binary Assignment : 163
-Name, Type of LHS : a8,int
-
-Variable a8 already exists in the map 
-Statement String : a16 = 6
-Line Number of Binary Assignment : 164
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 165
-Name, Type of LHS : a21,int
-
-Variable a21 already exists in the map 
-Statement String : a20 = 0
-Line Number of Binary Assignment : 166
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
+Variable a4 already exists in the map 
 Statement String : a7 = 0
-Line Number of Binary Assignment : 167
+Line Number of Binary Assignment : 116
 Name, Type of LHS : a7,int
 
-Variable a7 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 168
-Name, Type of LHS : a17,int
+Adding Variable a7 to map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 117
+Name, Type of LHS : a1,int
 
-Variable a17 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 171
-Name, Type of LHS : a17,int
+Variable a1 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 118
+Name, Type of LHS : a3,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 0
-Line Number of Binary Assignment : 172
-Name, Type of LHS : a20,int
+Variable a3 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 119
+Name, Type of LHS : a12,int
 
-Variable a20 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 173
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 120
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 121
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 122
+Name, Type of LHS : a14,int
+
+Adding Variable a14 to map 
+Statement String : a19 = 1
+Line Number of Binary Assignment : 125
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 126
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a24 = 1
+Line Number of Binary Assignment : 127
+Name, Type of LHS : a24,int
+
+Adding Variable a24 to map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 128
+Name, Type of LHS : a5,int
+
+Adding Variable a5 to map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 129
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 130
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 131
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a28 = 0
+Line Number of Binary Assignment : 132
+Name, Type of LHS : a28,int
+
+Adding Variable a28 to map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 133
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 134
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 137
 Name, Type of LHS : a16,int
 
-Variable a16 already exists in the map 
-Statement String : a8 = 15
-Line Number of Binary Assignment : 176
+Adding Variable a16 to map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 138
+Name, Type of LHS : a22,int
+
+Adding Variable a22 to map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 139
 Name, Type of LHS : a8,int
 
-Variable a8 already exists in the map 
-Statement String : a21 = 1
+Adding Variable a8 to map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 140
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 141
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 142
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 143
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a14 = 1
+Line Number of Binary Assignment : 146
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a10 = 0
+Line Number of Binary Assignment : 147
+Name, Type of LHS : a10,int
+
+Adding Variable a10 to map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 148
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 149
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 150
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 151
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 152
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a24 = 0
+Line Number of Binary Assignment : 153
+Name, Type of LHS : a24,int
+
+Variable a24 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 154
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 157
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a15 = 0
+Line Number of Binary Assignment : 158
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 159
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 160
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 161
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 162
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 163
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 166
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 167
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a28 = 1
+Line Number of Binary Assignment : 168
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 169
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 170
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 171
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a25 = 1
+Line Number of Binary Assignment : 172
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 175
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 176
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a11 = 1
 Line Number of Binary Assignment : 177
-Name, Type of LHS : a21,int
+Name, Type of LHS : a11,int
 
-Variable a21 already exists in the map 
-Statement String : a20 = 0
+Variable a11 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 178
-Name, Type of LHS : a20,int
+Name, Type of LHS : a26,int
 
-Variable a20 already exists in the map 
+Variable a26 already exists in the map 
 Statement String : a7 = 0
 Line Number of Binary Assignment : 179
 Name, Type of LHS : a7,int
 
 Variable a7 already exists in the map 
-Statement String : a16 = 6
+Statement String : a27 = 1
 Line Number of Binary Assignment : 180
-Name, Type of LHS : a16,int
+Name, Type of LHS : a27,int
 
-Variable a16 already exists in the map 
+Variable a27 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 183
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
 Statement String : a17 = 0
-Line Number of Binary Assignment : 181
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a16 = 4
 Line Number of Binary Assignment : 184
-Name, Type of LHS : a16,int
+Name, Type of LHS : a17,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 0
+Variable a17 already exists in the map 
+Statement String : a10 = 1
 Line Number of Binary Assignment : 185
-Name, Type of LHS : a20,int
+Name, Type of LHS : a10,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 0
+Variable a10 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 186
-Name, Type of LHS : a17,int
+Name, Type of LHS : a3,int
 
-Variable a17 already exists in the map 
-Statement String : a17 = 0
+Variable a3 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 187
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 188
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 1
 Line Number of Binary Assignment : 189
-Name, Type of LHS : a17,int
+Name, Type of LHS : a12,int
 
-Variable a17 already exists in the map 
-Statement String : a16 = 5
-Line Number of Binary Assignment : 190
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 191
-Name, Type of LHS : a21,int
-
-Variable a21 already exists in the map 
-Statement String : a8 = 14
+Variable a12 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 192
-Name, Type of LHS : a8,int
+Name, Type of LHS : a3,int
 
-Variable a8 already exists in the map 
-Statement String : a7 = 1
+Variable a3 already exists in the map 
+Statement String : a11 = 1
 Line Number of Binary Assignment : 193
-Name, Type of LHS : a7,int
+Name, Type of LHS : a11,int
 
-Variable a7 already exists in the map 
-Statement String : a20 = 1
+Variable a11 already exists in the map 
+Statement String : a12 = 1
 Line Number of Binary Assignment : 194
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 195
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 196
 Name, Type of LHS : a20,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 1
+Adding Variable a20 to map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 197
-Name, Type of LHS : a17,int
+Name, Type of LHS : a26,int
 
-Variable a17 already exists in the map 
-Statement String : a17 = 0
-Line Number of Binary Assignment : 200
-Name, Type of LHS : a17,int
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 198
+Name, Type of LHS : a6,int
 
-Variable a17 already exists in the map 
-Statement String : a16 = 5
-Line Number of Binary Assignment : 201
-Name, Type of LHS : a16,int
+Variable a6 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 199
+Name, Type of LHS : a29,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 202
-Name, Type of LHS : a20,int
+Variable a29 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 203
+Name, Type of LHS : a12,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 1
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 204
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a5 = 1
 Line Number of Binary Assignment : 205
-Name, Type of LHS : a17,int
+Name, Type of LHS : a5,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 1
+Variable a5 already exists in the map 
+Statement String : a0 = 0
+Line Number of Binary Assignment : 206
+Name, Type of LHS : a0,int
+
+Adding Variable a0 to map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 207
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 2
 Line Number of Binary Assignment : 208
-Name, Type of LHS : a20,int
+Name, Type of LHS : a3,int
 
-Variable a20 already exists in the map 
-Statement String : a16 = 4
+Variable a3 already exists in the map 
+Statement String : a21 = 1
 Line Number of Binary Assignment : 209
-Name, Type of LHS : a16,int
+Name, Type of LHS : a21,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 1
+Adding Variable a21 to map 
+Statement String : a6 = 0
 Line Number of Binary Assignment : 210
-Name, Type of LHS : a7,int
+Name, Type of LHS : a6,int
 
-Variable a7 already exists in the map 
-Statement String : a8 = 13
+Variable a6 already exists in the map 
+Statement String : a29 = 0
 Line Number of Binary Assignment : 211
-Name, Type of LHS : a8,int
+Name, Type of LHS : a29,int
 
-Variable a8 already exists in the map 
-Statement String : a20 = 0
+Variable a29 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 213
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a9 = 0
 Line Number of Binary Assignment : 214
-Name, Type of LHS : a20,int
+Name, Type of LHS : a9,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 1
+Adding Variable a9 to map 
+Statement String : a3 = 2
 Line Number of Binary Assignment : 215
-Name, Type of LHS : a17,int
+Name, Type of LHS : a3,int
 
-Variable a17 already exists in the map 
-Statement String : a16 = 4
+Variable a3 already exists in the map 
+Statement String : a26 = 0
 Line Number of Binary Assignment : 216
-Name, Type of LHS : a16,int
+Name, Type of LHS : a26,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 1
+Variable a26 already exists in the map 
+Statement String : a4 = 0
+Line Number of Binary Assignment : 217
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 218
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a5 = 1
 Line Number of Binary Assignment : 219
-Name, Type of LHS : a7,int
+Name, Type of LHS : a5,int
 
-Variable a7 already exists in the map 
-Statement String : a8 = 13
+Variable a5 already exists in the map 
+Statement String : a27 = 0
 Line Number of Binary Assignment : 220
-Name, Type of LHS : a8,int
+Name, Type of LHS : a27,int
 
-Variable a8 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 221
-Name, Type of LHS : a17,int
+Variable a27 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 224
+Name, Type of LHS : a3,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 222
-Name, Type of LHS : a20,int
-
-Variable a20 already exists in the map 
-Statement String : a17 = 0
+Variable a3 already exists in the map 
+Statement String : a24 = 0
 Line Number of Binary Assignment : 225
-Name, Type of LHS : a17,int
+Name, Type of LHS : a24,int
 
-Variable a17 already exists in the map 
-Statement String : a16 = 6
+Variable a24 already exists in the map 
+Statement String : a28 = 0
 Line Number of Binary Assignment : 226
-Name, Type of LHS : a16,int
+Name, Type of LHS : a28,int
 
-Variable a16 already exists in the map 
-Statement String : a17 = 1
+Variable a28 already exists in the map 
+Statement String : a0 = 0
+Line Number of Binary Assignment : 227
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 228
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 0
 Line Number of Binary Assignment : 229
-Name, Type of LHS : a17,int
+Name, Type of LHS : a12,int
 
-Variable a17 already exists in the map 
-Statement String : a7 = 1
+Variable a12 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 230
-Name, Type of LHS : a7,int
+Name, Type of LHS : a26,int
 
-Variable a7 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 231
-Name, Type of LHS : a8,int
+Variable a26 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 233
+Name, Type of LHS : a12,int
 
-Variable a8 already exists in the map 
-Statement String : a21 = 1
+Variable a12 already exists in the map 
+Statement String : a27 = 1
 Line Number of Binary Assignment : 234
-Name, Type of LHS : a21,int
+Name, Type of LHS : a27,int
 
-Variable a21 already exists in the map 
-Statement String : a8 = 14
+Variable a27 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 235
-Name, Type of LHS : a8,int
+Name, Type of LHS : a26,int
 
-Variable a8 already exists in the map 
-Statement String : a16 = 4
+Variable a26 already exists in the map 
+Statement String : a25 = 0
 Line Number of Binary Assignment : 236
-Name, Type of LHS : a16,int
+Name, Type of LHS : a25,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 0
+Variable a25 already exists in the map 
+Statement String : a6 = 1
 Line Number of Binary Assignment : 237
-Name, Type of LHS : a20,int
+Name, Type of LHS : a6,int
 
-Variable a20 already exists in the map 
-Statement String : a7 = 0
+Variable a6 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 238
-Name, Type of LHS : a7,int
+Name, Type of LHS : a3,int
 
-Variable a7 already exists in the map 
-Statement String : a17 = 0
+Variable a3 already exists in the map 
+Statement String : a16 = 1
 Line Number of Binary Assignment : 239
-Name, Type of LHS : a17,int
+Name, Type of LHS : a16,int
 
-Variable a17 already exists in the map 
-Statement String : a8 = 14
-Line Number of Binary Assignment : 242
-Name, Type of LHS : a8,int
+Variable a16 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 240
+Name, Type of LHS : a10,int
 
-Variable a8 already exists in the map 
-Statement String : a7 = 0
-Line Number of Binary Assignment : 243
-Name, Type of LHS : a7,int
+Variable a10 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 241
+Name, Type of LHS : a11,int
 
-Variable a7 already exists in the map 
-Statement String : a17 = 1
+Variable a11 already exists in the map 
+Statement String : a1 = 1
 Line Number of Binary Assignment : 244
-Name, Type of LHS : a17,int
+Name, Type of LHS : a1,int
 
-Variable a17 already exists in the map 
-Statement String : a21 = 1
+Variable a1 already exists in the map 
+Statement String : a19 = 0
 Line Number of Binary Assignment : 245
-Name, Type of LHS : a21,int
+Name, Type of LHS : a19,int
 
-Variable a21 already exists in the map 
-Statement String : a16 = 4
+Variable a19 already exists in the map 
+Statement String : a0 = 1
 Line Number of Binary Assignment : 246
-Name, Type of LHS : a16,int
+Name, Type of LHS : a0,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 0
+Variable a0 already exists in the map 
+Statement String : a1 = 1
 Line Number of Binary Assignment : 249
-Name, Type of LHS : a20,int
+Name, Type of LHS : a1,int
 
-Variable a20 already exists in the map 
-Statement String : a21 = 1
+Variable a1 already exists in the map 
+Statement String : a11 = 1
 Line Number of Binary Assignment : 250
-Name, Type of LHS : a21,int
+Name, Type of LHS : a11,int
 
-Variable a21 already exists in the map 
-Statement String : a17 = 0
+Variable a11 already exists in the map 
+Statement String : a12 = 1
 Line Number of Binary Assignment : 251
-Name, Type of LHS : a17,int
+Name, Type of LHS : a12,int
 
-Variable a17 already exists in the map 
-Statement String : a8 = 14
+Variable a12 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 252
-Name, Type of LHS : a8,int
+Name, Type of LHS : a3,int
 
-Variable a8 already exists in the map 
-Statement String : a16 = 4
+Variable a3 already exists in the map 
+Statement String : a27 = 1
 Line Number of Binary Assignment : 253
-Name, Type of LHS : a16,int
+Name, Type of LHS : a27,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 1
+Variable a27 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 254
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 255
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a2 = 0
 Line Number of Binary Assignment : 256
-Name, Type of LHS : a7,int
+Name, Type of LHS : a2,int
 
-Variable a7 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 257
-Name, Type of LHS : a8,int
+Variable a2 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 259
+Name, Type of LHS : a27,int
 
-Variable a8 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 258
-Name, Type of LHS : a17,int
+Variable a27 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 260
+Name, Type of LHS : a1,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 1
+Variable a1 already exists in the map 
+Statement String : a25 = 0
 Line Number of Binary Assignment : 261
-Name, Type of LHS : a20,int
+Name, Type of LHS : a25,int
 
-Variable a20 already exists in the map 
-Statement String : a8 = 13
+Variable a25 already exists in the map 
+Statement String : a6 = 1
 Line Number of Binary Assignment : 262
-Name, Type of LHS : a8,int
+Name, Type of LHS : a6,int
 
-Variable a8 already exists in the map 
-Statement String : a7 = 1
+Variable a6 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 263
-Name, Type of LHS : a7,int
+Name, Type of LHS : a26,int
 
-Variable a7 already exists in the map 
-Statement String : a16 = 4
+Variable a26 already exists in the map 
+Statement String : a3 = 1
 Line Number of Binary Assignment : 264
-Name, Type of LHS : a16,int
+Name, Type of LHS : a3,int
 
-Variable a16 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 267
-Name, Type of LHS : a16,int
+Variable a3 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 265
+Name, Type of LHS : a15,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 1
+Variable a15 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 268
-Name, Type of LHS : a7,int
+Name, Type of LHS : a26,int
 
-Variable a7 already exists in the map 
-Statement String : a8 = 13
+Variable a26 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 269
-Name, Type of LHS : a8,int
+Name, Type of LHS : a3,int
 
-Variable a8 already exists in the map 
-Statement String : a16 = 4
+Variable a3 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 270
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 271
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a23 = 0
 Line Number of Binary Assignment : 272
-Name, Type of LHS : a16,int
+Name, Type of LHS : a23,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 0
+Adding Variable a23 to map 
+Statement String : a4 = 1
 Line Number of Binary Assignment : 273
-Name, Type of LHS : a20,int
+Name, Type of LHS : a4,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 0
+Variable a4 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 276
-Name, Type of LHS : a17,int
+Name, Type of LHS : a3,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 0
+Variable a3 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 277
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 278
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 1
 Line Number of Binary Assignment : 279
-Name, Type of LHS : a20,int
+Name, Type of LHS : a11,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 1
+Variable a11 already exists in the map 
+Statement String : a15 = 1
 Line Number of Binary Assignment : 280
-Name, Type of LHS : a17,int
+Name, Type of LHS : a15,int
 
-Variable a17 already exists in the map 
-Statement String : a16 = 6
+Variable a15 already exists in the map 
+Statement String : a6 = 1
 Line Number of Binary Assignment : 281
-Name, Type of LHS : a16,int
+Name, Type of LHS : a6,int
 
-Variable a16 already exists in the map 
-Statement String : a16 = 4
+Variable a6 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 282
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 283
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a23 = 0
 Line Number of Binary Assignment : 284
-Name, Type of LHS : a16,int
+Name, Type of LHS : a23,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 0
-Line Number of Binary Assignment : 285
-Name, Type of LHS : a20,int
+Variable a23 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 287
+Name, Type of LHS : a11,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 286
-Name, Type of LHS : a17,int
+Variable a11 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 288
+Name, Type of LHS : a6,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 1
+Variable a6 already exists in the map 
+Statement String : a14 = 0
 Line Number of Binary Assignment : 289
-Name, Type of LHS : a20,int
+Name, Type of LHS : a14,int
 
-Variable a20 already exists in the map 
-Statement String : a8 = 13
+Variable a14 already exists in the map 
+Statement String : a10 = 1
 Line Number of Binary Assignment : 290
-Name, Type of LHS : a8,int
+Name, Type of LHS : a10,int
 
-Variable a8 already exists in the map 
-Statement String : a16 = 4
+Variable a10 already exists in the map 
+Statement String : a27 = 0
 Line Number of Binary Assignment : 291
-Name, Type of LHS : a16,int
+Name, Type of LHS : a27,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 0
+Variable a27 already exists in the map 
+Statement String : a23 = 0
 Line Number of Binary Assignment : 292
-Name, Type of LHS : a7,int
+Name, Type of LHS : a23,int
 
-Variable a7 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 293
-Name, Type of LHS : a21,int
+Variable a23 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 295
+Name, Type of LHS : a11,int
 
-Variable a21 already exists in the map 
+Variable a11 already exists in the map 
 Statement String : a17 = 0
-Line Number of Binary Assignment : 294
+Line Number of Binary Assignment : 296
 Name, Type of LHS : a17,int
 
 Variable a17 already exists in the map 
-Statement String : a17 = 1
+Statement String : a7 = 0
 Line Number of Binary Assignment : 297
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 298
 Name, Type of LHS : a7,int
 
 Variable a7 already exists in the map 
-Statement String : a8 = 13
-Line Number of Binary Assignment : 299
-Name, Type of LHS : a8,int
+Statement String : a26 = 1
+Line Number of Binary Assignment : 298
+Name, Type of LHS : a26,int
 
-Variable a8 already exists in the map 
-Statement String : a20 = 1
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 299
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a20 = 0
 Line Number of Binary Assignment : 300
 Name, Type of LHS : a20,int
 
 Variable a20 already exists in the map 
-Statement String : a16 = 4
+Statement String : a27 = 1
 Line Number of Binary Assignment : 303
-Name, Type of LHS : a16,int
+Name, Type of LHS : a27,int
 
-Variable a16 already exists in the map 
-Statement String : a17 = 1
+Variable a27 already exists in the map 
+Statement String : a16 = 1
 Line Number of Binary Assignment : 304
-Name, Type of LHS : a17,int
+Name, Type of LHS : a16,int
 
-Variable a17 already exists in the map 
-Statement String : a8 = 13
+Variable a16 already exists in the map 
+Statement String : a6 = 1
 Line Number of Binary Assignment : 305
-Name, Type of LHS : a8,int
+Name, Type of LHS : a6,int
 
-Variable a8 already exists in the map 
-Statement String : a20 = 1
+Variable a6 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 306
-Name, Type of LHS : a20,int
+Name, Type of LHS : a3,int
 
-Variable a20 already exists in the map 
-Statement String : a7 = 1
+Variable a3 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 307
-Name, Type of LHS : a7,int
+Name, Type of LHS : a26,int
 
-Variable a7 already exists in the map 
-Statement String : a16 = 4
-Line Number of Binary Assignment : 310
-Name, Type of LHS : a16,int
+Variable a26 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 308
+Name, Type of LHS : a0,int
 
-Variable a16 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 311
-Name, Type of LHS : a17,int
+Variable a0 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 309
+Name, Type of LHS : a10,int
 
-Variable a17 already exists in the map 
-Statement String : a7 = 1
+Variable a10 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 312
-Name, Type of LHS : a7,int
+Name, Type of LHS : a3,int
 
-Variable a7 already exists in the map 
-Statement String : a20 = 1
+Variable a3 already exists in the map 
+Statement String : a12 = 1
 Line Number of Binary Assignment : 313
-Name, Type of LHS : a20,int
+Name, Type of LHS : a12,int
 
-Variable a20 already exists in the map 
-Statement String : a8 = 13
+Variable a12 already exists in the map 
+Statement String : a11 = 1
 Line Number of Binary Assignment : 314
-Name, Type of LHS : a8,int
+Name, Type of LHS : a11,int
 
-Variable a8 already exists in the map 
-Statement String : a8 = 13
+Variable a11 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 315
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 316
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a27 = 1
 Line Number of Binary Assignment : 317
-Name, Type of LHS : a8,int
+Name, Type of LHS : a27,int
 
-Variable a8 already exists in the map 
-Statement String : a20 = 1
+Variable a27 already exists in the map 
+Statement String : a0 = 1
 Line Number of Binary Assignment : 318
-Name, Type of LHS : a20,int
+Name, Type of LHS : a0,int
 
-Variable a20 already exists in the map 
-Statement String : a16 = 4
+Variable a0 already exists in the map 
+Statement String : a7 = 0
 Line Number of Binary Assignment : 319
-Name, Type of LHS : a16,int
+Name, Type of LHS : a7,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 1
+Variable a7 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 320
-Name, Type of LHS : a7,int
+Name, Type of LHS : a26,int
 
-Variable a7 already exists in the map 
-Statement String : a8 = 13
+Variable a26 already exists in the map 
+Statement String : a11 = 0
 Line Number of Binary Assignment : 323
-Name, Type of LHS : a8,int
+Name, Type of LHS : a11,int
 
-Variable a8 already exists in the map 
-Statement String : a16 = 4
+Variable a11 already exists in the map 
+Statement String : a6 = 1
 Line Number of Binary Assignment : 324
-Name, Type of LHS : a16,int
+Name, Type of LHS : a6,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 329
-Name, Type of LHS : a7,int
+Variable a6 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 325
+Name, Type of LHS : a1,int
 
-Variable a7 already exists in the map 
-Statement String : a8 = 13
+Variable a1 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 326
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 327
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a11 = 1
 Line Number of Binary Assignment : 330
-Name, Type of LHS : a8,int
+Name, Type of LHS : a11,int
 
-Variable a8 already exists in the map 
-Statement String : a20 = 1
+Variable a11 already exists in the map 
+Statement String : a14 = 0
 Line Number of Binary Assignment : 331
-Name, Type of LHS : a20,int
+Name, Type of LHS : a14,int
 
-Variable a20 already exists in the map 
-Statement String : a16 = 4
+Variable a14 already exists in the map 
+Statement String : a6 = 1
 Line Number of Binary Assignment : 332
-Name, Type of LHS : a16,int
+Name, Type of LHS : a6,int
 
-Variable a16 already exists in the map 
-Statement String : a17 = 1
+Variable a6 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 333
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 334
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 335
-Name, Type of LHS : a17,int
+Name, Type of LHS : a26,int
 
-Variable a17 already exists in the map 
-Statement String : a8 = 13
+Variable a26 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 336
-Name, Type of LHS : a8,int
+Name, Type of LHS : a3,int
 
-Variable a8 already exists in the map 
-Statement String : a7 = 1
+Variable a3 already exists in the map 
+Statement String : a12 = 1
 Line Number of Binary Assignment : 337
-Name, Type of LHS : a7,int
+Name, Type of LHS : a12,int
 
-Variable a7 already exists in the map 
-Statement String : a16 = 6
+Variable a12 already exists in the map 
+Statement String : a29 = 1
 Line Number of Binary Assignment : 340
-Name, Type of LHS : a16,int
+Name, Type of LHS : a29,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 1
+Variable a29 already exists in the map 
+Statement String : a4 = 1
 Line Number of Binary Assignment : 341
-Name, Type of LHS : a20,int
+Name, Type of LHS : a4,int
 
-Variable a20 already exists in the map 
+Variable a4 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 342
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
 Statement String : a17 = 0
+Line Number of Binary Assignment : 343
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a6 = 0
 Line Number of Binary Assignment : 344
-Name, Type of LHS : a17,int
+Name, Type of LHS : a6,int
 
-Variable a17 already exists in the map 
-Statement String : a16 = 4
+Variable a6 already exists in the map 
+Statement String : a3 = 1
 Line Number of Binary Assignment : 345
-Name, Type of LHS : a16,int
+Name, Type of LHS : a3,int
 
-Variable a16 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 348
-Name, Type of LHS : a21,int
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 346
+Name, Type of LHS : a26,int
 
-Variable a21 already exists in the map 
-Statement String : a8 = 15
-Line Number of Binary Assignment : 349
-Name, Type of LHS : a8,int
+Variable a26 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 347
+Name, Type of LHS : a11,int
 
-Variable a8 already exists in the map 
-Statement String : a17 = 1
+Variable a11 already exists in the map 
+Statement String : a12 = 0
 Line Number of Binary Assignment : 350
-Name, Type of LHS : a17,int
+Name, Type of LHS : a12,int
 
-Variable a17 already exists in the map 
-Statement String : a7 = 0
+Variable a12 already exists in the map 
+Statement String : a25 = 0
 Line Number of Binary Assignment : 351
-Name, Type of LHS : a7,int
+Name, Type of LHS : a25,int
 
-Variable a7 already exists in the map 
-Statement String : a16 = 6
+Variable a25 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 352
-Name, Type of LHS : a16,int
+Name, Type of LHS : a3,int
 
-Variable a16 already exists in the map 
-Statement String : a20 = 0
+Variable a3 already exists in the map 
+Statement String : a15 = 1
 Line Number of Binary Assignment : 353
-Name, Type of LHS : a20,int
+Name, Type of LHS : a15,int
 
-Variable a20 already exists in the map 
-Statement String : a8 = 15
+Variable a15 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 354
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 355
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 1
 Line Number of Binary Assignment : 356
-Name, Type of LHS : a8,int
+Name, Type of LHS : a27,int
 
-Variable a8 already exists in the map 
-Statement String : a16 = 6
-Line Number of Binary Assignment : 357
-Name, Type of LHS : a16,int
-
-Variable a16 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 358
-Name, Type of LHS : a21,int
-
-Variable a21 already exists in the map 
-Statement String : a7 = 0
+Variable a27 already exists in the map 
+Statement String : a20 = 0
 Line Number of Binary Assignment : 359
-Name, Type of LHS : a7,int
+Name, Type of LHS : a20,int
 
-Variable a7 already exists in the map 
-Statement String : a20 = 0
+Variable a20 already exists in the map 
+Statement String : a27 = 1
 Line Number of Binary Assignment : 360
-Name, Type of LHS : a20,int
+Name, Type of LHS : a27,int
 
-Variable a20 already exists in the map 
-Statement String : a17 = 0
+Variable a27 already exists in the map 
+Statement String : a2 = 0
 Line Number of Binary Assignment : 361
-Name, Type of LHS : a17,int
+Name, Type of LHS : a2,int
 
-Variable a17 already exists in the map 
-Statement String : a20 = 1
-Line Number of Binary Assignment : 366
-Name, Type of LHS : a20,int
+Variable a2 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 362
+Name, Type of LHS : a26,int
 
-Variable a20 already exists in the map 
-Statement String : a8 = 13
+Variable a26 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 363
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 364
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a3 = 0
 Line Number of Binary Assignment : 367
-Name, Type of LHS : a8,int
+Name, Type of LHS : a3,int
 
-Variable a8 already exists in the map 
-Statement String : a7 = 1
+Variable a3 already exists in the map 
+Statement String : a29 = 1
 Line Number of Binary Assignment : 368
-Name, Type of LHS : a7,int
+Name, Type of LHS : a29,int
 
-Variable a7 already exists in the map 
-Statement String : a16 = 4
+Variable a29 already exists in the map 
+Statement String : a12 = 1
 Line Number of Binary Assignment : 369
-Name, Type of LHS : a16,int
+Name, Type of LHS : a12,int
 
-Variable a16 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 376
-Name, Type of LHS : a21,int
+Variable a12 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 370
+Name, Type of LHS : a11,int
 
-Variable a21 already exists in the map 
-Statement String : a7 = 0
+Variable a11 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 371
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 372
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 373
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 374
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a20 = 1
 Line Number of Binary Assignment : 377
-Name, Type of LHS : a7,int
+Name, Type of LHS : a20,int
 
-Variable a7 already exists in the map 
-Statement String : a17 = 0
+Variable a20 already exists in the map 
+Statement String : a6 = 0
 Line Number of Binary Assignment : 378
-Name, Type of LHS : a17,int
+Name, Type of LHS : a6,int
 
-Variable a17 already exists in the map 
-Statement String : a8 = 14
+Variable a6 already exists in the map 
+Statement String : a5 = 1
 Line Number of Binary Assignment : 379
-Name, Type of LHS : a8,int
+Name, Type of LHS : a5,int
 
-Variable a8 already exists in the map 
-Statement String : a20 = 0
+Variable a5 already exists in the map 
+Statement String : a12 = 0
 Line Number of Binary Assignment : 380
-Name, Type of LHS : a20,int
+Name, Type of LHS : a12,int
 
-Variable a20 already exists in the map 
-Statement String : a7 = 1
+Variable a12 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 381
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a19 = 1
+Line Number of Binary Assignment : 382
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a27 = 1
 Line Number of Binary Assignment : 383
-Name, Type of LHS : a7,int
+Name, Type of LHS : a27,int
 
-Variable a7 already exists in the map 
-Statement String : a8 = 13
+Variable a27 already exists in the map 
+Statement String : a26 = 1
 Line Number of Binary Assignment : 384
-Name, Type of LHS : a8,int
+Name, Type of LHS : a26,int
 
-Variable a8 already exists in the map 
-Statement String : a17 = 1
-Line Number of Binary Assignment : 385
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
+Variable a26 already exists in the map 
 Statement String : a21 = 1
-Line Number of Binary Assignment : 388
+Line Number of Binary Assignment : 385
 Name, Type of LHS : a21,int
 
 Variable a21 already exists in the map 
-Statement String : a16 = 6
+Statement String : a11 = 0
 Line Number of Binary Assignment : 389
-Name, Type of LHS : a16,int
+Name, Type of LHS : a11,int
 
-Variable a16 already exists in the map 
-Statement String : a7 = 0
+Variable a11 already exists in the map 
+Statement String : a24 = 0
 Line Number of Binary Assignment : 390
-Name, Type of LHS : a7,int
+Name, Type of LHS : a24,int
 
-Variable a7 already exists in the map 
-Statement String : a20 = 0
+Variable a24 already exists in the map 
+Statement String : a0 = 0
+Line Number of Binary Assignment : 391
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 392
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 0
 Line Number of Binary Assignment : 393
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 394
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 395
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a9 = 1
+Line Number of Binary Assignment : 396
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 397
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a20 = 1
+Line Number of Binary Assignment : 399
 Name, Type of LHS : a20,int
 
 Variable a20 already exists in the map 
-Statement String : a21 = 1
-Line Number of Binary Assignment : 394
-Name, Type of LHS : a21,int
+Statement String : a5 = 1
+Line Number of Binary Assignment : 400
+Name, Type of LHS : a5,int
 
-Variable a21 already exists in the map 
-Statement String : a8 = 14
-Line Number of Binary Assignment : 395
-Name, Type of LHS : a8,int
+Variable a5 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 401
+Name, Type of LHS : a12,int
 
-Variable a8 already exists in the map 
-Statement String : a17 = 0
-Line Number of Binary Assignment : 396
-Name, Type of LHS : a17,int
-
-Variable a17 already exists in the map 
-Statement String : a16 = 5
-Line Number of Binary Assignment : 397
+Variable a12 already exists in the map 
+Statement String : a16 = 0
+Line Number of Binary Assignment : 402
 Name, Type of LHS : a16,int
 
 Variable a16 already exists in the map 
-Statement String : a7 = 1
-Line Number of Binary Assignment : 398
+Statement String : a27 = 1
+Line Number of Binary Assignment : 403
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 404
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 408
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 409
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 410
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 411
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 412
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 413
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 416
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 417
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 418
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 419
 Name, Type of LHS : a7,int
 
 Variable a7 already exists in the map 
-Found VarDecl at line = 590
+Statement String : a6 = 1
+Line Number of Binary Assignment : 420
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 421
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 422
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 425
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 426
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 427
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 428
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 429
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 430
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a13 = 1
+Line Number of Binary Assignment : 433
+Name, Type of LHS : a13,int
+
+Adding Variable a13 to map 
+Statement String : a25 = 1
+Line Number of Binary Assignment : 434
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 435
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 436
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 437
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 438
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a20 = 1
+Line Number of Binary Assignment : 439
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 440
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 441
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 442
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a21 = 0
+Line Number of Binary Assignment : 445
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 446
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 447
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a24 = 1
+Line Number of Binary Assignment : 448
+Name, Type of LHS : a24,int
+
+Variable a24 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 449
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 452
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 453
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 454
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 455
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 456
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 457
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 458
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 461
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 462
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 463
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 464
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 465
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 466
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a28 = 0
+Line Number of Binary Assignment : 469
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 470
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a8 = 1
+Line Number of Binary Assignment : 471
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 472
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a13 = 1
+Line Number of Binary Assignment : 473
+Name, Type of LHS : a13,int
+
+Variable a13 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 474
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 475
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 479
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 480
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 481
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 482
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 483
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 485
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a17 = 0
+Line Number of Binary Assignment : 486
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 487
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 491
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 492
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 493
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 494
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 495
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 496
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 499
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 500
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 501
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 502
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 503
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 504
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 505
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 509
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 510
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 511
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 512
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 513
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 515
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 516
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 517
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 518
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 519
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 520
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 524
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 525
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 526
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 527
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 528
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 529
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 530
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 533
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 534
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 535
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 536
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 537
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 540
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 541
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 542
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 543
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 544
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 545
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 546
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 547
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 550
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 551
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 552
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 553
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 554
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 557
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 558
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 559
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 560
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 561
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 562
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 563
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 564
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 567
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 568
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 569
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 570
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 571
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 572
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 573
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 574
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 577
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 578
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 579
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 580
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 581
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 582
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 585
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a0 = 0
+Line Number of Binary Assignment : 586
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 587
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 588
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 589
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 590
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a28 = 1
+Line Number of Binary Assignment : 591
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 594
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 595
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a24 = 0
+Line Number of Binary Assignment : 596
+Name, Type of LHS : a24,int
+
+Variable a24 already exists in the map 
+Statement String : a28 = 1
+Line Number of Binary Assignment : 597
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 598
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a4 = 0
+Line Number of Binary Assignment : 599
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 600
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 603
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 604
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 605
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 606
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 607
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 608
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 609
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 610
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 611
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 614
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 615
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 616
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 617
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 618
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 619
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 620
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 621
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 622
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 625
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 626
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 627
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 628
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 629
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 630
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 633
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 634
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 635
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 636
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 637
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 638
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 639
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 640
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 641
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 644
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 645
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 646
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 647
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 648
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 649
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 650
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 651
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 654
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 655
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 656
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 657
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 658
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 659
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 660
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 661
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 664
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 665
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 666
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 669
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a0 = 0
+Line Number of Binary Assignment : 670
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 671
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a9 = 1
+Line Number of Binary Assignment : 672
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a21 = 0
+Line Number of Binary Assignment : 673
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 676
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 677
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 678
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 679
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a22 = 0
+Line Number of Binary Assignment : 680
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a24 = 1
+Line Number of Binary Assignment : 681
+Name, Type of LHS : a24,int
+
+Variable a24 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 682
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a7 = 1
+Line Number of Binary Assignment : 683
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 686
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 687
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 688
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 689
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 690
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 691
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 692
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 696
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 697
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 698
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 699
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 700
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 702
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 703
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 704
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 705
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 706
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 707
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 708
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 712
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 713
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 714
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 715
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 716
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 717
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 721
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 722
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 723
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a14 = 1
+Line Number of Binary Assignment : 724
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 725
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 726
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 727
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a24 = 0
+Line Number of Binary Assignment : 728
+Name, Type of LHS : a24,int
+
+Variable a24 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 729
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 731
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 732
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 733
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 734
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 735
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 736
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a13 = 0
+Line Number of Binary Assignment : 737
+Name, Type of LHS : a13,int
+
+Variable a13 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 738
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a25 = 1
+Line Number of Binary Assignment : 739
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a21 = 1
+Line Number of Binary Assignment : 740
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 744
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 745
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 746
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 747
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 748
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 749
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 750
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 751
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 754
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 755
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 756
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 757
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 758
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 759
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 760
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 761
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a21 = 0
+Line Number of Binary Assignment : 764
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 765
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a13 = 0
+Line Number of Binary Assignment : 766
+Name, Type of LHS : a13,int
+
+Variable a13 already exists in the map 
+Statement String : a4 = 0
+Line Number of Binary Assignment : 767
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 768
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 769
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 772
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 773
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 774
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 775
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 776
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 777
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 780
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a15 = 0
+Line Number of Binary Assignment : 781
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a14 = 1
+Line Number of Binary Assignment : 782
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 783
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 784
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 785
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 788
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 789
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 790
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 791
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 792
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 795
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 796
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 797
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 798
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 799
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 800
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 801
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 802
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 803
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 806
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 807
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a4 = 0
+Line Number of Binary Assignment : 808
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a13 = 0
+Line Number of Binary Assignment : 809
+Name, Type of LHS : a13,int
+
+Variable a13 already exists in the map 
+Statement String : a25 = 1
+Line Number of Binary Assignment : 810
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 811
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 812
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 815
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 816
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 817
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 818
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 819
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 820
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 821
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a9 = 0
+Line Number of Binary Assignment : 824
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 825
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a1 = 0
+Line Number of Binary Assignment : 826
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 827
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 828
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 829
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 830
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 831
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 832
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 833
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a4 = 0
+Line Number of Binary Assignment : 836
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 837
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 838
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 839
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a9 = 0
+Line Number of Binary Assignment : 840
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a0 = 0
+Line Number of Binary Assignment : 841
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 842
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 843
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 844
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 847
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 848
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 849
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 850
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 851
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 852
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 855
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 856
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 857
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 858
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 859
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 860
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 861
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 864
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 865
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a0 = 0
+Line Number of Binary Assignment : 866
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 867
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 868
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 869
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 870
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a8 = 1
+Line Number of Binary Assignment : 871
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 874
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 875
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 876
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 880
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 881
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a22 = 0
+Line Number of Binary Assignment : 882
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a15 = 0
+Line Number of Binary Assignment : 883
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 884
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a21 = 1
+Line Number of Binary Assignment : 885
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 886
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 888
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 889
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 890
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a13 = 0
+Line Number of Binary Assignment : 891
+Name, Type of LHS : a13,int
+
+Variable a13 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 892
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 893
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a22 = 0
+Line Number of Binary Assignment : 894
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 895
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 896
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 900
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 901
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 902
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 903
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 904
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 905
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 906
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 907
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 910
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a14 = 1
+Line Number of Binary Assignment : 911
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a28 = 1
+Line Number of Binary Assignment : 912
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a9 = 1
+Line Number of Binary Assignment : 913
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 914
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 915
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 918
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 919
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 920
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 921
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 922
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 923
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 924
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 925
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 929
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a13 = 0
+Line Number of Binary Assignment : 930
+Name, Type of LHS : a13,int
+
+Variable a13 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 931
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a7 = 1
+Line Number of Binary Assignment : 932
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 933
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 934
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 935
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 936
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 938
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 939
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a9 = 0
+Line Number of Binary Assignment : 940
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 941
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a16 = 0
+Line Number of Binary Assignment : 942
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 943
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 944
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 948
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 949
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 950
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 951
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 952
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 953
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 954
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 955
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 958
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a25 = 1
+Line Number of Binary Assignment : 959
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 960
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a9 = 0
+Line Number of Binary Assignment : 961
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 962
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 963
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 966
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a19 = 1
+Line Number of Binary Assignment : 967
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 968
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 969
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 970
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a21 = 0
+Line Number of Binary Assignment : 971
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 972
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 973
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 974
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 977
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 978
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 979
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 980
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 981
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 982
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 983
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 986
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 987
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 988
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 989
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 990
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a17 = 0
+Line Number of Binary Assignment : 991
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 994
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 995
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 996
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 997
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 998
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 999
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 1000
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1001
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1002
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1005
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 1006
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 1007
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1008
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1009
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 1010
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1011
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1014
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 1015
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1016
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 1017
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 1018
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1019
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1022
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1023
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1024
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 1025
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 1026
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1027
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1028
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 1029
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 1032
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1033
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 1034
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1035
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1036
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1037
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 1038
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1039
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1042
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a17 = 0
+Line Number of Binary Assignment : 1043
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 1044
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1045
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 1046
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1050
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a15 = 0
+Line Number of Binary Assignment : 1051
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 1052
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1053
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1054
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1055
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a24 = 0
+Line Number of Binary Assignment : 1056
+Name, Type of LHS : a24,int
+
+Variable a24 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1057
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1058
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1060
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a21 = 0
+Line Number of Binary Assignment : 1061
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 1062
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1063
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a8 = 1
+Line Number of Binary Assignment : 1064
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1065
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1066
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1067
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1068
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 1072
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a14 = 0
+Line Number of Binary Assignment : 1073
+Name, Type of LHS : a14,int
+
+Variable a14 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 1074
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1077
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1078
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 1079
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 1080
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 1081
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 1082
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1085
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 1086
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a7 = 1
+Line Number of Binary Assignment : 1087
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a22 = 0
+Line Number of Binary Assignment : 1088
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1089
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1090
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1091
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1092
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1093
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a19 = 1
+Line Number of Binary Assignment : 1094
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1097
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1098
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a4 = 0
+Line Number of Binary Assignment : 1099
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1100
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1101
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a8 = 1
+Line Number of Binary Assignment : 1102
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a22 = 0
+Line Number of Binary Assignment : 1103
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1106
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 1107
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1108
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1109
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1110
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 1111
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 1112
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1115
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1116
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 1117
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1118
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 1119
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 1120
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 1123
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1124
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 1125
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 1126
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1127
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 1128
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1131
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1132
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a28 = 1
+Line Number of Binary Assignment : 1133
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1134
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a21 = 1
+Line Number of Binary Assignment : 1135
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 1138
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 1139
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 1140
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 1143
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1144
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1145
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1146
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 1147
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1148
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1149
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 1150
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 1153
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1154
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1155
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1156
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 1157
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1158
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1159
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 1160
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1163
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 1164
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a17 = 0
+Line Number of Binary Assignment : 1165
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 1166
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1167
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1168
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1169
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1170
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1173
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 1174
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1175
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1176
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 1177
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1178
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1179
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1180
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 1181
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1184
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1185
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 1186
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1187
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1188
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a13 = 1
+Line Number of Binary Assignment : 1189
+Name, Type of LHS : a13,int
+
+Variable a13 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 1190
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 1193
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1194
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1195
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 1196
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 1197
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1198
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1201
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1202
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 1203
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 1204
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1205
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1206
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 1207
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 1208
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1211
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1212
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1213
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1214
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a29 = 1
+Line Number of Binary Assignment : 1215
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 1216
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 1217
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1218
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 1222
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1223
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1224
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 1225
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 1227
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1228
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 1229
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1230
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1231
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1232
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1233
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 1237
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1238
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 1239
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1240
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 1241
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1242
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1243
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1244
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1245
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a10 = 0
+Line Number of Binary Assignment : 1248
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a8 = 1
+Line Number of Binary Assignment : 1249
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1250
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1251
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1252
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a9 = 0
+Line Number of Binary Assignment : 1253
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1254
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1255
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1256
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1257
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a4 = 0
+Line Number of Binary Assignment : 1261
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1262
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1263
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1264
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1265
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a28 = 0
+Line Number of Binary Assignment : 1266
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 1267
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1268
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1269
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1270
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a8 = 1
+Line Number of Binary Assignment : 1272
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1273
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1274
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a29 = 0
+Line Number of Binary Assignment : 1275
+Name, Type of LHS : a29,int
+
+Variable a29 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1276
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1277
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1278
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1279
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1280
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a24 = 1
+Line Number of Binary Assignment : 1281
+Name, Type of LHS : a24,int
+
+Variable a24 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1285
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 1286
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 1287
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 1288
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1289
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1290
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1291
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1295
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a21 = 0
+Line Number of Binary Assignment : 1296
+Name, Type of LHS : a21,int
+
+Variable a21 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1297
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1298
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1299
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a22 = 0
+Line Number of Binary Assignment : 1300
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 1301
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a13 = 0
+Line Number of Binary Assignment : 1302
+Name, Type of LHS : a13,int
+
+Variable a13 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1303
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1305
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a9 = 0
+Line Number of Binary Assignment : 1306
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1307
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a16 = 0
+Line Number of Binary Assignment : 1308
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1309
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a20 = 1
+Line Number of Binary Assignment : 1310
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1311
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1312
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 1316
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a4 = 1
+Line Number of Binary Assignment : 1317
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1318
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1319
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1320
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 1321
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1324
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1325
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 1326
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a23 = 0
+Line Number of Binary Assignment : 1327
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1328
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a20 = 0
+Line Number of Binary Assignment : 1329
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 1332
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 1333
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 1334
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1337
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a16 = 0
+Line Number of Binary Assignment : 1338
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1339
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1340
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a8 = 1
+Line Number of Binary Assignment : 1341
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1342
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 1343
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a23 = 1
+Line Number of Binary Assignment : 1344
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a17 = 0
+Line Number of Binary Assignment : 1347
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 1348
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1349
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1350
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1351
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a1 = 1
+Line Number of Binary Assignment : 1352
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 1355
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1356
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1357
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a8 = 0
+Line Number of Binary Assignment : 1358
+Name, Type of LHS : a8,int
+
+Variable a8 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1361
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1362
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a16 = 1
+Line Number of Binary Assignment : 1363
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1364
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a19 = 0
+Line Number of Binary Assignment : 1365
+Name, Type of LHS : a19,int
+
+Variable a19 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1366
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a22 = 1
+Line Number of Binary Assignment : 1367
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a17 = 1
+Line Number of Binary Assignment : 1371
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1372
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a20 = 1
+Line Number of Binary Assignment : 1373
+Name, Type of LHS : a20,int
+
+Variable a20 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1374
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1375
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1376
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1377
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1378
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a1 = 0
+Line Number of Binary Assignment : 1379
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1381
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a1 = 0
+Line Number of Binary Assignment : 1382
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a3 = 1
+Line Number of Binary Assignment : 1383
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a6 = 0
+Line Number of Binary Assignment : 1384
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a9 = 1
+Line Number of Binary Assignment : 1385
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a15 = 0
+Line Number of Binary Assignment : 1386
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1387
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1388
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a16 = 0
+Line Number of Binary Assignment : 1393
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1394
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a23 = 1
+Line Number of Binary Assignment : 1395
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1396
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1397
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1398
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1399
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a1 = 0
+Line Number of Binary Assignment : 1400
+Name, Type of LHS : a1,int
+
+Variable a1 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1402
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1403
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 1404
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1405
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a10 = 0
+Line Number of Binary Assignment : 1406
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a16 = 0
+Line Number of Binary Assignment : 1407
+Name, Type of LHS : a16,int
+
+Variable a16 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1408
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1409
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a22 = 0
+Line Number of Binary Assignment : 1414
+Name, Type of LHS : a22,int
+
+Variable a22 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1415
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a24 = 1
+Line Number of Binary Assignment : 1416
+Name, Type of LHS : a24,int
+
+Variable a24 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1417
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1418
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1419
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a9 = 0
+Line Number of Binary Assignment : 1420
+Name, Type of LHS : a9,int
+
+Variable a9 already exists in the map 
+Statement String : a28 = 1
+Line Number of Binary Assignment : 1422
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1423
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1424
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a7 = 1
+Line Number of Binary Assignment : 1425
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1426
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a4 = 0
+Line Number of Binary Assignment : 1427
+Name, Type of LHS : a4,int
+
+Variable a4 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1428
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a12 = 0
+Line Number of Binary Assignment : 1429
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1430
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1434
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a25 = 1
+Line Number of Binary Assignment : 1435
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 1436
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a23 = 1
+Line Number of Binary Assignment : 1437
+Name, Type of LHS : a23,int
+
+Variable a23 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1438
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a12 = 1
+Line Number of Binary Assignment : 1439
+Name, Type of LHS : a12,int
+
+Variable a12 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1440
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a27 = 0
+Line Number of Binary Assignment : 1443
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1444
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a26 = 0
+Line Number of Binary Assignment : 1445
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a5 = 1
+Line Number of Binary Assignment : 1446
+Name, Type of LHS : a5,int
+
+Variable a5 already exists in the map 
+Statement String : a7 = 1
+Line Number of Binary Assignment : 1447
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a11 = 0
+Line Number of Binary Assignment : 1448
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a28 = 0
+Line Number of Binary Assignment : 1449
+Name, Type of LHS : a28,int
+
+Variable a28 already exists in the map 
+Statement String : a2 = 1
+Line Number of Binary Assignment : 1450
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1453
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a27 = 1
+Line Number of Binary Assignment : 1454
+Name, Type of LHS : a27,int
+
+Variable a27 already exists in the map 
+Statement String : a25 = 0
+Line Number of Binary Assignment : 1455
+Name, Type of LHS : a25,int
+
+Variable a25 already exists in the map 
+Statement String : a17 = 0
+Line Number of Binary Assignment : 1456
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1457
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a3 = 0
+Line Number of Binary Assignment : 1458
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a7 = 0
+Line Number of Binary Assignment : 1459
+Name, Type of LHS : a7,int
+
+Variable a7 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1460
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a6 = 1
+Line Number of Binary Assignment : 1463
+Name, Type of LHS : a6,int
+
+Variable a6 already exists in the map 
+Statement String : a10 = 1
+Line Number of Binary Assignment : 1464
+Name, Type of LHS : a10,int
+
+Variable a10 already exists in the map 
+Statement String : a3 = 2
+Line Number of Binary Assignment : 1465
+Name, Type of LHS : a3,int
+
+Variable a3 already exists in the map 
+Statement String : a0 = 1
+Line Number of Binary Assignment : 1466
+Name, Type of LHS : a0,int
+
+Variable a0 already exists in the map 
+Statement String : a11 = 1
+Line Number of Binary Assignment : 1467
+Name, Type of LHS : a11,int
+
+Variable a11 already exists in the map 
+Statement String : a26 = 1
+Line Number of Binary Assignment : 1468
+Name, Type of LHS : a26,int
+
+Variable a26 already exists in the map 
+Statement String : a17 = 0
+Line Number of Binary Assignment : 1471
+Name, Type of LHS : a17,int
+
+Variable a17 already exists in the map 
+Statement String : a15 = 1
+Line Number of Binary Assignment : 1472
+Name, Type of LHS : a15,int
+
+Variable a15 already exists in the map 
+Statement String : a2 = 0
+Line Number of Binary Assignment : 1473
+Name, Type of LHS : a2,int
+
+Variable a2 already exists in the map 
+Found VarDecl at line = 1665
 VarDecl is Local and has Init 
 VarDecl Name : output 	VarDecl Type : int
-VarDecl Line Number : 590
+VarDecl Line Number : 1665
 Adding Variable output to map 
-Found VarDecl at line = 596
+Found VarDecl at line = 1671
 Statement String : input = __VERIFIER_nondet_int()
-Line Number of Binary Assignment : 597
+Line Number of Binary Assignment : 1672
 Name, Type of LHS : input,int
 
 Adding Variable input to map 
 Statement String : output = calculate_output(input)
-Line Number of Binary Assignment : 601
+Line Number of Binary Assignment : 1676
 Name, Type of LHS : output,int
 
 Variable output already exists in the map 
