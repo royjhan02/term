@@ -1,0 +1,4 @@
+/home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles/instrumenter.dir
+/home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles/instCore.dir
+/home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles/edit_cache.dir
+/home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles/rebuild_cache.dir

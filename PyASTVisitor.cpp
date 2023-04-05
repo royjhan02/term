@@ -18,11 +18,13 @@ void PyASTVisitor::set_VisitorCompilerInstance(clang::CompilerInstance *pyASTVis
 
 bool PyASTVisitor::VisitDecl(clang::Decl *d)
 {
+    clang::SourceManager &SM = visitor_CompilerInstance->getSourceManager();
 
     if (decl_counter == 0)
     {
         std::string insertStr = "#include <stdio.h>\n";
-        clang::SourceLocation fBeginLoc = d->getBeginLoc();
+       // clang::SourceLocation fBeginLoc = d->getBeginLoc();
+        clang::SourceLocation fBeginLoc = SM.getLocForStartOfFile(SM.getMainFileID());
         vRewriter.InsertTextBefore(fBeginLoc, insertStr);
         decl_counter++;
     }
