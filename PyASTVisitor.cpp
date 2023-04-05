@@ -16,6 +16,101 @@ void PyASTVisitor::set_VisitorCompilerInstance(clang::CompilerInstance *pyASTVis
     this->decl_counter = 0;
 }
 
+
+bool PyASTVisitor::av_map_contains(std::string varName, AVInfo::assignment_info vd, 
+                                   clang::SourceLocation stmtEndLoc)
+{
+    std::pair<std::string, AVInfo::assignment_info> av_pair;
+    std::string insertStr = "";
+    clang::SourceLocation stmtEndloc = stmtEndLoc;
+    if (av_map.find(varName) != av_map.end())
+    {
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "Variable " << varName << " already exists in the map " << std::endl;
+        fclose(stderr);
+    }
+    else
+    {
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "Adding Variable " << varName << " to map " << std::endl;
+        fclose(stderr);
+        av_pair = std::make_pair(varName, vd);
+        av_map.insert(av_pair);
+    }
+
+    insertStr = insertStr + "printf(\"DirNT State @ line" + std::to_string(vd.lin) + ": <\");";
+    for (auto it = av_map.begin(); it != av_map.end(); ++it)
+    {
+        std::string t_typ = it->second.typ;
+        std::string instvarName = it->second.nam;
+        if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
+            insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
+        else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
+            insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
+        else if (t_typ == "char")
+            insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
+    }
+    insertStr = insertStr + "printf(\">\\n\");";
+
+    clang::SourceManager &v_srcMgr = visitor_CompilerInstance->getSourceManager();
+   // clang::SourceLocation stmtEndloc = v_binop->getRHS()->getEndLoc();
+    const char *ptr = v_srcMgr.getCharacterData(stmtEndloc);
+    const char *end = v_srcMgr.getCharacterData(v_srcMgr.getLocForEndOfFile(v_srcMgr.getMainFileID()));
+    clang::Token tok;
+    clang::Lexer lexer(stmtEndloc, visitor_CompilerInstance->getLangOpts(), v_srcMgr.getCharacterData(stmtEndloc), ptr, end);
+    int counter = 0;
+    // lexer.SetKeepWhitespaceMode(true);
+    // if (lexer.isKeepWhitespaceMode())
+    //     std::cout << "Lexer is in KeepWhitespaceMode" << std::endl;
+    // else
+    // {
+    //     std::cout << "Lexer is not in KeepWhitespaceMode" << std::endl;
+    //     lexer.SetKeepWhitespaceMode(true);
+    //     if (lexer.isKeepWhitespaceMode())
+    //     {
+    //         std::cout << "Lexer is now in KeepWhitespaceMode" << std::endl;
+    //     }
+    // }
+
+    while (ptr != end)
+    {
+        // freopen(visitor_OutFile, "a+", stderr);
+        // std::cerr << "Current stmtEndLoc " << stmtEndloc.printToString(v_srcMgr) << "\n";
+        // fclose(stderr);
+
+        if (lexer.getRawToken(stmtEndloc, tok, v_srcMgr, visitor_CompilerInstance->getLangOpts()))
+        {
+            // std::cout << tok.getName() << "\n";
+            // std::cout << "Error in finding token at " << stmtEndloc.printToString(v_srcMgr) << "\n";
+            stmtEndloc = stmtEndloc.getLocWithOffset(1);
+            break;
+        }
+        // std::cout << tok.getName() << "\n";
+        // std::cout << "Finding ; at " << tok.getName() << " " << counter << "\n";
+        // if (*ptr == ';')
+        if (tok.is(clang::tok::semi))
+        {
+            // std::cout << "Found ; at " << stmtEndloc.printToString(v_srcMgr) << "\n";
+            // std::cout << counter << "\n";
+            // clang::SourceLocation nextSourceLoc = stmtEndloc.getLocWithOffset(2);
+            clang::SourceLocation nextSourceLoc = stmtEndloc;
+            vRewriter.InsertTextAfterToken(nextSourceLoc, insertStr);
+            break;
+        }
+        stmtEndloc = tok.getLocation().getLocWithOffset(tok.getLength());
+        ptr = v_srcMgr.getCharacterData(stmtEndloc);
+        //++ptr;
+    }
+    return true;
+}
+
+
+
+
+
+
+
+
 bool PyASTVisitor::VisitDecl(clang::Decl *d)
 {
     clang::SourceManager &SM = visitor_CompilerInstance->getSourceManager();
@@ -23,7 +118,7 @@ bool PyASTVisitor::VisitDecl(clang::Decl *d)
     if (decl_counter == 0)
     {
         std::string insertStr = "#include <stdio.h>\n";
-       // clang::SourceLocation fBeginLoc = d->getBeginLoc();
+        // clang::SourceLocation fBeginLoc = d->getBeginLoc();
         clang::SourceLocation fBeginLoc = SM.getLocForStartOfFile(SM.getMainFileID());
         vRewriter.InsertTextBefore(fBeginLoc, insertStr);
         decl_counter++;
@@ -48,12 +143,52 @@ bool PyASTVisitor::VisitDecl(clang::Decl *d)
 
 // bool PyASTVisitor::VisitDeclStmt(clang::DeclStmt *v_declStmt)
 // {
-//     // freopen(visitor_OutFile, "a+", stderr);
-//     // std::cerr << "Found DeclStmt at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_declStmt->getBeginLoc()) << "\n";
-//     // fclose(stderr);
+//      freopen(visitor_OutFile, "a+", stderr);
+//      std::cerr << "Found DeclStmt at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_declStmt->getBeginLoc()) << "\n";
+//      fclose(stderr);
 
 //     return true;
 // }
+
+// Function that checks if a variable name is in av_map. If not it adds it to the map and instruments the code
+
+
+bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
+{
+    // std::cout << "Found VarDecl at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc()) << "\n";
+    freopen(visitor_OutFile, "a+", stderr);
+    std::cerr << "Found VarDecl at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc()) << "\n";
+    fclose(stderr);
+    std::string vardecl_name = v_varDecl->getNameAsString();
+    std::string vardecl_type = clang::QualType::getAsString(v_varDecl->getType().split(), clang::PrintingPolicy(
+                                                                                              visitor_CompilerInstance->getLangOpts()));
+    unsigned int vardecl_lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
+
+    if (v_varDecl->hasLocalStorage())
+    {
+        if (v_varDecl->hasInit())
+        {
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "VarDecl is Local and has Init "
+                      << "\n";
+            std::cerr << "VarDecl Name : " << vardecl_name << " \t";
+            std::cerr << "VarDecl Type : " << vardecl_type << "\n";
+            std::cerr << "VarDecl Line Number : " << vardecl_lineNum << "\n";
+            // std::cerr << "VarDecl Init : " << v_varDecl->getInit()->getStmtClassName() << "\n";
+            fclose(stderr);
+
+            AVInfo::assignment_info vd_vardecl_info;
+            vd_vardecl_info.nam = vardecl_name;
+            vd_vardecl_info.typ = vardecl_type;
+            vd_vardecl_info.lin = vardecl_lineNum;
+            clang::SourceLocation vd_vardecl_loc = v_varDecl->getEndLoc();
+            av_map_contains(vardecl_name, vd_vardecl_info, vd_vardecl_loc);
+
+        }
+    }
+
+    return true;
+}
 
 bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 {
@@ -80,7 +215,6 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
                     clang::ValueDecl *decl = refExpr->getDecl();
 
                     std::string varName = decl->getNameAsString();
-
 
                     llvm::StringRef text_ref = clang::Lexer::getSourceText(
                         clang::CharSourceRange::getTokenRange(s->getSourceRange()),

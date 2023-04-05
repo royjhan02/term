@@ -63,6 +63,9 @@ public:
     // bool VisitCallExpr(clang::CallExpr *s);
     //  bool VisitVarDecl(clang::VarDecl *v_varDecl);
     bool VisitDecl(clang::Decl *d);
+    //bool VisitDeclStmt(clang::DeclStmt *v_declStmt);
+    bool VisitVarDecl(clang::VarDecl *v_varDecl);
+    bool av_map_contains(std::string varName, AVInfo::assignment_info av, clang::SourceLocation loc);
     // void printLivenessInfo(clang::FunctionDecl* liveness_fd);
 
 private:
