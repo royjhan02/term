@@ -4,7 +4,7 @@
 # compile CXX with clang++-14
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tcs/Documents/Termination/Repo/Code/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include
+CXX_INCLUDES = -I/home/hrishik/Repos/GitHub/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -I/usr/include/c++/12
 
 CXX_FLAGS = -g -std=gnu++17
 

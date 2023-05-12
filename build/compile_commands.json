@@ -1,22 +1,22 @@
 [
 {
-  "directory": "/home/tcs/Documents/Termination/Repo/Code/term/build",
-  "command": "clang++-14  -I/home/tcs/Documents/Termination/Repo/Code/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -g -std=gnu++17 -o CMakeFiles/instCore.dir/main.cpp.o -c /home/tcs/Documents/Termination/Repo/Code/term/main.cpp",
-  "file": "/home/tcs/Documents/Termination/Repo/Code/term/main.cpp"
+  "directory": "/home/hrishik/Repos/GitHub/term/build",
+  "command": "clang++-14  -I/home/hrishik/Repos/GitHub/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -I/usr/include/c++/12 -g -std=gnu++17 -o CMakeFiles/instCore.dir/main.cpp.o -c /home/hrishik/Repos/GitHub/term/main.cpp",
+  "file": "/home/hrishik/Repos/GitHub/term/main.cpp"
 },
 {
-  "directory": "/home/tcs/Documents/Termination/Repo/Code/term/build",
-  "command": "clang++-14  -I/home/tcs/Documents/Termination/Repo/Code/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -g -std=gnu++17 -o CMakeFiles/instCore.dir/PyASTVisitor.cpp.o -c /home/tcs/Documents/Termination/Repo/Code/term/PyASTVisitor.cpp",
-  "file": "/home/tcs/Documents/Termination/Repo/Code/term/PyASTVisitor.cpp"
+  "directory": "/home/hrishik/Repos/GitHub/term/build",
+  "command": "clang++-14  -I/home/hrishik/Repos/GitHub/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -I/usr/include/c++/12 -g -std=gnu++17 -o CMakeFiles/instCore.dir/PyASTVisitor.cpp.o -c /home/hrishik/Repos/GitHub/term/PyASTVisitor.cpp",
+  "file": "/home/hrishik/Repos/GitHub/term/PyASTVisitor.cpp"
 },
 {
-  "directory": "/home/tcs/Documents/Termination/Repo/Code/term/build",
-  "command": "clang++-14  -I/home/tcs/Documents/Termination/Repo/Code/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -g -std=gnu++17 -o CMakeFiles/instCore.dir/PyASTConsumer.cpp.o -c /home/tcs/Documents/Termination/Repo/Code/term/PyASTConsumer.cpp",
-  "file": "/home/tcs/Documents/Termination/Repo/Code/term/PyASTConsumer.cpp"
+  "directory": "/home/hrishik/Repos/GitHub/term/build",
+  "command": "clang++-14  -I/home/hrishik/Repos/GitHub/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -I/usr/include/c++/12 -g -std=gnu++17 -o CMakeFiles/instCore.dir/PyASTConsumer.cpp.o -c /home/hrishik/Repos/GitHub/term/PyASTConsumer.cpp",
+  "file": "/home/hrishik/Repos/GitHub/term/PyASTConsumer.cpp"
 },
 {
-  "directory": "/home/tcs/Documents/Termination/Repo/Code/term/build",
-  "command": "clang++-14  -I/home/tcs/Documents/Termination/Repo/Code/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -g -std=gnu++17 -o CMakeFiles/instrumenter.dir/main.cpp.o -c /home/tcs/Documents/Termination/Repo/Code/term/main.cpp",
-  "file": "/home/tcs/Documents/Termination/Repo/Code/term/main.cpp"
+  "directory": "/home/hrishik/Repos/GitHub/term/build",
+  "command": "clang++-14  -I/home/hrishik/Repos/GitHub/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -I/usr/include/c++/12 -g -std=gnu++17 -o CMakeFiles/instrumenter.dir/main.cpp.o -c /home/hrishik/Repos/GitHub/term/main.cpp",
+  "file": "/home/hrishik/Repos/GitHub/term/main.cpp"
 }
 ]

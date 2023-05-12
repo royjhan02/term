@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tcs/Documents/Termination/Repo/Code/term
+CMAKE_SOURCE_DIR = /home/hrishik/Repos/GitHub/term
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tcs/Documents/Termination/Repo/Code/term/build
+CMAKE_BINARY_DIR = /home/hrishik/Repos/GitHub/term/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -83,14 +83,14 @@ clean: CMakeFiles/instCore.dir/clean
 CMakeFiles/instrumenter.dir/all: CMakeFiles/instCore.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/instrumenter.dir/build.make CMakeFiles/instrumenter.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/instrumenter.dir/build.make CMakeFiles/instrumenter.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles --progress-num=5,6 "Built target instrumenter"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hrishik/Repos/GitHub/term/build/CMakeFiles --progress-num=5,6 "Built target instrumenter"
 .PHONY : CMakeFiles/instrumenter.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/instrumenter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hrishik/Repos/GitHub/term/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/instrumenter.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hrishik/Repos/GitHub/term/build/CMakeFiles 0
 .PHONY : CMakeFiles/instrumenter.dir/rule
 
 # Convenience name for target.
@@ -109,14 +109,14 @@ CMakeFiles/instrumenter.dir/clean:
 CMakeFiles/instCore.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/instCore.dir/build.make CMakeFiles/instCore.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/instCore.dir/build.make CMakeFiles/instCore.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles --progress-num=1,2,3,4 "Built target instCore"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hrishik/Repos/GitHub/term/build/CMakeFiles --progress-num=1,2,3,4 "Built target instCore"
 .PHONY : CMakeFiles/instCore.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/instCore.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hrishik/Repos/GitHub/term/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/instCore.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tcs/Documents/Termination/Repo/Code/term/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hrishik/Repos/GitHub/term/build/CMakeFiles 0
 .PHONY : CMakeFiles/instCore.dir/rule
 
 # Convenience name for target.

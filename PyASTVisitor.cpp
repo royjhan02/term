@@ -15,9 +15,29 @@ void PyASTVisitor::set_VisitorCompilerInstance(clang::CompilerInstance *pyASTVis
     visitor_InputFile = i_file;
     this->decl_counter = 0;
 }
+bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
+{
+    std::string insertStr = "";
+    insertStr = insertStr + "printf(\"DirNT State @ line" + std::to_string(lineNum) + ": <\");";
+    for (auto it = av_map.begin(); it != av_map.end(); ++it)
+    {
+        std::string t_typ = it->second.typ;
+        std::string instvarName = it->second.nam;
+        if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
+            insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
+        else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
+            insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
+        else if (t_typ == "char")
+            insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
+    }
+    insertStr = insertStr + "printf(\">\\n\");";
+    //clang::SourceLocation nextSourceLoc = stmtEndloc;
+    vRewriter.InsertTextAfterToken(srcLoc, insertStr);
 
+    return true;
+}
 
-bool PyASTVisitor::av_map_contains(std::string varName, AVInfo::assignment_info vd, 
+bool PyASTVisitor::av_map_contains(std::string varName, AVInfo::assignment_info vd,
                                    clang::SourceLocation stmtEndLoc)
 {
     std::pair<std::string, AVInfo::assignment_info> av_pair;
@@ -53,7 +73,7 @@ bool PyASTVisitor::av_map_contains(std::string varName, AVInfo::assignment_info 
     insertStr = insertStr + "printf(\">\\n\");";
 
     clang::SourceManager &v_srcMgr = visitor_CompilerInstance->getSourceManager();
-   // clang::SourceLocation stmtEndloc = v_binop->getRHS()->getEndLoc();
+    // clang::SourceLocation stmtEndloc = v_binop->getRHS()->getEndLoc();
     const char *ptr = v_srcMgr.getCharacterData(stmtEndloc);
     const char *end = v_srcMgr.getCharacterData(v_srcMgr.getLocForEndOfFile(v_srcMgr.getMainFileID()));
     clang::Token tok;
@@ -104,13 +124,6 @@ bool PyASTVisitor::av_map_contains(std::string varName, AVInfo::assignment_info 
     return true;
 }
 
-
-
-
-
-
-
-
 bool PyASTVisitor::VisitDecl(clang::Decl *d)
 {
     clang::SourceManager &SM = visitor_CompilerInstance->getSourceManager();
@@ -152,7 +165,6 @@ bool PyASTVisitor::VisitDecl(clang::Decl *d)
 
 // Function that checks if a variable name is in av_map. If not it adds it to the map and instruments the code
 
-
 bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
 {
     // std::cout << "Found VarDecl at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc()) << "\n";
@@ -183,7 +195,6 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
             vd_vardecl_info.lin = vardecl_lineNum;
             clang::SourceLocation vd_vardecl_loc = v_varDecl->getEndLoc();
             av_map_contains(vardecl_name, vd_vardecl_info, vd_vardecl_loc);
-
         }
     }
 
@@ -197,6 +208,8 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
     unsigned int blockEndLineNum;
     std::pair<std::string, AVInfo::assignment_info> av_pair;
     std::string insertStr = "";
+
+    // std::cout << "Stmt Class Name : " << s->getStmtClassName() << "\n";
 
     if (auto *v_binop = clang::dyn_cast<clang::BinaryOperator>(s))
     {
@@ -338,9 +351,30 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             }
         }
     }
-    else
+    // else
+    // {
+    //     // std::cout << "Not a Binary Operator" << std::endl;
+    // }
+
+    if (strcmp(s->getStmtClassName(), "WhileStmt") == 0)
     {
-        // std::cout << "Not a Binary Operator" << std::endl;
+        std::cout << "While Statement Found\n";
+        clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
+        clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
+        lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
+        print_map(nextSourceLoc, lineNum, "");
+
+        //vRewriter.InsertTextAfterToken(nextSourceLoc,insertStr);
+
+        //     // clang::Expr *cond_expr = whileStmt->getCond();
+        //     freopen(visitor_OutFile, "a+", stderr);
+        //     std::cerr << "\nWhile Statement ";
+        //     fclose(stderr);
+        //     insertStr = " __VERIFIER_reached_control(" + std::to_string(lineNum) + ", __FUNCTION__);  ";
+        //     vRewriter.InsertText(s->getBeginLoc(), insertStr, true, true);
+        //     insertStr = " __VERIFIER_loop_head(" + std::to_string(lineNum) + ", __FUNCTION__);  ";
+        //     clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
+        //     vRewriter.InsertTextAfterToken(nextSourceLoc, insertStr);
     }
     return true;
 }
