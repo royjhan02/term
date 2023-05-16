@@ -97,60 +97,6 @@ bool PyASTVisitor::av_map_contains(std::string varName, AVInfo::assignment_info 
         }
     }
 
-    /*
-        insertStr = insertStr + "printf(\"DirNT State @ line" + std::to_string(vd.lin) + ": <\");";
-        for (auto it = av_map.begin(); it != av_map.end(); ++it)
-        {
-            std::string t_typ = it->second.typ;
-            std::string instvarName = it->second.nam;
-            if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
-                insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
-            else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
-                insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
-            else if (t_typ == "char")
-                insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
-        }
-        insertStr = insertStr + "printf(\">\\n\");";
-
-
-        clang::SourceManager &v_srcMgr = visitor_CompilerInstance->getSourceManager();
-        // clang::SourceLocation stmtEndloc = v_binop->getRHS()->getEndLoc();
-        const char *ptr = v_srcMgr.getCharacterData(stmtEndloc);
-        const char *end = v_srcMgr.getCharacterData(v_srcMgr.getLocForEndOfFile(v_srcMgr.getMainFileID()));
-        clang::Token tok;
-        clang::Lexer lexer(stmtEndloc, visitor_CompilerInstance->getLangOpts(), v_srcMgr.getCharacterData(stmtEndloc), ptr, end);
-        int counter = 0;
-
-        while (ptr != end)
-        {
-            // freopen(visitor_OutFile, "a+", stderr);
-            // std::cerr << "Current stmtEndLoc " << stmtEndloc.printToString(v_srcMgr) << "\n";
-            // fclose(stderr);
-
-            if (lexer.getRawToken(stmtEndloc, tok, v_srcMgr, visitor_CompilerInstance->getLangOpts()))
-            {
-                // std::cout << tok.getName() << "\n";
-                // std::cout << "Error in finding token at " << stmtEndloc.printToString(v_srcMgr) << "\n";
-                stmtEndloc = stmtEndloc.getLocWithOffset(1);
-                break;
-            }
-            // std::cout << tok.getName() << "\n";
-            // std::cout << "Finding ; at " << tok.getName() << " " << counter << "\n";
-            // if (*ptr == ';')
-            if (tok.is(clang::tok::semi))
-            {
-                // std::cout << "Found ; at " << stmtEndloc.printToString(v_srcMgr) << "\n";
-                // std::cout << counter << "\n";
-                // clang::SourceLocation nextSourceLoc = stmtEndloc.getLocWithOffset(2);
-                clang::SourceLocation nextSourceLoc = stmtEndloc;
-                vRewriter.InsertTextAfterToken(nextSourceLoc, insertStr);
-                break;
-            }
-            stmtEndloc = tok.getLocation().getLocWithOffset(tok.getLength());
-            ptr = v_srcMgr.getCharacterData(stmtEndloc);
-            //++ptr;
-        } */
-
     return true;
 }
 
