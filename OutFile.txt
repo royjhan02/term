@@ -1,21 +1,25 @@
 
-Found Input File To Parse on disk = input/Bangalore_v2.c
+Found Input File To Parse on disk = input/Arrays03-ValueRestictsIndex-2.c
 Output File = OutFile.txt
 
 Found VarDecl at line = 12
+VarDecl is Local and has Init 
+VarDecl Name : k 	VarDecl Type : int
+VarDecl Line Number : 12
+Adding Variable k to map 
 Found VarDecl at line = 13
-Statement String : x = __VERIFIER_nondet_int()
-Line Number of Binary Assignment : 14
-Name, Type of LHS : x,int
-
+Found VarDecl at line = 15
+VarDecl is Local and has Init 
+VarDecl Name : i 	VarDecl Type : int
+VarDecl Line Number : 15
+Adding Variable i to map 
+Found VarDecl at line = 21
+VarDecl is Local and has Init 
+VarDecl Name : x 	VarDecl Type : int
+VarDecl Line Number : 21
 Adding Variable x to map 
-Statement String : y = __VERIFIER_nondet_int()
-Line Number of Binary Assignment : 15
-Name, Type of LHS : y,int
-
-Adding Variable y to map 
-Statement String : x = x - y
-Line Number of Binary Assignment : 18
+Statement String : x = x - k
+Line Number of Binary Assignment : 23
 Name, Type of LHS : x,int
 
 Variable x already exists in the map 

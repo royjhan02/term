@@ -1,7 +1,7 @@
 int __real_nondet_int();
 
-//const int fixInp [BOUND] = {2, 2, 2, 2, 2, 2, 2, 2, 2};
-const int fixInp [BOUND] = {1,0};
+const int fixInp [BOUND] = {2, 2, 2, 2, 2, 2, 2, 2, 2};
+//const int fixInp [BOUND] = {1,0};
 //const int fixInp [BOUND] = {6, 5, 5, 5, 5, 5, 5, 5, 5};
 //const int fixInp [BOUND] = {5, 6, 1, 2, 5, 4, 5, 5, 5};
 //const int fixInp [BOUND] = {1, 1, 1, 1, 1, 1, 1, 1, 1};

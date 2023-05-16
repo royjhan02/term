@@ -93,7 +93,8 @@ bool PyASTVisitor::av_map_contains(std::string varName, AVInfo::assignment_info 
             av_pair = std::make_pair(varName, vd);
             av_map.insert(av_pair);
 
-            print_map_semi(stmtEndloc, vd.lin, "");
+            // Use this to print the map at assignment and declaration with initial values
+            //print_map_semi(stmtEndloc, vd.lin, "");
         }
     }
 
@@ -217,17 +218,24 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         print_map(nextSourceLoc, lineNum, "");
 
-        // vRewriter.InsertTextAfterToken(nextSourceLoc,insertStr);
+    }
+    if (strcmp(s->getStmtClassName(), "ForStmt") == 0)
+    {
+        std::cout << "For Statement Found\n";
+        clang::ForStmt *forStmt = clang::dyn_cast<clang::ForStmt>(s);
+        clang::SourceLocation nextSourceLoc = forStmt->getBody()->getBeginLoc();
+        lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
+        print_map(nextSourceLoc, lineNum, "");
 
-        //     // clang::Expr *cond_expr = whileStmt->getCond();
-        //     freopen(visitor_OutFile, "a+", stderr);
-        //     std::cerr << "\nWhile Statement ";
-        //     fclose(stderr);
-        //     insertStr = " __VERIFIER_reached_control(" + std::to_string(lineNum) + ", __FUNCTION__);  ";
-        //     vRewriter.InsertText(s->getBeginLoc(), insertStr, true, true);
-        //     insertStr = " __VERIFIER_loop_head(" + std::to_string(lineNum) + ", __FUNCTION__);  ";
-        //     clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
-        //     vRewriter.InsertTextAfterToken(nextSourceLoc, insertStr);
+    }
+    if (strcmp(s->getStmtClassName(), "DoStmt") == 0)
+    {
+        std::cout << "Do-While Statement Found\n";
+        clang::DoStmt *doStmt = clang::dyn_cast<clang::DoStmt>(s);
+        clang::SourceLocation nextSourceLoc = doStmt->getBody()->getBeginLoc();
+        lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
+        print_map(nextSourceLoc, lineNum, "");
+
     }
     return true;
 }
