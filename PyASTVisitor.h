@@ -67,6 +67,7 @@ public:
     bool VisitVarDecl(clang::VarDecl *v_varDecl);
     bool av_map_contains(std::string varName, AVInfo::assignment_info av, clang::SourceLocation loc);
     bool print_map(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
+    bool print_map_semi(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
     // void printLivenessInfo(clang::FunctionDecl* liveness_fd);
 
 private:

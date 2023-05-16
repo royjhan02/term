@@ -11,10 +11,8 @@ int main()
 {
     int x;
     int y;
-    x = 1111;
-    //x = __VERIFIER_nondet_int();
-    y = 0;
-    //y = __VERIFIER_nondet_int();
+    x = __VERIFIER_nondet_int();
+    y = __VERIFIER_nondet_int();
 	if (y >= 0) {
 	    while (x >= 0) {
 	    	x = x - y;
