@@ -1,28 +1,76 @@
 
-Found Input File To Parse on disk = input/Arrays03-ValueRestictsIndex-2.c
+Found Input File To Parse on disk = input/Bangalore_v2.c
 Output File = OutFile.txt
 
-Found VarDecl at line = 12
-VarDecl is Local and has Init 
-VarDecl Name : k 	VarDecl Type : int
-VarDecl Line Number : 12
-Adding Variable k to map 
-Found VarDecl at line = 13
-Found VarDecl at line = 15
-VarDecl is Local and has Init 
-VarDecl Name : i 	VarDecl Type : int
-VarDecl Line Number : 15
-Adding Variable i to map 
-Found VarDecl at line = 21
-VarDecl is Local and has Init 
-VarDecl Name : x 	VarDecl Type : int
-VarDecl Line Number : 21
-Adding Variable x to map 
-Statement String : x = x - k
-Line Number of Binary Assignment : 23
-Name, Type of LHS : x,int
+VisitCompoundStmt :: CompoundStmt at line 11 and column 1 to line 27 and column 1
+VisitCompoundStmt :: Substmt is DeclStmt at line 12
+VisitCompoundStmt :: Variable x of type int declared at line 12 and column 5
+VisitCompoundStmt :: Substmt is DeclStmt at line 13
+VisitCompoundStmt :: Variable y of type int declared at line 13 and column 5
+VisitCompoundStmt :: Substmt is BinaryOperator at line 14
+VisitCompoundStmt :: Substmt is BinaryOperator at line 15
+VisitCompoundStmt :: Substmt is CompoundStmt at line 16
+VisitCompoundStmt :: Substmt is IfStmt at line 18
+VisitCompoundStmt :: Substmt is CompoundStmt at line 23
+VisitCompoundStmt :: Substmt is ReturnStmt at line 26
+show_scope_map :: Printing scope map
+x => x 11 27
+y => y 11 27
+VisitVarDecl :: Found VarDecl at line = 12
+VisitVarDecl :: Found VarDecl at line = 13
+VisitStmt :: Statement String : x = __VERIFIER_nondet_int()
+VisitStmt :: Line Number of Binary Assignment : 14
+VisitStmt :: Name, Type of LHS : x,int
 
-Variable x already exists in the map 
+av_map_contains :: Adding Variable x to map 
+av_map_contains :: Type of x is int
+VisitStmt :: Statement String : y = __VERIFIER_nondet_int()
+VisitStmt :: Line Number of Binary Assignment : 15
+VisitStmt :: Name, Type of LHS : y,int
+
+av_map_contains :: Adding Variable y to map 
+av_map_contains :: Type of y is int
+VisitCompoundStmt :: CompoundStmt at line 16 and column 5 to line 16 and column 12
+VisitCompoundStmt :: Substmt is DeclStmt at line 16
+VisitCompoundStmt :: Variable k of type int declared at line 16 and column 6
+show_scope_map :: Printing scope map
+k => k 16 16
+x => x 11 27
+y => y 11 27
+VisitVarDecl :: Found VarDecl at line = 16
+VisitCompoundStmt :: CompoundStmt at line 18 and column 14 to line 22 and column 2
+VisitCompoundStmt :: Substmt is WhileStmt at line 19
+show_scope_map :: Printing scope map
+k => k 16 16
+x => x 11 27
+y => y 11 27
+VisitStmt :: While Statement Found
+print_map :: Checking scope of  x of type int
+check_variable_scope :: Checking scope of variable x at line number : 19
+ *** check_variable_scope :: Variable x is in scope at line number : 19 *** 
+print_map :: Checking scope of  y of type int
+check_variable_scope :: Checking scope of variable y at line number : 19
+ *** check_variable_scope :: Variable y is in scope at line number : 19 *** 
+VisitCompoundStmt :: CompoundStmt at line 19 and column 21 to line 21 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 20
+show_scope_map :: Printing scope map
+k => k 16 16
+x => x 11 27
+y => y 11 27
+VisitStmt :: Statement String : x = x - y
+VisitStmt :: Line Number of Binary Assignment : 20
+VisitStmt :: Name, Type of LHS : x,int
+
+av_map_contains :: Variable x already exists in the map 
+VisitCompoundStmt :: CompoundStmt at line 23 and column 5 to line 25 and column 5
+VisitCompoundStmt :: Substmt is DeclStmt at line 24
+VisitCompoundStmt :: Variable z of type int declared at line 24 and column 2
+show_scope_map :: Printing scope map
+k => k 16 16
+x => x 11 27
+y => y 11 27
+z => z 23 25
+VisitVarDecl :: Found VarDecl at line = 24
 
 Finished call to function ParseAST   
 
