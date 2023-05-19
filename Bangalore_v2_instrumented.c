@@ -14,15 +14,11 @@ int main()
     int y;
     x = __VERIFIER_nondet_int();
     y = __VERIFIER_nondet_int();
-    {int k;}
 
 	if (y >= 0) {
-	    while (x >= 0) {printf("DirNT State @ line19: <");printf("x=%d,",x);printf("y=%d,",y);printf(">\n");
+	    while (x >= 0) {
 	    	x = x - y;
-    	}
+    printf("DirNT State @ line20: <");printf("x=%d,",x);printf("y=%d,",y);printf(">\n");	}
 	}
-    {
-	int z;
-    }
 	return 0;
 }

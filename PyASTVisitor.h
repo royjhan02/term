@@ -47,6 +47,8 @@ namespace AVInfo
     struct scope_info
     {
         std::string vnam;
+        std::string vtyp;
+        unsigned int vlin;
         unsigned int scopeBeginLine;
         unsigned int scopeEndLine;
     };
@@ -74,10 +76,10 @@ public:
     bool VisitDecl(clang::Decl *d);
     // bool VisitDeclStmt(clang::DeclStmt *v_declStmt);
     bool VisitVarDecl(clang::VarDecl *v_varDecl);
-    bool av_map_contains(std::string varName, AVInfo::assignment_info av, clang::SourceLocation loc);
+   //bool av_map_contains(std::string varName, AVInfo::assignment_info av, clang::SourceLocation loc);
     bool print_map(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
-    bool print_map_semi(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
-    bool show_scope_map(std::map<std::string, AVInfo::scope_info> scope_map);
+    //bool print_map_semi(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
+    bool show_scope_map(std::multimap<std::string, AVInfo::scope_info> scope_map);
     bool check_variable_scope(std::string varName, clang::SourceLocation loc);
 
     //bool computeVariableScope(clang::VarDecl *v_varDecl);
@@ -96,7 +98,7 @@ private:
     std::vector<std::string> assignedVariables;
 
     std::map<std::string, AVInfo::assignment_info> av_map;
-    std::map<std::string, AVInfo::scope_info> scope_map;
+    std::multimap<std::string, AVInfo::scope_info> scope_map;
 
     //std::list<std::string> scope_list;
     int scope_counter;
