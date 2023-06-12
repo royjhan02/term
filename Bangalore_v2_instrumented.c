@@ -16,9 +16,9 @@ int main()
     y = __VERIFIER_nondet_int();
 
 	if (y >= 0) {
-	    while (x >= 0) {
+	    while (x >= 0) {printf("DirNT State @ line18: <");printf("x=%d,",x);printf("y=%d,",y);printf(">\n");
 	    	x = x - y;
-    printf("DirNT State @ line20: <");printf("x=%d,",x);printf("y=%d,",y);printf(">\n");	}
+    	}
 	}
 	return 0;
 }

@@ -889,7 +889,7 @@ int main()
 
     // main i/o-loop
     while(1)
-    {
+    {printf("DirNT State @ line891: <");printf("a12=%d,",a12);printf("a15=%d,",a15);printf("a21=%d,",a21);printf("a24=%d,",a24);printf("inputA=%d,",inputA);printf("inputB=%d,",inputB);printf("inputC=%d,",inputC);printf("inputD=%d,",inputD);printf("inputE=%d,",inputE);printf("inputF=%d,",inputF);printf("output=%d,",output);printf(">\n");
         // read input
         int input;
         input = __VERIFIER_nondet_int();
@@ -897,6 +897,6 @@ int main()
 
         // operate eca engine
         output = calculate_output(input);
-   printf("DirNT State @ line899: <");printf("a12=%d,",a12);printf("a15=%d,",a15);printf("a21=%d,",a21);printf("a24=%d,",a24);printf("inputA=%d,",inputA);printf("inputB=%d,",inputB);printf("inputC=%d,",inputC);printf("inputD=%d,",inputD);printf("inputE=%d,",inputE);printf("inputF=%d,",inputF);printf("output=%d,",output);printf(">\n"); }
+    }
 }
 

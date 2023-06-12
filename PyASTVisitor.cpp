@@ -382,9 +382,14 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         fclose(stderr);
 
         clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
-        //clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
-        clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getEndLoc();
-        clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(-1);
+
+
+        clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
+        clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
+        //Uncomment the following two lines and comment the above two lines to print at the end of the while loop
+        //clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getEndLoc();
+        //clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(-1);
+
         //lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         //print_map(nextSourceLoc, lineNum, "");
