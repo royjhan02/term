@@ -178,7 +178,9 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                     scope_info.vtyp = varType;
                     scope_info.vlin = varLine;
 
-                    scope_info.scopeBeginLine = cmpndBeginLine;
+                    //scope_info.scopeBeginLine = cmpndBeginLine;
+                    scope_info.scopeBeginLine = varLine; // scope begins at the line of declaration
+
                     scope_info.scopeEndLine = cmpndEndLine;
                     scope_pair = std::make_pair(varName, scope_info);
                     scope_map.insert(scope_pair);
