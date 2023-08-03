@@ -41,17 +41,17 @@ bool PyASTVisitor::check_variable_scope(std::string varName, clang::SourceLocati
 
     for (auto it = it_mult.first; it != it_mult.second; ++it)
     {
-        if ((it->second.scopeBeginLine <= lineNum && it->second.scopeEndLine >= lineNum) || 
-                (it->second.scopeBeginLine ==0 && it->second.scopeEndLine == 0))
+        if ((it->second.scopeBeginLine <= lineNum && it->second.scopeEndLine >= lineNum) ||
+            (it->second.scopeBeginLine == 0 && it->second.scopeEndLine == 0))
         {
-            //std::cerr << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : " << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " >>> \n";
-            std::cerr << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : " 
-            << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " | scope begin = " 
-            << it->second.scopeBeginLine << " | scope end = " << it->second.scopeEndLine << " >>> \n";
+            // std::cerr << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : " << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " >>> \n";
+            std::cerr << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : "
+                      << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " | scope begin = "
+                      << it->second.scopeBeginLine << " | scope end = " << it->second.scopeEndLine << " >>> \n";
 
-            std::cout << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : " 
-            << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " | scope begin = " 
-            << it->second.scopeBeginLine << " | scope end = " << it->second.scopeEndLine << " >>> \n";
+            std::cout << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : "
+                      << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " | scope begin = "
+                      << it->second.scopeBeginLine << " | scope end = " << it->second.scopeEndLine << " >>> \n";
             return true;
         }
     }
@@ -170,16 +170,28 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                     unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
                     unsigned int varCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_varDecl->getBeginLoc());
 
+                    // std::string ext_string;
+                    // if (v_varDecl->hasExternalStorage())
+                    // {
+                    //     ext_string = "extern";
+                    // }
+                    // else
+                    // {
+                    //     ext_string = "not extern";
+                    // }
+
                     freopen(visitor_OutFile, "a+", stderr);
-                    std::cerr << "VisitCompoundStmt :: Variable " << varName << " of type " << varType << " declared at line " << varLine << " and column " << varCol << "\n";
+                    std::cerr << "VisitCompoundStmt :: Variable " << varName << " of type " << varType
+                              << " declared at line " << varLine << " and column " << varCol << "\n";
                     fclose(stderr);
 
                     scope_info.vnam = varName;
                     scope_info.vtyp = varType;
                     scope_info.vlin = varLine;
 
-                    //scope_info.scopeBeginLine = cmpndBeginLine;
-                    scope_info.scopeBeginLine = varLine; // scope begins at the line of declaration
+                    // scope_info.scopeBeginLine = cmpndBeginLine;
+                    scope_info.scopeBeginLine = varLine; // scope begins at the line of declaration.
+                    // Fixes compiler error where variable value is printed before declaration
 
                     scope_info.scopeEndLine = cmpndEndLine;
                     scope_pair = std::make_pair(varName, scope_info);
@@ -277,10 +289,25 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
                                                                                               visitor_CompilerInstance->getLangOpts()));
     unsigned int vardecl_lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
 
-    if (v_varDecl->hasGlobalStorage())
+    // std::string ext_string;
+    // if (v_varDecl->hasExternalStorage())
+    // {
+    //     ext_string = "extern";
+    // }
+    // else
+    // {
+    //     ext_string = "not extern";
+    // }
+
+    // freopen(visitor_OutFile, "a+", stderr);
+    // std::cerr << "VisitCompoundStmt :: Variable " << vardecl_name << " of type " << vardecl_type
+    //           << " declared at line " << vardecl_lineNum << " and " << ext_string << "\n";
+    // fclose(stderr);
+
+    if (v_varDecl->hasGlobalStorage() && !(v_varDecl->hasExternalStorage()))
     {
         freopen(visitor_OutFile, "a+", stderr);
-        std::cerr << "VisitVarDecl :: VarDecl is Global "
+        std::cerr << "VisitVarDecl :: VarDecl is Global and not extern"
                   << "\n";
         std::cerr << "VisitVarDecl :: VarDecl Name : " << vardecl_name << " \t";
         std::cerr << "VisitVarDecl :: VarDecl Type : " << vardecl_type << "\t";
@@ -291,8 +318,8 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
         scope_info.vtyp = vardecl_type;
         scope_info.vlin = vardecl_lineNum;
 
-        scope_info.scopeBeginLine = 0;
-        scope_info.scopeEndLine = 0;
+        scope_info.scopeBeginLine = 0; //global scope (excludes extern variables)
+        scope_info.scopeEndLine = 0; //global scope (excludes extern variables)
         scope_pair = std::make_pair(vardecl_name, scope_info);
         scope_map.insert(scope_pair);
     }
@@ -385,16 +412,15 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
         clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
 
-
         clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
         clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
-        //Uncomment the following two lines and comment the above two lines to print at the end of the while loop
-        //clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getEndLoc();
-        //clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(-1);
+        // Uncomment the following two lines and comment the above two lines to print at the end of the while loop
+        // clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getEndLoc();
+        // clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(-1);
 
-        //lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
+        // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
-        //print_map(nextSourceLoc, lineNum, "");
+        // print_map(nextSourceLoc, lineNum, "");
         print_map(printSourceLoc, printlineNum, "");
     }
     if (strcmp(s->getStmtClassName(), "ForStmt") == 0)

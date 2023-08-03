@@ -1,393 +1,253 @@
 
-Found Input File To Parse on disk = input/data_structures_set_multi_proc_trivial_ground.i
+Found Input File To Parse on disk = input/display-bit1.i
 Output File = OutFile.txt
 
-VisitVarDecl :: Found VarDecl at line = 3
-VisitVarDecl :: Found VarDecl at line = 3
-VisitVarDecl :: Found VarDecl at line = 4
-VisitVarDecl :: Found VarDecl at line = 4
-VisitVarDecl :: Found VarDecl at line = 6
-VisitVarDecl :: Found VarDecl at line = 6
-VisitVarDecl :: Found VarDecl at line = 7
-VisitVarDecl :: Found VarDecl at line = 7
-VisitVarDecl :: Found VarDecl at line = 9
-VisitVarDecl :: Found VarDecl at line = 9
-VisitVarDecl :: Found VarDecl at line = 9
-VisitCompoundStmt :: CompoundStmt at line 12 and column 20 to line 12 and column 198
-VisitCompoundStmt :: Substmt is ParenExpr at line 12
+VisitVarDecl :: Found VarDecl at line = 133
+VisitVarDecl :: Found VarDecl at line = 134
+VisitVarDecl :: Found VarDecl at line = 135
+VisitVarDecl :: Found VarDecl at line = 136
+VisitVarDecl :: Found VarDecl at line = 137
+VisitVarDecl :: Found VarDecl at line = 137
+VisitVarDecl :: Found VarDecl at line = 138
+VisitVarDecl :: Found VarDecl at line = 138
+VisitVarDecl :: Found VarDecl at line = 138
+VisitVarDecl :: Found VarDecl at line = 139
+VisitVarDecl :: Found VarDecl at line = 141
+VisitVarDecl :: Found VarDecl at line = 142
+VisitVarDecl :: Found VarDecl at line = 143
+VisitVarDecl :: Found VarDecl at line = 143
+VisitVarDecl :: Found VarDecl at line = 145
+VisitVarDecl :: Found VarDecl at line = 146
+VisitVarDecl :: Found VarDecl at line = 147
+VisitVarDecl :: Found VarDecl at line = 148
+VisitVarDecl :: Found VarDecl at line = 149
+VisitVarDecl :: Found VarDecl at line = 150
+VisitVarDecl :: Found VarDecl at line = 151
+VisitVarDecl :: Found VarDecl at line = 152
+VisitVarDecl :: Found VarDecl at line = 153
+VisitVarDecl :: Found VarDecl at line = 153
+VisitVarDecl :: Found VarDecl at line = 154
+VisitVarDecl :: Found VarDecl at line = 154
+VisitVarDecl :: Found VarDecl at line = 154
+VisitVarDecl :: Found VarDecl at line = 156
+VisitVarDecl :: Found VarDecl at line = 156
+VisitVarDecl :: Found VarDecl at line = 157
+VisitVarDecl :: Found VarDecl at line = 157
+VisitVarDecl :: Found VarDecl at line = 158
+VisitVarDecl :: Found VarDecl at line = 158
+VisitVarDecl :: Found VarDecl at line = 159
+VisitVarDecl :: Found VarDecl at line = 159
+VisitVarDecl :: Found VarDecl at line = 160
+VisitVarDecl :: Found VarDecl at line = 160
+VisitVarDecl :: Found VarDecl at line = 161
+VisitVarDecl :: Found VarDecl at line = 162
+VisitVarDecl :: Found VarDecl at line = 163
+VisitVarDecl :: Found VarDecl at line = 164
+VisitVarDecl :: Found VarDecl at line = 165
+VisitVarDecl :: Found VarDecl at line = 166
+VisitVarDecl :: Found VarDecl at line = 167
+VisitVarDecl :: Found VarDecl at line = 168
+VisitVarDecl :: Found VarDecl at line = 168
+VisitVarDecl :: Found VarDecl at line = 169
+VisitVarDecl :: Found VarDecl at line = 170
+VisitVarDecl :: Found VarDecl at line = 170
+VisitVarDecl :: Found VarDecl at line = 171
+VisitVarDecl :: Found VarDecl at line = 171
+VisitVarDecl :: Found VarDecl at line = 172
+VisitVarDecl :: Found VarDecl at line = 173
+VisitVarDecl :: Found VarDecl at line = 173
+VisitVarDecl :: Found VarDecl at line = 174
+VisitVarDecl :: Found VarDecl at line = 176
+VisitVarDecl :: Found VarDecl at line = 176
+VisitVarDecl :: Found VarDecl at line = 177
+VisitVarDecl :: Found VarDecl at line = 177
+VisitVarDecl :: Found VarDecl at line = 179
+VisitVarDecl :: Found VarDecl at line = 179
+VisitVarDecl :: Found VarDecl at line = 180
+VisitVarDecl :: Found VarDecl at line = 182
+VisitVarDecl :: Found VarDecl at line = 182
+VisitVarDecl :: Found VarDecl at line = 184
+VisitVarDecl :: Found VarDecl at line = 185
+VisitVarDecl :: Found VarDecl at line = 186
+VisitVarDecl :: Found VarDecl at line = 187
+VisitVarDecl :: Found VarDecl at line = 188
+VisitVarDecl :: Found VarDecl at line = 189
+VisitVarDecl :: Found VarDecl at line = 189
+VisitVarDecl :: Found VarDecl at line = 190
+VisitVarDecl :: Found VarDecl at line = 191
+VisitVarDecl :: Found VarDecl at line = 191
+VisitVarDecl :: Found VarDecl at line = 192
+VisitVarDecl :: Found VarDecl at line = 192
+VisitVarDecl :: Found VarDecl at line = 193
+VisitVarDecl :: Found VarDecl at line = 195
+VisitVarDecl :: Found VarDecl at line = 195
+VisitVarDecl :: Found VarDecl at line = 197
+VisitVarDecl :: Found VarDecl at line = 198
+VisitVarDecl :: Found VarDecl at line = 198
+VisitVarDecl :: Found VarDecl at line = 200
+VisitVarDecl :: Found VarDecl at line = 200
+VisitVarDecl :: Found VarDecl at line = 200
+VisitVarDecl :: Found VarDecl at line = 202
+VisitVarDecl :: Found VarDecl at line = 202
+VisitVarDecl :: Found VarDecl at line = 204
+VisitVarDecl :: Found VarDecl at line = 204
+VisitVarDecl :: Found VarDecl at line = 204
+VisitVarDecl :: Found VarDecl at line = 206
+VisitVarDecl :: Found VarDecl at line = 207
+VisitVarDecl :: Found VarDecl at line = 209
+VisitVarDecl :: Found VarDecl at line = 211
+VisitVarDecl :: Found VarDecl at line = 212
+VisitVarDecl :: Found VarDecl at line = 212
+VisitVarDecl :: Found VarDecl at line = 213
+VisitVarDecl :: Found VarDecl at line = 213
+VisitVarDecl :: Found VarDecl at line = 214
+VisitVarDecl :: Found VarDecl at line = 215
+VisitVarDecl :: Found VarDecl at line = 215
+VisitVarDecl :: Found VarDecl at line = 216
+VisitVarDecl :: Found VarDecl at line = 216
+VisitVarDecl :: Found VarDecl at line = 217
+VisitVarDecl :: Found VarDecl at line = 218
+VisitVarDecl :: Found VarDecl at line = 219
+VisitVarDecl :: Found VarDecl at line = 219
+VisitVarDecl :: Found VarDecl at line = 220
+VisitVarDecl :: Found VarDecl at line = 220
+VisitVarDecl :: Found VarDecl at line = 220
+VisitVarDecl :: Found VarDecl at line = 222
+VisitVarDecl :: Found VarDecl at line = 223
+VisitVarDecl :: Found VarDecl at line = 223
+VisitVarDecl :: Found VarDecl at line = 224
+VisitVarDecl :: Found VarDecl at line = 225
+VisitVarDecl :: Found VarDecl at line = 226
+VisitVarDecl :: Found VarDecl at line = 226
+VisitVarDecl :: Found VarDecl at line = 227
+VisitVarDecl :: Found VarDecl at line = 228
+VisitVarDecl :: Found VarDecl at line = 229
+VisitVarDecl :: Found VarDecl at line = 230
+VisitVarDecl :: Found VarDecl at line = 231
+VisitVarDecl :: Found VarDecl at line = 231
+VisitVarDecl :: Found VarDecl at line = 232
+VisitVarDecl :: Found VarDecl at line = 233
+VisitVarDecl :: Found VarDecl at line = 233
+VisitVarDecl :: Found VarDecl at line = 234
+VisitVarDecl :: Found VarDecl at line = 234
+VisitVarDecl :: Found VarDecl at line = 235
+VisitVarDecl :: Found VarDecl at line = 235
+VisitVarDecl :: Found VarDecl at line = 236
+VisitVarDecl :: Found VarDecl at line = 236
+VisitVarDecl :: Found VarDecl at line = 237
+VisitVarDecl :: Found VarDecl at line = 237
+VisitVarDecl :: Found VarDecl at line = 238
+VisitVarDecl :: Found VarDecl at line = 238
+VisitVarDecl :: Found VarDecl at line = 239
+VisitVarDecl :: Found VarDecl at line = 239
+VisitVarDecl :: Found VarDecl at line = 240
+VisitVarDecl :: Found VarDecl at line = 240
+VisitVarDecl :: Found VarDecl at line = 241
+VisitVarDecl :: Found VarDecl at line = 241
+VisitVarDecl :: Found VarDecl at line = 242
+VisitVarDecl :: Found VarDecl at line = 242
+VisitVarDecl :: Found VarDecl at line = 242
+VisitVarDecl :: Found VarDecl at line = 243
+VisitVarDecl :: Found VarDecl at line = 244
+VisitVarDecl :: Found VarDecl at line = 245
+VisitVarDecl :: Found VarDecl at line = 245
+VisitVarDecl :: Found VarDecl at line = 245
+VisitVarDecl :: Found VarDecl at line = 246
+VisitVarDecl :: Found VarDecl at line = 247
+VisitVarDecl :: Found VarDecl at line = 247
+VisitVarDecl :: Found VarDecl at line = 248
+VisitVarDecl :: Found VarDecl at line = 248
+VisitVarDecl :: Found VarDecl at line = 249
+VisitVarDecl :: Found VarDecl at line = 250
+VisitVarDecl :: Found VarDecl at line = 251
+VisitVarDecl :: Found VarDecl at line = 252
+VisitVarDecl :: Found VarDecl at line = 253
+VisitVarDecl :: Found VarDecl at line = 254
+VisitVarDecl :: Found VarDecl at line = 255
+VisitVarDecl :: Found VarDecl at line = 256
+VisitVarDecl :: Found VarDecl at line = 257
+VisitVarDecl :: Found VarDecl at line = 258
+VisitVarDecl :: Found VarDecl at line = 259
+VisitVarDecl :: Found VarDecl at line = 260
+VisitVarDecl :: Found VarDecl at line = 260
+VisitVarDecl :: Found VarDecl at line = 261
+VisitVarDecl :: Found VarDecl at line = 262
+VisitVarDecl :: Found VarDecl at line = 263
+VisitVarDecl :: Found VarDecl at line = 264
+VisitVarDecl :: Found VarDecl at line = 265
+VisitVarDecl :: Found VarDecl at line = 266
+VisitVarDecl :: Found VarDecl at line = 267
+VisitVarDecl :: Found VarDecl at line = 267
+VisitVarDecl :: Found VarDecl at line = 269
+VisitVarDecl :: Found VarDecl at line = 270
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : number1 	VisitVarDecl :: VarDecl Type : unsigned int	VisitVarDecl :: VarDecl Line Number : 270
+VisitVarDecl :: Found VarDecl at line = 271
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : mask 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 271
+VisitVarDecl :: Found VarDecl at line = 272
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : x 	VisitVarDecl :: VarDecl Type : unsigned int	VisitVarDecl :: VarDecl Line Number : 272
+VisitVarDecl :: Found VarDecl at line = 273
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : c 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 273
+VisitVarDecl :: Found VarDecl at line = 274
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : y 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 274
+VisitCompoundStmt :: CompoundStmt at line 275 and column 16 to line 287 and column 1
+VisitCompoundStmt :: Substmt is DeclStmt at line 276
+VisitCompoundStmt :: Variable displayMask of type unsigned int declared at line 276 and column 3
+VisitCompoundStmt :: Substmt is WhileStmt at line 277
+VisitCompoundStmt :: Substmt is BinaryOperator at line 285
+VisitCompoundStmt :: Substmt is ReturnStmt at line 286
 show_scope_map :: Printing scope map
-VisitCompoundStmt :: CompoundStmt at line 12 and column 67 to line 12 and column 193
-VisitCompoundStmt :: Substmt is IfStmt at line 12
-show_scope_map :: Printing scope map
-VisitVarDecl :: Found VarDecl at line = 13
-VisitCompoundStmt :: CompoundStmt at line 13 and column 34 to line 13 and column 84
-VisitCompoundStmt :: Substmt is IfStmt at line 13
-show_scope_map :: Printing scope map
-VisitCompoundStmt :: CompoundStmt at line 13 and column 48 to line 13 and column 82
-VisitCompoundStmt :: Substmt is LabelStmt at line 13
-show_scope_map :: Printing scope map
-VisitCompoundStmt :: CompoundStmt at line 13 and column 57 to line 13 and column 80
-VisitCompoundStmt :: Substmt is CallExpr at line 13
-VisitCompoundStmt :: Substmt is CallExpr at line 13
-show_scope_map :: Printing scope map
-VisitVarDecl :: Found VarDecl at line = 16
-VisitVarDecl :: Found VarDecl at line = 16
-VisitVarDecl :: Found VarDecl at line = 16
-VisitCompoundStmt :: CompoundStmt at line 16 and column 49 to line 19 and column 1
-VisitCompoundStmt :: Substmt is BinaryOperator at line 17
-VisitCompoundStmt :: Substmt is ReturnStmt at line 18
-show_scope_map :: Printing scope map
-VisitVarDecl :: Found VarDecl at line = 20
-VisitVarDecl :: Found VarDecl at line = 20
-VisitVarDecl :: Found VarDecl at line = 20
-VisitCompoundStmt :: CompoundStmt at line 20 and column 55 to line 26 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 21
-VisitCompoundStmt :: Variable i of type int declared at line 21 and column 3
-VisitCompoundStmt :: Substmt is ForStmt at line 22
-VisitCompoundStmt :: Substmt is ReturnStmt at line 25
-show_scope_map :: Printing scope map
-i => i 21 26
-VisitVarDecl :: Found VarDecl at line = 21
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 22
- <<< check_variable_scope :: Variable i is in scope at print line number : 22 | scope begin = 21 | scope end = 26 >>> 
-VisitCompoundStmt :: CompoundStmt at line 22 and column 34 to line 24 and column 3
-VisitCompoundStmt :: Substmt is IfStmt at line 23
-show_scope_map :: Printing scope map
-i => i 21 26
-VisitCompoundStmt :: CompoundStmt at line 27 and column 13 to line 67 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 28
-VisitCompoundStmt :: Variable n of type int declared at line 28 and column 3
-VisitCompoundStmt :: Substmt is DeclStmt at line 29
-VisitCompoundStmt :: Variable set of type int[100000] declared at line 29 and column 3
-VisitCompoundStmt :: Substmt is DeclStmt at line 30
-VisitCompoundStmt :: Variable x of type int declared at line 30 and column 3
-VisitCompoundStmt :: Substmt is DeclStmt at line 31
-VisitCompoundStmt :: Variable y of type int declared at line 31 and column 3
-VisitCompoundStmt :: Substmt is ForStmt at line 33
-VisitCompoundStmt :: Substmt is ForStmt at line 39
-VisitCompoundStmt :: Substmt is DeclStmt at line 44
-VisitCompoundStmt :: Variable values of type int[100000] declared at line 44 and column 3
-VisitCompoundStmt :: Substmt is DeclStmt at line 45
-VisitCompoundStmt :: Variable v of type int declared at line 45 and column 3
-VisitCompoundStmt :: Substmt is ForStmt at line 47
-VisitCompoundStmt :: Substmt is ForStmt at line 51
-VisitCompoundStmt :: Substmt is ForStmt at line 61
-VisitCompoundStmt :: Substmt is ReturnStmt at line 66
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitVarDecl :: Found VarDecl at line = 28
-VisitVarDecl :: Found VarDecl at line = 29
-VisitVarDecl :: Found VarDecl at line = 30
-VisitVarDecl :: Found VarDecl at line = 31
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 34
- <<< check_variable_scope :: Variable i is not in scope at line number : 34>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 34
- <<< check_variable_scope :: Variable n is in scope at print line number : 34 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 34
- <<< check_variable_scope :: Variable set is in scope at print line number : 34 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 34
- <<< check_variable_scope :: Variable v is not in scope at line number : 34>>> 
- print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 34
- <<< check_variable_scope :: Variable values is not in scope at line number : 34>>> 
- print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 34
- <<< check_variable_scope :: Variable x is in scope at print line number : 34 | scope begin = 30 | scope end = 67 >>> 
+c => c 0 0
+displayMask => displayMask 276 287
+mask => mask 0 0
+number1 => number1 0 0
+x => x 0 0
+y => y 0 0
+VisitVarDecl :: Found VarDecl at line = 276
+VisitStmt :: While Statement Found
+print_map :: Checking scope of  c of type int
+check_variable_scope :: Checking scope of variable c at print line number : 277
+ <<< check_variable_scope :: Variable c is in scope at print line number : 277 | scope begin = 0 | scope end = 0 >>> 
+print_map :: Checking scope of  displayMask of type unsigned int
+check_variable_scope :: Checking scope of variable displayMask at print line number : 277
+ <<< check_variable_scope :: Variable displayMask is in scope at print line number : 277 | scope begin = 276 | scope end = 287 >>> 
+print_map :: Checking scope of  mask of type int
+check_variable_scope :: Checking scope of variable mask at print line number : 277
+ <<< check_variable_scope :: Variable mask is in scope at print line number : 277 | scope begin = 0 | scope end = 0 >>> 
+print_map :: Checking scope of  number1 of type unsigned int
+check_variable_scope :: Checking scope of variable number1 at print line number : 277
+ <<< check_variable_scope :: Variable number1 is in scope at print line number : 277 | scope begin = 0 | scope end = 0 >>> 
+print_map :: Checking scope of  x of type unsigned int
+check_variable_scope :: Checking scope of variable x at print line number : 277
+ <<< check_variable_scope :: Variable x is in scope at print line number : 277 | scope begin = 0 | scope end = 0 >>> 
 print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 34
- <<< check_variable_scope :: Variable y is in scope at print line number : 34 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 34 and column 2 to line 36 and column 2
-VisitCompoundStmt :: Substmt is BinaryOperator at line 35
+check_variable_scope :: Checking scope of variable y at print line number : 277
+ <<< check_variable_scope :: Variable y is in scope at print line number : 277 | scope begin = 0 | scope end = 0 >>> 
+VisitCompoundStmt :: CompoundStmt at line 277 and column 17 to line 284 and column 3
+VisitCompoundStmt :: Substmt is CompoundAssignOperator at line 278
+VisitCompoundStmt :: Substmt is IfStmt at line 279
+VisitCompoundStmt :: Substmt is BinaryOperator at line 282
+VisitCompoundStmt :: Substmt is BinaryOperator at line 283
 show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 39
- <<< check_variable_scope :: Variable i is not in scope at line number : 39>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 39
- <<< check_variable_scope :: Variable n is in scope at print line number : 39 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 39
- <<< check_variable_scope :: Variable set is in scope at print line number : 39 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 39
- <<< check_variable_scope :: Variable v is not in scope at line number : 39>>> 
- print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 39
- <<< check_variable_scope :: Variable values is not in scope at line number : 39>>> 
- print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 39
- <<< check_variable_scope :: Variable x is in scope at print line number : 39 | scope begin = 30 | scope end = 67 >>> 
-print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 39
- <<< check_variable_scope :: Variable y is in scope at print line number : 39 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 39 and column 30 to line 43 and column 3
-VisitCompoundStmt :: Substmt is ForStmt at line 40
+c => c 0 0
+displayMask => displayMask 276 287
+mask => mask 0 0
+number1 => number1 0 0
+x => x 0 0
+y => y 0 0
+VisitCompoundStmt :: CompoundStmt at line 279 and column 21 to line 281 and column 5
+VisitCompoundStmt :: Substmt is CallExpr at line 280
 show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 40
- <<< check_variable_scope :: Variable i is not in scope at line number : 40>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 40
- <<< check_variable_scope :: Variable n is in scope at print line number : 40 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 40
- <<< check_variable_scope :: Variable set is in scope at print line number : 40 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 40
- <<< check_variable_scope :: Variable v is not in scope at line number : 40>>> 
- print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 40
- <<< check_variable_scope :: Variable values is not in scope at line number : 40>>> 
- print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 40
- <<< check_variable_scope :: Variable x is in scope at print line number : 40 | scope begin = 30 | scope end = 67 >>> 
-print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 40
- <<< check_variable_scope :: Variable y is in scope at print line number : 40 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 40 and column 37 to line 42 and column 5
-VisitCompoundStmt :: Substmt is CallExpr at line 41
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitVarDecl :: Found VarDecl at line = 44
-VisitVarDecl :: Found VarDecl at line = 45
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 48
- <<< check_variable_scope :: Variable i is not in scope at line number : 48>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 48
- <<< check_variable_scope :: Variable n is in scope at print line number : 48 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 48
- <<< check_variable_scope :: Variable set is in scope at print line number : 48 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 48
- <<< check_variable_scope :: Variable v is in scope at print line number : 48 | scope begin = 45 | scope end = 67 >>> 
-print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 48
- <<< check_variable_scope :: Variable values is in scope at print line number : 48 | scope begin = 44 | scope end = 67 >>> 
-print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 48
- <<< check_variable_scope :: Variable x is in scope at print line number : 48 | scope begin = 30 | scope end = 67 >>> 
-print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 48
- <<< check_variable_scope :: Variable y is in scope at print line number : 48 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 48 and column 2 to line 50 and column 2
-VisitCompoundStmt :: Substmt is BinaryOperator at line 49
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 51
- <<< check_variable_scope :: Variable i is not in scope at line number : 51>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 51
- <<< check_variable_scope :: Variable n is in scope at print line number : 51 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 51
- <<< check_variable_scope :: Variable set is in scope at print line number : 51 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 51
- <<< check_variable_scope :: Variable v is in scope at print line number : 51 | scope begin = 45 | scope end = 67 >>> 
-print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 51
- <<< check_variable_scope :: Variable values is in scope at print line number : 51 | scope begin = 44 | scope end = 67 >>> 
-print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 51
- <<< check_variable_scope :: Variable x is in scope at print line number : 51 | scope begin = 30 | scope end = 67 >>> 
-print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 51
- <<< check_variable_scope :: Variable y is in scope at print line number : 51 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 51 and column 36 to line 60 and column 3
-VisitCompoundStmt :: Substmt is IfStmt at line 52
-VisitCompoundStmt :: Substmt is ForStmt at line 55
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitCompoundStmt :: CompoundStmt at line 52 and column 49 to line 54 and column 5
-VisitCompoundStmt :: Substmt is BinaryOperator at line 53
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 55
- <<< check_variable_scope :: Variable i is not in scope at line number : 55>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 55
- <<< check_variable_scope :: Variable n is in scope at print line number : 55 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 55
- <<< check_variable_scope :: Variable set is in scope at print line number : 55 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 55
- <<< check_variable_scope :: Variable v is in scope at print line number : 55 | scope begin = 45 | scope end = 67 >>> 
-print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 55
- <<< check_variable_scope :: Variable values is in scope at print line number : 55 | scope begin = 44 | scope end = 67 >>> 
-print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 55
- <<< check_variable_scope :: Variable x is in scope at print line number : 55 | scope begin = 30 | scope end = 67 >>> 
-print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 55
- <<< check_variable_scope :: Variable y is in scope at print line number : 55 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 55 and column 33 to line 59 and column 5
-VisitCompoundStmt :: Substmt is ForStmt at line 56
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 56
- <<< check_variable_scope :: Variable i is not in scope at line number : 56>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 56
- <<< check_variable_scope :: Variable n is in scope at print line number : 56 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 56
- <<< check_variable_scope :: Variable set is in scope at print line number : 56 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 56
- <<< check_variable_scope :: Variable v is in scope at print line number : 56 | scope begin = 45 | scope end = 67 >>> 
-print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 56
- <<< check_variable_scope :: Variable values is in scope at print line number : 56 | scope begin = 44 | scope end = 67 >>> 
-print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 56
- <<< check_variable_scope :: Variable x is in scope at print line number : 56 | scope begin = 30 | scope end = 67 >>> 
-print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 56
- <<< check_variable_scope :: Variable y is in scope at print line number : 56 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 56 and column 39 to line 58 and column 7
-VisitCompoundStmt :: Substmt is CallExpr at line 57
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 61
- <<< check_variable_scope :: Variable i is not in scope at line number : 61>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 61
- <<< check_variable_scope :: Variable n is in scope at print line number : 61 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 61
- <<< check_variable_scope :: Variable set is in scope at print line number : 61 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 61
- <<< check_variable_scope :: Variable v is in scope at print line number : 61 | scope begin = 45 | scope end = 67 >>> 
-print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 61
- <<< check_variable_scope :: Variable values is in scope at print line number : 61 | scope begin = 44 | scope end = 67 >>> 
-print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 61
- <<< check_variable_scope :: Variable x is in scope at print line number : 61 | scope begin = 30 | scope end = 67 >>> 
-print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 61
- <<< check_variable_scope :: Variable y is in scope at print line number : 61 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 61 and column 31 to line 65 and column 3
-VisitCompoundStmt :: Substmt is ForStmt at line 62
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
-VisitStmt :: For Statement Found
-print_map :: Checking scope of  i of type int
-check_variable_scope :: Checking scope of variable i at print line number : 62
- <<< check_variable_scope :: Variable i is not in scope at line number : 62>>> 
- print_map :: Checking scope of  n of type int
-check_variable_scope :: Checking scope of variable n at print line number : 62
- <<< check_variable_scope :: Variable n is in scope at print line number : 62 | scope begin = 28 | scope end = 67 >>> 
-print_map :: Checking scope of  set of type int[100000]
-check_variable_scope :: Checking scope of variable set at print line number : 62
- <<< check_variable_scope :: Variable set is in scope at print line number : 62 | scope begin = 29 | scope end = 67 >>> 
-print_map :: Checking scope of  v of type int
-check_variable_scope :: Checking scope of variable v at print line number : 62
- <<< check_variable_scope :: Variable v is in scope at print line number : 62 | scope begin = 45 | scope end = 67 >>> 
-print_map :: Checking scope of  values of type int[100000]
-check_variable_scope :: Checking scope of variable values at print line number : 62
- <<< check_variable_scope :: Variable values is in scope at print line number : 62 | scope begin = 44 | scope end = 67 >>> 
-print_map :: Checking scope of  x of type int
-check_variable_scope :: Checking scope of variable x at print line number : 62
- <<< check_variable_scope :: Variable x is in scope at print line number : 62 | scope begin = 30 | scope end = 67 >>> 
-print_map :: Checking scope of  y of type int
-check_variable_scope :: Checking scope of variable y at print line number : 62
- <<< check_variable_scope :: Variable y is in scope at print line number : 62 | scope begin = 31 | scope end = 67 >>> 
-VisitCompoundStmt :: CompoundStmt at line 62 and column 37 to line 64 and column 5
-VisitCompoundStmt :: Substmt is CallExpr at line 63
-show_scope_map :: Printing scope map
-i => i 21 26
-n => n 28 67
-set => set 29 67
-v => v 45 67
-values => values 44 67
-x => x 30 67
-y => y 31 67
+c => c 0 0
+displayMask => displayMask 276 287
+mask => mask 0 0
+number1 => number1 0 0
+x => x 0 0
+y => y 0 0
 
 Finished call to function ParseAST   
 
