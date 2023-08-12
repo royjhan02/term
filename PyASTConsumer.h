@@ -17,7 +17,7 @@
 class PyASTConsumer : public clang::ASTConsumer
 {
 public:
-    PyASTConsumer(clang::CompilerInstance *ci, const char *o_file, const char* i_file, unsigned pl,
+    PyASTConsumer(clang::CompilerInstance *ci, const char *o_file, const char* i_file,
                   clang::Rewriter &pyRewriter);
     PyASTVisitor get_consumerPyASTVisitor();
     std::vector<std::string> py_functionNames;

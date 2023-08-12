@@ -3,7 +3,7 @@
 #include "clang/Rewrite/Core/Rewriter.h"
 #include "clang/Rewrite/Frontend/Rewriters.h"
 
-PyASTConsumer::PyASTConsumer(clang::CompilerInstance *ci, const char *o_file, const char *i_file, unsigned pl, clang::Rewriter &pyRewriter):consumer_pyASTVisitor(pyRewriter)
+PyASTConsumer::PyASTConsumer(clang::CompilerInstance *ci, const char *o_file, const char *i_file, clang::Rewriter &pyRewriter):consumer_pyASTVisitor(pyRewriter)
 {
 
     this->t_outFile = o_file;

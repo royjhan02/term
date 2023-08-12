@@ -103,8 +103,11 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
     insertStr = insertStr + "printf(\">\\n\");";
     // clang::SourceLocation nextSourceLoc = stmtEndloc;
     if (!scope_map.empty())
-    {
-        vRewriter.InsertTextAfterToken(srcLoc, insertStr);
+    {   std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+        if (instrumentation_flag==1)
+        {
+            vRewriter.InsertTextAfterToken(srcLoc, insertStr);
+        }
     }
     return true;
 }
