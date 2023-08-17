@@ -73,6 +73,87 @@ bool PyASTVisitor::check_variable_scope(std::string varName, clang::SourceLocati
     return false;
 }
 
+bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
+{
+    std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+    if (instrumentation_flag == 2)
+    {
+
+        // for (auto it = av_map.begin(); it != av_map.end(); ++it)
+        // iterate over scope map
+        // for (auto it = scope_map.begin(); it != scope_map.end(); ++it)
+        std::pair<std::string, std::string> inscope_pair;
+        std::vector<std::pair<std::string, std::string>> inscope_vars_pair;
+
+        for (auto it = scope_map.begin(); it != scope_map.end(); it = scope_map.upper_bound(it->first))
+        {
+            std::string t_typ = it->second.vtyp;
+            std::string instvarName = it->second.vnam;
+
+            // freopen(visitor_OutFile, "a+", stderr);
+            // std::cerr << "print_cbmc :: Checking scope of  " << instvarName << " of type " << t_typ << "\n";
+            // fclose(stderr);
+
+            if (check_variable_scope(instvarName, srcLoc))
+            {
+                // insertStr = insertStr + "static " + t_typ + " " + instvarName + ";";
+                inscope_pair = std::make_pair(instvarName, t_typ);
+                inscope_vars_pair.push_back(inscope_pair);
+            }
+        }
+        std::string insertStr = "";
+        std::string defStr = "";
+        std::string eqStrAnd = "";
+        std::string eqStrSemi = "";
+
+
+        insertStr = insertStr + "printf(\"CBMC Instrumentation @ line" + std::to_string(lineNum) + "\");";
+        insertStr = insertStr + "static bool pStored = false;";
+        insertStr = insertStr + "bool flag=__VERIFIER_nondet_bool();";
+
+        std::string scope_t_typ;
+        std::string scope_instvarName;
+
+        int vec_loc=0;
+
+        // iterate over inscope_vars_pair
+        for (auto it = inscope_vars_pair.begin(); it != inscope_vars_pair.end(); ++it)
+        {
+            scope_t_typ = it->second;
+            scope_instvarName = it->first;
+            
+            std::string oinstvarName = "o" + scope_instvarName;
+            defStr = defStr + "static " + scope_t_typ + " " + oinstvarName + ";";
+            eqStrSemi = eqStrSemi + oinstvarName + "=" + scope_instvarName + ";";
+            //eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName + " && ";
+            eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName;
+
+            if (vec_loc != inscope_vars_pair.size()-1)
+            {
+                eqStrAnd = eqStrAnd + " && ";
+            }
+            std::cout << "eqStrAnd = " << eqStrAnd << "\n";
+            vec_loc++;
+        }
+        insertStr = insertStr + defStr;
+        insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi +"pStored=true;}";
+
+
+
+
+        // clang::SourceLocation nextSourceLoc = stmtEndloc;
+        if (!scope_map.empty())
+        {
+            std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+            if (instrumentation_flag == 2)
+            {
+                vRewriter.InsertTextAfterToken(srcLoc, insertStr);
+            }
+        }
+    }
+    return true;
+}
+
 bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
 {
     std::string insertStr = "";
@@ -103,8 +184,9 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
     insertStr = insertStr + "printf(\">\\n\");";
     // clang::SourceLocation nextSourceLoc = stmtEndloc;
     if (!scope_map.empty())
-    {   std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
-        if (instrumentation_flag==1)
+    {
+        std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+        if (instrumentation_flag == 1)
         {
             vRewriter.InsertTextAfterToken(srcLoc, insertStr);
         }
@@ -321,8 +403,8 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
         scope_info.vtyp = vardecl_type;
         scope_info.vlin = vardecl_lineNum;
 
-        scope_info.scopeBeginLine = 0; //global scope (excludes extern variables)
-        scope_info.scopeEndLine = 0; //global scope (excludes extern variables)
+        scope_info.scopeBeginLine = 0; // global scope (excludes extern variables)
+        scope_info.scopeEndLine = 0;   // global scope (excludes extern variables)
         scope_pair = std::make_pair(vardecl_name, scope_info);
         scope_map.insert(scope_pair);
     }
@@ -424,7 +506,10 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
-        print_map(printSourceLoc, printlineNum, "");
+        if (instrumentation_flag == 1)
+            print_map(printSourceLoc, printlineNum, "");
+        else if (instrumentation_flag == 2)
+            print_cbmc(printSourceLoc, printlineNum, "");
     }
     if (strcmp(s->getStmtClassName(), "ForStmt") == 0)
     {
@@ -435,7 +520,11 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         clang::ForStmt *forStmt = clang::dyn_cast<clang::ForStmt>(s);
         clang::SourceLocation nextSourceLoc = forStmt->getBody()->getBeginLoc();
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
-        print_map(nextSourceLoc, lineNum, "");
+        // print_map(nextSourceLoc, lineNum, "");
+        if (instrumentation_flag == 1)
+            print_map(nextSourceLoc, printlineNum, "");
+        else if (instrumentation_flag == 2)
+            print_cbmc(nextSourceLoc, printlineNum, "");
     }
     if (strcmp(s->getStmtClassName(), "DoStmt") == 0)
     {
@@ -445,7 +534,11 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         clang::DoStmt *doStmt = clang::dyn_cast<clang::DoStmt>(s);
         clang::SourceLocation nextSourceLoc = doStmt->getBody()->getBeginLoc();
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
-        print_map(nextSourceLoc, lineNum, "");
+        // print_map(nextSourceLoc, lineNum, "");
+        if (instrumentation_flag == 1)
+            print_map(nextSourceLoc, printlineNum, "");
+        else if (instrumentation_flag == 2)
+            print_cbmc(nextSourceLoc, printlineNum, "");
     }
     return true;
 }

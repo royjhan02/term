@@ -16,7 +16,7 @@ int main()
     y = __VERIFIER_nondet_int();
 
 	if (y >= 0) {
-	    while (x >= 0) {printf("DirNT State @ line18: <");printf("x=%d,",x);printf("y=%d,",y);printf(">\n");
+	    while (x >= 0) {printf("CBMC Instrumentation @ line18");static bool pStored = false;bool flag=__VERIFIER_nondet_bool();static int ox;static int oy;if(pStored){__CPROVER_assert(!(ox==x && oy==y),"recurrent state found");} if(flag){ox=x;oy=y;pStored=true;}
 	    	x = x - y;
     	}
 	}
