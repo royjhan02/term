@@ -41,7 +41,7 @@ int main(int argc, const char **argv)
 
     if (argv[1] == NULL)
     {
-        std::cout << "Use ./bin/instrumenter -in <inputfile.c> -[Optional flags: r,c,rc]\n\n";
+        std::cout << "Use ./bin/instrumenter -in <inputfile.c> -[Optional flags: r,c]\n\n";
         return 1;
     }
 
