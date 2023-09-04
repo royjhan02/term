@@ -106,29 +106,28 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         std::string eqStrAnd = "";
         std::string eqStrSemi = "";
 
-
         insertStr = insertStr + "printf(\"CBMC Instrumentation @ line" + std::to_string(lineNum) + "\");";
-        insertStr = insertStr + "static bool pStored = false;";
-        insertStr = insertStr + "bool flag=__VERIFIER_nondet_bool();";
+        insertStr = insertStr + "static bool pStored = myFalse;";
+        insertStr = insertStr + "_Bool flag=__VERIFIER_nondet_bool();";
 
         std::string scope_t_typ;
         std::string scope_instvarName;
 
-        int vec_loc=0;
+        int vec_loc = 0;
 
         // iterate over inscope_vars_pair
         for (auto it = inscope_vars_pair.begin(); it != inscope_vars_pair.end(); ++it)
         {
             scope_t_typ = it->second;
             scope_instvarName = it->first;
-            
+
             std::string oinstvarName = "o" + scope_instvarName;
             defStr = defStr + "static " + scope_t_typ + " " + oinstvarName + ";";
             eqStrSemi = eqStrSemi + oinstvarName + "=" + scope_instvarName + ";";
-            //eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName + " && ";
+            // eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName + " && ";
             eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName;
 
-            if (vec_loc != inscope_vars_pair.size()-1)
+            if (vec_loc != inscope_vars_pair.size() - 1)
             {
                 eqStrAnd = eqStrAnd + " && ";
             }
@@ -136,10 +135,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             vec_loc++;
         }
         insertStr = insertStr + defStr;
-        insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi +"pStored=true;}";
-
-
-
+        insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi + "pStored=myTrue;}";
 
         // clang::SourceLocation nextSourceLoc = stmtEndloc;
         if (!scope_map.empty())
@@ -266,7 +262,7 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                     // }
 
                     freopen(visitor_OutFile, "a+", stderr);
-                    std::cerr << "VisitCompoundStmt :: Variable " << varName << " of type " << varType
+                    std::cerr << "VisitCompoundStmt :: Variable (SingleDecl) " << varName << " of type " << varType
                               << " declared at line " << varLine << " and column " << varCol << "\n";
                     fclose(stderr);
 
@@ -281,6 +277,52 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                     scope_info.scopeEndLine = cmpndEndLine;
                     scope_pair = std::make_pair(varName, scope_info);
                     scope_map.insert(scope_pair);
+                }
+            }
+            else
+            { // If v_declStmt is not singleDecl but something like int x,y
+                for (auto decl : v_declStmt->decls())
+                {
+                    clang::Decl *v_decl = decl;
+                    std::cout << "Decl is " << v_decl->getDeclKindName() << "\n";
+                    // // check if it is a variable declaration and get variable name, line number and column number and type
+                    if (strcmp(v_decl->getDeclKindName(), "Var") == 0)
+                    {
+                        clang::VarDecl *v_varDecl = clang::dyn_cast<clang::VarDecl>(v_decl);
+                        std::string varName = v_varDecl->getNameAsString();
+                        std::string varType = v_varDecl->getType().getAsString();
+                        unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
+                        unsigned int varCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_varDecl->getBeginLoc());
+
+
+                        //     // std::string ext_string;
+                        //     // if (v_varDecl->hasExternalStorage())
+                        //     // {
+                        //     //     ext_string = "extern";
+                        //     // }
+                        //     // else
+                        //     // {
+                        //     //     ext_string = "not extern";
+                        //     // }
+                        
+                        freopen(visitor_OutFile, "a+", stderr);
+                        std::cerr << "VisitCompoundStmt :: Variable (Not SingleDecl) " << varName << " of type " << varType
+                                  << " declared at line " << varLine << " and column " << varCol << "\n";
+                        fclose(stderr);
+
+
+                             scope_info.vnam = varName;
+                             scope_info.vtyp = varType;
+                             scope_info.vlin = varLine;
+
+                        //     // scope_info.scopeBeginLine = cmpndBeginLine;
+                             scope_info.scopeBeginLine = varLine; // scope begins at the line of declaration.
+                        //     // Fixes compiler error where variable value is printed before declaration
+
+                             scope_info.scopeEndLine = cmpndEndLine;
+                             scope_pair = std::make_pair(varName, scope_info);
+                             scope_map.insert(scope_pair);
+                    }
                 }
             }
 
@@ -345,13 +387,14 @@ bool PyASTVisitor::VisitDecl(clang::Decl *d)
     if (decl_counter == 0)
     {
         std::string insertStr;
-        if (instrumentation_flag==1)
-            insertStr = "#include <stdio.h>\n";
-        else if (instrumentation_flag==2)
-            insertStr = "#include <stdio.h>\n#include <stdbool.h>\n";
+        // if (instrumentation_flag == 1)
+        //     insertStr = "#include <stdio.h>\n";
+        // else 
+        if (instrumentation_flag == 2)
+            insertStr = "typedef enum {myFalse, myTrue} myBool;\n";
 
-        //insertStr = "#include <stdio.h>\n";
-        // clang::SourceLocation fBeginLoc = d->getBeginLoc();
+        // insertStr = "#include <stdio.h>\n";
+        //  clang::SourceLocation fBeginLoc = d->getBeginLoc();
         clang::SourceLocation fBeginLoc = SM.getLocForStartOfFile(SM.getMainFileID());
         vRewriter.InsertTextBefore(fBeginLoc, insertStr);
         decl_counter++;
