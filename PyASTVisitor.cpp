@@ -107,8 +107,8 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         std::string eqStrSemi = "";
 
         insertStr = insertStr + "printf(\"CBMC Instrumentation @ line" + std::to_string(lineNum) + "\");";
-        insertStr = insertStr + "static bool pStored = myFalse;";
-        insertStr = insertStr + "_Bool flag=__VERIFIER_nondet_bool();";
+        insertStr = insertStr + "static myBool pStored = myFalse;";
+        insertStr = insertStr + "myBool flag=__VERIFIER_nondet_bool();";
 
         std::string scope_t_typ;
         std::string scope_instvarName;
