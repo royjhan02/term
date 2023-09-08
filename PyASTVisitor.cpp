@@ -105,8 +105,8 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
                 //     insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
                 // insertStr = insertStr + "static " + t_typ + " " + instvarName + ";";
 
-                //Only instrument for CBMC if the types are one of the following. If a variable is in scope AND has one of the
-                //following types add it to the vector of variables to be instrumented
+                // Only instrument for CBMC if the types are one of the following. If a variable is in scope AND has one of the
+                // following types add it to the vector of variables to be instrumented
                 if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" ||
                     t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long" ||
                     t_typ == "float" || t_typ == "double" || t_typ == "long double" || t_typ == "char")
@@ -114,9 +114,17 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
                     inscope_pair = std::make_pair(instvarName, t_typ);
                     inscope_vars_pair.push_back(inscope_pair);
                 }
-
             }
         }
+
+        // freopen(visitor_OutFile, "a+", stderr);
+        // std::cerr << "show_scope_map :: Printing CBMC scope map\n";
+        // for (auto it = inscope_vars_pair.begin(); it != inscope_vars_pair.end(); ++it)
+        // {
+        //     std::cerr << it->first << " => " << it->second << "\n";
+        // }
+        // fclose(stderr);
+
         std::string insertStr = "";
         std::string defStr = "";
         std::string eqStrAnd = "";
