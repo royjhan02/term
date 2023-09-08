@@ -246,6 +246,11 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                 if (strcmp(v_decl->getDeclKindName(), "Var") == 0)
                 {
                     clang::VarDecl *v_varDecl = clang::dyn_cast<clang::VarDecl>(v_decl);
+                    //Check if variable is function pointer
+                    if (v_varDecl->getType()->isFunctionPointerType())
+                    {
+                       break; 
+                    }
                     std::string varName = v_varDecl->getNameAsString();
                     std::string varType = v_varDecl->getType().getAsString();
                     unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
@@ -294,7 +299,6 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                         unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
                         unsigned int varCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_varDecl->getBeginLoc());
 
-
                         //     // std::string ext_string;
                         //     // if (v_varDecl->hasExternalStorage())
                         //     // {
@@ -304,24 +308,23 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                         //     // {
                         //     //     ext_string = "not extern";
                         //     // }
-                        
+
                         freopen(visitor_OutFile, "a+", stderr);
                         std::cerr << "VisitCompoundStmt :: Variable (Not SingleDecl) " << varName << " of type " << varType
                                   << " declared at line " << varLine << " and column " << varCol << "\n";
                         fclose(stderr);
 
-
-                             scope_info.vnam = varName;
-                             scope_info.vtyp = varType;
-                             scope_info.vlin = varLine;
+                        scope_info.vnam = varName;
+                        scope_info.vtyp = varType;
+                        scope_info.vlin = varLine;
 
                         //     // scope_info.scopeBeginLine = cmpndBeginLine;
-                             scope_info.scopeBeginLine = varLine; // scope begins at the line of declaration.
-                        //     // Fixes compiler error where variable value is printed before declaration
+                        scope_info.scopeBeginLine = varLine; // scope begins at the line of declaration.
+                                                             //     // Fixes compiler error where variable value is printed before declaration
 
-                             scope_info.scopeEndLine = cmpndEndLine;
-                             scope_pair = std::make_pair(varName, scope_info);
-                             scope_map.insert(scope_pair);
+                        scope_info.scopeEndLine = cmpndEndLine;
+                        scope_pair = std::make_pair(varName, scope_info);
+                        scope_map.insert(scope_pair);
                     }
                 }
             }
@@ -389,7 +392,7 @@ bool PyASTVisitor::VisitDecl(clang::Decl *d)
         std::string insertStr;
         // if (instrumentation_flag == 1)
         //     insertStr = "#include <stdio.h>\n";
-        // else 
+        // else
         if (instrumentation_flag == 2)
             insertStr = "typedef enum {myFalse, myTrue} myBool;\n";
 
