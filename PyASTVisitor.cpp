@@ -107,6 +107,8 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
 
                 // Only instrument for CBMC if the types are one of the following. If a variable is in scope AND has one of the
                 // following types add it to the vector of variables to be instrumented
+                // Aeroplane
+
                 if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" ||
                     t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long" ||
                     t_typ == "float" || t_typ == "double" || t_typ == "long double" || t_typ == "char")
