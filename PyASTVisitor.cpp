@@ -96,9 +96,25 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
 
             if (check_variable_scope(instvarName, srcLoc))
             {
+
+                // if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
+                //     insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
+                // else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
+                //     insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
+                // else if (t_typ == "char")
+                //     insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
                 // insertStr = insertStr + "static " + t_typ + " " + instvarName + ";";
-                inscope_pair = std::make_pair(instvarName, t_typ);
-                inscope_vars_pair.push_back(inscope_pair);
+
+                //Only instrument for CBMC if the types are one of the following. If a variable is in scope AND has one of the
+                //following types add it to the vector of variables to be instrumented
+                if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" ||
+                    t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long" ||
+                    t_typ == "float" || t_typ == "double" || t_typ == "long double" || t_typ == "char")
+                {
+                    inscope_pair = std::make_pair(instvarName, t_typ);
+                    inscope_vars_pair.push_back(inscope_pair);
+                }
+
             }
         }
         std::string insertStr = "";
@@ -246,10 +262,10 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                 if (strcmp(v_decl->getDeclKindName(), "Var") == 0)
                 {
                     clang::VarDecl *v_varDecl = clang::dyn_cast<clang::VarDecl>(v_decl);
-                    //Check if variable is function pointer
+                    // Check if variable is function pointer
                     if (v_varDecl->getType()->isFunctionPointerType())
                     {
-                       break; 
+                        // break;
                     }
                     std::string varName = v_varDecl->getNameAsString();
                     std::string varType = v_varDecl->getType().getAsString();
