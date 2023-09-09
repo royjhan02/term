@@ -169,7 +169,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
             if (instrumentation_flag == 2)
             {
-                if (eqStrAnd.empty()) std::cout << "METTA: eqStrAnd is empty\n";
+                if (eqStrAnd.empty()) std::cout << "TODO DEBUG: eqStrAnd is empty, but scope mapt is NpOT\n";
                 else vRewriter.InsertTextAfterToken(srcLoc, insertStr);
             }
         }
