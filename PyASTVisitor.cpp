@@ -119,13 +119,14 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             }
         }
 
-        // freopen(visitor_OutFile, "a+", stderr);
-        // std::cerr << "show_scope_map :: Printing CBMC scope map\n";
-        // for (auto it = inscope_vars_pair.begin(); it != inscope_vars_pair.end(); ++it)
-        // {
-        //     std::cerr << it->first << " => " << it->second << "\n";
-        // }
-        // fclose(stderr);
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "Begin show_scope_map :: Printing CBMC scope map\n";
+        for (auto it = inscope_vars_pair.begin(); it != inscope_vars_pair.end(); ++it)
+        {
+            std::cerr << it->first << " => " << it->second << "\n";
+        }
+        std::cerr << "End show_scope_map :: Printing CBMC scope map\n";
+        fclose(stderr);
 
         std::string insertStr = "";
         std::string defStr = "";

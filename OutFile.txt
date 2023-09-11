@@ -61,6 +61,11 @@ check_variable_scope :: Checking scope of variable cleanupTimeShifts at print li
  <<< check_variable_scope :: Variable cleanupTimeShifts is in scope at print line number : 62 | scope begin = 0 | scope end = 0 >>> 
 check_variable_scope :: Checking scope of variable i at print line number : 62
  <<< check_variable_scope :: Variable i is in scope at print line number : 62 | scope begin = 53 | scope end = 81 >>> 
+Begin show_scope_map :: Printing CBMC scope map
+__cil_tmp2 => int
+cleanupTimeShifts => int
+i => int
+End show_scope_map :: Printing CBMC scope map
 VisitCompoundStmt :: CompoundStmt at line 62 and column 13 to line 76 and column 3
 VisitCompoundStmt :: Substmt is LabelStmt at line 63
 VisitCompoundStmt :: Substmt is CompoundStmt at line 64
@@ -1360,6 +1365,18 @@ check_variable_scope :: Checking scope of variable tmp___2 at print line number 
  <<< check_variable_scope :: Variable tmp___2 is in scope at print line number : 394 | scope begin = 389 | scope end = 447 >>> 
 check_variable_scope :: Checking scope of variable waterLevel at print line number : 394
  <<< check_variable_scope :: Variable waterLevel is in scope at print line number : 394 | scope begin = 0 | scope end = 0 >>> 
+Begin show_scope_map :: Printing CBMC scope map
+cleanupTimeShifts => int
+methaneLevelCritical => int
+pumpRunning => int
+splverifierCounter => int
+systemActive => int
+tmp => int
+tmp___0 => int
+tmp___1 => int
+tmp___2 => int
+waterLevel => int
+End show_scope_map :: Printing CBMC scope map
 VisitCompoundStmt :: CompoundStmt at line 394 and column 13 to line 439 and column 3
 VisitCompoundStmt :: Substmt is LabelStmt at line 395
 VisitCompoundStmt :: Substmt is IfStmt at line 396
@@ -2646,6 +2663,24 @@ check_variable_scope :: Checking scope of variable tmp___0 at print line number 
  <<< check_variable_scope :: Variable tmp___2 is not in scope at line number : 562>>> 
  check_variable_scope :: Checking scope of variable waterLevel at print line number : 562
  <<< check_variable_scope :: Variable waterLevel is in scope at print line number : 562 | scope begin = 0 | scope end = 0 >>> 
+Begin show_scope_map :: Printing CBMC scope map
+__cil_tmp10 => unsigned long
+__cil_tmp11 => unsigned long
+__cil_tmp12 => unsigned long
+__cil_tmp13 => unsigned long
+__cil_tmp14 => unsigned long
+__cil_tmp5 => unsigned long
+__cil_tmp6 => unsigned long
+__cil_tmp7 => unsigned long
+__cil_tmp8 => unsigned long
+__cil_tmp9 => unsigned long
+cleanupTimeShifts => int
+methaneLevelCritical => int
+pumpRunning => int
+systemActive => int
+tmp => int
+waterLevel => int
+End show_scope_map :: Printing CBMC scope map
 VisitCompoundStmt :: CompoundStmt at line 562 and column 13 to line 583 and column 3
 VisitCompoundStmt :: Substmt is LabelStmt at line 563
 VisitCompoundStmt :: Substmt is CompoundStmt at line 564
@@ -3300,6 +3335,24 @@ check_variable_scope :: Checking scope of variable tmp at print line number : 61
  <<< check_variable_scope :: Variable tmp___2 is not in scope at line number : 619>>> 
  check_variable_scope :: Checking scope of variable waterLevel at print line number : 619
  <<< check_variable_scope :: Variable waterLevel is in scope at print line number : 619 | scope begin = 0 | scope end = 0 >>> 
+Begin show_scope_map :: Printing CBMC scope map
+__cil_tmp10 => unsigned long
+__cil_tmp11 => unsigned long
+__cil_tmp12 => unsigned long
+__cil_tmp13 => unsigned long
+__cil_tmp14 => unsigned long
+__cil_tmp15 => unsigned long
+__cil_tmp5 => unsigned long
+__cil_tmp6 => unsigned long
+__cil_tmp7 => unsigned long
+__cil_tmp8 => unsigned long
+__cil_tmp9 => unsigned long
+cleanupTimeShifts => int
+methaneLevelCritical => int
+pumpRunning => int
+systemActive => int
+waterLevel => int
+End show_scope_map :: Printing CBMC scope map
 VisitCompoundStmt :: CompoundStmt at line 619 and column 13 to line 644 and column 3
 VisitCompoundStmt :: Substmt is LabelStmt at line 620
 VisitCompoundStmt :: Substmt is CompoundStmt at line 621
@@ -4814,6 +4867,22 @@ check_variable_scope :: Checking scope of variable tmp___0 at print line number 
  <<< check_variable_scope :: Variable tmp___2 is not in scope at line number : 704>>> 
  check_variable_scope :: Checking scope of variable waterLevel at print line number : 704
  <<< check_variable_scope :: Variable waterLevel is in scope at print line number : 704 | scope begin = 0 | scope end = 0 >>> 
+Begin show_scope_map :: Printing CBMC scope map
+__cil_tmp10 => unsigned long
+__cil_tmp11 => unsigned long
+__cil_tmp12 => unsigned long
+__cil_tmp13 => unsigned long
+__cil_tmp14 => unsigned long
+__cil_tmp15 => unsigned long
+__cil_tmp16 => unsigned long
+cleanupTimeShifts => int
+methaneLevelCritical => int
+pumpRunning => int
+retValue_acc => int
+systemActive => int
+tmp => int
+waterLevel => int
+End show_scope_map :: Printing CBMC scope map
 VisitCompoundStmt :: CompoundStmt at line 704 and column 15 to line 724 and column 5
 VisitCompoundStmt :: Substmt is LabelStmt at line 705
 VisitCompoundStmt :: Substmt is IfStmt at line 706
