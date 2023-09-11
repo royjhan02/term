@@ -135,7 +135,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
 
         insertStr = insertStr + "printf(\"CBMC Instrumentation @ line" + std::to_string(lineNum) + "\");";
         insertStr = insertStr + "static myBool pStored = myFalse;";
-        insertStr = insertStr + "myBool flag=__VERIFIER_nondet_bool();";
+        insertStr = insertStr + "myBool flag=__VERIFIER_nondet_myBool();";
 
         std::string scope_t_typ;
         std::string scope_instvarName;
@@ -170,7 +170,8 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
             if (instrumentation_flag == 2)
             {
-                vRewriter.InsertTextAfterToken(srcLoc, insertStr);
+                if (eqStrAnd.empty()) std::cout << "TODO DEBUG: eqStrAnd is empty, but scope mapt is NpOT\n";
+                else vRewriter.InsertTextAfterToken(srcLoc, insertStr);
             }
         }
     }
@@ -421,7 +422,7 @@ bool PyASTVisitor::VisitDecl(clang::Decl *d)
         //     insertStr = "#include <stdio.h>\n";
         // else
         if (instrumentation_flag == 2)
-            insertStr = "typedef enum {myFalse, myTrue} myBool;\n";
+            insertStr = "typedef enum {myFalse, myTrue} myBool; myBool __VERIFIER_nondet_myBool(void);\n";
 
         // insertStr = "#include <stdio.h>\n";
         //  clang::SourceLocation fBeginLoc = d->getBeginLoc();
