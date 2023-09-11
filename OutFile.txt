@@ -22,14 +22,6 @@ show_scope_map :: Printing scope map
 x => x 12 23
 y => y 13 23
 VisitStmt :: While Statement Found
-check_variable_scope :: Checking scope of variable x at print line number : 18
- <<< check_variable_scope :: Variable x is in scope at print line number : 18 | scope begin = 12 | scope end = 23 >>> 
-check_variable_scope :: Checking scope of variable y at print line number : 18
- <<< check_variable_scope :: Variable y is in scope at print line number : 18 | scope begin = 13 | scope end = 23 >>> 
-Begin inscope_var_pairs :: Printing CBMC scope map
-x => int
-y => int
-End inscope_var_pairs :: Printing CBMC scope map
 VisitCompoundStmt :: CompoundStmt at line 18 and column 21 to line 20 and column 6
 VisitCompoundStmt :: Substmt is BinaryOperator at line 19
 show_scope_map :: Printing scope map
