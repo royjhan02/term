@@ -120,12 +120,12 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         }
 
         freopen(visitor_OutFile, "a+", stderr);
-        std::cerr << "Begin show_scope_map :: Printing CBMC scope map\n";
+        std::cerr << "Begin inscope_var_pairs :: Printing CBMC scope map\n";
         for (auto it = inscope_vars_pair.begin(); it != inscope_vars_pair.end(); ++it)
         {
             std::cerr << it->first << " => " << it->second << "\n";
         }
-        std::cerr << "End show_scope_map :: Printing CBMC scope map\n";
+        std::cerr << "End inscope_var_pairs :: Printing CBMC scope map\n";
         fclose(stderr);
 
         std::string insertStr = "";
@@ -165,12 +165,13 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi + "pStored=myTrue;}";
 
         // clang::SourceLocation nextSourceLoc = stmtEndloc;
-        if (!scope_map.empty())
+        //if (!scope_map.empty())
+        if (!inscope_vars_pair.empty()) /* Fix for case when eqStrAnd is empty but scope map is not. Check inscope_vars_pair instead*/
         {
             std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
             if (instrumentation_flag == 2)
             {
-                if (eqStrAnd.empty()) std::cout << "TODO DEBUG: eqStrAnd is empty, but scope mapt is NpOT\n";
+                if (eqStrAnd.empty()) std::cout << "DEBUG: eqStrAnd is empty, but scope list is not\n";
                 else vRewriter.InsertTextAfterToken(srcLoc, insertStr);
             }
         }
