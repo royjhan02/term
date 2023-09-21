@@ -2,7 +2,7 @@
 Found Input File To Parse on disk = input/test1.c
 Output File = OutFile.txt
 
-VisitCompoundStmt :: CompoundStmt at line 11 and column 1 to line 23 and column 1
+VisitCompoundStmt :: CompoundStmt at line 11 and column 1 to line 31 and column 1
 VisitCompoundStmt :: Substmt is DeclStmt at line 12
 VisitCompoundStmt :: Variable (SingleDecl) x of type int declared at line 12 and column 5
 VisitCompoundStmt :: Substmt is DeclStmt at line 13
@@ -10,23 +10,81 @@ VisitCompoundStmt :: Variable (SingleDecl) y of type int declared at line 13 and
 VisitCompoundStmt :: Substmt is BinaryOperator at line 14
 VisitCompoundStmt :: Substmt is BinaryOperator at line 15
 VisitCompoundStmt :: Substmt is IfStmt at line 17
-VisitCompoundStmt :: Substmt is ReturnStmt at line 22
+VisitCompoundStmt :: Substmt is ForStmt at line 23
+VisitCompoundStmt :: Substmt is WhileStmt at line 26
+VisitCompoundStmt :: Substmt is ReturnStmt at line 30
 show_scope_map :: Printing scope map
-x => x 12 23
-y => y 13 23
+x => x 12 31
+y => y 13 31
 VisitVarDecl :: Found VarDecl at line = 12
 VisitVarDecl :: Found VarDecl at line = 13
 VisitCompoundStmt :: CompoundStmt at line 17 and column 14 to line 21 and column 2
 VisitCompoundStmt :: Substmt is WhileStmt at line 18
 show_scope_map :: Printing scope map
-x => x 12 23
-y => y 13 23
+x => x 12 31
+y => y 13 31
 VisitStmt :: While Statement Found
+check_variable_scope :: Checking scope of variable x at print line number : 18
+ <<< check_variable_scope :: Variable x is in scope at print line number : 18 | scope begin = 12 | scope end = 31 >>> 
+check_variable_scope :: Checking scope of variable y at print line number : 18
+ <<< check_variable_scope :: Variable y is in scope at print line number : 18 | scope begin = 13 | scope end = 31 >>> 
+Begin inscope_var_pairs :: Printing CBMC scope map
+x => int
+y => int
+End inscope_var_pairs :: Printing CBMC scope map
 VisitCompoundStmt :: CompoundStmt at line 18 and column 21 to line 20 and column 6
 VisitCompoundStmt :: Substmt is BinaryOperator at line 19
 show_scope_map :: Printing scope map
-x => x 12 23
-y => y 13 23
+x => x 12 31
+y => y 13 31
+VisitStmt :: For Statement Found
+VisitForStmt :: Variable (Not SingleDecl) loopi of type int declared at line 23 and column 7
+VisitForStmt :: Variable (Not SingleDecl) loopj of type int declared at line 23 and column 7
+VisitForStmt :: Decl Stmt found in Init and added to scope_map
+Returned from getDeclInForStmt()
+check_variable_scope :: Checking scope of variable loopi at print line number : 23
+ <<< check_variable_scope :: Variable loopi is in scope at print line number : 23 | scope begin = 23 | scope end = 25 >>> 
+check_variable_scope :: Checking scope of variable loopj at print line number : 23
+ <<< check_variable_scope :: Variable loopj is in scope at print line number : 23 | scope begin = 23 | scope end = 25 >>> 
+check_variable_scope :: Checking scope of variable x at print line number : 23
+ <<< check_variable_scope :: Variable x is in scope at print line number : 23 | scope begin = 12 | scope end = 31 >>> 
+check_variable_scope :: Checking scope of variable y at print line number : 23
+ <<< check_variable_scope :: Variable y is in scope at print line number : 23 | scope begin = 13 | scope end = 31 >>> 
+Begin inscope_var_pairs :: Printing CBMC scope map
+loopi => int
+loopj => int
+x => int
+y => int
+End inscope_var_pairs :: Printing CBMC scope map
+VisitVarDecl :: Found VarDecl at line = 23
+VisitVarDecl :: Found VarDecl at line = 23
+VisitCompoundStmt :: CompoundStmt at line 23 and column 41 to line 25 and column 3
+VisitCompoundStmt :: Substmt is BinaryOperator at line 24
+show_scope_map :: Printing scope map
+loopi => loopi 23 25
+loopj => loopj 23 25
+x => x 12 31
+y => y 13 31
+VisitStmt :: While Statement Found
+check_variable_scope :: Checking scope of variable loopi at print line number : 26
+ <<< check_variable_scope :: Variable loopi is not in scope at line number : 26>>> 
+ check_variable_scope :: Checking scope of variable loopj at print line number : 26
+ <<< check_variable_scope :: Variable loopj is not in scope at line number : 26>>> 
+ check_variable_scope :: Checking scope of variable x at print line number : 26
+ <<< check_variable_scope :: Variable x is in scope at print line number : 26 | scope begin = 12 | scope end = 31 >>> 
+check_variable_scope :: Checking scope of variable y at print line number : 26
+ <<< check_variable_scope :: Variable y is in scope at print line number : 26 | scope begin = 13 | scope end = 31 >>> 
+Begin inscope_var_pairs :: Printing CBMC scope map
+x => int
+y => int
+End inscope_var_pairs :: Printing CBMC scope map
+VisitCompoundStmt :: CompoundStmt at line 26 and column 21 to line 28 and column 1
+VisitCompoundStmt :: Substmt is BinaryOperator at line 27
+show_scope_map :: Printing scope map
+loopi => loopi 23 25
+loopj => loopj 23 25
+x => x 12 31
+y => y 13 31
 
 Finished call to function ParseAST   
 

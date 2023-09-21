@@ -19,5 +19,13 @@ int main()
 	    	x = x - y;
     	}
 	}
+
+	for (int loopi, loopj;loopi<10;loopi++){
+		x=loopi;
+		}
+	    while (x >= 0) {
+	    	x = x - y;
+}
+
 	return 0;
 }

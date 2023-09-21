@@ -70,7 +70,8 @@ public:
     bool VisitStmt(clang::Stmt *s);
     // bool VisitDeclStmt(clang::DeclStmt *v_declStmt);
     //  bool VisitWhileStmt(clang::WhileStmt *w);
-    //  bool VisitForStmt(clang::ForStmt *w);
+    //bool VisitForStmt(clang::ForStmt *w);
+    bool getDeclInForStmt(clang::ForStmt *w);
     //  bool VisitCallExpr(clang::CallExpr *s);
     //   bool VisitVarDecl(clang::VarDecl *v_varDecl);
     bool VisitDecl(clang::Decl *d);

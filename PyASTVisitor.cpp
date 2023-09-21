@@ -16,6 +16,20 @@ void PyASTVisitor::set_VisitorCompilerInstance(clang::CompilerInstance *pyASTVis
     this->decl_counter = 0;
 }
 
+int check_variable_type_list(std::string varType)
+{
+    if (varType == "int" || varType == "long" || varType == "short" || varType == "long long" || varType == "unsigned int" ||
+        varType == "unsigned long" || varType == "unsigned short" || varType == "unsigned long long" ||
+        varType == "float" || varType == "double" || varType == "long double" || varType == "char")
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 bool PyASTVisitor::show_scope_map(std::multimap<std::string, AVInfo::scope_info> scope_map)
 {
 
@@ -109,9 +123,12 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
                 // following types add it to the vector of variables to be instrumented
                 // Aeroplane
 
-                if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" ||
-                    t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long" ||
-                    t_typ == "float" || t_typ == "double" || t_typ == "long double" || t_typ == "char")
+                // if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" ||
+                //     t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long" ||
+                //     t_typ == "float" || t_typ == "double" || t_typ == "long double" || t_typ == "char")
+
+                // Checking if variable type belongs to list of types to be instrumented
+                if (check_variable_type_list(t_typ) == 1)
                 {
                     inscope_pair = std::make_pair(instvarName, t_typ);
                     inscope_vars_pair.push_back(inscope_pair);
@@ -165,14 +182,16 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi + "pStored=myTrue;}";
 
         // clang::SourceLocation nextSourceLoc = stmtEndloc;
-        //if (!scope_map.empty())
+        // if (!scope_map.empty())
         if (!inscope_vars_pair.empty()) /* Fix for case when eqStrAnd is empty but scope map is not. Check inscope_vars_pair instead*/
         {
             std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
             if (instrumentation_flag == 2)
             {
-                if (eqStrAnd.empty()) std::cout << "DEBUG: eqStrAnd is empty, but scope list is not\n";
-                else vRewriter.InsertTextAfterToken(srcLoc, insertStr);
+                if (eqStrAnd.empty())
+                    std::cout << "DEBUG: eqStrAnd is empty, but scope list is not\n";
+                else
+                    vRewriter.InsertTextAfterToken(srcLoc, insertStr);
             }
         }
     }
@@ -187,6 +206,10 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
     // for (auto it = av_map.begin(); it != av_map.end(); ++it)
     // iterate over scope map
     // for (auto it = scope_map.begin(); it != scope_map.end(); ++it)
+
+    std::pair<std::string, std::string> inscope_pair;
+    std::vector<std::pair<std::string, std::string>> inscope_vars_pair;
+
     for (auto it = scope_map.begin(); it != scope_map.end(); it = scope_map.upper_bound(it->first))
     {
         std::string t_typ = it->second.vtyp;
@@ -204,13 +227,24 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
                 insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
             else if (t_typ == "char")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
+
+            if (check_variable_type_list(t_typ) == 1)
+            {
+                inscope_pair = std::make_pair(instvarName, t_typ);
+                inscope_vars_pair.push_back(inscope_pair);
+            }
         }
     }
+
     insertStr = insertStr + "printf(\">\\n\");";
     // clang::SourceLocation nextSourceLoc = stmtEndloc;
-    if (!scope_map.empty())
+    // if (!scope_map.empty())
+    if (!inscope_vars_pair.empty())
     {
         std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "Non-empty inscope_vars_pair map\n";
+        fclose(stderr);
         if (instrumentation_flag == 1)
         {
             vRewriter.InsertTextAfterToken(srcLoc, insertStr);
@@ -515,6 +549,112 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
     return true;
 }
 
+// Visitor for ForStmt that retrieves the variable declared in this "for" statement, if any.
+bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
+{
+
+    clang::Stmt *v_forBodyStmt = v_forStmt->getBody();
+    unsigned int forBeginLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_forBodyStmt->getBeginLoc());
+    unsigned int forEndLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_forBodyStmt->getEndLoc());
+    unsigned int forBeginCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_forBodyStmt->getBeginLoc());
+    unsigned int forEndCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_forBodyStmt->getEndLoc());
+
+    std::pair<std::string, AVInfo::scope_info> scope_pair;
+    AVInfo::scope_info scope_info;
+
+    if (v_forStmt->getInit())
+    {
+        //std::cout << "Init of ForStmt\n";
+        clang::Stmt *v_forInitStmt = v_forStmt->getInit();
+        //std::cout << "Init Stmt is " << v_forInitStmt->getStmtClassName() << "\n";
+        const clang::DeclStmt *v_declStmt = clang::dyn_cast<clang::DeclStmt>(v_forInitStmt);
+
+    //if (v_forStmt->getConditionVariableDeclStmt())
+    //    const clang::DeclStmt *v_declStmt = v_forStmt->getConditionVariableDeclStmt();
+
+        if (v_declStmt->isSingleDecl())
+        {
+            const clang::Decl *v_decl = v_declStmt->getSingleDecl();
+            // check if it is a variable declaration and get variable name, line number and column number and type
+            if (strcmp(v_decl->getDeclKindName(), "Var") == 0)
+            {
+                const clang::VarDecl *v_varDecl = clang::dyn_cast<clang::VarDecl>(v_decl);
+                // Check if variable is function pointer
+                if (v_varDecl->getType()->isFunctionPointerType())
+                {
+                    // break;
+                }
+                std::string varName = v_varDecl->getNameAsString();
+                std::string varType = v_varDecl->getType().getAsString();
+                unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
+                unsigned int varCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_varDecl->getBeginLoc());
+
+                freopen(visitor_OutFile, "a+", stderr);
+                std::cerr << "VisitForStmt :: Variable (SingleDecl) " << varName << " of type " << varType
+                          << " declared at line " << varLine << " and column " << varCol << "\n";
+                fclose(stderr);
+
+                scope_info.vnam = varName;
+                scope_info.vtyp = varType;
+                scope_info.vlin = varLine;
+
+                // scope_info.scopeBeginLine = cmpndBeginLine;
+                scope_info.scopeBeginLine = varLine; // scope begins at the line of declaration.
+                // Fixes compiler error where variable value is printed before declaration
+
+                scope_info.scopeEndLine = forEndLine;
+                scope_pair = std::make_pair(varName, scope_info);
+                scope_map.insert(scope_pair);
+            }
+        }
+        else
+        { // If v_declStmt is not singleDecl but something like int x,y
+            for (auto decl : v_declStmt->decls())
+            {
+                clang::Decl *v_decl = decl;
+                std::cout << "Decl is " << v_decl->getDeclKindName() << "\n";
+                // // check if it is a variable declaration and get variable name, line number and column number and type
+                if (strcmp(v_decl->getDeclKindName(), "Var") == 0)
+                {
+                    clang::VarDecl *v_varDecl = clang::dyn_cast<clang::VarDecl>(v_decl);
+                    std::string varName = v_varDecl->getNameAsString();
+                    std::string varType = v_varDecl->getType().getAsString();
+                    unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
+                    unsigned int varCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_varDecl->getBeginLoc());
+
+                    freopen(visitor_OutFile, "a+", stderr);
+                    std::cerr << "VisitForStmt :: Variable (Not SingleDecl) " << varName << " of type " << varType
+                              << " declared at line " << varLine << " and column " << varCol << "\n";
+                    fclose(stderr);
+
+                    scope_info.vnam = varName;
+                    scope_info.vtyp = varType;
+                    scope_info.vlin = varLine;
+
+                    //     // scope_info.scopeBeginLine = cmpndBeginLine;
+                    scope_info.scopeBeginLine = varLine; // scope begins at the line of declaration.
+                                                         //     // Fixes compiler error where variable value is printed before declaration
+
+                    scope_info.scopeEndLine = forEndLine;
+                    scope_pair = std::make_pair(varName, scope_info);
+                    scope_map.insert(scope_pair);
+                }
+            }
+        }
+
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "VisitForStmt :: Decl Stmt found in Init and added to scope_map\n";
+        fclose(stderr);
+    }
+    else{
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "VisitForStmt :: No Decl Stmt found in Init\n";
+        fclose(stderr);
+    }
+
+    return true;
+}
+
 bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 {
     unsigned int lineNum;
@@ -599,6 +739,13 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         fclose(stderr);
 
         clang::ForStmt *forStmt = clang::dyn_cast<clang::ForStmt>(s);
+        if (getDeclInForStmt(forStmt))
+        {
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "Returned from getDeclInForStmt()\n";
+            fclose(stderr);
+        }
+
         clang::SourceLocation nextSourceLoc = forStmt->getBody()->getBeginLoc();
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
