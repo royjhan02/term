@@ -72,6 +72,7 @@ public:
     //  bool VisitWhileStmt(clang::WhileStmt *w);
     //bool VisitForStmt(clang::ForStmt *w);
     bool getDeclInForStmt(clang::ForStmt *w);
+    bool getArrayUseInLoop(clang::Stmt *s, std::string loopType); //Check if an array has been used in a loop and turns off  instrumentation
     //  bool VisitCallExpr(clang::CallExpr *s);
     //   bool VisitVarDecl(clang::VarDecl *v_varDecl);
     bool VisitDecl(clang::Decl *d);

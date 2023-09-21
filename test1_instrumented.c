@@ -1,4 +1,3 @@
-typedef enum {myFalse, myTrue} myBool; myBool __VERIFIER_nondet_myBool(void);
 /*
  * Date: 06/07/2015
  * Created by: Ton Chanh Le (chanhle@comp.nus.edu.sg)
@@ -12,21 +11,37 @@ int main()
 {
     int x;
     int y;
+    float array[10];
+    int arrayindex=2;
     x = __VERIFIER_nondet_int();
     y = __VERIFIER_nondet_int();
 
 	if (y >= 0) {
-	    while (x >= 0) {printf("CBMC Instrumentation @ line18");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int ox;static int oy;if(pStored){__CPROVER_assert(!(ox==x && oy==y),"recurrent state found");} if(flag){ox=x;oy=y;pStored=myTrue;}
+	for (int loopi, loopj;loopi<10;loopi++){printf("DirNT State @ line0: <");printf("arrayindex=%d,",arrayindex);printf("loopi=%d,",loopi);printf("loopj=%d,",loopj);printf("x=%d,",x);printf("y=%d,",y);printf(">\n");
+		x=loopi;
+		}
+
+	    while (x >= 0) {
 	    	x = x - y;
+		array[5]=1;
     	}
 	}
 
-	for (int loopi, loopj;loopi<10;loopi++){printf("CBMC Instrumentation @ line1897610928");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oloopi;static int oloopj;static int ox;static int oy;if(pStored){__CPROVER_assert(!(oloopi==loopi && oloopj==loopj && ox==x && oy==y),"recurrent state found");} if(flag){oloopi=loopi;oloopj=loopj;ox=x;oy=y;pStored=myTrue;}
+	for (int loopi, loopj;loopi<10;loopi++){
 		x=loopi;
+		array[arrayindex]=1;
 		}
-	    while (x >= 0) {printf("CBMC Instrumentation @ line26");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int ox;static int oy;if(pStored){__CPROVER_assert(!(ox==x && oy==y),"recurrent state found");} if(flag){ox=x;oy=y;pStored=myTrue;}
+
+	    while (x >= 0) {printf("DirNT State @ line35: <");printf("arrayindex=%d,",arrayindex);printf("x=%d,",x);printf("y=%d,",y);printf(">\n");
 	    	x = x - y;
-}
+	}
+
+
+	    while (x >= 0) {
+	    	x = x - y;
+		array[arrayindex]=array[3];
+		x=array[arrayindex];
+	}
 
 	return 0;
 }

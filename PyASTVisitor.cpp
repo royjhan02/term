@@ -549,6 +549,107 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
     return true;
 }
 
+// Check if an array has been used in a loop and turns off  instrumentation
+bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
+{
+
+    clang::Stmt *BodyStmt;
+    // std::cout << "getArrayUseInLoop :: Loop type is " << loopType << "\n";
+
+    if (loopType == "WhileStmt")
+    {
+        clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
+        BodyStmt = whileStmt->getBody();
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "getArrayUseInLoop :: Stmt Body of " << BodyStmt->getStmtClassName() << "\n";
+        fclose(stderr);
+    }
+    else if (loopType == "ForStmt")
+    {
+        clang::ForStmt *forStmt = clang::dyn_cast<clang::ForStmt>(s);
+        BodyStmt = forStmt->getBody();
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "getArrayUseInLoop :: Stmt Body of " << BodyStmt->getStmtClassName() << "\n";
+        fclose(stderr);
+    }
+    else if (loopType == "DoStmt")
+    {
+        clang::DoStmt *doStmt = clang::dyn_cast<clang::DoStmt>(s);
+        BodyStmt = doStmt->getBody();
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "getArrayUseInLoop :: Stmt Body of " << BodyStmt->getStmtClassName() << "\n";
+        fclose(stderr);
+    }
+    else
+    {
+        std::cout << "getArrayUseInLoop :: Invalid loop type\n";
+        return false;
+    }
+
+    // Iterate over BodyStmt to check if it contains array use
+    for (auto it = BodyStmt->child_begin(); it != BodyStmt->child_end(); ++it)
+    {
+        clang::Stmt *stmt = *it;
+
+        std::cout << "getArrayUseInLoop :: Stmt at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(stmt->getBeginLoc())
+                  << " is " << stmt->getStmtClassName() << "\n";
+
+        if (strcmp(stmt->getStmtClassName(), "BinaryOperator") == 0)
+        {
+            clang::BinaryOperator *binOp = clang::dyn_cast<clang::BinaryOperator>(stmt);
+            clang::Expr *lhs = binOp->getLHS();
+            clang::Expr *rhs = binOp->getRHS();
+
+            std::cout << "getArrayUseInLoop :: LHS at " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(lhs->getBeginLoc())
+                      << " is " << lhs->getStmtClassName() << "\n";
+
+            std::cout << "getArrayUseInLoop :: RHS at " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rhs->getBeginLoc())
+                      << " is " << rhs->getStmtClassName() << "\n";
+
+            if (clang::ArraySubscriptExpr *larraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(lhs))
+            {
+                std::cout << "lhs is ArraySubscriptExpr\n";
+                std::cout << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(larraySubExpr->getBeginLoc()) << "\n";
+                return true;
+            }
+
+            // if (clang::ArraySubscriptExpr *rarraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rhs))
+            // {
+            //     std::cout << "lhs is ArraySubscriptExpr\n";
+            //     std::cout << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rarraySubExpr->getBeginLoc()) << "\n";
+            // }
+
+            if (clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(rhs))
+            {
+                // std::cout << "rhs is ImplicitCastExpr of Kind " << rImpCastExpr->getCastKindName() << "\n";
+                if (clang::ArraySubscriptExpr *rImparraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rImpCastExpr->IgnoreImplicit()))
+                {
+                    std::cout << "rhs is ArraySubscriptExpr\n";
+                    std::cout << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImparraySubExpr->getBeginLoc()) << "\n";
+                    return true;
+                }
+            }
+
+            // if (strcmp(stmt->getStmtClassName(),"ArraySubscriptExpr")==0)
+            // {
+            //     clang::ArraySubscriptExpr *arraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(stmt);
+            //     clang::Expr *arrayBase = arraySubExpr->getBase();
+            //     clang::Expr *arrayIdx = arraySubExpr->getIdx();
+            //     clang::SourceLocation arrayBaseLoc = arrayBase->getBeginLoc();
+            //     clang::SourceLocation arrayIdxLoc = arrayIdx->getBeginLoc();
+            //     unsigned int arrayBaseLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arrayBaseLoc);
+            //     unsigned int arrayIdxLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arrayIdxLoc);
+            //     freopen(visitor_OutFile, "a+", stderr);
+            //     std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << arrayBaseLine << " and " << arrayIdxLine << "\n";
+            //     fclose(stderr);
+            //     return true;
+            // }
+        }
+    }
+
+    return false;
+}
+
 // Visitor for ForStmt that retrieves the variable declared in this "for" statement, if any.
 bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
 {
@@ -564,13 +665,13 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
 
     if (v_forStmt->getInit())
     {
-        //std::cout << "Init of ForStmt\n";
+        // std::cout << "Init of ForStmt\n";
         clang::Stmt *v_forInitStmt = v_forStmt->getInit();
-        //std::cout << "Init Stmt is " << v_forInitStmt->getStmtClassName() << "\n";
+        // std::cout << "Init Stmt is " << v_forInitStmt->getStmtClassName() << "\n";
         const clang::DeclStmt *v_declStmt = clang::dyn_cast<clang::DeclStmt>(v_forInitStmt);
 
-    //if (v_forStmt->getConditionVariableDeclStmt())
-    //    const clang::DeclStmt *v_declStmt = v_forStmt->getConditionVariableDeclStmt();
+        // if (v_forStmt->getConditionVariableDeclStmt())
+        //     const clang::DeclStmt *v_declStmt = v_forStmt->getConditionVariableDeclStmt();
 
         if (v_declStmt->isSingleDecl())
         {
@@ -646,7 +747,8 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
         std::cerr << "VisitForStmt :: Decl Stmt found in Init and added to scope_map\n";
         fclose(stderr);
     }
-    else{
+    else
+    {
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "VisitForStmt :: No Decl Stmt found in Init\n";
         fclose(stderr);
@@ -727,11 +829,30 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
-        if (instrumentation_flag == 1)
-            print_map(printSourceLoc, printlineNum, "");
-        else if (instrumentation_flag == 2)
-            print_cbmc(printSourceLoc, printlineNum, "");
+
+        // if (!getArrayUseInLoop(s, "WhileStmt"))
+        // {
+        //     freopen(visitor_OutFile, "a+", stderr);
+        //     std::cerr << "VisitStmt :: Array not used in While loop\n";
+        //     fclose(stderr);
+        // }
+        // else
+        // {
+        //     freopen(visitor_OutFile, "a+", stderr);
+        //     std::cerr << "VisitStmt :: Array used in While loop\n";
+        //     fclose(stderr);
+        // }
+
+        // Check if there is an array use in the body of the loop and only then instrument
+        if (!getArrayUseInLoop(s, "WhileStmt"))
+        {
+            if (instrumentation_flag == 1)
+                print_map(printSourceLoc, printlineNum, "");
+            else if (instrumentation_flag == 2)
+                print_cbmc(printSourceLoc, printlineNum, "");
+        }
     }
+
     if (strcmp(s->getStmtClassName(), "ForStmt") == 0)
     {
         freopen(visitor_OutFile, "a+", stderr);
@@ -739,21 +860,43 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         fclose(stderr);
 
         clang::ForStmt *forStmt = clang::dyn_cast<clang::ForStmt>(s);
+
+        // Check if there is a variable declaration in the For statement e.g. for (int x; x < 10; x++) and add to scope map
         if (getDeclInForStmt(forStmt))
         {
             freopen(visitor_OutFile, "a+", stderr);
-            std::cerr << "Returned from getDeclInForStmt()\n";
+            std::cerr << "Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()\n";
             fclose(stderr);
         }
 
         clang::SourceLocation nextSourceLoc = forStmt->getBody()->getBeginLoc();
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
-        if (instrumentation_flag == 1)
-            print_map(nextSourceLoc, printlineNum, "");
-        else if (instrumentation_flag == 2)
-            print_cbmc(nextSourceLoc, printlineNum, "");
+
+        // Check if there is an array use in the body of the loop
+        // if (!getArrayUseInLoop(s, "ForStmt"))
+        // {
+        //     freopen(visitor_OutFile, "a+", stderr);
+        //     std::cerr << "VisitStmt :: Array not used in For loop\n";
+        //     fclose(stderr);
+        // }
+        // else
+        // {
+        //     freopen(visitor_OutFile, "a+", stderr);
+        //     std::cerr << "VisitStmt :: Array used in For loop\n";
+        //     fclose(stderr);
+        // }
+
+        // Check if there is an array use in the body of the loop and only then instrument
+        if (!getArrayUseInLoop(s, "ForStmt"))
+        {
+            if (instrumentation_flag == 1)
+                print_map(nextSourceLoc, printlineNum, "");
+            else if (instrumentation_flag == 2)
+                print_cbmc(nextSourceLoc, printlineNum, "");
+        }
     }
+
     if (strcmp(s->getStmtClassName(), "DoStmt") == 0)
     {
         freopen(visitor_OutFile, "a+", stderr);
@@ -763,10 +906,29 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         clang::SourceLocation nextSourceLoc = doStmt->getBody()->getBeginLoc();
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
+
+        // Check if there is an array use in the body of the loop
+        // if (!getArrayUseInLoop(s, "DoStmt"))
+        // {
+        //     freopen(visitor_OutFile, "a+", stderr);
+        //     std::cerr << "VisitStmt :: Array not used in Do While loop\n";
+        //     fclose(stderr);
+        // }
+        // else
+        // {
+        //     freopen(visitor_OutFile, "a+", stderr);
+        //     std::cerr << "VisitStmt :: Array used in Do While loop\n";
+        //     fclose(stderr);
+        // }
+
+        // Check if there is an array use in the body of the loop and only then instrument
+        if (!getArrayUseInLoop(s, "DoStmt"))
+        {
         if (instrumentation_flag == 1)
             print_map(nextSourceLoc, printlineNum, "");
         else if (instrumentation_flag == 2)
             print_cbmc(nextSourceLoc, printlineNum, "");
+        }
     }
     return true;
 }
