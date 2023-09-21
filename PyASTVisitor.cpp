@@ -198,6 +198,18 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
     return true;
 }
 
+bool PyASTVisitor::print_other(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
+{
+    std::string insertStr = "";
+    if (message == "ArrayFound")
+    {
+        insertStr = insertStr + "printf(\"DirNT State @ line" + std::to_string(lineNum) + ": Array Found\\n\");";
+        vRewriter.InsertTextAfterToken(srcLoc, insertStr);
+    }
+
+    return true;
+}
+
 bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
 {
     std::string insertStr = "";
@@ -851,6 +863,10 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             else if (instrumentation_flag == 2)
                 print_cbmc(printSourceLoc, printlineNum, "");
         }
+        else
+        {
+            print_other(printSourceLoc, printlineNum, "ArrayFound");
+        }
     }
 
     if (strcmp(s->getStmtClassName(), "ForStmt") == 0)
@@ -871,6 +887,8 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
         clang::SourceLocation nextSourceLoc = forStmt->getBody()->getBeginLoc();
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
+        clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
+        printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
 
         // Check if there is an array use in the body of the loop
@@ -891,9 +909,13 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         if (!getArrayUseInLoop(s, "ForStmt"))
         {
             if (instrumentation_flag == 1)
-                print_map(nextSourceLoc, printlineNum, "");
+                print_map(printSourceLoc, printlineNum, "");
             else if (instrumentation_flag == 2)
-                print_cbmc(nextSourceLoc, printlineNum, "");
+                print_cbmc(printSourceLoc, printlineNum, "");
+        }
+        else
+        {
+            print_other(printSourceLoc, printlineNum, "ArrayFound");
         }
     }
 
@@ -905,6 +927,9 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         clang::DoStmt *doStmt = clang::dyn_cast<clang::DoStmt>(s);
         clang::SourceLocation nextSourceLoc = doStmt->getBody()->getBeginLoc();
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
+
+        clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
+        printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
 
         // Check if there is an array use in the body of the loop
@@ -924,10 +949,14 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         // Check if there is an array use in the body of the loop and only then instrument
         if (!getArrayUseInLoop(s, "DoStmt"))
         {
-        if (instrumentation_flag == 1)
-            print_map(nextSourceLoc, printlineNum, "");
-        else if (instrumentation_flag == 2)
-            print_cbmc(nextSourceLoc, printlineNum, "");
+            if (instrumentation_flag == 1)
+                print_map(printSourceLoc, printlineNum, "");
+            else if (instrumentation_flag == 2)
+                print_cbmc(printSourceLoc, printlineNum, "");
+        }
+        else
+        {
+            print_other(printSourceLoc, printlineNum, "ArrayFound");
         }
     }
     return true;
