@@ -889,8 +889,8 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
-        // print_map(nextSourceLoc, lineNum, "");
 
+        // print_map(nextSourceLoc, lineNum, "");
         // Check if there is an array use in the body of the loop
         // if (!getArrayUseInLoop(s, "ForStmt"))
         // {
