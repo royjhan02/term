@@ -203,7 +203,7 @@ bool PyASTVisitor::print_other(clang::SourceLocation srcLoc, unsigned int lineNu
     std::string insertStr = "";
     if (message == "ArrayFound")
     {
-        insertStr = insertStr + "printf(\"DirNT State @ line" + std::to_string(lineNum) + ": Array Found\\n\");";
+        insertStr = insertStr + "printf(\"ArrayNT State @ line" + std::to_string(lineNum) + ": Array Found\\n\");";
         vRewriter.InsertTextAfterToken(srcLoc, insertStr);
     }
 
