@@ -452,12 +452,58 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
 //     return true;
 // }
 
-// bool PyASTVisitor::VisitFunctionDecl(clang::FunctionDecl *fd)
-// {
+bool PyASTVisitor::VisitFunctionDecl(clang::FunctionDecl *fd)
+{
+    std::pair<std::string, AVInfo::scope_info> scope_pair;
+    AVInfo::scope_info scope_info;
+    std::string varName;
 
-//     std::cout << "Found Function Declaration at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getBeginLoc()) << "\n";
-//     return true;
-// }
+    // std::cout << "Found Function Declaration at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getBeginLoc()) << "\n";
+    // If function name is not  __VERIFIER_nondet_int then print name of function
+    if (fd->getNameAsString() != "__VERIFIER_nondet_int")
+    {
+        std::cout << "Function name is " << fd->getNameAsString() << "\n";
+        // Get function body
+        clang::Stmt *funcBody = fd->getBody();
+        // Get the begin and end line number of body
+        std::cout << "Function body begins at line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getBeginLoc()) << "\n";
+        std::cout << "Function body ends at line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getEndLoc()) << "\n";
+        int func_begin = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getBeginLoc());
+        int func_end = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getEndLoc());
+
+        // Get the number, name and type of arguments
+        int numArgs = fd->getNumParams();
+        std::cout << "Number of arguments = " << numArgs << "\n";
+        for (int i = 0; i < numArgs; i++)
+        {
+            std::cout << "Argument " << i << " name = " << fd->getParamDecl(i)->getNameAsString() << "\n";
+            std::cout << "Argument " << i << " type = " << fd->getParamDecl(i)->getType().getAsString() << "\n";
+            // Get line and column number of argument
+            // std::cout << "Argument " << i << " line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getParamDecl(i)->getBeginLoc()) << "\n";
+            // std::cout << "Argument " << i << " column number = " << visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(fd->getParamDecl(i)->getBeginLoc()) << "\n";
+            varName=fd->getParamDecl(i)->getNameAsString();
+            scope_info.vnam = fd->getParamDecl(i)->getNameAsString();
+            scope_info.vtyp = fd->getParamDecl(i)->getType().getAsString();
+            scope_info.vlin = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getParamDecl(i)->getBeginLoc());
+
+            // scope_info.scopeBeginLine = cmpndBeginLine;
+            scope_info.scopeBeginLine = func_begin;
+            
+            // scope begins at the line of declaration.
+            // Fixes compiler error where variable value is printed before declaration
+
+            scope_info.scopeEndLine = func_end;
+            scope_pair = std::make_pair(varName, scope_info);
+            scope_map.insert(scope_pair);
+        }
+    }
+    else
+    {
+        std::cout << "Function name is __VERIFIER_nondet_int\n";
+    }
+
+    return true;
+}
 
 bool PyASTVisitor::VisitDecl(clang::Decl *d)
 {

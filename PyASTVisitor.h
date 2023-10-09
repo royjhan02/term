@@ -63,7 +63,7 @@ public:
     void set_VisitorCompilerInstance(clang::CompilerInstance *pyASTVisitorCI, const char *o_file, const char *i_file);
 
     /* Visitor Functions for different AST elements */
-    // bool VisitFunctionDecl(clang::FunctionDecl *v_functionDecl);
+    bool VisitFunctionDecl(clang::FunctionDecl *v_functionDecl);
     bool VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt);
     // bool VisitBinAssign(clang::BinaryOperator *BO);
     // bool VisitBinaryOperator(clang::BinaryOperator *binOp);

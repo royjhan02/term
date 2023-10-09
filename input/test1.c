@@ -7,6 +7,7 @@ typedef enum {false, true} bool;
 
 extern int __VERIFIER_nondet_int(void);
 
+
 int main()
 {
     int x;
@@ -44,4 +45,17 @@ int main()
 	}
 
 	return 0;
+}
+
+
+int foo(int a, float b)
+{
+int h,m;
+float yy;
+	    while (a >= 0) {
+	    	a = a - b;
+	}
+
+return a;
+
 }
