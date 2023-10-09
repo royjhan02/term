@@ -4,3 +4,5 @@ extern std::string callExprType;
 extern std::string callExprName;
 
 extern int instrumentation_flag;
+
+#define DEBUG_INST

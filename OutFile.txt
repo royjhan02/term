@@ -2,8 +2,14 @@
 Found Input File To Parse on disk = input/test1.c
 Output File = OutFile.txt
 
+Function name is __VERIFIER_nondet_int
+Function name is main
+Function body begins at line number = 12
+Function body ends at line number = 50
+Number of function arguments = 0
 VisitCompoundStmt :: CompoundStmt at line 12 and column 1 to line 50 and column 1
 VisitCompoundStmt :: Substmt is DeclStmt at line 14
+Pointer type is char * :: Variable name is pc
 VisitCompoundStmt :: Variable (SingleDecl) pc of type char * declared at line 14 and column 5
 VisitCompoundStmt :: Substmt is DeclStmt at line 15
 VisitCompoundStmt :: Variable (SingleDecl) x of type int declared at line 15 and column 5
@@ -41,11 +47,17 @@ pc => pc 14 50
 x => x 15 50
 y => y 16 50
 VisitStmt :: For Statement Found
+Decl is Var
 VisitForStmt :: Variable (Not SingleDecl) loopi of type int declared at line 23 and column 7
+Decl is Var
 VisitForStmt :: Variable (Not SingleDecl) loopj of type int declared at line 23 and column 7
 VisitForStmt :: Decl Stmt found in Init and added to scope_map
 Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
 getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 24 is BinaryOperator
+getArrayUseInLoop :: LHS at 24 is DeclRefExpr
+getArrayUseInLoop :: RHS at 24 is ImplicitCastExpr
+Instrumentation flag = 2
 check_variable_scope :: Checking scope of variable array at print line number : 23
  <<< check_variable_scope :: Variable array is in scope at print line number : 23 | scope begin = 17 | scope end = 50 >>> 
 check_variable_scope :: Checking scope of variable arrayindex at print line number : 23
@@ -68,6 +80,12 @@ pc => char *
 x => int
 y => int
 End inscope_var_pairs :: Printing CBMC scope map
+eqStrAnd = oarrayindex==arrayindex && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && ox==x && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && ox==x && oy==y
 VisitVarDecl :: Found VarDecl at line = 23
 VisitVarDecl :: Found VarDecl at line = 23
 VisitCompoundStmt :: CompoundStmt at line 23 and column 41 to line 25 and column 3
@@ -82,6 +100,14 @@ x => x 15 50
 y => y 16 50
 VisitStmt :: While Statement Found
 getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 28 is BinaryOperator
+getArrayUseInLoop :: LHS at 28 is DeclRefExpr
+getArrayUseInLoop :: RHS at 28 is BinaryOperator
+getArrayUseInLoop :: Stmt at line 29 is BinaryOperator
+getArrayUseInLoop :: LHS at 29 is ArraySubscriptExpr
+getArrayUseInLoop :: RHS at 29 is ImplicitCastExpr
+lhs is ArraySubscriptExpr
+getArrayUseInLoop :: ArraySubscriptExpr at line 29
 VisitCompoundStmt :: CompoundStmt at line 27 and column 21 to line 30 and column 6
 VisitCompoundStmt :: Substmt is BinaryOperator at line 28
 VisitCompoundStmt :: Substmt is BinaryOperator at line 29
@@ -94,11 +120,21 @@ pc => pc 14 50
 x => x 15 50
 y => y 16 50
 VisitStmt :: For Statement Found
+Decl is Var
 VisitForStmt :: Variable (Not SingleDecl) loopi of type int declared at line 33 and column 7
+Decl is Var
 VisitForStmt :: Variable (Not SingleDecl) loopj of type int declared at line 33 and column 7
 VisitForStmt :: Decl Stmt found in Init and added to scope_map
 Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
 getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 34 is BinaryOperator
+getArrayUseInLoop :: LHS at 34 is DeclRefExpr
+getArrayUseInLoop :: RHS at 34 is ImplicitCastExpr
+getArrayUseInLoop :: Stmt at line 35 is BinaryOperator
+getArrayUseInLoop :: LHS at 35 is ArraySubscriptExpr
+getArrayUseInLoop :: RHS at 35 is ImplicitCastExpr
+lhs is ArraySubscriptExpr
+getArrayUseInLoop :: ArraySubscriptExpr at line 35
 VisitVarDecl :: Found VarDecl at line = 33
 VisitVarDecl :: Found VarDecl at line = 33
 VisitCompoundStmt :: CompoundStmt at line 33 and column 41 to line 36 and column 3
@@ -116,6 +152,10 @@ x => x 15 50
 y => y 16 50
 VisitStmt :: While Statement Found
 getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 39 is BinaryOperator
+getArrayUseInLoop :: LHS at 39 is DeclRefExpr
+getArrayUseInLoop :: RHS at 39 is BinaryOperator
+Instrumentation flag = 2
 check_variable_scope :: Checking scope of variable array at print line number : 38
  <<< check_variable_scope :: Variable array is in scope at print line number : 38 | scope begin = 17 | scope end = 50 >>> 
 check_variable_scope :: Checking scope of variable arrayindex at print line number : 38
@@ -136,6 +176,10 @@ pc => char *
 x => int
 y => int
 End inscope_var_pairs :: Printing CBMC scope map
+eqStrAnd = oarrayindex==arrayindex && 
+eqStrAnd = oarrayindex==arrayindex && opc==pc && 
+eqStrAnd = oarrayindex==arrayindex && opc==pc && ox==x && 
+eqStrAnd = oarrayindex==arrayindex && opc==pc && ox==x && oy==y
 VisitCompoundStmt :: CompoundStmt at line 38 and column 21 to line 40 and column 2
 VisitCompoundStmt :: Substmt is BinaryOperator at line 39
 show_scope_map :: Printing scope map
@@ -150,6 +194,14 @@ x => x 15 50
 y => y 16 50
 VisitStmt :: While Statement Found
 getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 44 is BinaryOperator
+getArrayUseInLoop :: LHS at 44 is DeclRefExpr
+getArrayUseInLoop :: RHS at 44 is BinaryOperator
+getArrayUseInLoop :: Stmt at line 45 is BinaryOperator
+getArrayUseInLoop :: LHS at 45 is ArraySubscriptExpr
+getArrayUseInLoop :: RHS at 45 is ImplicitCastExpr
+lhs is ArraySubscriptExpr
+getArrayUseInLoop :: ArraySubscriptExpr at line 45
 VisitCompoundStmt :: CompoundStmt at line 43 and column 21 to line 47 and column 2
 VisitCompoundStmt :: Substmt is BinaryOperator at line 44
 VisitCompoundStmt :: Substmt is BinaryOperator at line 45
@@ -164,12 +216,24 @@ loopj => loopj 33 36
 pc => pc 14 50
 x => x 15 50
 y => y 16 50
+Function name is foo
+Function body begins at line number = 54
+Function body ends at line number = 63
+Number of function arguments = 3
+Argument 0 name = a
+Argument 0 type = int
+Argument 1 name = b
+Argument 1 type = float
+Argument 2 name = funcp
+Argument 2 type = char *
 VisitVarDecl :: Found VarDecl at line = 53
 VisitVarDecl :: Found VarDecl at line = 53
 VisitVarDecl :: Found VarDecl at line = 53
 VisitCompoundStmt :: CompoundStmt at line 54 and column 1 to line 63 and column 1
 VisitCompoundStmt :: Substmt is DeclStmt at line 55
+Decl is Var
 VisitCompoundStmt :: Variable (Not SingleDecl) h of type int declared at line 55 and column 1
+Decl is Var
 VisitCompoundStmt :: Variable (Not SingleDecl) m of type int declared at line 55 and column 1
 VisitCompoundStmt :: Substmt is DeclStmt at line 56
 VisitCompoundStmt :: Variable (SingleDecl) yy of type float declared at line 56 and column 1
@@ -196,6 +260,10 @@ VisitVarDecl :: Found VarDecl at line = 55
 VisitVarDecl :: Found VarDecl at line = 56
 VisitStmt :: While Statement Found
 getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 58 is BinaryOperator
+getArrayUseInLoop :: LHS at 58 is DeclRefExpr
+getArrayUseInLoop :: RHS at 58 is ImplicitCastExpr
+Instrumentation flag = 2
 check_variable_scope :: Checking scope of variable a at print line number : 57
  <<< check_variable_scope :: Variable a is in scope at print line number : 57 | scope begin = 54 | scope end = 63 >>> 
 check_variable_scope :: Checking scope of variable array at print line number : 57
@@ -230,6 +298,12 @@ h => int
 m => int
 yy => float
 End inscope_var_pairs :: Printing CBMC scope map
+eqStrAnd = oa==a && 
+eqStrAnd = oa==a && ob==b && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && oyy==yy
 VisitCompoundStmt :: CompoundStmt at line 57 and column 21 to line 59 and column 2
 VisitCompoundStmt :: Substmt is BinaryOperator at line 58
 show_scope_map :: Printing scope map

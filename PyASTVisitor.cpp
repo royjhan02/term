@@ -33,7 +33,7 @@ int check_variable_type_list(std::string varType)
 
 bool PyASTVisitor::show_scope_map(std::multimap<std::string, AVInfo::scope_info> scope_map)
 {
-
+    #ifdef DEBUG_INST
     freopen(visitor_OutFile, "a+", stderr);
     std::cerr << "show_scope_map :: Printing scope map\n";
     for (auto it = scope_map.begin(); it != scope_map.end(); ++it)
@@ -41,6 +41,8 @@ bool PyASTVisitor::show_scope_map(std::multimap<std::string, AVInfo::scope_info>
         std::cerr << it->first << " => " << it->second.vnam << " " << it->second.scopeBeginLine << " " << it->second.scopeEndLine << "\n";
     }
     fclose(stderr);
+    #endif
+
     return true;
 }
 
@@ -48,9 +50,12 @@ bool PyASTVisitor::check_variable_scope(std::string varName, clang::SourceLocati
 {
     unsigned int lineNum = visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc);
 
+    #ifdef DEBUG_INST
     freopen(visitor_OutFile, "a+", stderr);
     std::cerr << "check_variable_scope :: Checking scope of variable " << varName << " at print line number : " << lineNum
               << "\n";
+    fclose(stderr);
+    #endif
 
     auto it_mult = scope_map.equal_range(varName);
 
@@ -60,13 +65,17 @@ bool PyASTVisitor::check_variable_scope(std::string varName, clang::SourceLocati
             (it->second.scopeBeginLine == 0 && it->second.scopeEndLine == 0))
         {
             // std::cerr << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : " << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " >>> \n";
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
             std::cerr << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : "
                       << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " | scope begin = "
                       << it->second.scopeBeginLine << " | scope end = " << it->second.scopeEndLine << " >>> \n";
+            fclose(stderr);
+            #endif
 
-            std::cout << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : "
-                      << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " | scope begin = "
-                      << it->second.scopeBeginLine << " | scope end = " << it->second.scopeEndLine << " >>> \n";
+            // std::cout << " <<< check_variable_scope :: Variable " << varName << " is in scope at print line number : "
+            //           << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " | scope begin = "
+            //           << it->second.scopeBeginLine << " | scope end = " << it->second.scopeEndLine << " >>> \n";
             return true;
         }
     }
@@ -83,14 +92,25 @@ bool PyASTVisitor::check_variable_scope(std::string varName, clang::SourceLocati
     //         }
     //     }
     // }
+    
+    #ifdef DEBUG_INST
+    freopen(visitor_OutFile, "a+", stderr);
     std::cerr << " <<< check_variable_scope :: Variable " << varName << " is not in scope at line number : " << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << ">>> \n ";
     fclose(stderr);
+    #endif
+
     return false;
 }
 
 bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
 {
-    std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+    #ifdef DEBUG_INST
+    freopen(visitor_OutFile, "a+", stderr);
+    std::cerr << "Instrumentation flag = " << instrumentation_flag << "\n";
+    fclose(stderr);
+    #endif
+
+
     if (instrumentation_flag == 2)
     {
 
@@ -137,6 +157,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             }
         }
 
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "Begin inscope_var_pairs :: Printing CBMC scope map\n";
         for (auto it = inscope_vars_pair.begin(); it != inscope_vars_pair.end(); ++it)
@@ -145,6 +166,8 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         }
         std::cerr << "End inscope_var_pairs :: Printing CBMC scope map\n";
         fclose(stderr);
+        #endif
+
 
         std::string insertStr = "";
         std::string defStr = "";
@@ -176,7 +199,13 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             {
                 eqStrAnd = eqStrAnd + " && ";
             }
-            std::cout << "eqStrAnd = " << eqStrAnd << "\n";
+
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "eqStrAnd = " << eqStrAnd << "\n";
+            fclose(stderr);
+            #endif
+            
             vec_loc++;
         }
         insertStr = insertStr + defStr;
@@ -186,7 +215,12 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         // if (!scope_map.empty())
         if (!inscope_vars_pair.empty()) /* Fix for case when eqStrAnd is empty but scope map is not. Check inscope_vars_pair instead*/
         {
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
             std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+            fclose(stderr);
+            #endif
+
             if (instrumentation_flag == 2)
             {
                 if (eqStrAnd.empty())
@@ -228,9 +262,11 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
         std::string t_typ = it->second.vtyp;
         std::string instvarName = it->second.vnam;
 
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "print_map :: Checking scope of  " << instvarName << " of type " << t_typ << "\n";
         fclose(stderr);
+        #endif
 
         if (check_variable_scope(instvarName, srcLoc))
         {
@@ -256,10 +292,14 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
     // if (!scope_map.empty())
     if (!inscope_vars_pair.empty())
     {
-        std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "Instrumentation flag = " << instrumentation_flag << "\n";
         std::cerr << "Non-empty inscope_vars_pair map\n";
         fclose(stderr);
+        #endif
+
+
         if (instrumentation_flag == 1)
         {
             vRewriter.InsertTextAfterToken(srcLoc, insertStr);
@@ -303,15 +343,21 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
     std::pair<std::string, AVInfo::scope_info> scope_pair;
     AVInfo::scope_info scope_info;
 
+    #ifdef DEBUG_INST
     freopen(visitor_OutFile, "a+", stderr);
     std::cerr << "VisitCompoundStmt :: CompoundStmt at line " << cmpndBeginLine << " and column " << cmpndBeginCol << " to line " << cmpndEndLine << " and column " << cmpndEndCol << "\n";
     fclose(stderr);
+    #endif
+
 
     for (auto substmt : v_compoundStmt->body())
     {
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "VisitCompoundStmt :: Substmt is " << substmt->getStmtClassName() << " at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(substmt->getBeginLoc()) << "\n";
         fclose(stderr);
+        #endif
+
 
         if (strcmp(substmt->getStmtClassName(), "DeclStmt") == 0)
         {
@@ -333,7 +379,12 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                     // Check if variable is a char*
                     else if (v_varDecl->getType()->isPointerType())
                     {
-                        std::cout << "Pointer type is " << v_varDecl->getType().getAsString() << " :: Variable name is " << v_varDecl->getNameAsString() << "\n";
+                        #ifdef DEBUG_INST
+                        freopen(visitor_OutFile, "a+", stderr);
+                        std::cerr << "Pointer type is " << v_varDecl->getType().getAsString() << " :: Variable name is " << v_varDecl->getNameAsString() << "\n";
+                        fclose(stderr);
+                        #endif
+
                         // if (v_varDecl->getType().getAsString()=="char *")
                         // {
                         //     std::cout << "Found char * pointer variable" << "\n";
@@ -356,11 +407,13 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                     // {
                     //     ext_string = "not extern";
                     // }
-
+                    #ifdef DEBUG_INST
                     freopen(visitor_OutFile, "a+", stderr);
                     std::cerr << "VisitCompoundStmt :: Variable (SingleDecl) " << varName << " of type " << varType
                               << " declared at line " << varLine << " and column " << varCol << "\n";
                     fclose(stderr);
+                    #endif
+
 
                     scope_info.vnam = varName;
                     scope_info.vtyp = varType;
@@ -380,7 +433,13 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                 for (auto decl : v_declStmt->decls())
                 {
                     clang::Decl *v_decl = decl;
-                    std::cout << "Decl is " << v_decl->getDeclKindName() << "\n";
+
+                    #ifdef DEBUG_INST
+                    freopen(visitor_OutFile, "a+", stderr);
+                    std::cerr << "Decl is " << v_decl->getDeclKindName() << "\n";
+                    fclose(stderr);
+                    #endif
+
                     // // check if it is a variable declaration and get variable name, line number and column number and type
                     if (strcmp(v_decl->getDeclKindName(), "Var") == 0)
                     {
@@ -399,11 +458,12 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                         //     // {
                         //     //     ext_string = "not extern";
                         //     // }
-
+                        #ifdef DEBUG_INST
                         freopen(visitor_OutFile, "a+", stderr);
                         std::cerr << "VisitCompoundStmt :: Variable (Not SingleDecl) " << varName << " of type " << varType
                                   << " declared at line " << varLine << " and column " << varCol << "\n";
                         fclose(stderr);
+                        #endif
 
                         scope_info.vnam = varName;
                         scope_info.vtyp = varType;
@@ -475,24 +535,47 @@ bool PyASTVisitor::VisitFunctionDecl(clang::FunctionDecl *fd)
 
     // std::cout << "Found Function Declaration at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getBeginLoc()) << "\n";
     // If function name is not  __VERIFIER_nondet_int then print name of function
-    std::cout << "Function name is " << fd->getNameAsString() << "\n";
+    #ifdef DEBUG_INST
+    freopen(visitor_OutFile, "a+", stderr);
+    std::cerr << "Function name is " << fd->getNameAsString() << "\n";
+    fclose(stderr);
+    #endif
+
     clang::Stmt *funcBody = fd->getBody();
+
     if (funcBody != 0)
     {
         // Get function body
         // Get the begin and end line number of body
-        std::cout << "Function body begins at line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getBeginLoc()) << "\n";
-        std::cout << "Function body ends at line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getEndLoc()) << "\n";
+        #ifdef DEBUG_INST
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "Function body begins at line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getBeginLoc()) << "\n";
+        std::cerr << "Function body ends at line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getEndLoc()) << "\n";
+        fclose(stderr);
+        #endif
+
         int func_begin = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getBeginLoc());
         int func_end = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getEndLoc());
 
         // Get the number, name and type of arguments
         int numArgs = fd->getNumParams();
-        std::cout << "Number of arguments = " << numArgs << "\n";
+        
+        #ifdef DEBUG_INST
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "Number of function arguments = " << numArgs << "\n";
+        fclose(stderr);
+        #endif
+
         for (int i = 0; i < numArgs; i++)
         {
-            std::cout << "Argument " << i << " name = " << fd->getParamDecl(i)->getNameAsString() << "\n";
-            std::cout << "Argument " << i << " type = " << fd->getParamDecl(i)->getType().getAsString() << "\n";
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "Argument " << i << " name = " << fd->getParamDecl(i)->getNameAsString() << "\n";
+            std::cerr << "Argument " << i << " type = " << fd->getParamDecl(i)->getType().getAsString() << "\n";
+            fclose(stderr);
+            #endif
+
+
             // Get line and column number of argument
             // std::cout << "Argument " << i << " line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getParamDecl(i)->getBeginLoc()) << "\n";
             // std::cout << "Argument " << i << " column number = " << visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(fd->getParamDecl(i)->getBeginLoc()) << "\n";
@@ -548,9 +631,12 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
     AVInfo::scope_info scope_info;
 
     // std::cout << "Found VarDecl at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc()) << "\n";
+    #ifdef DEBUG_INST
     freopen(visitor_OutFile, "a+", stderr);
     std::cerr << "VisitVarDecl :: Found VarDecl at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc()) << "\n";
     fclose(stderr);
+    #endif
+
 
     // computeVariableScope(v_varDecl);
 
@@ -576,6 +662,7 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
 
     if (v_varDecl->hasGlobalStorage() && !(v_varDecl->hasExternalStorage()))
     {
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "VisitVarDecl :: VarDecl is Global and not extern"
                   << "\n";
@@ -583,6 +670,7 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
         std::cerr << "VisitVarDecl :: VarDecl Type : " << vardecl_type << "\t";
         std::cerr << "VisitVarDecl :: VarDecl Line Number : " << vardecl_lineNum << "\n";
         fclose(stderr);
+        #endif
 
         scope_info.vnam = vardecl_name;
         scope_info.vtyp = vardecl_type;
@@ -630,93 +718,127 @@ bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
     {
         clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
         BodyStmt = whileStmt->getBody();
+
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "getArrayUseInLoop :: Stmt Body of " << BodyStmt->getStmtClassName() << "\n";
         fclose(stderr);
+        #endif
     }
     else if (loopType == "ForStmt")
     {
         clang::ForStmt *forStmt = clang::dyn_cast<clang::ForStmt>(s);
         BodyStmt = forStmt->getBody();
+
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "getArrayUseInLoop :: Stmt Body of " << BodyStmt->getStmtClassName() << "\n";
         fclose(stderr);
+        #endif
     }
     else if (loopType == "DoStmt")
     {
         clang::DoStmt *doStmt = clang::dyn_cast<clang::DoStmt>(s);
         BodyStmt = doStmt->getBody();
+
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "getArrayUseInLoop :: Stmt Body of " << BodyStmt->getStmtClassName() << "\n";
         fclose(stderr);
+        #endif
     }
     else
     {
-        std::cout << "getArrayUseInLoop :: Invalid loop type\n";
+        #ifdef DEBUG_INST
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "getArrayUseInLoop :: Invalid loop type\n";
+        fclose(stderr);
+        #endif
+
         return false;
     }
 
     // Iterate over BodyStmt to check if it contains array use
-    for (auto it = BodyStmt->child_begin(); it != BodyStmt->child_end(); ++it)
+    if (BodyStmt != 0)
     {
-        clang::Stmt *stmt = *it;
-
-        std::cout << "getArrayUseInLoop :: Stmt at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(stmt->getBeginLoc())
-                  << " is " << stmt->getStmtClassName() << "\n";
-
-        if (strcmp(stmt->getStmtClassName(), "BinaryOperator") == 0)
+        for (auto it = BodyStmt->child_begin(); it != BodyStmt->child_end(); ++it)
         {
-            clang::BinaryOperator *binOp = clang::dyn_cast<clang::BinaryOperator>(stmt);
-            clang::Expr *lhs = binOp->getLHS();
-            clang::Expr *rhs = binOp->getRHS();
+            clang::Stmt *stmt = *it;
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "getArrayUseInLoop :: Stmt at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(stmt->getBeginLoc())
+                      << " is " << stmt->getStmtClassName() << "\n";
+            fclose(stderr);
+            #endif
 
-            std::cout << "getArrayUseInLoop :: LHS at " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(lhs->getBeginLoc())
-                      << " is " << lhs->getStmtClassName() << "\n";
-
-            std::cout << "getArrayUseInLoop :: RHS at " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rhs->getBeginLoc())
-                      << " is " << rhs->getStmtClassName() << "\n";
-
-            if (clang::ArraySubscriptExpr *larraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(lhs))
+            if (strcmp(stmt->getStmtClassName(), "BinaryOperator") == 0)
             {
-                std::cout << "lhs is ArraySubscriptExpr\n";
-                std::cout << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(larraySubExpr->getBeginLoc()) << "\n";
-                return true;
-            }
+                clang::BinaryOperator *binOp = clang::dyn_cast<clang::BinaryOperator>(stmt);
+                clang::Expr *lhs = binOp->getLHS();
+                clang::Expr *rhs = binOp->getRHS();
 
-            // if (clang::ArraySubscriptExpr *rarraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rhs))
-            // {
-            //     std::cout << "lhs is ArraySubscriptExpr\n";
-            //     std::cout << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rarraySubExpr->getBeginLoc()) << "\n";
-            // }
+                #ifdef DEBUG_INST
+                freopen(visitor_OutFile, "a+", stderr);
+                std::cerr << "getArrayUseInLoop :: LHS at " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(lhs->getBeginLoc())
+                          << " is " << lhs->getStmtClassName() << "\n";
 
-            if (clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(rhs))
-            {
-                // std::cout << "rhs is ImplicitCastExpr of Kind " << rImpCastExpr->getCastKindName() << "\n";
-                if (clang::ArraySubscriptExpr *rImparraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rImpCastExpr->IgnoreImplicit()))
+                std::cerr << "getArrayUseInLoop :: RHS at " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rhs->getBeginLoc())
+                          << " is " << rhs->getStmtClassName() << "\n";
+                fclose(stderr);
+                #endif
+
+                if (clang::ArraySubscriptExpr *larraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(lhs))
                 {
-                    std::cout << "rhs is ArraySubscriptExpr\n";
-                    std::cout << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImparraySubExpr->getBeginLoc()) << "\n";
+                    #ifdef DEBUG_INST
+                    freopen(visitor_OutFile, "a+", stderr);
+                    std::cerr << "lhs is ArraySubscriptExpr\n";
+                    std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(larraySubExpr->getBeginLoc()) << "\n";
+                    fclose(stderr);
+                    #endif
+
                     return true;
                 }
-            }
 
-            // if (strcmp(stmt->getStmtClassName(),"ArraySubscriptExpr")==0)
-            // {
-            //     clang::ArraySubscriptExpr *arraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(stmt);
-            //     clang::Expr *arrayBase = arraySubExpr->getBase();
-            //     clang::Expr *arrayIdx = arraySubExpr->getIdx();
-            //     clang::SourceLocation arrayBaseLoc = arrayBase->getBeginLoc();
-            //     clang::SourceLocation arrayIdxLoc = arrayIdx->getBeginLoc();
-            //     unsigned int arrayBaseLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arrayBaseLoc);
-            //     unsigned int arrayIdxLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arrayIdxLoc);
-            //     freopen(visitor_OutFile, "a+", stderr);
-            //     std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << arrayBaseLine << " and " << arrayIdxLine << "\n";
-            //     fclose(stderr);
-            //     return true;
-            // }
+                // if (clang::ArraySubscriptExpr *rarraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rhs))
+                // {
+                //     std::cout << "lhs is ArraySubscriptExpr\n";
+                //     std::cout << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rarraySubExpr->getBeginLoc()) << "\n";
+                // }
+
+                if (clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(rhs))
+                {
+                    // std::cout << "rhs is ImplicitCastExpr of Kind " << rImpCastExpr->getCastKindName() << "\n";
+                    if (clang::ArraySubscriptExpr *rImparraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rImpCastExpr->IgnoreImplicit()))
+                    {
+
+                        #ifdef DEBUG_INST
+                        freopen(visitor_OutFile, "a+", stderr);
+                        std::cerr << "rhs is ArraySubscriptExpr\n";
+                        std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImparraySubExpr->getBeginLoc()) << "\n";
+                        fclose(stderr);
+                        #endif
+
+                        return true;
+                    }
+                }
+
+                // if (strcmp(stmt->getStmtClassName(),"ArraySubscriptExpr")==0)
+                // {
+                //     clang::ArraySubscriptExpr *arraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(stmt);
+                //     clang::Expr *arrayBase = arraySubExpr->getBase();
+                //     clang::Expr *arrayIdx = arraySubExpr->getIdx();
+                //     clang::SourceLocation arrayBaseLoc = arrayBase->getBeginLoc();
+                //     clang::SourceLocation arrayIdxLoc = arrayIdx->getBeginLoc();
+                //     unsigned int arrayBaseLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arrayBaseLoc);
+                //     unsigned int arrayIdxLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arrayIdxLoc);
+                //     freopen(visitor_OutFile, "a+", stderr);
+                //     std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << arrayBaseLine << " and " << arrayIdxLine << "\n";
+                //     fclose(stderr);
+                //     return true;
+                // }
+            }
         }
     }
-
     return false;
 }
 
@@ -745,9 +867,11 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
 
         if (v_declStmt == 0)
         {
+            #ifdef DEBUG_INST
             freopen(visitor_OutFile, "a+", stderr);
             std::cerr << "VisitForStmt :: No Decl Stmt found in Init\n";
             fclose(stderr);
+            #endif
         }
         else
         if (v_declStmt->isSingleDecl())
@@ -767,10 +891,13 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
                 unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
                 unsigned int varCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_varDecl->getBeginLoc());
 
+                #ifdef DEBUG_INST
                 freopen(visitor_OutFile, "a+", stderr);
                 std::cerr << "VisitForStmt :: Variable (SingleDecl) " << varName << " of type " << varType
                           << " declared at line " << varLine << " and column " << varCol << "\n";
                 fclose(stderr);
+                #endif
+
 
                 scope_info.vnam = varName;
                 scope_info.vtyp = varType;
@@ -790,7 +917,13 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
             for (auto decl : v_declStmt->decls())
             {
                 clang::Decl *v_decl = decl;
-                std::cout << "Decl is " << v_decl->getDeclKindName() << "\n";
+
+                #ifdef DEBUG_INST
+                freopen(visitor_OutFile, "a+", stderr);
+                std::cerr << "Decl is " << v_decl->getDeclKindName() << "\n";
+                fclose(stderr);
+                #endif
+
                 // // check if it is a variable declaration and get variable name, line number and column number and type
                 if (strcmp(v_decl->getDeclKindName(), "Var") == 0)
                 {
@@ -800,10 +933,12 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
                     unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
                     unsigned int varCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_varDecl->getBeginLoc());
 
+                    #ifdef DEBUG_INST
                     freopen(visitor_OutFile, "a+", stderr);
                     std::cerr << "VisitForStmt :: Variable (Not SingleDecl) " << varName << " of type " << varType
                               << " declared at line " << varLine << " and column " << varCol << "\n";
                     fclose(stderr);
+                    #endif
 
                     scope_info.vnam = varName;
                     scope_info.vtyp = varType;
@@ -819,16 +954,19 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
                 }
             }
         }
-
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "VisitForStmt :: Decl Stmt found in Init and added to scope_map\n";
         fclose(stderr);
+        #endif
     }
     else
     {
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "VisitForStmt :: No Decl Stmt found in Init\n";
         fclose(stderr);
+        #endif
     }
 
     return true;
@@ -891,9 +1029,11 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
     if (strcmp(s->getStmtClassName(), "WhileStmt") == 0)
     {
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "VisitStmt :: While Statement Found\n";
         fclose(stderr);
+        #endif
 
         clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
 
@@ -936,18 +1076,22 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
     if (strcmp(s->getStmtClassName(), "ForStmt") == 0)
     {
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "VisitStmt :: For Statement Found\n";
         fclose(stderr);
+        #endif
 
         clang::ForStmt *forStmt = clang::dyn_cast<clang::ForStmt>(s);
 
         // Check if there is a variable declaration in the For statement e.g. for (int x; x < 10; x++) and add to scope map
         if (getDeclInForStmt(forStmt))
         {
+            #ifdef DEBUG_INST
             freopen(visitor_OutFile, "a+", stderr);
             std::cerr << "Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()\n";
             fclose(stderr);
+            #endif
         }
 
         clang::SourceLocation nextSourceLoc = forStmt->getBody()->getBeginLoc();
@@ -986,9 +1130,12 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
     if (strcmp(s->getStmtClassName(), "DoStmt") == 0)
     {
+        #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
         std::cerr << "VisitStmt :: Do-While Statement Found\n";
         fclose(stderr);
+        #endif
+
         clang::DoStmt *doStmt = clang::dyn_cast<clang::DoStmt>(s);
         clang::SourceLocation nextSourceLoc = doStmt->getBody()->getBeginLoc();
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
