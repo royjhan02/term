@@ -21,7 +21,7 @@ int check_variable_type_list(std::string varType)
     if (varType == "int" || varType == "long" || varType == "short" || varType == "long long" || varType == "unsigned int" ||
         varType == "unsigned long" || varType == "unsigned short" || varType == "unsigned long long" ||
         varType == "float" || varType == "double" || varType == "long double" ||
-        varType == "char" || varType == "signed char" || varType == "unsigned char" || varType == "char *") // char * for pointer types
+        varType == "char" || varType == "signed char" || varType == "unsigned char" || varType == "char *" || varType == "const char *") // char * for pointer types
     {
         return 1;
     }
@@ -276,7 +276,7 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
                 insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
             else if (t_typ == "char" || t_typ == "signed char" || t_typ == "unsigned char")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
-            else if (t_typ == "char *")
+            else if (t_typ == "char *" || t_typ == "const char *")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%p,\",(void *) &" + instvarName + ");"; // print address of char *
 
             if (check_variable_type_list(t_typ) == 1)
