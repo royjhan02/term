@@ -10,6 +10,8 @@ extern int __VERIFIER_nondet_int(void);
 
 int main()
 {
+
+    char *pc;
     int x;
     int y;
     float array[10];
@@ -48,7 +50,7 @@ int main()
 }
 
 
-int foo(int a, float b)
+int foo(int a, float b, char* funcp)
 {
 int h,m;
 float yy;

@@ -21,7 +21,7 @@ int check_variable_type_list(std::string varType)
     if (varType == "int" || varType == "long" || varType == "short" || varType == "long long" || varType == "unsigned int" ||
         varType == "unsigned long" || varType == "unsigned short" || varType == "unsigned long long" ||
         varType == "float" || varType == "double" || varType == "long double" ||
-        varType == "char" || varType == "signed char" || varType == "unsigned char")
+        varType == "char" || varType == "signed char" || varType == "unsigned char" || varType == "char *") // char * for pointer types
     {
         return 1;
     }
@@ -240,6 +240,8 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
                 insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
             else if (t_typ == "char" || t_typ == "signed char" || t_typ == "unsigned char")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
+            else if (t_typ == "char *")
+                insertStr = insertStr + "printf(\"" + instvarName + "=%p,\",(void *) &" + instvarName + ");"; // print address of char *
 
             if (check_variable_type_list(t_typ) == 1)
             {
@@ -297,6 +299,7 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
     unsigned int cmpndEndLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_compoundStmt->getEndLoc());
     unsigned int cmpndBeginCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_compoundStmt->getBeginLoc());
     unsigned int cmpndEndCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_compoundStmt->getEndLoc());
+
     std::pair<std::string, AVInfo::scope_info> scope_pair;
     AVInfo::scope_info scope_info;
 
@@ -327,6 +330,18 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                     {
                         // break;
                     }
+                    // Check if variable is a char*
+                    else if (v_varDecl->getType()->isPointerType())
+                    {
+                        std::cout << "Pointer type is " << v_varDecl->getType().getAsString() << " :: Variable name is " << v_varDecl->getNameAsString() << "\n";
+                        // if (v_varDecl->getType().getAsString()=="char *")
+                        // {
+                        //     std::cout << "Found char * pointer variable" << "\n";
+                        // }
+                        //std::cout << "Pointee type is " << v_varDecl->getType()->getPointeeType().getAsString() << " :: Variable name is " << v_varDecl->getNameAsString() << "\n";
+                    }
+                    
+
                     std::string varName = v_varDecl->getNameAsString();
                     std::string varType = v_varDecl->getType().getAsString();
                     unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
@@ -481,14 +496,14 @@ bool PyASTVisitor::VisitFunctionDecl(clang::FunctionDecl *fd)
             // Get line and column number of argument
             // std::cout << "Argument " << i << " line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getParamDecl(i)->getBeginLoc()) << "\n";
             // std::cout << "Argument " << i << " column number = " << visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(fd->getParamDecl(i)->getBeginLoc()) << "\n";
-            varName=fd->getParamDecl(i)->getNameAsString();
+            varName = fd->getParamDecl(i)->getNameAsString();
             scope_info.vnam = fd->getParamDecl(i)->getNameAsString();
             scope_info.vtyp = fd->getParamDecl(i)->getType().getAsString();
             scope_info.vlin = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getParamDecl(i)->getBeginLoc());
 
             // scope_info.scopeBeginLine = cmpndBeginLine;
             scope_info.scopeBeginLine = func_begin;
-            
+
             // scope begins at the line of declaration.
             // Fixes compiler error where variable value is printed before declaration
 
