@@ -20,7 +20,8 @@ int check_variable_type_list(std::string varType)
 {
     if (varType == "int" || varType == "long" || varType == "short" || varType == "long long" || varType == "unsigned int" ||
         varType == "unsigned long" || varType == "unsigned short" || varType == "unsigned long long" ||
-        varType == "float" || varType == "double" || varType == "long double" || varType == "char")
+        varType == "float" || varType == "double" || varType == "long double" ||
+        varType == "char" || varType == "signed char" || varType == "unsigned char")
     {
         return 1;
     }
@@ -237,7 +238,7 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
                 insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
             else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
-            else if (t_typ == "char")
+            else if (t_typ == "char" || t_typ == "signed char" || t_typ == "unsigned char")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
 
             if (check_variable_type_list(t_typ) == 1)
