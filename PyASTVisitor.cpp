@@ -475,11 +475,11 @@ bool PyASTVisitor::VisitFunctionDecl(clang::FunctionDecl *fd)
 
     // std::cout << "Found Function Declaration at line = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(fd->getBeginLoc()) << "\n";
     // If function name is not  __VERIFIER_nondet_int then print name of function
-    if (fd->getNameAsString() != "__VERIFIER_nondet_int")
+    std::cout << "Function name is " << fd->getNameAsString() << "\n";
+    clang::Stmt *funcBody = fd->getBody();
+    if (funcBody != 0)
     {
-        std::cout << "Function name is " << fd->getNameAsString() << "\n";
         // Get function body
-        clang::Stmt *funcBody = fd->getBody();
         // Get the begin and end line number of body
         std::cout << "Function body begins at line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getBeginLoc()) << "\n";
         std::cout << "Function body ends at line number = " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(funcBody->getEndLoc()) << "\n";
@@ -511,10 +511,6 @@ bool PyASTVisitor::VisitFunctionDecl(clang::FunctionDecl *fd)
             scope_pair = std::make_pair(varName, scope_info);
             scope_map.insert(scope_pair);
         }
-    }
-    else
-    {
-        std::cout << "Function name is __VERIFIER_nondet_int\n";
     }
 
     return true;
@@ -747,6 +743,13 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
         // if (v_forStmt->getConditionVariableDeclStmt())
         //     const clang::DeclStmt *v_declStmt = v_forStmt->getConditionVariableDeclStmt();
 
+        if (v_declStmt == 0)
+        {
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "VisitForStmt :: No Decl Stmt found in Init\n";
+            fclose(stderr);
+        }
+        else
         if (v_declStmt->isSingleDecl())
         {
             const clang::Decl *v_decl = v_declStmt->getSingleDecl();
