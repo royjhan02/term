@@ -54,8 +54,15 @@ int foo(int a, float b, char* funcp)
 {
 int h,m;
 float yy;
+int z[10];
 	    while (a >= 0) {
 	    	a = a - b;
+		//b = a + b + z[1];
+		//z[1]=b;
+		//b=z[1];
+		b=a+z[1];
+		//b=z[1]+a;
+		//b=a+b+z[2]+a;
 	}
 
 return a;

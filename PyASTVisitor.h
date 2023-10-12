@@ -85,6 +85,7 @@ public:
     //bool print_map_semi(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
     bool show_scope_map(std::multimap<std::string, AVInfo::scope_info> scope_map);
     bool check_variable_scope(std::string varName, clang::SourceLocation loc);
+    bool hasArrayAccessInExpression(clang::Expr *expr);
 
     //bool computeVariableScope(clang::VarDecl *v_varDecl);
     // void printLivenessInfo(clang::FunctionDecl* liveness_fd);

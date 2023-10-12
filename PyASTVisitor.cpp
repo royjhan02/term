@@ -707,6 +707,68 @@ bool PyASTVisitor::VisitVarDecl(clang::VarDecl *v_varDecl)
     return true;
 }
 
+bool PyASTVisitor::hasArrayAccessInExpression(clang::Expr *expr) {
+    if (!expr) {
+        return false;
+    }
+
+    #ifdef DEBUG_INST
+    freopen(visitor_OutFile, "a+", stderr);
+    //Print the string corresponding to the expression expr
+    std::cerr << "hasArrayAccessInExpression :: Expression is " << expr->getStmtClassName() << " at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(expr->getBeginLoc()) << "\n";
+    fclose(stderr);
+    #endif
+
+    if (clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(expr))
+    {
+        if (clang::ArraySubscriptExpr *rImparraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rImpCastExpr->IgnoreImplicit()))
+        {
+            // If the current expression is an ArraySubscriptExpr, we found an array access.
+            std::cout << "hasArrayAccessInExpression :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImparraySubExpr->getBeginLoc()) << "\n";
+            return true;
+        }
+    }
+
+    //clang::ImplicitCastExpr *impCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(expr);
+
+    // if (clang::ArraySubscriptExpr *arraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(expr)) {
+    //     // If the current expression is an ArraySubscriptExpr, we found an array access.
+    //     std::cout << "hasArrayAccessExpression : ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arraySubExpr->getBeginLoc()) << "\n";
+    //     return true;
+    // }
+
+    if (clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(expr))
+    {
+        if (clang::BinaryOperator *binOp = clang::dyn_cast<clang::BinaryOperator>(rImpCastExpr->IgnoreImplicit()))
+        {
+            std::cout << "hasArrayAccessInExpression :: BinOp at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImpCastExpr->getBeginLoc()) << "\n";
+            //  If the current expression is a BinaryOperator, recursively check its operands.
+            if (hasArrayAccessInExpression(binOp->getLHS()) || hasArrayAccessInExpression(binOp->getRHS()))
+            {
+                return true;
+            }
+        }
+    }
+    if (clang::BinaryOperator *binOp = clang::dyn_cast<clang::BinaryOperator>(expr))
+    {
+        std::cout << "hasArrayAccessInExpression :: BinOp at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(expr->getBeginLoc()) << "\n";
+        //  If the current expression is a BinaryOperator, recursively check its operands.
+        if (hasArrayAccessInExpression(binOp->getLHS()) || hasArrayAccessInExpression(binOp->getRHS()))
+        {
+            return true;
+        }
+    }
+
+    //else if ()
+
+    // Handle other expression types as needed.
+
+    return false;
+}
+
+
+
+
 // Check if an array has been used in a loop and turns off  instrumentation
 bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
 {
@@ -771,12 +833,15 @@ bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
             fclose(stderr);
             #endif
 
+
             if (strcmp(stmt->getStmtClassName(), "BinaryOperator") == 0)
             {
                 clang::BinaryOperator *binOp = clang::dyn_cast<clang::BinaryOperator>(stmt);
                 clang::Expr *lhs = binOp->getLHS();
                 clang::Expr *rhs = binOp->getRHS();
 
+                clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(rhs);
+                
                 #ifdef DEBUG_INST
                 freopen(visitor_OutFile, "a+", stderr);
                 std::cerr << "getArrayUseInLoop :: LHS at " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(lhs->getBeginLoc())
@@ -786,6 +851,20 @@ bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
                           << " is " << rhs->getStmtClassName() << "\n";
                 fclose(stderr);
                 #endif
+
+                if (hasArrayAccessInExpression(rhs))
+                {
+                    #ifdef DEBUG_INST
+                    freopen(visitor_OutFile, "a+", stderr);
+                    std::cerr << "ArraySubscriptExpr in rhs\n";
+                    //std::cerr << "getArrayUseInLoop :: hasArrayAccessInExpression:: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImpCastExpr->getBeginLoc()) << "\n";
+                    std::cerr << "getArrayUseInLoop :: hasArrayAccessInExpression:: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rhs->getBeginLoc()) << "\n";
+                    fclose(stderr);
+                    #endif
+
+                    return true;
+                }
+
 
                 if (clang::ArraySubscriptExpr *larraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(lhs))
                 {
@@ -805,37 +884,25 @@ bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
                 //     std::cout << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rarraySubExpr->getBeginLoc()) << "\n";
                 // }
 
-                if (clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(rhs))
-                {
-                    // std::cout << "rhs is ImplicitCastExpr of Kind " << rImpCastExpr->getCastKindName() << "\n";
-                    if (clang::ArraySubscriptExpr *rImparraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rImpCastExpr->IgnoreImplicit()))
-                    {
+                
 
-                        #ifdef DEBUG_INST
-                        freopen(visitor_OutFile, "a+", stderr);
-                        std::cerr << "rhs is ArraySubscriptExpr\n";
-                        std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImparraySubExpr->getBeginLoc()) << "\n";
-                        fclose(stderr);
-                        #endif
-
-                        return true;
-                    }
-                }
-
-                // if (strcmp(stmt->getStmtClassName(),"ArraySubscriptExpr")==0)
+                // if (clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(rhs))
                 // {
-                //     clang::ArraySubscriptExpr *arraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(stmt);
-                //     clang::Expr *arrayBase = arraySubExpr->getBase();
-                //     clang::Expr *arrayIdx = arraySubExpr->getIdx();
-                //     clang::SourceLocation arrayBaseLoc = arrayBase->getBeginLoc();
-                //     clang::SourceLocation arrayIdxLoc = arrayIdx->getBeginLoc();
-                //     unsigned int arrayBaseLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arrayBaseLoc);
-                //     unsigned int arrayIdxLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(arrayIdxLoc);
-                //     freopen(visitor_OutFile, "a+", stderr);
-                //     std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << arrayBaseLine << " and " << arrayIdxLine << "\n";
-                //     fclose(stderr);
-                //     return true;
+                //     // std::cout << "rhs is ImplicitCastExpr of Kind " << rImpCastExpr->getCastKindName() << "\n";
+                //     if (clang::ArraySubscriptExpr *rImparraySubExpr = clang::dyn_cast<clang::ArraySubscriptExpr>(rImpCastExpr->IgnoreImplicit()))
+                //     {
+
+                //         #ifdef DEBUG_INST
+                //         freopen(visitor_OutFile, "a+", stderr);
+                //         std::cerr << "rhs is ArraySubscriptExpr\n";
+                //         std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImparraySubExpr->getBeginLoc()) << "\n";
+                //         fclose(stderr);
+                //         #endif
+
+                //         return true;
+                //     }
                 // }
+
             }
         }
     }

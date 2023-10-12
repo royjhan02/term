@@ -26,6 +26,5 @@ bool PyASTConsumer::HandleTopLevelDecl(clang::DeclGroupRef D)
       this->consumer_pyASTVisitor.TraverseDecl(*it_declGroupRef);
     }
 
-
     return true;
 }

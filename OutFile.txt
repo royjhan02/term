@@ -1,600 +1,317 @@
 
-Found Input File To Parse on disk = input/cstrcmp_reverse_alloca.i
+Found Input File To Parse on disk = input/test1.c
 Output File = OutFile.txt
 
-Function name is __cygwin_lock_init
-VisitVarDecl :: Found VarDecl at line = 23
-Function name is __cygwin_lock_init_recursive
-VisitVarDecl :: Found VarDecl at line = 24
-Function name is __cygwin_lock_fini
-VisitVarDecl :: Found VarDecl at line = 25
-Function name is __cygwin_lock_lock
-VisitVarDecl :: Found VarDecl at line = 26
-Function name is __cygwin_lock_trylock
-VisitVarDecl :: Found VarDecl at line = 27
-Function name is __cygwin_lock_unlock
-VisitVarDecl :: Found VarDecl at line = 28
-VisitVarDecl :: Found VarDecl at line = 94
-VisitVarDecl :: Found VarDecl at line = 94
-VisitVarDecl :: Found VarDecl at line = 94
-VisitVarDecl :: Found VarDecl at line = 94
-VisitVarDecl :: Found VarDecl at line = 95
-VisitVarDecl :: Found VarDecl at line = 95
-VisitVarDecl :: Found VarDecl at line = 95
-VisitVarDecl :: Found VarDecl at line = 95
-VisitVarDecl :: Found VarDecl at line = 96
-VisitVarDecl :: Found VarDecl at line = 96
-VisitVarDecl :: Found VarDecl at line = 96
-VisitVarDecl :: Found VarDecl at line = 96
-VisitVarDecl :: Found VarDecl at line = 97
-VisitVarDecl :: Found VarDecl at line = 97
-VisitVarDecl :: Found VarDecl at line = 121
-VisitVarDecl :: Found VarDecl at line = 121
-VisitVarDecl :: Found VarDecl at line = 121
-VisitVarDecl :: Found VarDecl at line = 121
-VisitVarDecl :: Found VarDecl at line = 122
-VisitVarDecl :: Found VarDecl at line = 122
-VisitVarDecl :: Found VarDecl at line = 122
-VisitVarDecl :: Found VarDecl at line = 122
-VisitVarDecl :: Found VarDecl at line = 123
-VisitVarDecl :: Found VarDecl at line = 123
-VisitVarDecl :: Found VarDecl at line = 123
-VisitVarDecl :: Found VarDecl at line = 123
-VisitVarDecl :: Found VarDecl at line = 124
-VisitVarDecl :: Found VarDecl at line = 124
-VisitVarDecl :: Found VarDecl at line = 134
-VisitVarDecl :: Found VarDecl at line = 134
-VisitVarDecl :: Found VarDecl at line = 134
-VisitVarDecl :: Found VarDecl at line = 134
-VisitVarDecl :: Found VarDecl at line = 159
-VisitVarDecl :: Found VarDecl at line = 198
-VisitVarDecl :: Found VarDecl at line = 202
-VisitVarDecl :: Found VarDecl at line = 203
-Function name is _reclaim_reent
-VisitVarDecl :: Found VarDecl at line = 204
-Function name is __getreent
-Function name is mkdtemp
-VisitVarDecl :: Found VarDecl at line = 206
-Function name is arc4random
-Function name is arc4random_addrandom
-VisitVarDecl :: Found VarDecl at line = 208
-VisitVarDecl :: Found VarDecl at line = 208
-Function name is arc4random_buf
-VisitVarDecl :: Found VarDecl at line = 209
-VisitVarDecl :: Found VarDecl at line = 209
-Function name is arc4random_stir
-Function name is arc4random_uniform
-VisitVarDecl :: Found VarDecl at line = 211
-Function name is getprogname
-Function name is setprogname
-VisitVarDecl :: Found VarDecl at line = 213
-Function name is canonicalize_file_name
-VisitVarDecl :: Found VarDecl at line = 214
-Function name is unsetenv
-VisitVarDecl :: Found VarDecl at line = 215
-Function name is initstate
-VisitVarDecl :: Found VarDecl at line = 216
-VisitVarDecl :: Found VarDecl at line = 216
-VisitVarDecl :: Found VarDecl at line = 216
-Function name is random
-Function name is setstate
-VisitVarDecl :: Found VarDecl at line = 218
-Function name is srandom
-VisitVarDecl :: Found VarDecl at line = 219
-Function name is ptsname
-VisitVarDecl :: Found VarDecl at line = 220
-Function name is ptsname_r
-VisitVarDecl :: Found VarDecl at line = 221
-VisitVarDecl :: Found VarDecl at line = 221
-VisitVarDecl :: Found VarDecl at line = 221
-Function name is getpt
-Function name is grantpt
-VisitVarDecl :: Found VarDecl at line = 223
-Function name is unlockpt
-VisitVarDecl :: Found VarDecl at line = 224
-Function name is posix_openpt
-VisitVarDecl :: Found VarDecl at line = 225
-Function name is posix_memalign
-VisitVarDecl :: Found VarDecl at line = 226
-VisitVarDecl :: Found VarDecl at line = 226
-VisitVarDecl :: Found VarDecl at line = 226
-Function name is memalign
-VisitVarDecl :: Found VarDecl at line = 227
-VisitVarDecl :: Found VarDecl at line = 227
-Function name is valloc
-VisitVarDecl :: Found VarDecl at line = 228
-VisitVarDecl :: Found VarDecl at line = 245
-VisitVarDecl :: Found VarDecl at line = 245
-Function name is __locale_mb_cur_max
-Function name is abort
-Function name is abs
-VisitVarDecl :: Found VarDecl at line = 248
-Function name is atexit
-VisitVarDecl :: Found VarDecl at line = 249
-Function name is atof
-VisitVarDecl :: Found VarDecl at line = 250
-Function name is atoff
-VisitVarDecl :: Found VarDecl at line = 251
-Function name is atoi
-VisitVarDecl :: Found VarDecl at line = 252
-Function name is _atoi_r
-VisitVarDecl :: Found VarDecl at line = 253
-VisitVarDecl :: Found VarDecl at line = 253
-Function name is atol
-VisitVarDecl :: Found VarDecl at line = 254
-Function name is _atol_r
-VisitVarDecl :: Found VarDecl at line = 255
-VisitVarDecl :: Found VarDecl at line = 255
-Function name is bsearch
-VisitVarDecl :: Found VarDecl at line = 256
-VisitVarDecl :: Found VarDecl at line = 256
-VisitVarDecl :: Found VarDecl at line = 256
-VisitVarDecl :: Found VarDecl at line = 256
-VisitVarDecl :: Found VarDecl at line = 256
-Function name is calloc
-VisitVarDecl :: Found VarDecl at line = 257
-VisitVarDecl :: Found VarDecl at line = 257
-Function name is div
-VisitVarDecl :: Found VarDecl at line = 258
-VisitVarDecl :: Found VarDecl at line = 258
-Function name is exit
-VisitVarDecl :: Found VarDecl at line = 259
-Function name is free
-VisitVarDecl :: Found VarDecl at line = 260
-Function name is getenv
-VisitVarDecl :: Found VarDecl at line = 261
-Function name is _getenv_r
-VisitVarDecl :: Found VarDecl at line = 262
-VisitVarDecl :: Found VarDecl at line = 262
-Function name is _findenv
-VisitVarDecl :: Found VarDecl at line = 263
-VisitVarDecl :: Found VarDecl at line = 263
-Function name is _findenv_r
-VisitVarDecl :: Found VarDecl at line = 264
-VisitVarDecl :: Found VarDecl at line = 264
-VisitVarDecl :: Found VarDecl at line = 264
-VisitVarDecl :: Found VarDecl at line = 265
-Function name is getsubopt
-VisitVarDecl :: Found VarDecl at line = 266
-VisitVarDecl :: Found VarDecl at line = 266
-VisitVarDecl :: Found VarDecl at line = 266
-Function name is labs
-VisitVarDecl :: Found VarDecl at line = 267
-Function name is ldiv
-VisitVarDecl :: Found VarDecl at line = 268
-VisitVarDecl :: Found VarDecl at line = 268
-Function name is malloc
-VisitVarDecl :: Found VarDecl at line = 269
-Function name is mblen
-VisitVarDecl :: Found VarDecl at line = 270
-VisitVarDecl :: Found VarDecl at line = 270
-Function name is _mblen_r
-VisitVarDecl :: Found VarDecl at line = 271
-VisitVarDecl :: Found VarDecl at line = 271
-VisitVarDecl :: Found VarDecl at line = 271
-VisitVarDecl :: Found VarDecl at line = 271
-Function name is mbtowc
-VisitVarDecl :: Found VarDecl at line = 272
-VisitVarDecl :: Found VarDecl at line = 272
-VisitVarDecl :: Found VarDecl at line = 272
-Function name is _mbtowc_r
-VisitVarDecl :: Found VarDecl at line = 273
-VisitVarDecl :: Found VarDecl at line = 273
-VisitVarDecl :: Found VarDecl at line = 273
-VisitVarDecl :: Found VarDecl at line = 273
-VisitVarDecl :: Found VarDecl at line = 273
-Function name is wctomb
-VisitVarDecl :: Found VarDecl at line = 274
-VisitVarDecl :: Found VarDecl at line = 274
-Function name is _wctomb_r
-VisitVarDecl :: Found VarDecl at line = 275
-VisitVarDecl :: Found VarDecl at line = 275
-VisitVarDecl :: Found VarDecl at line = 275
-VisitVarDecl :: Found VarDecl at line = 275
-Function name is mbstowcs
-VisitVarDecl :: Found VarDecl at line = 276
-VisitVarDecl :: Found VarDecl at line = 276
-VisitVarDecl :: Found VarDecl at line = 276
-Function name is _mbstowcs_r
-VisitVarDecl :: Found VarDecl at line = 277
-VisitVarDecl :: Found VarDecl at line = 277
-VisitVarDecl :: Found VarDecl at line = 277
-VisitVarDecl :: Found VarDecl at line = 277
-VisitVarDecl :: Found VarDecl at line = 277
-Function name is wcstombs
-VisitVarDecl :: Found VarDecl at line = 278
-VisitVarDecl :: Found VarDecl at line = 278
-VisitVarDecl :: Found VarDecl at line = 278
-Function name is _wcstombs_r
-VisitVarDecl :: Found VarDecl at line = 279
-VisitVarDecl :: Found VarDecl at line = 279
-VisitVarDecl :: Found VarDecl at line = 279
-VisitVarDecl :: Found VarDecl at line = 279
-VisitVarDecl :: Found VarDecl at line = 279
-Function name is mkdtemp
-VisitVarDecl :: Found VarDecl at line = 280
-Function name is mkostemp
-VisitVarDecl :: Found VarDecl at line = 281
-VisitVarDecl :: Found VarDecl at line = 281
-Function name is mkostemps
-VisitVarDecl :: Found VarDecl at line = 282
-VisitVarDecl :: Found VarDecl at line = 282
-VisitVarDecl :: Found VarDecl at line = 282
-Function name is mkstemp
-VisitVarDecl :: Found VarDecl at line = 283
-Function name is mkstemps
-VisitVarDecl :: Found VarDecl at line = 284
-VisitVarDecl :: Found VarDecl at line = 284
-Function name is mktemp
-VisitVarDecl :: Found VarDecl at line = 285
-Function name is _mkdtemp_r
-VisitVarDecl :: Found VarDecl at line = 286
-VisitVarDecl :: Found VarDecl at line = 286
-Function name is _mkostemp_r
-VisitVarDecl :: Found VarDecl at line = 287
-VisitVarDecl :: Found VarDecl at line = 287
-VisitVarDecl :: Found VarDecl at line = 287
-Function name is _mkostemps_r
-VisitVarDecl :: Found VarDecl at line = 288
-VisitVarDecl :: Found VarDecl at line = 288
-VisitVarDecl :: Found VarDecl at line = 288
-VisitVarDecl :: Found VarDecl at line = 288
-Function name is _mkstemp_r
-VisitVarDecl :: Found VarDecl at line = 289
-VisitVarDecl :: Found VarDecl at line = 289
-Function name is _mkstemps_r
-VisitVarDecl :: Found VarDecl at line = 290
-VisitVarDecl :: Found VarDecl at line = 290
-VisitVarDecl :: Found VarDecl at line = 290
-Function name is _mktemp_r
-VisitVarDecl :: Found VarDecl at line = 291
-VisitVarDecl :: Found VarDecl at line = 291
-Function name is qsort
-VisitVarDecl :: Found VarDecl at line = 292
-VisitVarDecl :: Found VarDecl at line = 292
-VisitVarDecl :: Found VarDecl at line = 292
-VisitVarDecl :: Found VarDecl at line = 292
-Function name is rand
-Function name is realloc
-VisitVarDecl :: Found VarDecl at line = 294
-VisitVarDecl :: Found VarDecl at line = 294
-Function name is reallocf
-VisitVarDecl :: Found VarDecl at line = 295
-VisitVarDecl :: Found VarDecl at line = 295
-Function name is realpath
-VisitVarDecl :: Found VarDecl at line = 296
-VisitVarDecl :: Found VarDecl at line = 296
-Function name is srand
-VisitVarDecl :: Found VarDecl at line = 297
-Function name is strtod
-VisitVarDecl :: Found VarDecl at line = 298
-VisitVarDecl :: Found VarDecl at line = 298
-Function name is _strtod_r
-VisitVarDecl :: Found VarDecl at line = 299
-VisitVarDecl :: Found VarDecl at line = 299
-VisitVarDecl :: Found VarDecl at line = 299
-Function name is strtof
-VisitVarDecl :: Found VarDecl at line = 300
-VisitVarDecl :: Found VarDecl at line = 300
-Function name is strtol
-VisitVarDecl :: Found VarDecl at line = 301
-VisitVarDecl :: Found VarDecl at line = 301
-VisitVarDecl :: Found VarDecl at line = 301
-Function name is _strtol_r
-VisitVarDecl :: Found VarDecl at line = 302
-VisitVarDecl :: Found VarDecl at line = 302
-VisitVarDecl :: Found VarDecl at line = 302
-VisitVarDecl :: Found VarDecl at line = 302
-Function name is strtoul
-VisitVarDecl :: Found VarDecl at line = 303
-VisitVarDecl :: Found VarDecl at line = 303
-VisitVarDecl :: Found VarDecl at line = 303
-Function name is _strtoul_r
-VisitVarDecl :: Found VarDecl at line = 304
-VisitVarDecl :: Found VarDecl at line = 304
-VisitVarDecl :: Found VarDecl at line = 304
-VisitVarDecl :: Found VarDecl at line = 304
-Function name is system
-VisitVarDecl :: Found VarDecl at line = 305
-Function name is a64l
-VisitVarDecl :: Found VarDecl at line = 306
-Function name is l64a
-VisitVarDecl :: Found VarDecl at line = 307
-Function name is _l64a_r
-VisitVarDecl :: Found VarDecl at line = 308
-VisitVarDecl :: Found VarDecl at line = 308
-Function name is on_exit
-VisitVarDecl :: Found VarDecl at line = 309
-VisitVarDecl :: Found VarDecl at line = 309
-VisitVarDecl :: Found VarDecl at line = 309
-VisitVarDecl :: Found VarDecl at line = 309
-Function name is _Exit
-VisitVarDecl :: Found VarDecl at line = 310
-Function name is putenv
-VisitVarDecl :: Found VarDecl at line = 311
-Function name is _putenv_r
-VisitVarDecl :: Found VarDecl at line = 312
-VisitVarDecl :: Found VarDecl at line = 312
-Function name is _reallocf_r
-VisitVarDecl :: Found VarDecl at line = 313
-VisitVarDecl :: Found VarDecl at line = 313
-VisitVarDecl :: Found VarDecl at line = 313
-Function name is setenv
-VisitVarDecl :: Found VarDecl at line = 314
-VisitVarDecl :: Found VarDecl at line = 314
-VisitVarDecl :: Found VarDecl at line = 314
-Function name is _setenv_r
-VisitVarDecl :: Found VarDecl at line = 315
-VisitVarDecl :: Found VarDecl at line = 315
-VisitVarDecl :: Found VarDecl at line = 315
-VisitVarDecl :: Found VarDecl at line = 315
-Function name is gcvt
-VisitVarDecl :: Found VarDecl at line = 316
-VisitVarDecl :: Found VarDecl at line = 316
-VisitVarDecl :: Found VarDecl at line = 316
-Function name is gcvtf
-VisitVarDecl :: Found VarDecl at line = 317
-VisitVarDecl :: Found VarDecl at line = 317
-VisitVarDecl :: Found VarDecl at line = 317
-Function name is fcvt
-VisitVarDecl :: Found VarDecl at line = 318
-VisitVarDecl :: Found VarDecl at line = 318
-VisitVarDecl :: Found VarDecl at line = 318
-VisitVarDecl :: Found VarDecl at line = 318
-Function name is fcvtf
-VisitVarDecl :: Found VarDecl at line = 319
-VisitVarDecl :: Found VarDecl at line = 319
-VisitVarDecl :: Found VarDecl at line = 319
-VisitVarDecl :: Found VarDecl at line = 319
-Function name is ecvt
-VisitVarDecl :: Found VarDecl at line = 320
-VisitVarDecl :: Found VarDecl at line = 320
-VisitVarDecl :: Found VarDecl at line = 320
-VisitVarDecl :: Found VarDecl at line = 320
-Function name is ecvtbuf
-VisitVarDecl :: Found VarDecl at line = 321
-VisitVarDecl :: Found VarDecl at line = 321
-VisitVarDecl :: Found VarDecl at line = 321
-VisitVarDecl :: Found VarDecl at line = 321
-VisitVarDecl :: Found VarDecl at line = 321
-Function name is fcvtbuf
-VisitVarDecl :: Found VarDecl at line = 322
-VisitVarDecl :: Found VarDecl at line = 322
-VisitVarDecl :: Found VarDecl at line = 322
-VisitVarDecl :: Found VarDecl at line = 322
-VisitVarDecl :: Found VarDecl at line = 322
-Function name is ecvtf
-VisitVarDecl :: Found VarDecl at line = 323
-VisitVarDecl :: Found VarDecl at line = 323
-VisitVarDecl :: Found VarDecl at line = 323
-VisitVarDecl :: Found VarDecl at line = 323
-Function name is dtoa
-VisitVarDecl :: Found VarDecl at line = 324
-VisitVarDecl :: Found VarDecl at line = 324
-VisitVarDecl :: Found VarDecl at line = 324
-VisitVarDecl :: Found VarDecl at line = 324
-VisitVarDecl :: Found VarDecl at line = 324
-VisitVarDecl :: Found VarDecl at line = 324
-Function name is __itoa
-VisitVarDecl :: Found VarDecl at line = 325
-VisitVarDecl :: Found VarDecl at line = 325
-VisitVarDecl :: Found VarDecl at line = 325
-Function name is __utoa
-VisitVarDecl :: Found VarDecl at line = 326
-VisitVarDecl :: Found VarDecl at line = 326
-VisitVarDecl :: Found VarDecl at line = 326
-Function name is itoa
-VisitVarDecl :: Found VarDecl at line = 327
-VisitVarDecl :: Found VarDecl at line = 327
-VisitVarDecl :: Found VarDecl at line = 327
-Function name is utoa
-VisitVarDecl :: Found VarDecl at line = 328
-VisitVarDecl :: Found VarDecl at line = 328
-VisitVarDecl :: Found VarDecl at line = 328
-Function name is rand_r
-VisitVarDecl :: Found VarDecl at line = 329
-Function name is drand48
-Function name is _drand48_r
-VisitVarDecl :: Found VarDecl at line = 331
-Function name is erand48
-VisitVarDecl :: Found VarDecl at line = 332
-Function name is _erand48_r
-VisitVarDecl :: Found VarDecl at line = 333
-VisitVarDecl :: Found VarDecl at line = 333
-Function name is jrand48
-VisitVarDecl :: Found VarDecl at line = 334
-Function name is _jrand48_r
-VisitVarDecl :: Found VarDecl at line = 335
-VisitVarDecl :: Found VarDecl at line = 335
-Function name is lcong48
-VisitVarDecl :: Found VarDecl at line = 336
-Function name is _lcong48_r
-VisitVarDecl :: Found VarDecl at line = 337
-VisitVarDecl :: Found VarDecl at line = 337
-Function name is lrand48
-Function name is _lrand48_r
-VisitVarDecl :: Found VarDecl at line = 339
-Function name is mrand48
-Function name is _mrand48_r
-VisitVarDecl :: Found VarDecl at line = 341
-Function name is nrand48
-VisitVarDecl :: Found VarDecl at line = 342
-Function name is _nrand48_r
-VisitVarDecl :: Found VarDecl at line = 343
-VisitVarDecl :: Found VarDecl at line = 343
-Function name is seed48
-VisitVarDecl :: Found VarDecl at line = 345
-Function name is _seed48_r
-VisitVarDecl :: Found VarDecl at line = 347
-VisitVarDecl :: Found VarDecl at line = 347
-Function name is srand48
-VisitVarDecl :: Found VarDecl at line = 348
-Function name is _srand48_r
-VisitVarDecl :: Found VarDecl at line = 349
-VisitVarDecl :: Found VarDecl at line = 349
-Function name is atoll
-VisitVarDecl :: Found VarDecl at line = 350
-Function name is _atoll_r
-VisitVarDecl :: Found VarDecl at line = 351
-VisitVarDecl :: Found VarDecl at line = 351
-Function name is llabs
-VisitVarDecl :: Found VarDecl at line = 352
-Function name is lldiv
-VisitVarDecl :: Found VarDecl at line = 353
-VisitVarDecl :: Found VarDecl at line = 353
-Function name is strtoll
-VisitVarDecl :: Found VarDecl at line = 354
-VisitVarDecl :: Found VarDecl at line = 354
-VisitVarDecl :: Found VarDecl at line = 354
-Function name is _strtoll_r
-VisitVarDecl :: Found VarDecl at line = 355
-VisitVarDecl :: Found VarDecl at line = 355
-VisitVarDecl :: Found VarDecl at line = 355
-VisitVarDecl :: Found VarDecl at line = 355
-Function name is strtoull
-VisitVarDecl :: Found VarDecl at line = 356
-VisitVarDecl :: Found VarDecl at line = 356
-VisitVarDecl :: Found VarDecl at line = 356
-Function name is _strtoull_r
-VisitVarDecl :: Found VarDecl at line = 357
-VisitVarDecl :: Found VarDecl at line = 357
-VisitVarDecl :: Found VarDecl at line = 357
-VisitVarDecl :: Found VarDecl at line = 357
-Function name is _dtoa_r
-VisitVarDecl :: Found VarDecl at line = 358
-VisitVarDecl :: Found VarDecl at line = 358
-VisitVarDecl :: Found VarDecl at line = 358
-VisitVarDecl :: Found VarDecl at line = 358
-VisitVarDecl :: Found VarDecl at line = 358
-VisitVarDecl :: Found VarDecl at line = 358
-VisitVarDecl :: Found VarDecl at line = 358
-Function name is _system_r
-VisitVarDecl :: Found VarDecl at line = 359
-VisitVarDecl :: Found VarDecl at line = 359
-Function name is __eprintf
-VisitVarDecl :: Found VarDecl at line = 360
-VisitVarDecl :: Found VarDecl at line = 360
-VisitVarDecl :: Found VarDecl at line = 360
-VisitVarDecl :: Found VarDecl at line = 360
-Function name is strtold
-VisitVarDecl :: Found VarDecl at line = 361
-VisitVarDecl :: Found VarDecl at line = 361
 Function name is __VERIFIER_nondet_int
-Function name is cstrcmp
-Function body begins at line number = 365
-Function body ends at line number = 374
-Number of function arguments = 2
-Argument 0 name = s1
-Argument 0 type = const char *
-Argument 1 name = s2
-Argument 1 type = const char *
-VisitVarDecl :: Found VarDecl at line = 364
-VisitVarDecl :: Found VarDecl at line = 364
-VisitCompoundStmt :: CompoundStmt at line 365 and column 2 to line 374 and column 2
-VisitCompoundStmt :: Substmt is DeclStmt at line 366
-Decl is Var
-VisitCompoundStmt :: Variable (Not SingleDecl) uc1 of type unsigned char declared at line 366 and column 6
-Decl is Var
-VisitCompoundStmt :: Variable (Not SingleDecl) uc2 of type unsigned char declared at line 366 and column 6
-VisitCompoundStmt :: Substmt is WhileStmt at line 367
-VisitCompoundStmt :: Substmt is BinaryOperator at line 371
-VisitCompoundStmt :: Substmt is BinaryOperator at line 372
-VisitCompoundStmt :: Substmt is ReturnStmt at line 373
+Function name is main
+Function body begins at line number = 12
+Function body ends at line number = 50
+Number of function arguments = 0
+VisitCompoundStmt :: CompoundStmt at line 12 and column 1 to line 50 and column 1
+VisitCompoundStmt :: Substmt is DeclStmt at line 14
+Pointer type is char * :: Variable name is pc
+VisitCompoundStmt :: Variable (SingleDecl) pc of type char * declared at line 14 and column 5
+VisitCompoundStmt :: Substmt is DeclStmt at line 15
+VisitCompoundStmt :: Variable (SingleDecl) x of type int declared at line 15 and column 5
+VisitCompoundStmt :: Substmt is DeclStmt at line 16
+VisitCompoundStmt :: Variable (SingleDecl) y of type int declared at line 16 and column 5
+VisitCompoundStmt :: Substmt is DeclStmt at line 17
+VisitCompoundStmt :: Variable (SingleDecl) array of type float[10] declared at line 17 and column 5
+VisitCompoundStmt :: Substmt is DeclStmt at line 18
+VisitCompoundStmt :: Variable (SingleDecl) arrayindex of type int declared at line 18 and column 5
+VisitCompoundStmt :: Substmt is BinaryOperator at line 19
+VisitCompoundStmt :: Substmt is BinaryOperator at line 20
+VisitCompoundStmt :: Substmt is IfStmt at line 22
+VisitCompoundStmt :: Substmt is ForStmt at line 33
+VisitCompoundStmt :: Substmt is WhileStmt at line 38
+VisitCompoundStmt :: Substmt is WhileStmt at line 43
+VisitCompoundStmt :: Substmt is ReturnStmt at line 49
 show_scope_map :: Printing scope map
-s1 => s1 365 374
-s2 => s2 365 374
-uc1 => uc1 366 374
-uc2 => uc2 366 374
-VisitVarDecl :: Found VarDecl at line = 366
-VisitVarDecl :: Found VarDecl at line = 366
+array => array 17 50
+arrayindex => arrayindex 18 50
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
+VisitVarDecl :: Found VarDecl at line = 14
+VisitVarDecl :: Found VarDecl at line = 15
+VisitVarDecl :: Found VarDecl at line = 16
+VisitVarDecl :: Found VarDecl at line = 17
+VisitVarDecl :: Found VarDecl at line = 18
+VisitCompoundStmt :: CompoundStmt at line 22 and column 14 to line 31 and column 2
+VisitCompoundStmt :: Substmt is ForStmt at line 23
+VisitCompoundStmt :: Substmt is WhileStmt at line 27
+show_scope_map :: Printing scope map
+array => array 17 50
+arrayindex => arrayindex 18 50
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
+VisitStmt :: For Statement Found
+Decl is Var
+VisitForStmt :: Variable (Not SingleDecl) loopi of type int declared at line 23 and column 7
+Decl is Var
+VisitForStmt :: Variable (Not SingleDecl) loopj of type int declared at line 23 and column 7
+VisitForStmt :: Decl Stmt found in Init and added to scope_map
+Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 24 is BinaryOperator
+getArrayUseInLoop :: LHS at 24 is DeclRefExpr
+getArrayUseInLoop :: RHS at 24 is ImplicitCastExpr
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 24
+Instrumentation flag = 2
+check_variable_scope :: Checking scope of variable array at print line number : 23
+ <<< check_variable_scope :: Variable array is in scope at print line number : 23 | scope begin = 17 | scope end = 50 >>> 
+check_variable_scope :: Checking scope of variable arrayindex at print line number : 23
+ <<< check_variable_scope :: Variable arrayindex is in scope at print line number : 23 | scope begin = 18 | scope end = 50 >>> 
+check_variable_scope :: Checking scope of variable loopi at print line number : 23
+ <<< check_variable_scope :: Variable loopi is in scope at print line number : 23 | scope begin = 23 | scope end = 25 >>> 
+check_variable_scope :: Checking scope of variable loopj at print line number : 23
+ <<< check_variable_scope :: Variable loopj is in scope at print line number : 23 | scope begin = 23 | scope end = 25 >>> 
+check_variable_scope :: Checking scope of variable pc at print line number : 23
+ <<< check_variable_scope :: Variable pc is in scope at print line number : 23 | scope begin = 14 | scope end = 50 >>> 
+check_variable_scope :: Checking scope of variable x at print line number : 23
+ <<< check_variable_scope :: Variable x is in scope at print line number : 23 | scope begin = 15 | scope end = 50 >>> 
+check_variable_scope :: Checking scope of variable y at print line number : 23
+ <<< check_variable_scope :: Variable y is in scope at print line number : 23 | scope begin = 16 | scope end = 50 >>> 
+Begin inscope_var_pairs :: Printing CBMC scope map
+arrayindex => int
+loopi => int
+loopj => int
+pc => char *
+x => int
+y => int
+End inscope_var_pairs :: Printing CBMC scope map
+eqStrAnd = oarrayindex==arrayindex && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && ox==x && 
+eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && ox==x && oy==y
+VisitVarDecl :: Found VarDecl at line = 23
+VisitVarDecl :: Found VarDecl at line = 23
+VisitCompoundStmt :: CompoundStmt at line 23 and column 41 to line 25 and column 3
+VisitCompoundStmt :: Substmt is BinaryOperator at line 24
+show_scope_map :: Printing scope map
+array => array 17 50
+arrayindex => arrayindex 18 50
+loopi => loopi 23 25
+loopj => loopj 23 25
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
 VisitStmt :: While Statement Found
 getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 368 is UnaryOperator
-getArrayUseInLoop :: Stmt at line 369 is UnaryOperator
+getArrayUseInLoop :: Stmt at line 28 is BinaryOperator
+getArrayUseInLoop :: LHS at 28 is DeclRefExpr
+getArrayUseInLoop :: RHS at 28 is BinaryOperator
+hasArrayAccessInExpression :: Expression is BinaryOperator at line 28
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 28
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 28
+getArrayUseInLoop :: Stmt at line 29 is BinaryOperator
+getArrayUseInLoop :: LHS at 29 is ArraySubscriptExpr
+getArrayUseInLoop :: RHS at 29 is ImplicitCastExpr
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 29
+lhs is ArraySubscriptExpr
+getArrayUseInLoop :: ArraySubscriptExpr at line 29
+VisitCompoundStmt :: CompoundStmt at line 27 and column 21 to line 30 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 28
+VisitCompoundStmt :: Substmt is BinaryOperator at line 29
+show_scope_map :: Printing scope map
+array => array 17 50
+arrayindex => arrayindex 18 50
+loopi => loopi 23 25
+loopj => loopj 23 25
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
+VisitStmt :: For Statement Found
+Decl is Var
+VisitForStmt :: Variable (Not SingleDecl) loopi of type int declared at line 33 and column 7
+Decl is Var
+VisitForStmt :: Variable (Not SingleDecl) loopj of type int declared at line 33 and column 7
+VisitForStmt :: Decl Stmt found in Init and added to scope_map
+Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 34 is BinaryOperator
+getArrayUseInLoop :: LHS at 34 is DeclRefExpr
+getArrayUseInLoop :: RHS at 34 is ImplicitCastExpr
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 34
+getArrayUseInLoop :: Stmt at line 35 is BinaryOperator
+getArrayUseInLoop :: LHS at 35 is ArraySubscriptExpr
+getArrayUseInLoop :: RHS at 35 is ImplicitCastExpr
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 35
+lhs is ArraySubscriptExpr
+getArrayUseInLoop :: ArraySubscriptExpr at line 35
+VisitVarDecl :: Found VarDecl at line = 33
+VisitVarDecl :: Found VarDecl at line = 33
+VisitCompoundStmt :: CompoundStmt at line 33 and column 41 to line 36 and column 3
+VisitCompoundStmt :: Substmt is BinaryOperator at line 34
+VisitCompoundStmt :: Substmt is BinaryOperator at line 35
+show_scope_map :: Printing scope map
+array => array 17 50
+arrayindex => arrayindex 18 50
+loopi => loopi 23 25
+loopi => loopi 33 36
+loopj => loopj 23 25
+loopj => loopj 33 36
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
+VisitStmt :: While Statement Found
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 39 is BinaryOperator
+getArrayUseInLoop :: LHS at 39 is DeclRefExpr
+getArrayUseInLoop :: RHS at 39 is BinaryOperator
+hasArrayAccessInExpression :: Expression is BinaryOperator at line 39
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 39
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 39
 Instrumentation flag = 2
-check_variable_scope :: Checking scope of variable s1 at print line number : 367
- <<< check_variable_scope :: Variable s1 is in scope at print line number : 367 | scope begin = 365 | scope end = 374 >>> 
-check_variable_scope :: Checking scope of variable s2 at print line number : 367
- <<< check_variable_scope :: Variable s2 is in scope at print line number : 367 | scope begin = 365 | scope end = 374 >>> 
-check_variable_scope :: Checking scope of variable uc1 at print line number : 367
- <<< check_variable_scope :: Variable uc1 is in scope at print line number : 367 | scope begin = 366 | scope end = 374 >>> 
-check_variable_scope :: Checking scope of variable uc2 at print line number : 367
- <<< check_variable_scope :: Variable uc2 is in scope at print line number : 367 | scope begin = 366 | scope end = 374 >>> 
+check_variable_scope :: Checking scope of variable array at print line number : 38
+ <<< check_variable_scope :: Variable array is in scope at print line number : 38 | scope begin = 17 | scope end = 50 >>> 
+check_variable_scope :: Checking scope of variable arrayindex at print line number : 38
+ <<< check_variable_scope :: Variable arrayindex is in scope at print line number : 38 | scope begin = 18 | scope end = 50 >>> 
+check_variable_scope :: Checking scope of variable loopi at print line number : 38
+ <<< check_variable_scope :: Variable loopi is not in scope at line number : 38>>> 
+ check_variable_scope :: Checking scope of variable loopj at print line number : 38
+ <<< check_variable_scope :: Variable loopj is not in scope at line number : 38>>> 
+ check_variable_scope :: Checking scope of variable pc at print line number : 38
+ <<< check_variable_scope :: Variable pc is in scope at print line number : 38 | scope begin = 14 | scope end = 50 >>> 
+check_variable_scope :: Checking scope of variable x at print line number : 38
+ <<< check_variable_scope :: Variable x is in scope at print line number : 38 | scope begin = 15 | scope end = 50 >>> 
+check_variable_scope :: Checking scope of variable y at print line number : 38
+ <<< check_variable_scope :: Variable y is in scope at print line number : 38 | scope begin = 16 | scope end = 50 >>> 
 Begin inscope_var_pairs :: Printing CBMC scope map
-s1 => const char *
-s2 => const char *
-uc1 => unsigned char
-uc2 => unsigned char
+arrayindex => int
+pc => char *
+x => int
+y => int
 End inscope_var_pairs :: Printing CBMC scope map
-eqStrAnd = os1==s1 && 
-eqStrAnd = os1==s1 && os2==s2 && 
-eqStrAnd = os1==s1 && os2==s2 && ouc1==uc1 && 
-eqStrAnd = os1==s1 && os2==s2 && ouc1==uc1 && ouc2==uc2
-VisitCompoundStmt :: CompoundStmt at line 367 and column 40 to line 370 and column 6
-VisitCompoundStmt :: Substmt is UnaryOperator at line 368
-VisitCompoundStmt :: Substmt is UnaryOperator at line 369
+eqStrAnd = oarrayindex==arrayindex && 
+eqStrAnd = oarrayindex==arrayindex && opc==pc && 
+eqStrAnd = oarrayindex==arrayindex && opc==pc && ox==x && 
+eqStrAnd = oarrayindex==arrayindex && opc==pc && ox==x && oy==y
+VisitCompoundStmt :: CompoundStmt at line 38 and column 21 to line 40 and column 2
+VisitCompoundStmt :: Substmt is BinaryOperator at line 39
 show_scope_map :: Printing scope map
-s1 => s1 365 374
-s2 => s2 365 374
-uc1 => uc1 366 374
-uc2 => uc2 366 374
-Function name is main
-Function body begins at line number = 375
-Function body ends at line number = 391
-Number of function arguments = 0
-VisitCompoundStmt :: CompoundStmt at line 375 and column 12 to line 391 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 376
-VisitCompoundStmt :: Variable (SingleDecl) length1 of type int declared at line 376 and column 5
-VisitCompoundStmt :: Substmt is DeclStmt at line 377
-VisitCompoundStmt :: Variable (SingleDecl) length2 of type int declared at line 377 and column 5
-VisitCompoundStmt :: Substmt is IfStmt at line 378
-VisitCompoundStmt :: Substmt is IfStmt at line 381
-VisitCompoundStmt :: Substmt is DeclStmt at line 384
-Pointer type is char * :: Variable name is nondetString1
-VisitCompoundStmt :: Variable (SingleDecl) nondetString1 of type char * declared at line 384 and column 5
-VisitCompoundStmt :: Substmt is DeclStmt at line 385
-Pointer type is char * :: Variable name is nondetString2
-VisitCompoundStmt :: Variable (SingleDecl) nondetString2 of type char * declared at line 385 and column 5
-VisitCompoundStmt :: Substmt is BinaryOperator at line 386
-VisitCompoundStmt :: Substmt is BinaryOperator at line 387
-VisitCompoundStmt :: Substmt is CompoundAssignOperator at line 388
-VisitCompoundStmt :: Substmt is CompoundAssignOperator at line 389
-VisitCompoundStmt :: Substmt is ReturnStmt at line 390
+array => array 17 50
+arrayindex => arrayindex 18 50
+loopi => loopi 23 25
+loopi => loopi 33 36
+loopj => loopj 23 25
+loopj => loopj 33 36
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
+VisitStmt :: While Statement Found
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 44 is BinaryOperator
+getArrayUseInLoop :: LHS at 44 is DeclRefExpr
+getArrayUseInLoop :: RHS at 44 is BinaryOperator
+hasArrayAccessInExpression :: Expression is BinaryOperator at line 44
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 44
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 44
+getArrayUseInLoop :: Stmt at line 45 is BinaryOperator
+getArrayUseInLoop :: LHS at 45 is ArraySubscriptExpr
+getArrayUseInLoop :: RHS at 45 is ImplicitCastExpr
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 45
+ArraySubscriptExpr in rhs
+getArrayUseInLoop :: hasArrayAccessInExpression:: ArraySubscriptExpr at line 45
+VisitCompoundStmt :: CompoundStmt at line 43 and column 21 to line 47 and column 2
+VisitCompoundStmt :: Substmt is BinaryOperator at line 44
+VisitCompoundStmt :: Substmt is BinaryOperator at line 45
+VisitCompoundStmt :: Substmt is BinaryOperator at line 46
 show_scope_map :: Printing scope map
-length1 => length1 376 391
-length2 => length2 377 391
-nondetString1 => nondetString1 384 391
-nondetString2 => nondetString2 385 391
-s1 => s1 365 374
-s2 => s2 365 374
-uc1 => uc1 366 374
-uc2 => uc2 366 374
-VisitVarDecl :: Found VarDecl at line = 376
-VisitVarDecl :: Found VarDecl at line = 377
-VisitCompoundStmt :: CompoundStmt at line 378 and column 22 to line 380 and column 5
-VisitCompoundStmt :: Substmt is BinaryOperator at line 379
+array => array 17 50
+arrayindex => arrayindex 18 50
+loopi => loopi 23 25
+loopi => loopi 33 36
+loopj => loopj 23 25
+loopj => loopj 33 36
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
+Function name is foo
+Function body begins at line number = 54
+Function body ends at line number = 70
+Number of function arguments = 3
+Argument 0 name = a
+Argument 0 type = int
+Argument 1 name = b
+Argument 1 type = float
+Argument 2 name = funcp
+Argument 2 type = char *
+VisitVarDecl :: Found VarDecl at line = 53
+VisitVarDecl :: Found VarDecl at line = 53
+VisitVarDecl :: Found VarDecl at line = 53
+VisitCompoundStmt :: CompoundStmt at line 54 and column 1 to line 70 and column 1
+VisitCompoundStmt :: Substmt is DeclStmt at line 55
+Decl is Var
+VisitCompoundStmt :: Variable (Not SingleDecl) h of type int declared at line 55 and column 1
+Decl is Var
+VisitCompoundStmt :: Variable (Not SingleDecl) m of type int declared at line 55 and column 1
+VisitCompoundStmt :: Substmt is DeclStmt at line 56
+VisitCompoundStmt :: Variable (SingleDecl) yy of type float declared at line 56 and column 1
+VisitCompoundStmt :: Substmt is DeclStmt at line 57
+VisitCompoundStmt :: Variable (SingleDecl) z of type int[10] declared at line 57 and column 1
+VisitCompoundStmt :: Substmt is WhileStmt at line 58
+VisitCompoundStmt :: Substmt is ReturnStmt at line 68
 show_scope_map :: Printing scope map
-length1 => length1 376 391
-length2 => length2 377 391
-nondetString1 => nondetString1 384 391
-nondetString2 => nondetString2 385 391
-s1 => s1 365 374
-s2 => s2 365 374
-uc1 => uc1 366 374
-uc2 => uc2 366 374
-VisitCompoundStmt :: CompoundStmt at line 381 and column 22 to line 383 and column 5
-VisitCompoundStmt :: Substmt is BinaryOperator at line 382
+a => a 54 70
+array => array 17 50
+arrayindex => arrayindex 18 50
+b => b 54 70
+funcp => funcp 54 70
+h => h 55 70
+loopi => loopi 23 25
+loopi => loopi 33 36
+loopj => loopj 23 25
+loopj => loopj 33 36
+m => m 55 70
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
+yy => yy 56 70
+z => z 57 70
+VisitVarDecl :: Found VarDecl at line = 55
+VisitVarDecl :: Found VarDecl at line = 55
+VisitVarDecl :: Found VarDecl at line = 56
+VisitVarDecl :: Found VarDecl at line = 57
+VisitStmt :: While Statement Found
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 59 is BinaryOperator
+getArrayUseInLoop :: LHS at 59 is DeclRefExpr
+getArrayUseInLoop :: RHS at 59 is ImplicitCastExpr
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 59
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 59
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 59
+getArrayUseInLoop :: Stmt at line 63 is BinaryOperator
+getArrayUseInLoop :: LHS at 63 is DeclRefExpr
+getArrayUseInLoop :: RHS at 63 is ImplicitCastExpr
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 63
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 63
+hasArrayAccessInExpression :: Expression is ImplicitCastExpr at line 63
+ArraySubscriptExpr in rhs
+getArrayUseInLoop :: hasArrayAccessInExpression:: ArraySubscriptExpr at line 63
+VisitCompoundStmt :: CompoundStmt at line 58 and column 21 to line 66 and column 2
+VisitCompoundStmt :: Substmt is BinaryOperator at line 59
+VisitCompoundStmt :: Substmt is BinaryOperator at line 63
 show_scope_map :: Printing scope map
-length1 => length1 376 391
-length2 => length2 377 391
-nondetString1 => nondetString1 384 391
-nondetString2 => nondetString2 385 391
-s1 => s1 365 374
-s2 => s2 365 374
-uc1 => uc1 366 374
-uc2 => uc2 366 374
-VisitVarDecl :: Found VarDecl at line = 384
-VisitVarDecl :: Found VarDecl at line = 385
+a => a 54 70
+array => array 17 50
+arrayindex => arrayindex 18 50
+b => b 54 70
+funcp => funcp 54 70
+h => h 55 70
+loopi => loopi 23 25
+loopi => loopi 33 36
+loopj => loopj 23 25
+loopj => loopj 33 36
+m => m 55 70
+pc => pc 14 50
+x => x 15 50
+y => y 16 50
+yy => yy 56 70
+z => z 57 70
 
 Finished call to function ParseAST   
 
