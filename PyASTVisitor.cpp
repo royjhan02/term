@@ -46,6 +46,40 @@ bool PyASTVisitor::show_scope_map(std::multimap<std::string, AVInfo::scope_info>
     return true;
 }
 
+bool PyASTVisitor::check_alloca_map(std::string varName, clang::SourceLocation loc)
+{
+    //print alloca_map
+    #ifdef DEBUG_INST
+    freopen(visitor_OutFile, "a+", stderr);
+    std::cerr << "check_alloca_map :: Printing alloca map\n";
+    for (auto it = alloca_map.begin(); it != alloca_map.end(); ++it)
+    {
+        std::cerr << it->first << " => " << it->second.vnam << " " << it->second.scopeBeginLine << " " << it->second.scopeEndLine << "\n";
+    }
+    fclose(stderr);
+    #endif
+
+    //iterate over alloca map and check if varName is in alloca map
+    for (auto it = alloca_map.begin(); it != alloca_map.end(); ++it)
+    {
+        if (it->first == varName)
+        {
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << " <<< check_alloca_map :: Variable " << varName << " is in alloca map at line number : " << visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) << " >>> \n";
+            fclose(stderr);
+            #endif
+            return true;
+            // if (it->second.scopeBeginLine <= visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc) && it->second.scopeEndLine >= visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc))
+            // {
+
+            //     return true;
+            // }
+        }
+    }
+    return false;
+}
+
 bool PyASTVisitor::check_variable_scope(std::string varName, clang::SourceLocation loc)
 {
     unsigned int lineNum = visitor_CompilerInstance->getSourceManager().getSpellingLineNumber(loc);
@@ -154,6 +188,11 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
                     inscope_pair = std::make_pair(instvarName, t_typ);
                     inscope_vars_pair.push_back(inscope_pair);
                 }
+                if (check_alloca_map(instvarName, srcLoc))
+                {
+                    inscope_pair = std::make_pair(instvarName, t_typ);
+                    inscope_vars_pair.push_back(inscope_pair);
+                }
             }
         }
 
@@ -173,6 +212,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         std::string defStr = "";
         std::string eqStrAnd = "";
         std::string eqStrSemi = "";
+        std::string eqStrAlloca = "";
 
         insertStr = insertStr + "printf(\"CBMC Instrumentation @ line" + std::to_string(lineNum) + "\");";
         insertStr = insertStr + "static myBool pStored = myFalse;";
@@ -190,10 +230,21 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             scope_instvarName = it->first;
 
             std::string oinstvarName = "o" + scope_instvarName;
+            std::string allocainstvarName = "*" + scope_instvarName;
+            std::string allocaoinstvarName = "*" +  oinstvarName;
+
             defStr = defStr + "static " + scope_t_typ + " " + oinstvarName + ";";
             eqStrSemi = eqStrSemi + oinstvarName + "=" + scope_instvarName + ";";
+            if (scope_t_typ=="int *")
+            {
+                eqStrSemi = eqStrSemi + allocaoinstvarName + "=" + allocainstvarName + ";";
+            }
             // eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName + " && ";
             eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName;
+            if (scope_t_typ=="int *")
+            {
+                eqStrAnd = eqStrAnd + allocaoinstvarName + "=" + allocainstvarName + ";";
+            }
 
             if (vec_loc != inscope_vars_pair.size() - 1)
             {
@@ -342,6 +393,8 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
 
     std::pair<std::string, AVInfo::scope_info> scope_pair;
     AVInfo::scope_info scope_info;
+    std::pair<std::string, AVInfo::alloca_scope_info> alloca_pair;
+    AVInfo::alloca_scope_info alloca_info;
 
     #ifdef DEBUG_INST
     freopen(visitor_OutFile, "a+", stderr);
@@ -384,6 +437,54 @@ bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
                         std::cerr << "Pointer type is " << v_varDecl->getType().getAsString() << " :: Variable name is " << v_varDecl->getNameAsString() << "\n";
                         fclose(stderr);
                         #endif
+
+                        if (v_varDecl->getType().getAsString()=="int *")
+                        {
+                            if (clang::Expr *initExpr = v_varDecl->getInit())
+                            {
+                                #ifdef DEBUG_INST
+                                freopen(visitor_OutFile, "a+", stderr);
+                                std::cerr << "Found POINTER " << v_varDecl->getType().getAsString() << " :: Variable name is " << v_varDecl->getNameAsString() << "\n";
+                                std::cerr << "InitExpr is " << initExpr->getStmtClassName() << "\n";
+                                fclose(stderr);
+                                #endif
+                               //Convert initial expression to a string
+                                std::string initExprStr;
+                                llvm::raw_string_ostream rso(initExprStr);
+                                initExpr->printPretty(rso, nullptr, clang::PrintingPolicy(visitor_CompilerInstance->getLangOpts()));
+                                std::string initExprStr2 = rso.str();
+                                //if keyword alloca is in found in initExprStr2 set flag
+                                if (initExprStr2.find("alloca") != std::string::npos)
+                                {
+                                    #ifdef DEBUG_INST
+                                    freopen(visitor_OutFile, "a+", stderr);
+                                    std::cerr << "alloca found in POINTER InitExprStr " << initExprStr2 << "\n";
+                                    fclose(stderr);
+                                    #endif
+                                    std::string varName = v_varDecl->getNameAsString();
+                                    std::string varType = v_varDecl->getType().getAsString();
+                                    unsigned int varLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_varDecl->getBeginLoc());
+                                    unsigned int varCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_varDecl->getBeginLoc());
+                                    alloca_info.vnam = varName;
+                                    alloca_info.vtyp = varType;
+                                    alloca_info.vlin = varLine;
+
+                                    // scope_info.scopeBeginLine = cmpndBeginLine;
+                                    alloca_info.scopeBeginLine = varLine; // scope begins at the line of declaration.
+                                    // Fixes compiler error where variable value is printed before declaration
+
+                                    alloca_info.scopeEndLine = cmpndEndLine;
+                                    alloca_pair = std::make_pair(varName, alloca_info);
+                                    alloca_map.insert(alloca_pair);
+                                }
+                                #ifdef DEBUG_INST
+                                freopen(visitor_OutFile, "a+", stderr);
+                                std::cerr << "POINTER InitExprStr is " << initExprStr2 << "\n";
+                                fclose(stderr);
+                                #endif
+                            }
+                            //Get the initial value assigned to the pointer variable declaration
+                        }
 
                         // if (v_varDecl->getType().getAsString()=="char *")
                         // {
