@@ -21,7 +21,9 @@ int check_variable_type_list(std::string varType)
     if (varType == "int" || varType == "long" || varType == "short" || varType == "long long" || varType == "unsigned int" ||
         varType == "unsigned long" || varType == "unsigned short" || varType == "unsigned long long" ||
         varType == "float" || varType == "double" || varType == "long double" ||
-        varType == "char" || varType == "signed char" || varType == "unsigned char" || varType == "char *" || varType == "const char *") // char * for pointer types
+        varType == "_Bool" ||
+        varType == "char" || varType == "signed char" || varType == "unsigned char" ||
+        varType == "char *" || varType == "const char *" || varType == "unsigned char *" || varType == "const unsigned char *") // char * for pointer types
     {
         return 1;
     }
@@ -216,7 +218,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
 
         insertStr = insertStr + "printf(\"CBMC Instrumentation @ line" + std::to_string(lineNum) + "\");";
         insertStr = insertStr + "static myBool pStored = myFalse;";
-        insertStr = insertStr + "myBool flag=__VERIFIER_nondet_myBool();";
+        insertStr = insertStr + "myBool flag=(__VERIFIER_nondet_myBool() && !pStored);";
 
         std::string scope_t_typ;
         std::string scope_instvarName;
@@ -321,13 +323,13 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
 
         if (check_variable_scope(instvarName, srcLoc))
         {
-            if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
+            if (t_typ == "_Bool" || t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
             else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
             else if (t_typ == "char" || t_typ == "signed char" || t_typ == "unsigned char")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
-            else if (t_typ == "char *" || t_typ == "const char *")
+            else if (t_typ == "char *" || t_typ == "const char *" || t_typ == "unsigned char *" || t_typ == "const unsigned char *")
                 insertStr = insertStr + "printf(\"" + instvarName + "=%p,\",(void *) &" + instvarName + ");"; // print address of char *
 
             if (check_variable_type_list(t_typ) == 1)
