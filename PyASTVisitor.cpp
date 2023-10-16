@@ -793,6 +793,57 @@ bool PyASTVisitor::hasArrayAccessInExpression(clang::Expr *expr) {
         return true;
     }
 
+    // Check if stmt is a ternary operator (conditional operator)
+    if (clang::ConditionalOperator *condOp = clang::dyn_cast<clang::ConditionalOperator>(expr))
+    {
+        // std::cout << "getArrayUseInLoop :: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(stmt->getBeginLoc()) << "\n";
+        //clang::ConditionalOperator *condOp = clang::dyn_cast<clang::ConditionalOperator>(stmt);
+        clang::Expr *cond = condOp->getCond();
+        clang::Expr *trueExpr = condOp->getTrueExpr();
+        clang::Expr *falseExpr = condOp->getFalseExpr();
+
+        #ifdef DEBUG_INST
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "hasArrayAccessInExpression :: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(condOp->getBeginLoc()) << "\n";
+        std::cerr << "hasArrayAccessInExpression :: ConditionalOperator :: Cond at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(cond->getBeginLoc()) << "\n";
+        std::cerr << "hasArrayAccessInExpression :: ConditionalOperator :: TrueExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(trueExpr->getBeginLoc()) << "\n";
+        std::cerr << "hasArrayAccessInExpression :: ConditionalOperator :: FalseExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(falseExpr->getBeginLoc()) << "\n";
+        fclose(stderr);
+        #endif
+
+        if (hasArrayAccessInExpression(cond))
+        {
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "hasArrayAccessInExpression:: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(cond->getBeginLoc()) << "\n";
+            fclose(stderr);
+            #endif
+
+            return true;
+        }
+
+        if (hasArrayAccessInExpression(trueExpr))
+        {
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "hasArrayAccessInExpression:: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(trueExpr->getBeginLoc()) << "\n";
+            fclose(stderr);
+            #endif
+
+            return true;
+        }
+
+        if (hasArrayAccessInExpression(falseExpr))
+        {
+            #ifdef DEBUG_INST
+            freopen(visitor_OutFile, "a+", stderr);
+            std::cerr << "hasArrayAccessInExpression:: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(falseExpr->getBeginLoc()) << "\n";
+            fclose(stderr);
+            #endif
+
+            return true;
+        }
+    }
 
     if (clang::ImplicitCastExpr *rImpCastExpr = clang::dyn_cast<clang::ImplicitCastExpr>(expr))
     {
@@ -1018,7 +1069,58 @@ bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
             fclose(stderr);
             #endif
 
+            if (strcmp(stmt->getStmtClassName(), "ConditionalOperator") == 0)
+            {
+                // std::cout << "getArrayUseInLoop :: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(stmt->getBeginLoc()) << "\n";
+                clang::ConditionalOperator *condOp = clang::dyn_cast<clang::ConditionalOperator>(stmt);
+                clang::Expr *cond = condOp->getCond();
+                clang::Expr *trueExpr = condOp->getTrueExpr();
+                clang::Expr *falseExpr = condOp->getFalseExpr();
 
+                #ifdef DEBUG_INST
+                freopen(visitor_OutFile, "a+", stderr);
+                std::cerr << "getArrayUseInLoop :: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(condOp->getBeginLoc()) << "\n";
+                std::cerr << "getArrayUseInLoop :: ConditionalOperator :: Cond at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(cond->getBeginLoc()) << "\n";
+                std::cerr << "getArrayUseInLoop :: ConditionalOperator :: TrueExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(trueExpr->getBeginLoc()) << "\n";
+                std::cerr << "getArrayUseInLoop :: ConditionalOperator :: FalseExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(falseExpr->getBeginLoc()) << "\n";
+                fclose(stderr);
+                #endif
+
+                if (hasArrayAccessInExpression(cond))
+                {
+                    #ifdef DEBUG_INST
+                    freopen(visitor_OutFile, "a+", stderr);
+                    std::cerr << "getArrayUseInLoop :: hasArrayAccessInExpression:: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(cond->getBeginLoc()) << "\n";
+                    fclose(stderr);
+                    #endif
+
+                    return true;
+                }
+
+                if (hasArrayAccessInExpression(trueExpr))
+                {
+                    #ifdef DEBUG_INST
+                    freopen(visitor_OutFile, "a+", stderr);
+                    std::cerr << "getArrayUseInLoop :: hasArrayAccessInExpression:: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(trueExpr->getBeginLoc()) << "\n";
+                    fclose(stderr);
+                    #endif
+
+                    return true;
+                }
+
+                if (hasArrayAccessInExpression(falseExpr))
+                {
+                    #ifdef DEBUG_INST
+                    freopen(visitor_OutFile, "a+", stderr);
+                    std::cerr << "getArrayUseInLoop :: hasArrayAccessInExpression:: ConditionalOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(falseExpr->getBeginLoc()) << "\n";
+                    fclose(stderr);
+                    #endif
+
+                    return true;
+                }
+            }
+
+            //At this level the BinaryOperator expected is Assignment =
             if (strcmp(stmt->getStmtClassName(), "BinaryOperator") == 0)
             {
                 clang::BinaryOperator *binOp = clang::dyn_cast<clang::BinaryOperator>(stmt);
@@ -1063,57 +1165,6 @@ bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
                     return true;
                 }
             }
-            // else if(strcmp(stmt->getStmtClassName(), "UnaryOperator") == 0)
-            // {
-            //     clang::UnaryOperator *unOp = clang::dyn_cast<clang::UnaryOperator>(stmt);
-            //     clang::Expr *expr = unOp->getSubExpr();
-
-            //     if (hasArrayAccessInExpression(expr))
-            //     {
-            //         #ifdef DEBUG_INST
-            //         freopen(visitor_OutFile, "a+", stderr);
-            //         std::cerr << "ArraySubscriptExpr in expr\n";
-            //         std::cerr << "getArrayUseInLoop :: hasArrayAccessInExpression:: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(expr->getBeginLoc()) << "\n";
-            //         fclose(stderr);
-            //         #endif
-
-            //         return true;
-            //     }
-            // }
-            // else if (strcmp(stmt->getStmtClassName(), "DeclRefExpr") == 0)
-            // {
-            //     clang::DeclRefExpr *declRefExpr = clang::dyn_cast<clang::DeclRefExpr>(stmt);
-            //     clang::ValueDecl *valueDecl = declRefExpr->getDecl();
-            //     clang::VarDecl *varDecl = clang::dyn_cast<clang::VarDecl>(valueDecl);
-
-            //     if (varDecl->getType()->isArrayType())
-            //     {
-            //         #ifdef DEBUG_INST
-            //         freopen(visitor_OutFile, "a+", stderr);
-            //         std::cerr << "ArraySubscriptExpr in DeclRefExpr\n";
-            //         std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(stmt->getBeginLoc()) << "\n";
-            //         fclose(stderr);
-            //         #endif
-
-            //         return true;
-            //     }
-            // }
-            // else if (strcmp(stmt->getStmtClassName(), "CallExpr") == 0)
-            // {
-            //     clang::CallExpr *callExpr = clang::dyn_cast<clang::CallExpr>(stmt);
-            //     clang::FunctionDecl *funcDecl = callExpr->getDirectCallee();
-
-            //     if (funcDecl)
-            //     {
-            //         if (funcDecl->getNameAsString() == "malloc")
-            //         {
-            //             #ifdef DEBUG_INST
-            //             freopen(visitor_OutFile, "a+", stderr);
-            //             std::cerr << "ArraySubscriptExpr in malloc\n";
-            //             std::cerr << "getArrayUseInLoop :: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(stmt->getBeginLoc()) << "\n";
-            //         }
-            //     }
-            // }
         }
     }
     return false;

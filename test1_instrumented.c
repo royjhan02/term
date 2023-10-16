@@ -56,7 +56,9 @@ int foo(int a, float b, char* funcp)
 int h,m;
 float yy;
 int z[10];
-	    while (a >= 0) {printf("CBMC Instrumentation @ line58");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oa;static float ob;static char * ofuncp;static int oh;static int om;static float oyy;if(pStored){__CPROVER_assert(!(oa==a && ob==b && ofuncp==funcp && oh==h && om==m && oyy==yy),"recurrent state found");} if(flag){oa=a;ob=b;ofuncp=funcp;oh=h;om=m;oyy=yy;pStored=myTrue;}
+int ret;
+int i;
+	    while (a >= 0) {printf("ArrayNT State @ line60: Array Found\n");
 	    	a = a - b;
 		//b = a + b + z[1];
 		//b=-z[1];	
@@ -71,6 +73,14 @@ int z[10];
 		//b=a+z[1]-z[2]++;
 		//b=z[1]+a;
 		//b=a+b+z[2]+a;
+		//h=(z[2]==0)?(a=1):(a=2);
+		//(z[2]==0)?(a=1):(a=2);
+		//(a==0)?(z[1]=1):(a=2);
+		//(a==0)?(a=1):(z[2]=2);
+		//ret = ret < z[i]?z[i]:ret;
+		ret = ret < z[i]?ret:ret;
+
+
 	}
 
 return a;
