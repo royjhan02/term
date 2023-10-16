@@ -56,12 +56,19 @@ int foo(int a, float b, char* funcp)
 int h,m;
 float yy;
 int z[10];
-	    while (a >= 0) {printf("ArrayNT State @ line58: Array Found\n");
+	    while (a >= 0) {printf("CBMC Instrumentation @ line58");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oa;static float ob;static char * ofuncp;static int oh;static int om;static float oyy;if(pStored){__CPROVER_assert(!(oa==a && ob==b && ofuncp==funcp && oh==h && om==m && oyy==yy),"recurrent state found");} if(flag){oa=a;ob=b;ofuncp=funcp;oh=h;om=m;oyy=yy;pStored=myTrue;}
 	    	a = a - b;
 		//b = a + b + z[1];
+		//b=-z[1];	
+		//b=z[1]++;
+		//b=a+z[2]++;
+		//b=-z[1]+a;	
+		//b=a-(z[1]++);
+		//b=++z[1];
+		//b=(z[1]++);
 		//z[1]=b;
 		//b=z[1];
-		b=a+z[1];
+		//b=a+z[1]-z[2]++;
 		//b=z[1]+a;
 		//b=a+b+z[2]+a;
 	}
