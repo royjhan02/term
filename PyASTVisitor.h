@@ -91,6 +91,7 @@ public:
     bool print_map(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
     bool print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
     bool print_other(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
+    bool print_trace(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
     //bool print_map_semi(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message);
     bool show_scope_map(std::multimap<std::string, AVInfo::scope_info> scope_map);
     bool check_variable_scope(std::string varName, clang::SourceLocation loc);

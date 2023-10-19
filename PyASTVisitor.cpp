@@ -262,7 +262,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             vec_loc++;
         }
         insertStr = insertStr + defStr;
-        insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi + "pStored=myTrue;}";
+        insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi + "pStored=myTrue;} ";
 
         // clang::SourceLocation nextSourceLoc = stmtEndloc;
         // if (!scope_map.empty())
@@ -294,6 +294,30 @@ bool PyASTVisitor::print_other(clang::SourceLocation srcLoc, unsigned int lineNu
         insertStr = insertStr + "printf(\"ArrayNT State @ line" + std::to_string(lineNum) + ": Array Found\\n\");";
         vRewriter.InsertTextAfterToken(srcLoc, insertStr);
     }
+
+    return true;
+}
+
+bool PyASTVisitor::print_trace(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
+{
+    std::string insertStr = "";
+    if (message == "reached_control")
+    {
+        insertStr = insertStr + " __VERIFIER_reached_control(" + std::to_string(lineNum) + ", \" \");\n";
+    }
+    else if (message == "loop_head")
+    {
+        insertStr = insertStr + " __VERIFIER_loop_head(" + std::to_string(lineNum) + ", \" \");\n";
+    }
+    else if (message == "control_true")
+    {
+        insertStr = insertStr + " __VERIFIER_control_true(" + std::to_string(lineNum) + ", \" \");\n";
+    }
+    else if (message == "control_false")
+    {
+        insertStr = insertStr + " __VERIFIER_control_false(" + std::to_string(lineNum) + ", \" \");\n";
+    }
+    vRewriter.InsertTextAfterToken(srcLoc, insertStr);
 
     return true;
 }
@@ -713,7 +737,14 @@ bool PyASTVisitor::VisitDecl(clang::Decl *d)
         //     insertStr = "#include <stdio.h>\n";
         // else
         if (instrumentation_flag == 2)
-            insertStr = "typedef enum {myFalse, myTrue} myBool; myBool __VERIFIER_nondet_myBool(void);\n";
+        {
+            //insertStr = "typedef enum {myFalse, myTrue} myBool; myBool __VERIFIER_nondet_myBool(void);\n";
+            insertStr = "typedef enum {myFalse, myTrue} myBool; myBool __VERIFIER_nondet_myBool(void);\n"; 
+            insertStr = insertStr + "extern void __VERIFIER_reached_control(int, char const *);\n";
+            insertStr = insertStr + "extern void __VERIFIER_loop_head(int, char const *);\n";        
+            insertStr = insertStr + "extern void __VERIFIER_control_true(int, char const *);\n";        
+            insertStr = insertStr + "extern void __VERIFIER_control_false(int, char const *);\n";        
+        }
 
         // insertStr = "#include <stdio.h>\n";
         //  clang::SourceLocation fBeginLoc = d->getBeginLoc();
@@ -1364,15 +1395,28 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         #endif
 
         clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
+        
+        
 
         clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
         clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
+        printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         // Uncomment the following two lines and comment the above two lines to print at the end of the while loop
         // clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getEndLoc();
         // clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(-1);
 
+
+        clang::SourceLocation beforeWhilePrintSourceLoc = whileStmt->getBeginLoc();
+        beforeWhilePrintSourceLoc = beforeWhilePrintSourceLoc.getLocWithOffset(-5); //Offset to print before the while loop
+
+        //Get the source location before the while loop
+        //clang::SourceLocation whileSourceLoc = whileStmt->getBeginLoc();
+        //clang::SourceLocation whileSourceLoc = whileStmt->getBeginLoc();
+        //clang::SourceLocation beforeWhilePrintSourceLoc = nextSourceLoc.getLocWithOffset(-1);
+        //clang::SourceLocation beforeWhilePrintSourceLoc = whileStmt->getSourceRange().getBegin();
+
+
         // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
-        printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
 
         // if (!getArrayUseInLoop(s, "WhileStmt"))
@@ -1394,7 +1438,11 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             if (instrumentation_flag == 1)
                 print_map(printSourceLoc, printlineNum, "");
             else if (instrumentation_flag == 2)
+            {
                 print_cbmc(printSourceLoc, printlineNum, "");
+                print_trace(printSourceLoc, printlineNum, "loop_head");
+                print_trace(beforeWhilePrintSourceLoc, printlineNum, "reached_control");
+            }
         }
         else
         {
@@ -1426,6 +1474,9 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
+        
+        clang::SourceLocation beforeForPrintSourceLoc = forStmt->getBeginLoc();
+        beforeForPrintSourceLoc = beforeForPrintSourceLoc.getLocWithOffset(-3); //Offset to print before the for loop
 
         // print_map(nextSourceLoc, lineNum, "");
         // Check if there is an array use in the body of the loop
@@ -1448,7 +1499,11 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             if (instrumentation_flag == 1)
                 print_map(printSourceLoc, printlineNum, "");
             else if (instrumentation_flag == 2)
+            {
                 print_cbmc(printSourceLoc, printlineNum, "");
+                print_trace(printSourceLoc, printlineNum, "loop_head");
+                print_trace(beforeForPrintSourceLoc, printlineNum, "reached_control");
+            }
         }
         else
         {
@@ -1470,6 +1525,9 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
         clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
+        
+        clang::SourceLocation beforeDoWhilePrintSourceLoc = doStmt->getBeginLoc();
+        beforeDoWhilePrintSourceLoc = beforeDoWhilePrintSourceLoc.getLocWithOffset(-2); //Offset to print before the while loop
         // print_map(nextSourceLoc, lineNum, "");
 
         // Check if there is an array use in the body of the loop
@@ -1492,7 +1550,11 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             if (instrumentation_flag == 1)
                 print_map(printSourceLoc, printlineNum, "");
             else if (instrumentation_flag == 2)
+            {
                 print_cbmc(printSourceLoc, printlineNum, "");
+                print_trace(printSourceLoc, printlineNum, "loop_head");
+                print_trace(beforeDoWhilePrintSourceLoc, printlineNum, "reached_control");
+            }
         }
         else
         {

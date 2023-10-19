@@ -77,10 +77,15 @@ int i;
 		//(a==0)?(z[1]=1):(a=2);
 		//(a==0)?(a=1):(z[2]=2);
 		//ret = ret < z[i]?z[i]:ret;
-		ret = ret < z[i]?ret:ret;
+		//ret = ret < z[i]?ret:ret;
 
 
 	}
+
+do
+{
+i=i+1;
+}while(i>0);
 
 return a;
 
