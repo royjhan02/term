@@ -1483,7 +1483,7 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
     {
         #ifdef DEBUG_INST
         freopen(visitor_OutFile, "a+", stderr);
-        std::cerr << "VisitStmt :: If Statement Found\n";
+        std::cerr << "VisitStmt :: If Statement Found at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(s->getBeginLoc()) << "\n";
         fclose(stderr);
         #endif
         
@@ -1495,8 +1495,8 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
 
         clang::SourceLocation beforeIfPrintSourceLoc = ifStmt->getBeginLoc();
-        beforeIfPrintSourceLoc = beforeIfPrintSourceLoc.getLocWithOffset(-1); //Offset to print before the If statement
-        
+        beforeIfPrintSourceLoc = beforeIfPrintSourceLoc.getLocWithOffset(-1); // Offset to print before the If statement
+
         unsigned int printthenLineNum;
         unsigned int printelseLineNum;
         clang::SourceLocation thenSourceLoc;
@@ -1507,16 +1507,25 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             thenSourceLoc = ifStmt->getThen()->getBeginLoc();
             printthenLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(thenSourceLoc);
         }
-        
+
         if (ifStmt->getElse())
         {
-            elseSourceLoc = ifStmt->getElse()->getBeginLoc();
-            printelseLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(elseSourceLoc);
+            if (clang::IfStmt *elseIfStmt = clang::dyn_cast<clang::IfStmt>(ifStmt->getElse()))
+            {
+                //thenSourceLoc = ifStmt->getThen()->getBeginLoc();
+                //printthenLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(thenSourceLoc);
+            }
+            else
+            {
+                elseSourceLoc = ifStmt->getElse()->getBeginLoc();
+                printelseLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(elseSourceLoc);
+            }
         }
+        
 
         if (instrumentation_flag == 2)
         {
-            print_trace(beforeIfPrintSourceLoc, printlineNum, "reached_control");
+            //print_trace(beforeIfPrintSourceLoc, printlineNum, "reached_control");
             print_trace(thenSourceLoc, printthenLineNum, "control_true");
             print_trace(elseSourceLoc, printelseLineNum, "control_false");
         }

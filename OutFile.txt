@@ -1,468 +1,3185 @@
 
-Found Input File To Parse on disk = input/test1.c
+Found Input File To Parse on disk = input/Problem14_label34.c
 Output File = OutFile.txt
 
-Function name is __VERIFIER_nondet_int
-Function name is main
+Function name is calculate_output
+VisitVarDecl :: Found VarDecl at line = 9
+Function name is abort
+Function name is __assert_fail
+VisitVarDecl :: Found VarDecl at line = 11
+VisitVarDecl :: Found VarDecl at line = 11
+VisitVarDecl :: Found VarDecl at line = 11
+VisitVarDecl :: Found VarDecl at line = 11
+Function name is reach_error
 Function body begins at line number = 12
-Function body ends at line number = 50
+Function body ends at line number = 12
 Number of function arguments = 0
-VisitCompoundStmt :: CompoundStmt at line 12 and column 1 to line 50 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 14
-Pointer type is char * :: Variable name is pc
-VisitCompoundStmt :: Variable (SingleDecl) pc of type char * declared at line 14 and column 5
-VisitCompoundStmt :: Substmt is DeclStmt at line 15
-VisitCompoundStmt :: Variable (SingleDecl) x of type int declared at line 15 and column 5
-VisitCompoundStmt :: Substmt is DeclStmt at line 16
-VisitCompoundStmt :: Variable (SingleDecl) y of type int declared at line 16 and column 5
-VisitCompoundStmt :: Substmt is DeclStmt at line 17
-VisitCompoundStmt :: Variable (SingleDecl) array of type float[10] declared at line 17 and column 5
-VisitCompoundStmt :: Substmt is DeclStmt at line 18
-VisitCompoundStmt :: Variable (SingleDecl) arrayindex of type int declared at line 18 and column 5
-VisitCompoundStmt :: Substmt is BinaryOperator at line 19
-VisitCompoundStmt :: Substmt is BinaryOperator at line 20
-VisitCompoundStmt :: Substmt is IfStmt at line 22
-VisitCompoundStmt :: Substmt is ForStmt at line 33
-VisitCompoundStmt :: Substmt is WhileStmt at line 38
-VisitCompoundStmt :: Substmt is WhileStmt at line 43
-VisitCompoundStmt :: Substmt is ReturnStmt at line 49
+VisitCompoundStmt :: CompoundStmt at line 12 and column 20 to line 12 and column 83
+VisitCompoundStmt :: Substmt is CallExpr at line 12
 show_scope_map :: Printing scope map
-array => array 17 50
-arrayindex => arrayindex 18 50
-pc => pc 14 50
-x => x 15 50
-y => y 16 50
+Function name is __VERIFIER_nondet_int
+Function name is exit
 VisitVarDecl :: Found VarDecl at line = 14
-VisitVarDecl :: Found VarDecl at line = 15
-VisitVarDecl :: Found VarDecl at line = 16
 VisitVarDecl :: Found VarDecl at line = 17
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : inputD 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 17
 VisitVarDecl :: Found VarDecl at line = 18
-VisitStmt :: If Statement Found
-VisitCompoundStmt :: CompoundStmt at line 22 and column 14 to line 31 and column 2
-VisitCompoundStmt :: Substmt is ForStmt at line 23
-VisitCompoundStmt :: Substmt is WhileStmt at line 27
-show_scope_map :: Printing scope map
-array => array 17 50
-arrayindex => arrayindex 18 50
-pc => pc 14 50
-x => x 15 50
-y => y 16 50
-VisitStmt :: For Statement Found
-Decl is Var
-VisitForStmt :: Variable (Not SingleDecl) loopi of type int declared at line 23 and column 7
-Decl is Var
-VisitForStmt :: Variable (Not SingleDecl) loopj of type int declared at line 23 and column 7
-VisitForStmt :: Decl Stmt found in Init and added to scope_map
-Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
-getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 24 is BinaryOperator
-getArrayUseInLoop :: LHS at 24 is DeclRefExpr
-getArrayUseInLoop :: RHS at 24 is ImplicitCastExpr
-Instrumentation flag = 2
-check_variable_scope :: Checking scope of variable array at print line number : 23
- <<< check_variable_scope :: Variable array is in scope at print line number : 23 | scope begin = 17 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable arrayindex at print line number : 23
- <<< check_variable_scope :: Variable arrayindex is in scope at print line number : 23 | scope begin = 18 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable loopi at print line number : 23
- <<< check_variable_scope :: Variable loopi is in scope at print line number : 23 | scope begin = 23 | scope end = 25 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable loopj at print line number : 23
- <<< check_variable_scope :: Variable loopj is in scope at print line number : 23 | scope begin = 23 | scope end = 25 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable pc at print line number : 23
- <<< check_variable_scope :: Variable pc is in scope at print line number : 23 | scope begin = 14 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable x at print line number : 23
- <<< check_variable_scope :: Variable x is in scope at print line number : 23 | scope begin = 15 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable y at print line number : 23
- <<< check_variable_scope :: Variable y is in scope at print line number : 23 | scope begin = 16 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-Begin inscope_var_pairs :: Printing CBMC scope map
-arrayindex => int
-loopi => int
-loopj => int
-pc => char *
-x => int
-y => int
-End inscope_var_pairs :: Printing CBMC scope map
-eqStrAnd = oarrayindex==arrayindex && 
-eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && 
-eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && 
-eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && 
-eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && ox==x && 
-eqStrAnd = oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && ox==x && oy==y
-VisitVarDecl :: Found VarDecl at line = 23
-VisitVarDecl :: Found VarDecl at line = 23
-VisitCompoundStmt :: CompoundStmt at line 23 and column 41 to line 25 and column 3
-VisitCompoundStmt :: Substmt is BinaryOperator at line 24
-show_scope_map :: Printing scope map
-array => array 17 50
-arrayindex => arrayindex 18 50
-loopi => loopi 23 25
-loopj => loopj 23 25
-pc => pc 14 50
-x => x 15 50
-y => y 16 50
-VisitStmt :: While Statement Found
-getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 28 is BinaryOperator
-getArrayUseInLoop :: LHS at 28 is DeclRefExpr
-getArrayUseInLoop :: RHS at 28 is BinaryOperator
-hasArrayAccessInExpression :: BinaryOperator at line 28
-getArrayUseInLoop :: Stmt at line 29 is BinaryOperator
-getArrayUseInLoop :: LHS at 29 is ArraySubscriptExpr
-getArrayUseInLoop :: RHS at 29 is ImplicitCastExpr
-lhs is ArraySubscriptExpr
-getArrayUseInLoop :: ArraySubscriptExpr at line 29
-VisitCompoundStmt :: CompoundStmt at line 27 and column 21 to line 30 and column 6
-VisitCompoundStmt :: Substmt is BinaryOperator at line 28
-VisitCompoundStmt :: Substmt is BinaryOperator at line 29
-show_scope_map :: Printing scope map
-array => array 17 50
-arrayindex => arrayindex 18 50
-loopi => loopi 23 25
-loopj => loopj 23 25
-pc => pc 14 50
-x => x 15 50
-y => y 16 50
-VisitStmt :: For Statement Found
-Decl is Var
-VisitForStmt :: Variable (Not SingleDecl) loopi of type int declared at line 33 and column 7
-Decl is Var
-VisitForStmt :: Variable (Not SingleDecl) loopj of type int declared at line 33 and column 7
-VisitForStmt :: Decl Stmt found in Init and added to scope_map
-Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
-getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 34 is BinaryOperator
-getArrayUseInLoop :: LHS at 34 is DeclRefExpr
-getArrayUseInLoop :: RHS at 34 is ImplicitCastExpr
-getArrayUseInLoop :: Stmt at line 35 is BinaryOperator
-getArrayUseInLoop :: LHS at 35 is ArraySubscriptExpr
-getArrayUseInLoop :: RHS at 35 is ImplicitCastExpr
-lhs is ArraySubscriptExpr
-getArrayUseInLoop :: ArraySubscriptExpr at line 35
-VisitVarDecl :: Found VarDecl at line = 33
-VisitVarDecl :: Found VarDecl at line = 33
-VisitCompoundStmt :: CompoundStmt at line 33 and column 41 to line 36 and column 3
-VisitCompoundStmt :: Substmt is BinaryOperator at line 34
-VisitCompoundStmt :: Substmt is BinaryOperator at line 35
-show_scope_map :: Printing scope map
-array => array 17 50
-arrayindex => arrayindex 18 50
-loopi => loopi 23 25
-loopi => loopi 33 36
-loopj => loopj 23 25
-loopj => loopj 33 36
-pc => pc 14 50
-x => x 15 50
-y => y 16 50
-VisitStmt :: While Statement Found
-getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 39 is BinaryOperator
-getArrayUseInLoop :: LHS at 39 is DeclRefExpr
-getArrayUseInLoop :: RHS at 39 is BinaryOperator
-hasArrayAccessInExpression :: BinaryOperator at line 39
-Instrumentation flag = 2
-check_variable_scope :: Checking scope of variable array at print line number : 38
- <<< check_variable_scope :: Variable array is in scope at print line number : 38 | scope begin = 17 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable arrayindex at print line number : 38
- <<< check_variable_scope :: Variable arrayindex is in scope at print line number : 38 | scope begin = 18 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable loopi at print line number : 38
- <<< check_variable_scope :: Variable loopi is not in scope at line number : 38>>> 
- check_variable_scope :: Checking scope of variable loopj at print line number : 38
- <<< check_variable_scope :: Variable loopj is not in scope at line number : 38>>> 
- check_variable_scope :: Checking scope of variable pc at print line number : 38
- <<< check_variable_scope :: Variable pc is in scope at print line number : 38 | scope begin = 14 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable x at print line number : 38
- <<< check_variable_scope :: Variable x is in scope at print line number : 38 | scope begin = 15 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable y at print line number : 38
- <<< check_variable_scope :: Variable y is in scope at print line number : 38 | scope begin = 16 | scope end = 50 >>> 
-check_alloca_map :: Printing alloca map
-Begin inscope_var_pairs :: Printing CBMC scope map
-arrayindex => int
-pc => char *
-x => int
-y => int
-End inscope_var_pairs :: Printing CBMC scope map
-eqStrAnd = oarrayindex==arrayindex && 
-eqStrAnd = oarrayindex==arrayindex && opc==pc && 
-eqStrAnd = oarrayindex==arrayindex && opc==pc && ox==x && 
-eqStrAnd = oarrayindex==arrayindex && opc==pc && ox==x && oy==y
-VisitCompoundStmt :: CompoundStmt at line 38 and column 21 to line 40 and column 2
-VisitCompoundStmt :: Substmt is BinaryOperator at line 39
-show_scope_map :: Printing scope map
-array => array 17 50
-arrayindex => arrayindex 18 50
-loopi => loopi 23 25
-loopi => loopi 33 36
-loopj => loopj 23 25
-loopj => loopj 33 36
-pc => pc 14 50
-x => x 15 50
-y => y 16 50
-VisitStmt :: While Statement Found
-getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 44 is BinaryOperator
-getArrayUseInLoop :: LHS at 44 is DeclRefExpr
-getArrayUseInLoop :: RHS at 44 is BinaryOperator
-hasArrayAccessInExpression :: BinaryOperator at line 44
-getArrayUseInLoop :: Stmt at line 45 is BinaryOperator
-getArrayUseInLoop :: LHS at 45 is ArraySubscriptExpr
-getArrayUseInLoop :: RHS at 45 is ImplicitCastExpr
-hasArrayAccessInExpression :: ArraySubscriptExpr at line 45
-ArraySubscriptExpr in rhs
-getArrayUseInLoop :: hasArrayAccessInExpression:: ArraySubscriptExpr at line 45
-VisitCompoundStmt :: CompoundStmt at line 43 and column 21 to line 47 and column 2
-VisitCompoundStmt :: Substmt is BinaryOperator at line 44
-VisitCompoundStmt :: Substmt is BinaryOperator at line 45
-VisitCompoundStmt :: Substmt is BinaryOperator at line 46
-show_scope_map :: Printing scope map
-array => array 17 50
-arrayindex => arrayindex 18 50
-loopi => loopi 23 25
-loopi => loopi 33 36
-loopj => loopj 23 25
-loopj => loopj 33 36
-pc => pc 14 50
-x => x 15 50
-y => y 16 50
-Function name is foo
-Function body begins at line number = 54
-Function body ends at line number = 92
-Number of function arguments = 3
-Argument 0 name = a
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : inputB 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 18
+VisitVarDecl :: Found VarDecl at line = 19
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : inputC 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 19
+VisitVarDecl :: Found VarDecl at line = 20
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : inputF 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 20
+VisitVarDecl :: Found VarDecl at line = 21
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : inputE 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 21
+VisitVarDecl :: Found VarDecl at line = 22
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : inputA 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 22
+VisitVarDecl :: Found VarDecl at line = 25
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : a21 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 25
+VisitVarDecl :: Found VarDecl at line = 26
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : a15 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 26
+VisitVarDecl :: Found VarDecl at line = 27
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : a12 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 27
+VisitVarDecl :: Found VarDecl at line = 28
+VisitVarDecl :: VarDecl is Global and not extern
+VisitVarDecl :: VarDecl Name : a24 	VisitVarDecl :: VarDecl Type : int	VisitVarDecl :: VarDecl Line Number : 28
+Function name is calculate_output
+Function body begins at line number = 30
+Function body ends at line number = 882
+Number of function arguments = 1
+Argument 0 name = input
 Argument 0 type = int
-Argument 1 name = b
-Argument 1 type = float
-Argument 2 name = funcp
-Argument 2 type = char *
-VisitVarDecl :: Found VarDecl at line = 53
-VisitVarDecl :: Found VarDecl at line = 53
-VisitVarDecl :: Found VarDecl at line = 53
-VisitCompoundStmt :: CompoundStmt at line 54 and column 1 to line 92 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 55
-Decl is Var
-VisitCompoundStmt :: Variable (Not SingleDecl) h of type int declared at line 55 and column 1
-Decl is Var
-VisitCompoundStmt :: Variable (Not SingleDecl) m of type int declared at line 55 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 56
-VisitCompoundStmt :: Variable (SingleDecl) yy of type float declared at line 56 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 57
-VisitCompoundStmt :: Variable (SingleDecl) z of type int[10] declared at line 57 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 58
-VisitCompoundStmt :: Variable (SingleDecl) ret of type int declared at line 58 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 59
-VisitCompoundStmt :: Variable (SingleDecl) i of type int declared at line 59 and column 1
-VisitCompoundStmt :: Substmt is WhileStmt at line 60
-VisitCompoundStmt :: Substmt is DoStmt at line 85
-VisitCompoundStmt :: Substmt is ReturnStmt at line 90
+VisitVarDecl :: Found VarDecl at line = 30
+VisitCompoundStmt :: CompoundStmt at line 30 and column 34 to line 882 and column 2
+VisitCompoundStmt :: Substmt is IfStmt at line 31
+VisitCompoundStmt :: Substmt is IfStmt at line 34
+VisitCompoundStmt :: Substmt is IfStmt at line 37
+VisitCompoundStmt :: Substmt is IfStmt at line 40
+VisitCompoundStmt :: Substmt is IfStmt at line 43
+VisitCompoundStmt :: Substmt is IfStmt at line 46
+VisitCompoundStmt :: Substmt is IfStmt at line 49
+VisitCompoundStmt :: Substmt is IfStmt at line 52
+VisitCompoundStmt :: Substmt is IfStmt at line 55
+VisitCompoundStmt :: Substmt is IfStmt at line 58
+VisitCompoundStmt :: Substmt is IfStmt at line 61
+VisitCompoundStmt :: Substmt is IfStmt at line 64
+VisitCompoundStmt :: Substmt is IfStmt at line 67
+VisitCompoundStmt :: Substmt is IfStmt at line 70
+VisitCompoundStmt :: Substmt is IfStmt at line 73
+VisitCompoundStmt :: Substmt is IfStmt at line 76
+VisitCompoundStmt :: Substmt is IfStmt at line 79
+VisitCompoundStmt :: Substmt is IfStmt at line 82
+VisitCompoundStmt :: Substmt is IfStmt at line 85
+VisitCompoundStmt :: Substmt is IfStmt at line 88
+VisitCompoundStmt :: Substmt is IfStmt at line 91
+VisitCompoundStmt :: Substmt is IfStmt at line 94
+VisitCompoundStmt :: Substmt is IfStmt at line 97
+VisitCompoundStmt :: Substmt is IfStmt at line 100
+VisitCompoundStmt :: Substmt is IfStmt at line 103
+VisitCompoundStmt :: Substmt is IfStmt at line 106
+VisitCompoundStmt :: Substmt is IfStmt at line 109
+VisitCompoundStmt :: Substmt is IfStmt at line 112
+VisitCompoundStmt :: Substmt is IfStmt at line 115
+VisitCompoundStmt :: Substmt is IfStmt at line 118
+VisitCompoundStmt :: Substmt is IfStmt at line 121
+VisitCompoundStmt :: Substmt is IfStmt at line 124
+VisitCompoundStmt :: Substmt is IfStmt at line 127
+VisitCompoundStmt :: Substmt is IfStmt at line 130
+VisitCompoundStmt :: Substmt is IfStmt at line 133
+VisitCompoundStmt :: Substmt is IfStmt at line 136
+VisitCompoundStmt :: Substmt is IfStmt at line 139
+VisitCompoundStmt :: Substmt is IfStmt at line 142
+VisitCompoundStmt :: Substmt is IfStmt at line 145
+VisitCompoundStmt :: Substmt is IfStmt at line 148
+VisitCompoundStmt :: Substmt is IfStmt at line 151
+VisitCompoundStmt :: Substmt is IfStmt at line 154
+VisitCompoundStmt :: Substmt is IfStmt at line 157
+VisitCompoundStmt :: Substmt is IfStmt at line 160
+VisitCompoundStmt :: Substmt is IfStmt at line 163
+VisitCompoundStmt :: Substmt is IfStmt at line 166
+VisitCompoundStmt :: Substmt is IfStmt at line 169
+VisitCompoundStmt :: Substmt is IfStmt at line 172
+VisitCompoundStmt :: Substmt is IfStmt at line 175
+VisitCompoundStmt :: Substmt is IfStmt at line 178
+VisitCompoundStmt :: Substmt is IfStmt at line 181
+VisitCompoundStmt :: Substmt is IfStmt at line 184
+VisitCompoundStmt :: Substmt is IfStmt at line 187
+VisitCompoundStmt :: Substmt is IfStmt at line 190
+VisitCompoundStmt :: Substmt is IfStmt at line 193
+VisitCompoundStmt :: Substmt is IfStmt at line 196
+VisitCompoundStmt :: Substmt is IfStmt at line 199
+VisitCompoundStmt :: Substmt is IfStmt at line 202
+VisitCompoundStmt :: Substmt is IfStmt at line 205
+VisitCompoundStmt :: Substmt is IfStmt at line 208
+VisitCompoundStmt :: Substmt is IfStmt at line 211
+VisitCompoundStmt :: Substmt is IfStmt at line 215
+VisitCompoundStmt :: Substmt is ReturnStmt at line 881
 show_scope_map :: Printing scope map
-a => a 54 92
-array => array 17 50
-arrayindex => arrayindex 18 50
-b => b 54 92
-funcp => funcp 54 92
-h => h 55 92
-i => i 59 92
-loopi => loopi 23 25
-loopi => loopi 33 36
-loopj => loopj 23 25
-loopj => loopj 33 36
-m => m 55 92
-pc => pc 14 50
-ret => ret 58 92
-x => x 15 50
-y => y 16 50
-yy => yy 56 92
-z => z 57 92
-VisitVarDecl :: Found VarDecl at line = 55
-VisitVarDecl :: Found VarDecl at line = 55
-VisitVarDecl :: Found VarDecl at line = 56
-VisitVarDecl :: Found VarDecl at line = 57
-VisitVarDecl :: Found VarDecl at line = 58
-VisitVarDecl :: Found VarDecl at line = 59
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 31
+VisitCompoundStmt :: CompoundStmt at line 31 and column 59 to line 33 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 32
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 34
+VisitCompoundStmt :: CompoundStmt at line 34 and column 62 to line 36 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 35
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 37
+VisitCompoundStmt :: CompoundStmt at line 37 and column 79 to line 39 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 38
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 40
+VisitCompoundStmt :: CompoundStmt at line 40 and column 62 to line 42 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 41
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 43
+VisitCompoundStmt :: CompoundStmt at line 43 and column 81 to line 45 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 44
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 46
+VisitCompoundStmt :: CompoundStmt at line 46 and column 80 to line 48 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 47
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 49
+VisitCompoundStmt :: CompoundStmt at line 49 and column 81 to line 51 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 50
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 52
+VisitCompoundStmt :: CompoundStmt at line 52 and column 62 to line 54 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 53
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 55
+VisitCompoundStmt :: CompoundStmt at line 55 and column 60 to line 57 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 56
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 58
+VisitCompoundStmt :: CompoundStmt at line 58 and column 63 to line 60 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 59
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 61
+VisitCompoundStmt :: CompoundStmt at line 61 and column 79 to line 63 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 62
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 64
+VisitCompoundStmt :: CompoundStmt at line 64 and column 59 to line 66 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 65
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 67
+VisitCompoundStmt :: CompoundStmt at line 67 and column 59 to line 69 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 68
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 70
+VisitCompoundStmt :: CompoundStmt at line 70 and column 62 to line 72 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 71
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 73
+VisitCompoundStmt :: CompoundStmt at line 73 and column 60 to line 75 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 74
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 76
+VisitCompoundStmt :: CompoundStmt at line 76 and column 79 to line 78 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 77
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 79
+VisitCompoundStmt :: CompoundStmt at line 79 and column 79 to line 81 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 80
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 82
+VisitCompoundStmt :: CompoundStmt at line 82 and column 79 to line 84 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 83
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 85
+VisitCompoundStmt :: CompoundStmt at line 85 and column 80 to line 87 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 86
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 88
+VisitCompoundStmt :: CompoundStmt at line 88 and column 62 to line 90 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 89
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 91
+VisitCompoundStmt :: CompoundStmt at line 91 and column 59 to line 93 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 92
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 94
+VisitCompoundStmt :: CompoundStmt at line 94 and column 59 to line 96 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 95
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitCompoundStmt :: CompoundStmt at line 95 and column 13 to line 95 and column 36
+VisitCompoundStmt :: Substmt is CallExpr at line 95
+VisitCompoundStmt :: Substmt is CallExpr at line 95
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 97
+VisitCompoundStmt :: CompoundStmt at line 97 and column 79 to line 99 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 98
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 100
+VisitCompoundStmt :: CompoundStmt at line 100 and column 80 to line 102 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 101
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 103
+VisitCompoundStmt :: CompoundStmt at line 103 and column 59 to line 105 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 104
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 106
+VisitCompoundStmt :: CompoundStmt at line 106 and column 62 to line 108 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 107
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 109
+VisitCompoundStmt :: CompoundStmt at line 109 and column 63 to line 111 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 110
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 112
+VisitCompoundStmt :: CompoundStmt at line 112 and column 80 to line 114 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 113
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 115
+VisitCompoundStmt :: CompoundStmt at line 115 and column 62 to line 117 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 116
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 118
+VisitCompoundStmt :: CompoundStmt at line 118 and column 79 to line 120 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 119
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 121
+VisitCompoundStmt :: CompoundStmt at line 121 and column 80 to line 123 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 122
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 124
+VisitCompoundStmt :: CompoundStmt at line 124 and column 79 to line 126 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 125
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 127
+VisitCompoundStmt :: CompoundStmt at line 127 and column 81 to line 129 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 128
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 130
+VisitCompoundStmt :: CompoundStmt at line 130 and column 80 to line 132 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 131
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 133
+VisitCompoundStmt :: CompoundStmt at line 133 and column 62 to line 135 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 134
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 136
+VisitCompoundStmt :: CompoundStmt at line 136 and column 80 to line 138 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 137
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 139
+VisitCompoundStmt :: CompoundStmt at line 139 and column 62 to line 141 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 140
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 142
+VisitCompoundStmt :: CompoundStmt at line 142 and column 79 to line 144 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 143
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 145
+VisitCompoundStmt :: CompoundStmt at line 145 and column 59 to line 147 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 146
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 148
+VisitCompoundStmt :: CompoundStmt at line 148 and column 79 to line 150 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 149
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 151
+VisitCompoundStmt :: CompoundStmt at line 151 and column 59 to line 153 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 152
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 154
+VisitCompoundStmt :: CompoundStmt at line 154 and column 80 to line 156 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 155
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 157
+VisitCompoundStmt :: CompoundStmt at line 157 and column 59 to line 159 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 158
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 160
+VisitCompoundStmt :: CompoundStmt at line 160 and column 80 to line 162 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 161
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 163
+VisitCompoundStmt :: CompoundStmt at line 163 and column 60 to line 165 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 164
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 166
+VisitCompoundStmt :: CompoundStmt at line 166 and column 63 to line 168 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 167
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 169
+VisitCompoundStmt :: CompoundStmt at line 169 and column 80 to line 171 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 170
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 172
+VisitCompoundStmt :: CompoundStmt at line 172 and column 62 to line 174 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 173
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 175
+VisitCompoundStmt :: CompoundStmt at line 175 and column 62 to line 177 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 176
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 178
+VisitCompoundStmt :: CompoundStmt at line 178 and column 79 to line 180 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 179
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 181
+VisitCompoundStmt :: CompoundStmt at line 181 and column 59 to line 183 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 182
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 184
+VisitCompoundStmt :: CompoundStmt at line 184 and column 59 to line 186 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 185
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 187
+VisitCompoundStmt :: CompoundStmt at line 187 and column 80 to line 189 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 188
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 190
+VisitCompoundStmt :: CompoundStmt at line 190 and column 79 to line 192 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 191
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 193
+VisitCompoundStmt :: CompoundStmt at line 193 and column 62 to line 195 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 194
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 196
+VisitCompoundStmt :: CompoundStmt at line 196 and column 80 to line 198 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 197
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 199
+VisitCompoundStmt :: CompoundStmt at line 199 and column 62 to line 201 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 200
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 202
+VisitCompoundStmt :: CompoundStmt at line 202 and column 80 to line 204 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 203
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 205
+VisitCompoundStmt :: CompoundStmt at line 205 and column 80 to line 207 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 206
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 208
+VisitCompoundStmt :: CompoundStmt at line 208 and column 59 to line 210 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 209
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 211
+VisitCompoundStmt :: CompoundStmt at line 211 and column 80 to line 213 and column 3
+VisitCompoundStmt :: Substmt is LabelStmt at line 212
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 215
+VisitCompoundStmt :: CompoundStmt at line 215 and column 100 to line 221 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 216
+VisitCompoundStmt :: Substmt is BinaryOperator at line 217
+VisitCompoundStmt :: Substmt is BinaryOperator at line 218
+VisitCompoundStmt :: Substmt is ReturnStmt at line 220
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 221
+VisitCompoundStmt :: CompoundStmt at line 221 and column 118 to line 227 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 223
+VisitCompoundStmt :: Substmt is BinaryOperator at line 224
+VisitCompoundStmt :: Substmt is ReturnStmt at line 226
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 227
+VisitCompoundStmt :: CompoundStmt at line 227 and column 108 to line 233 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 228
+VisitCompoundStmt :: Substmt is BinaryOperator at line 229
+VisitCompoundStmt :: Substmt is BinaryOperator at line 230
+VisitCompoundStmt :: Substmt is ReturnStmt at line 232
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 233
+VisitCompoundStmt :: CompoundStmt at line 233 and column 121 to line 239 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 234
+VisitCompoundStmt :: Substmt is BinaryOperator at line 235
+VisitCompoundStmt :: Substmt is BinaryOperator at line 236
+VisitCompoundStmt :: Substmt is ReturnStmt at line 238
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 239
+VisitCompoundStmt :: CompoundStmt at line 239 and column 135 to line 245 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 240
+VisitCompoundStmt :: Substmt is BinaryOperator at line 241
+VisitCompoundStmt :: Substmt is BinaryOperator at line 242
+VisitCompoundStmt :: Substmt is ReturnStmt at line 244
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 245
+VisitCompoundStmt :: CompoundStmt at line 245 and column 188 to line 251 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 246
+VisitCompoundStmt :: Substmt is BinaryOperator at line 247
+VisitCompoundStmt :: Substmt is BinaryOperator at line 248
+VisitCompoundStmt :: Substmt is ReturnStmt at line 250
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 251
+VisitCompoundStmt :: CompoundStmt at line 251 and column 118 to line 257 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 253
+VisitCompoundStmt :: Substmt is BinaryOperator at line 254
+VisitCompoundStmt :: Substmt is ReturnStmt at line 256
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 257
+VisitCompoundStmt :: CompoundStmt at line 257 and column 107 to line 262 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 258
+VisitCompoundStmt :: Substmt is BinaryOperator at line 259
+VisitCompoundStmt :: Substmt is ReturnStmt at line 261
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 262
+VisitCompoundStmt :: CompoundStmt at line 262 and column 159 to line 268 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 263
+VisitCompoundStmt :: Substmt is BinaryOperator at line 264
+VisitCompoundStmt :: Substmt is BinaryOperator at line 265
+VisitCompoundStmt :: Substmt is ReturnStmt at line 267
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 268
+VisitCompoundStmt :: CompoundStmt at line 268 and column 193 to line 274 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 269
+VisitCompoundStmt :: Substmt is BinaryOperator at line 270
+VisitCompoundStmt :: Substmt is BinaryOperator at line 271
+VisitCompoundStmt :: Substmt is ReturnStmt at line 273
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 274
+VisitCompoundStmt :: CompoundStmt at line 274 and column 101 to line 279 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 276
+VisitCompoundStmt :: Substmt is ReturnStmt at line 278
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 279
+VisitCompoundStmt :: CompoundStmt at line 279 and column 123 to line 285 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 281
+VisitCompoundStmt :: Substmt is BinaryOperator at line 282
+VisitCompoundStmt :: Substmt is ReturnStmt at line 284
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 285
+VisitCompoundStmt :: CompoundStmt at line 285 and column 108 to line 290 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 287
+VisitCompoundStmt :: Substmt is ReturnStmt at line 289
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 290
+VisitCompoundStmt :: CompoundStmt at line 290 and column 101 to line 296 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 291
+VisitCompoundStmt :: Substmt is BinaryOperator at line 292
+VisitCompoundStmt :: Substmt is BinaryOperator at line 293
+VisitCompoundStmt :: Substmt is ReturnStmt at line 295
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 296
+VisitCompoundStmt :: CompoundStmt at line 296 and column 149 to line 303 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 297
+VisitCompoundStmt :: Substmt is BinaryOperator at line 298
+VisitCompoundStmt :: Substmt is BinaryOperator at line 299
+VisitCompoundStmt :: Substmt is BinaryOperator at line 300
+VisitCompoundStmt :: Substmt is ReturnStmt at line 302
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 303
+VisitCompoundStmt :: CompoundStmt at line 303 and column 90 to line 309 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 305
+VisitCompoundStmt :: Substmt is BinaryOperator at line 306
+VisitCompoundStmt :: Substmt is ReturnStmt at line 308
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 309
+VisitCompoundStmt :: CompoundStmt at line 309 and column 135 to line 315 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 310
+VisitCompoundStmt :: Substmt is BinaryOperator at line 311
+VisitCompoundStmt :: Substmt is BinaryOperator at line 312
+VisitCompoundStmt :: Substmt is ReturnStmt at line 314
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 315
+VisitCompoundStmt :: CompoundStmt at line 315 and column 101 to line 321 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 316
+VisitCompoundStmt :: Substmt is BinaryOperator at line 317
+VisitCompoundStmt :: Substmt is BinaryOperator at line 318
+VisitCompoundStmt :: Substmt is ReturnStmt at line 320
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 321
+VisitCompoundStmt :: CompoundStmt at line 321 and column 119 to line 327 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 323
+VisitCompoundStmt :: Substmt is BinaryOperator at line 324
+VisitCompoundStmt :: Substmt is ReturnStmt at line 326
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 327
+VisitCompoundStmt :: CompoundStmt at line 327 and column 108 to line 333 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 328
+VisitCompoundStmt :: Substmt is BinaryOperator at line 329
+VisitCompoundStmt :: Substmt is BinaryOperator at line 330
+VisitCompoundStmt :: Substmt is ReturnStmt at line 332
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 333
+VisitCompoundStmt :: CompoundStmt at line 333 and column 119 to line 339 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 335
+VisitCompoundStmt :: Substmt is BinaryOperator at line 336
+VisitCompoundStmt :: Substmt is ReturnStmt at line 338
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 339
+VisitCompoundStmt :: CompoundStmt at line 339 and column 107 to line 345 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 340
+VisitCompoundStmt :: Substmt is BinaryOperator at line 341
+VisitCompoundStmt :: Substmt is BinaryOperator at line 342
+VisitCompoundStmt :: Substmt is ReturnStmt at line 344
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 345
+VisitCompoundStmt :: CompoundStmt at line 345 and column 101 to line 351 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 347
+VisitCompoundStmt :: Substmt is BinaryOperator at line 348
+VisitCompoundStmt :: Substmt is ReturnStmt at line 350
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 351
+VisitCompoundStmt :: CompoundStmt at line 351 and column 101 to line 357 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 352
+VisitCompoundStmt :: Substmt is BinaryOperator at line 353
+VisitCompoundStmt :: Substmt is BinaryOperator at line 354
+VisitCompoundStmt :: Substmt is ReturnStmt at line 356
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 357
+VisitCompoundStmt :: CompoundStmt at line 357 and column 107 to line 363 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 358
+VisitCompoundStmt :: Substmt is BinaryOperator at line 359
+VisitCompoundStmt :: Substmt is BinaryOperator at line 360
+VisitCompoundStmt :: Substmt is ReturnStmt at line 362
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 363
+VisitCompoundStmt :: CompoundStmt at line 363 and column 135 to line 369 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 365
+VisitCompoundStmt :: Substmt is BinaryOperator at line 366
+VisitCompoundStmt :: Substmt is ReturnStmt at line 368
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 369
+VisitCompoundStmt :: CompoundStmt at line 369 and column 149 to line 376 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 370
+VisitCompoundStmt :: Substmt is BinaryOperator at line 371
+VisitCompoundStmt :: Substmt is BinaryOperator at line 372
+VisitCompoundStmt :: Substmt is BinaryOperator at line 373
+VisitCompoundStmt :: Substmt is ReturnStmt at line 375
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 376
+VisitCompoundStmt :: CompoundStmt at line 376 and column 193 to line 382 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 377
+VisitCompoundStmt :: Substmt is BinaryOperator at line 378
+VisitCompoundStmt :: Substmt is BinaryOperator at line 379
+VisitCompoundStmt :: Substmt is ReturnStmt at line 381
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 382
+VisitCompoundStmt :: CompoundStmt at line 382 and column 118 to line 388 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 384
+VisitCompoundStmt :: Substmt is BinaryOperator at line 385
+VisitCompoundStmt :: Substmt is ReturnStmt at line 387
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 388
+VisitCompoundStmt :: CompoundStmt at line 388 and column 108 to line 394 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 389
+VisitCompoundStmt :: Substmt is BinaryOperator at line 390
+VisitCompoundStmt :: Substmt is BinaryOperator at line 391
+VisitCompoundStmt :: Substmt is ReturnStmt at line 393
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 394
+VisitCompoundStmt :: CompoundStmt at line 394 and column 135 to line 400 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 396
+VisitCompoundStmt :: Substmt is BinaryOperator at line 397
+VisitCompoundStmt :: Substmt is ReturnStmt at line 399
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 400
+VisitCompoundStmt :: CompoundStmt at line 400 and column 136 to line 406 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 401
+VisitCompoundStmt :: Substmt is BinaryOperator at line 402
+VisitCompoundStmt :: Substmt is BinaryOperator at line 403
+VisitCompoundStmt :: Substmt is ReturnStmt at line 405
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 406
+VisitCompoundStmt :: CompoundStmt at line 406 and column 135 to line 412 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 407
+VisitCompoundStmt :: Substmt is BinaryOperator at line 408
+VisitCompoundStmt :: Substmt is BinaryOperator at line 409
+VisitCompoundStmt :: Substmt is ReturnStmt at line 411
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 412
+VisitCompoundStmt :: CompoundStmt at line 412 and column 136 to line 418 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 413
+VisitCompoundStmt :: Substmt is BinaryOperator at line 414
+VisitCompoundStmt :: Substmt is BinaryOperator at line 415
+VisitCompoundStmt :: Substmt is ReturnStmt at line 417
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 418
+VisitCompoundStmt :: CompoundStmt at line 418 and column 123 to line 424 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 419
+VisitCompoundStmt :: Substmt is BinaryOperator at line 420
+VisitCompoundStmt :: Substmt is BinaryOperator at line 421
+VisitCompoundStmt :: Substmt is ReturnStmt at line 423
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 424
+VisitCompoundStmt :: CompoundStmt at line 424 and column 135 to line 430 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 426
+VisitCompoundStmt :: Substmt is BinaryOperator at line 427
+VisitCompoundStmt :: Substmt is ReturnStmt at line 429
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 430
+VisitCompoundStmt :: CompoundStmt at line 430 and column 87 to line 436 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 431
+VisitCompoundStmt :: Substmt is BinaryOperator at line 432
+VisitCompoundStmt :: Substmt is BinaryOperator at line 433
+VisitCompoundStmt :: Substmt is ReturnStmt at line 435
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 436
+VisitCompoundStmt :: CompoundStmt at line 436 and column 119 to line 442 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 438
+VisitCompoundStmt :: Substmt is BinaryOperator at line 439
+VisitCompoundStmt :: Substmt is ReturnStmt at line 441
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 442
+VisitCompoundStmt :: CompoundStmt at line 442 and column 193 to line 448 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 443
+VisitCompoundStmt :: Substmt is BinaryOperator at line 444
+VisitCompoundStmt :: Substmt is BinaryOperator at line 445
+VisitCompoundStmt :: Substmt is ReturnStmt at line 447
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 448
+VisitCompoundStmt :: CompoundStmt at line 448 and column 118 to line 454 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 450
+VisitCompoundStmt :: Substmt is BinaryOperator at line 451
+VisitCompoundStmt :: Substmt is ReturnStmt at line 453
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 454
+VisitCompoundStmt :: CompoundStmt at line 454 and column 119 to line 459 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 455
+VisitCompoundStmt :: Substmt is BinaryOperator at line 456
+VisitCompoundStmt :: Substmt is ReturnStmt at line 458
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 459
+VisitCompoundStmt :: CompoundStmt at line 459 and column 90 to line 464 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 461
+VisitCompoundStmt :: Substmt is ReturnStmt at line 463
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 464
+VisitCompoundStmt :: CompoundStmt at line 464 and column 123 to line 470 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 465
+VisitCompoundStmt :: Substmt is BinaryOperator at line 466
+VisitCompoundStmt :: Substmt is BinaryOperator at line 467
+VisitCompoundStmt :: Substmt is ReturnStmt at line 469
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 470
+VisitCompoundStmt :: CompoundStmt at line 470 and column 149 to line 477 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 471
+VisitCompoundStmt :: Substmt is BinaryOperator at line 472
+VisitCompoundStmt :: Substmt is BinaryOperator at line 473
+VisitCompoundStmt :: Substmt is BinaryOperator at line 474
+VisitCompoundStmt :: Substmt is ReturnStmt at line 476
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 477
+VisitCompoundStmt :: CompoundStmt at line 477 and column 123 to line 482 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 478
+VisitCompoundStmt :: Substmt is BinaryOperator at line 479
+VisitCompoundStmt :: Substmt is ReturnStmt at line 481
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 482
+VisitCompoundStmt :: CompoundStmt at line 482 and column 101 to line 488 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 483
+VisitCompoundStmt :: Substmt is BinaryOperator at line 484
+VisitCompoundStmt :: Substmt is BinaryOperator at line 485
+VisitCompoundStmt :: Substmt is ReturnStmt at line 487
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 488
+VisitCompoundStmt :: CompoundStmt at line 488 and column 193 to line 494 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 489
+VisitCompoundStmt :: Substmt is BinaryOperator at line 490
+VisitCompoundStmt :: Substmt is BinaryOperator at line 491
+VisitCompoundStmt :: Substmt is ReturnStmt at line 493
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 494
+VisitCompoundStmt :: CompoundStmt at line 494 and column 135 to line 500 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 495
+VisitCompoundStmt :: Substmt is BinaryOperator at line 496
+VisitCompoundStmt :: Substmt is BinaryOperator at line 497
+VisitCompoundStmt :: Substmt is ReturnStmt at line 499
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 500
+VisitCompoundStmt :: CompoundStmt at line 500 and column 136 to line 505 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 502
+VisitCompoundStmt :: Substmt is ReturnStmt at line 504
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 505
+VisitCompoundStmt :: CompoundStmt at line 505 and column 118 to line 510 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 507
+VisitCompoundStmt :: Substmt is ReturnStmt at line 509
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 510
+VisitCompoundStmt :: CompoundStmt at line 510 and column 188 to line 516 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 511
+VisitCompoundStmt :: Substmt is BinaryOperator at line 512
+VisitCompoundStmt :: Substmt is BinaryOperator at line 513
+VisitCompoundStmt :: Substmt is ReturnStmt at line 515
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 516
+VisitCompoundStmt :: CompoundStmt at line 516 and column 90 to line 522 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 518
+VisitCompoundStmt :: Substmt is BinaryOperator at line 519
+VisitCompoundStmt :: Substmt is ReturnStmt at line 521
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 522
+VisitCompoundStmt :: CompoundStmt at line 522 and column 159 to line 528 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 523
+VisitCompoundStmt :: Substmt is BinaryOperator at line 524
+VisitCompoundStmt :: Substmt is BinaryOperator at line 525
+VisitCompoundStmt :: Substmt is ReturnStmt at line 527
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 528
+VisitCompoundStmt :: CompoundStmt at line 528 and column 118 to line 534 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 530
+VisitCompoundStmt :: Substmt is BinaryOperator at line 531
+VisitCompoundStmt :: Substmt is ReturnStmt at line 533
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 534
+VisitCompoundStmt :: CompoundStmt at line 534 and column 159 to line 540 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 535
+VisitCompoundStmt :: Substmt is BinaryOperator at line 536
+VisitCompoundStmt :: Substmt is BinaryOperator at line 537
+VisitCompoundStmt :: Substmt is ReturnStmt at line 539
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 540
+VisitCompoundStmt :: CompoundStmt at line 540 and column 107 to line 546 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 541
+VisitCompoundStmt :: Substmt is BinaryOperator at line 542
+VisitCompoundStmt :: Substmt is BinaryOperator at line 543
+VisitCompoundStmt :: Substmt is ReturnStmt at line 545
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 546
+VisitCompoundStmt :: CompoundStmt at line 546 and column 188 to line 551 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 547
+VisitCompoundStmt :: Substmt is BinaryOperator at line 548
+VisitCompoundStmt :: Substmt is ReturnStmt at line 550
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 551
+VisitCompoundStmt :: CompoundStmt at line 551 and column 159 to line 557 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 552
+VisitCompoundStmt :: Substmt is BinaryOperator at line 553
+VisitCompoundStmt :: Substmt is BinaryOperator at line 554
+VisitCompoundStmt :: Substmt is ReturnStmt at line 556
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 557
+VisitCompoundStmt :: CompoundStmt at line 557 and column 135 to line 562 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 558
+VisitCompoundStmt :: Substmt is BinaryOperator at line 559
+VisitCompoundStmt :: Substmt is ReturnStmt at line 561
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 562
+VisitCompoundStmt :: CompoundStmt at line 562 and column 87 to line 565 and column 6
+VisitCompoundStmt :: Substmt is ReturnStmt at line 564
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 565
+VisitCompoundStmt :: CompoundStmt at line 565 and column 101 to line 571 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 566
+VisitCompoundStmt :: Substmt is BinaryOperator at line 567
+VisitCompoundStmt :: Substmt is BinaryOperator at line 568
+VisitCompoundStmt :: Substmt is ReturnStmt at line 570
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 571
+VisitCompoundStmt :: CompoundStmt at line 571 and column 149 to line 578 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 572
+VisitCompoundStmt :: Substmt is BinaryOperator at line 573
+VisitCompoundStmt :: Substmt is BinaryOperator at line 574
+VisitCompoundStmt :: Substmt is BinaryOperator at line 575
+VisitCompoundStmt :: Substmt is ReturnStmt at line 577
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 578
+VisitCompoundStmt :: CompoundStmt at line 578 and column 87 to line 583 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 580
+VisitCompoundStmt :: Substmt is ReturnStmt at line 582
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 583
+VisitCompoundStmt :: CompoundStmt at line 583 and column 121 to line 589 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 584
+VisitCompoundStmt :: Substmt is BinaryOperator at line 585
+VisitCompoundStmt :: Substmt is BinaryOperator at line 586
+VisitCompoundStmt :: Substmt is ReturnStmt at line 588
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 589
+VisitCompoundStmt :: CompoundStmt at line 589 and column 135 to line 595 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 590
+VisitCompoundStmt :: Substmt is BinaryOperator at line 591
+VisitCompoundStmt :: Substmt is BinaryOperator at line 592
+VisitCompoundStmt :: Substmt is ReturnStmt at line 594
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 595
+VisitCompoundStmt :: CompoundStmt at line 595 and column 188 to line 601 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 596
+VisitCompoundStmt :: Substmt is BinaryOperator at line 597
+VisitCompoundStmt :: Substmt is BinaryOperator at line 598
+VisitCompoundStmt :: Substmt is ReturnStmt at line 600
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 601
+VisitCompoundStmt :: CompoundStmt at line 601 and column 119 to line 607 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 603
+VisitCompoundStmt :: Substmt is BinaryOperator at line 604
+VisitCompoundStmt :: Substmt is ReturnStmt at line 606
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 607
+VisitCompoundStmt :: CompoundStmt at line 607 and column 193 to line 613 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 608
+VisitCompoundStmt :: Substmt is BinaryOperator at line 609
+VisitCompoundStmt :: Substmt is BinaryOperator at line 610
+VisitCompoundStmt :: Substmt is ReturnStmt at line 612
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 613
+VisitCompoundStmt :: CompoundStmt at line 613 and column 136 to line 619 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 614
+VisitCompoundStmt :: Substmt is BinaryOperator at line 615
+VisitCompoundStmt :: Substmt is BinaryOperator at line 616
+VisitCompoundStmt :: Substmt is ReturnStmt at line 618
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 619
+VisitCompoundStmt :: CompoundStmt at line 619 and column 136 to line 625 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 620
+VisitCompoundStmt :: Substmt is BinaryOperator at line 621
+VisitCompoundStmt :: Substmt is BinaryOperator at line 622
+VisitCompoundStmt :: Substmt is ReturnStmt at line 624
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 625
+VisitCompoundStmt :: CompoundStmt at line 625 and column 121 to line 631 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 626
+VisitCompoundStmt :: Substmt is BinaryOperator at line 627
+VisitCompoundStmt :: Substmt is BinaryOperator at line 628
+VisitCompoundStmt :: Substmt is ReturnStmt at line 630
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 631
+VisitCompoundStmt :: CompoundStmt at line 631 and column 193 to line 636 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 632
+VisitCompoundStmt :: Substmt is BinaryOperator at line 633
+VisitCompoundStmt :: Substmt is ReturnStmt at line 635
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 636
+VisitCompoundStmt :: CompoundStmt at line 636 and column 108 to line 642 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 637
+VisitCompoundStmt :: Substmt is BinaryOperator at line 638
+VisitCompoundStmt :: Substmt is BinaryOperator at line 639
+VisitCompoundStmt :: Substmt is ReturnStmt at line 641
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 642
+VisitCompoundStmt :: CompoundStmt at line 642 and column 188 to line 648 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 643
+VisitCompoundStmt :: Substmt is BinaryOperator at line 644
+VisitCompoundStmt :: Substmt is BinaryOperator at line 645
+VisitCompoundStmt :: Substmt is ReturnStmt at line 647
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 648
+VisitCompoundStmt :: CompoundStmt at line 648 and column 121 to line 654 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 649
+VisitCompoundStmt :: Substmt is BinaryOperator at line 650
+VisitCompoundStmt :: Substmt is BinaryOperator at line 651
+VisitCompoundStmt :: Substmt is ReturnStmt at line 653
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 654
+VisitCompoundStmt :: CompoundStmt at line 654 and column 87 to line 660 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 656
+VisitCompoundStmt :: Substmt is BinaryOperator at line 657
+VisitCompoundStmt :: Substmt is ReturnStmt at line 659
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 660
+VisitCompoundStmt :: CompoundStmt at line 660 and column 90 to line 666 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 662
+VisitCompoundStmt :: Substmt is BinaryOperator at line 663
+VisitCompoundStmt :: Substmt is ReturnStmt at line 665
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 666
+VisitCompoundStmt :: CompoundStmt at line 666 and column 107 to line 672 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 667
+VisitCompoundStmt :: Substmt is BinaryOperator at line 668
+VisitCompoundStmt :: Substmt is BinaryOperator at line 669
+VisitCompoundStmt :: Substmt is ReturnStmt at line 671
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 672
+VisitCompoundStmt :: CompoundStmt at line 672 and column 101 to line 678 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 673
+VisitCompoundStmt :: Substmt is BinaryOperator at line 674
+VisitCompoundStmt :: Substmt is BinaryOperator at line 675
+VisitCompoundStmt :: Substmt is ReturnStmt at line 677
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 678
+VisitCompoundStmt :: CompoundStmt at line 678 and column 101 to line 684 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 679
+VisitCompoundStmt :: Substmt is BinaryOperator at line 680
+VisitCompoundStmt :: Substmt is BinaryOperator at line 681
+VisitCompoundStmt :: Substmt is ReturnStmt at line 683
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 684
+VisitCompoundStmt :: CompoundStmt at line 684 and column 87 to line 687 and column 6
+VisitCompoundStmt :: Substmt is ReturnStmt at line 686
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 687
+VisitCompoundStmt :: CompoundStmt at line 687 and column 168 to line 693 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 688
+VisitCompoundStmt :: Substmt is BinaryOperator at line 689
+VisitCompoundStmt :: Substmt is BinaryOperator at line 690
+VisitCompoundStmt :: Substmt is ReturnStmt at line 692
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 693
+VisitCompoundStmt :: CompoundStmt at line 693 and column 87 to line 698 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 694
+VisitCompoundStmt :: Substmt is BinaryOperator at line 695
+VisitCompoundStmt :: Substmt is ReturnStmt at line 697
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 698
+VisitCompoundStmt :: CompoundStmt at line 698 and column 168 to line 704 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 699
+VisitCompoundStmt :: Substmt is BinaryOperator at line 700
+VisitCompoundStmt :: Substmt is BinaryOperator at line 701
+VisitCompoundStmt :: Substmt is ReturnStmt at line 703
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 704
+VisitCompoundStmt :: CompoundStmt at line 704 and column 123 to line 710 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 705
+VisitCompoundStmt :: Substmt is BinaryOperator at line 706
+VisitCompoundStmt :: Substmt is BinaryOperator at line 707
+VisitCompoundStmt :: Substmt is ReturnStmt at line 709
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 710
+VisitCompoundStmt :: CompoundStmt at line 710 and column 135 to line 716 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 711
+VisitCompoundStmt :: Substmt is BinaryOperator at line 712
+VisitCompoundStmt :: Substmt is BinaryOperator at line 713
+VisitCompoundStmt :: Substmt is ReturnStmt at line 715
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 716
+VisitCompoundStmt :: CompoundStmt at line 716 and column 101 to line 722 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 717
+VisitCompoundStmt :: Substmt is BinaryOperator at line 718
+VisitCompoundStmt :: Substmt is BinaryOperator at line 719
+VisitCompoundStmt :: Substmt is ReturnStmt at line 721
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 722
+VisitCompoundStmt :: CompoundStmt at line 722 and column 168 to line 728 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 723
+VisitCompoundStmt :: Substmt is BinaryOperator at line 724
+VisitCompoundStmt :: Substmt is BinaryOperator at line 725
+VisitCompoundStmt :: Substmt is ReturnStmt at line 727
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 728
+VisitCompoundStmt :: CompoundStmt at line 728 and column 136 to line 734 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 729
+VisitCompoundStmt :: Substmt is BinaryOperator at line 730
+VisitCompoundStmt :: Substmt is BinaryOperator at line 731
+VisitCompoundStmt :: Substmt is ReturnStmt at line 733
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 734
+VisitCompoundStmt :: CompoundStmt at line 734 and column 90 to line 740 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 736
+VisitCompoundStmt :: Substmt is BinaryOperator at line 737
+VisitCompoundStmt :: Substmt is ReturnStmt at line 739
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 740
+VisitCompoundStmt :: CompoundStmt at line 740 and column 108 to line 745 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 741
+VisitCompoundStmt :: Substmt is BinaryOperator at line 742
+VisitCompoundStmt :: Substmt is ReturnStmt at line 744
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 745
+VisitCompoundStmt :: CompoundStmt at line 745 and column 108 to line 751 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 746
+VisitCompoundStmt :: Substmt is BinaryOperator at line 747
+VisitCompoundStmt :: Substmt is BinaryOperator at line 748
+VisitCompoundStmt :: Substmt is ReturnStmt at line 750
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 751
+VisitCompoundStmt :: CompoundStmt at line 751 and column 119 to line 757 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 753
+VisitCompoundStmt :: Substmt is BinaryOperator at line 754
+VisitCompoundStmt :: Substmt is ReturnStmt at line 756
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 757
+VisitCompoundStmt :: CompoundStmt at line 757 and column 168 to line 762 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 758
+VisitCompoundStmt :: Substmt is BinaryOperator at line 759
+VisitCompoundStmt :: Substmt is ReturnStmt at line 761
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 762
+VisitCompoundStmt :: CompoundStmt at line 762 and column 121 to line 768 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 763
+VisitCompoundStmt :: Substmt is BinaryOperator at line 764
+VisitCompoundStmt :: Substmt is BinaryOperator at line 765
+VisitCompoundStmt :: Substmt is ReturnStmt at line 767
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 768
+VisitCompoundStmt :: CompoundStmt at line 768 and column 135 to line 774 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 769
+VisitCompoundStmt :: Substmt is BinaryOperator at line 770
+VisitCompoundStmt :: Substmt is BinaryOperator at line 771
+VisitCompoundStmt :: Substmt is ReturnStmt at line 773
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 774
+VisitCompoundStmt :: CompoundStmt at line 774 and column 149 to line 781 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 775
+VisitCompoundStmt :: Substmt is BinaryOperator at line 776
+VisitCompoundStmt :: Substmt is BinaryOperator at line 777
+VisitCompoundStmt :: Substmt is BinaryOperator at line 778
+VisitCompoundStmt :: Substmt is ReturnStmt at line 780
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 781
+VisitCompoundStmt :: CompoundStmt at line 781 and column 168 to line 787 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 782
+VisitCompoundStmt :: Substmt is BinaryOperator at line 783
+VisitCompoundStmt :: Substmt is BinaryOperator at line 784
+VisitCompoundStmt :: Substmt is ReturnStmt at line 786
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 787
+VisitCompoundStmt :: CompoundStmt at line 787 and column 108 to line 793 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 788
+VisitCompoundStmt :: Substmt is BinaryOperator at line 789
+VisitCompoundStmt :: Substmt is BinaryOperator at line 790
+VisitCompoundStmt :: Substmt is ReturnStmt at line 792
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 793
+VisitCompoundStmt :: CompoundStmt at line 793 and column 108 to line 799 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 794
+VisitCompoundStmt :: Substmt is BinaryOperator at line 795
+VisitCompoundStmt :: Substmt is BinaryOperator at line 796
+VisitCompoundStmt :: Substmt is ReturnStmt at line 798
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 799
+VisitCompoundStmt :: CompoundStmt at line 799 and column 188 to line 805 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 800
+VisitCompoundStmt :: Substmt is BinaryOperator at line 801
+VisitCompoundStmt :: Substmt is BinaryOperator at line 802
+VisitCompoundStmt :: Substmt is ReturnStmt at line 804
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 805
+VisitCompoundStmt :: CompoundStmt at line 805 and column 90 to line 811 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 807
+VisitCompoundStmt :: Substmt is BinaryOperator at line 808
+VisitCompoundStmt :: Substmt is ReturnStmt at line 810
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 811
+VisitCompoundStmt :: CompoundStmt at line 811 and column 108 to line 817 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 812
+VisitCompoundStmt :: Substmt is BinaryOperator at line 813
+VisitCompoundStmt :: Substmt is BinaryOperator at line 814
+VisitCompoundStmt :: Substmt is ReturnStmt at line 816
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 817
+VisitCompoundStmt :: CompoundStmt at line 817 and column 149 to line 824 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 818
+VisitCompoundStmt :: Substmt is BinaryOperator at line 819
+VisitCompoundStmt :: Substmt is BinaryOperator at line 820
+VisitCompoundStmt :: Substmt is BinaryOperator at line 821
+VisitCompoundStmt :: Substmt is ReturnStmt at line 823
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 824
+VisitCompoundStmt :: CompoundStmt at line 824 and column 121 to line 829 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 825
+VisitCompoundStmt :: Substmt is BinaryOperator at line 826
+VisitCompoundStmt :: Substmt is ReturnStmt at line 828
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 829
+VisitCompoundStmt :: CompoundStmt at line 829 and column 159 to line 835 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 830
+VisitCompoundStmt :: Substmt is BinaryOperator at line 831
+VisitCompoundStmt :: Substmt is BinaryOperator at line 832
+VisitCompoundStmt :: Substmt is ReturnStmt at line 834
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 835
+VisitCompoundStmt :: CompoundStmt at line 835 and column 135 to line 841 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 837
+VisitCompoundStmt :: Substmt is BinaryOperator at line 838
+VisitCompoundStmt :: Substmt is ReturnStmt at line 840
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 841
+VisitCompoundStmt :: CompoundStmt at line 841 and column 168 to line 847 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 842
+VisitCompoundStmt :: Substmt is BinaryOperator at line 843
+VisitCompoundStmt :: Substmt is BinaryOperator at line 844
+VisitCompoundStmt :: Substmt is ReturnStmt at line 846
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 847
+VisitCompoundStmt :: CompoundStmt at line 847 and column 159 to line 852 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 848
+VisitCompoundStmt :: Substmt is BinaryOperator at line 849
+VisitCompoundStmt :: Substmt is ReturnStmt at line 851
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 852
+VisitCompoundStmt :: CompoundStmt at line 852 and column 123 to line 858 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 853
+VisitCompoundStmt :: Substmt is BinaryOperator at line 854
+VisitCompoundStmt :: Substmt is BinaryOperator at line 855
+VisitCompoundStmt :: Substmt is ReturnStmt at line 857
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 858
+VisitCompoundStmt :: CompoundStmt at line 858 and column 101 to line 864 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 859
+VisitCompoundStmt :: Substmt is BinaryOperator at line 860
+VisitCompoundStmt :: Substmt is BinaryOperator at line 861
+VisitCompoundStmt :: Substmt is ReturnStmt at line 863
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 864
+VisitCompoundStmt :: CompoundStmt at line 864 and column 101 to line 869 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 866
+VisitCompoundStmt :: Substmt is ReturnStmt at line 868
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 869
+VisitCompoundStmt :: CompoundStmt at line 869 and column 108 to line 875 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 870
+VisitCompoundStmt :: Substmt is BinaryOperator at line 871
+VisitCompoundStmt :: Substmt is BinaryOperator at line 872
+VisitCompoundStmt :: Substmt is ReturnStmt at line 874
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+VisitStmt :: If Statement Found at line 875
+VisitCompoundStmt :: CompoundStmt at line 875 and column 108 to line 880 and column 6
+VisitCompoundStmt :: Substmt is BinaryOperator at line 877
+VisitCompoundStmt :: Substmt is ReturnStmt at line 879
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+Function name is main
+Function body begins at line number = 885
+Function body ends at line number = 900
+Number of function arguments = 0
+VisitCompoundStmt :: CompoundStmt at line 885 and column 1 to line 900 and column 1
+VisitCompoundStmt :: Substmt is DeclStmt at line 887
+VisitCompoundStmt :: Variable (SingleDecl) output of type int declared at line 887 and column 5
+VisitCompoundStmt :: Substmt is WhileStmt at line 890
+show_scope_map :: Printing scope map
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+output => output 887 900
+VisitVarDecl :: Found VarDecl at line = 887
 VisitStmt :: While Statement Found
 getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 61 is BinaryOperator
-getArrayUseInLoop :: LHS at 61 is DeclRefExpr
-getArrayUseInLoop :: RHS at 61 is ImplicitCastExpr
-hasArrayAccessInExpression :: ImplicitCast :: BinaryOperator at line 61
-LHS is ImplicitCastExpr RHS is ImplicitCastExpr
+getArrayUseInLoop :: Stmt at line 893 is DeclStmt
+getArrayUseInLoop :: Stmt at line 894 is BinaryOperator
+getArrayUseInLoop :: LHS at 894 is DeclRefExpr
+getArrayUseInLoop :: RHS at 894 is CallExpr
+getArrayUseInLoop :: Stmt at line 895 is IfStmt
+getArrayUseInLoop :: Stmt at line 898 is BinaryOperator
+getArrayUseInLoop :: LHS at 898 is DeclRefExpr
+getArrayUseInLoop :: RHS at 898 is CallExpr
 Instrumentation flag = 2
-check_variable_scope :: Checking scope of variable a at print line number : 60
- <<< check_variable_scope :: Variable a is in scope at print line number : 60 | scope begin = 54 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable a12 at print line number : 891
+ <<< check_variable_scope :: Variable a12 is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
 check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable array at print line number : 60
- <<< check_variable_scope :: Variable array is not in scope at line number : 60>>> 
- check_variable_scope :: Checking scope of variable arrayindex at print line number : 60
- <<< check_variable_scope :: Variable arrayindex is not in scope at line number : 60>>> 
- check_variable_scope :: Checking scope of variable b at print line number : 60
- <<< check_variable_scope :: Variable b is in scope at print line number : 60 | scope begin = 54 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable a15 at print line number : 891
+ <<< check_variable_scope :: Variable a15 is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
 check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable funcp at print line number : 60
- <<< check_variable_scope :: Variable funcp is in scope at print line number : 60 | scope begin = 54 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable a21 at print line number : 891
+ <<< check_variable_scope :: Variable a21 is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
 check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable h at print line number : 60
- <<< check_variable_scope :: Variable h is in scope at print line number : 60 | scope begin = 55 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable a24 at print line number : 891
+ <<< check_variable_scope :: Variable a24 is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
 check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable i at print line number : 60
- <<< check_variable_scope :: Variable i is in scope at print line number : 60 | scope begin = 59 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable input at print line number : 891
+ <<< check_variable_scope :: Variable input is not in scope at line number : 891>>> 
+ check_variable_scope :: Checking scope of variable inputA at print line number : 891
+ <<< check_variable_scope :: Variable inputA is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
 check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable loopi at print line number : 60
- <<< check_variable_scope :: Variable loopi is not in scope at line number : 60>>> 
- check_variable_scope :: Checking scope of variable loopj at print line number : 60
- <<< check_variable_scope :: Variable loopj is not in scope at line number : 60>>> 
- check_variable_scope :: Checking scope of variable m at print line number : 60
- <<< check_variable_scope :: Variable m is in scope at print line number : 60 | scope begin = 55 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable inputB at print line number : 891
+ <<< check_variable_scope :: Variable inputB is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
 check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable pc at print line number : 60
- <<< check_variable_scope :: Variable pc is not in scope at line number : 60>>> 
- check_variable_scope :: Checking scope of variable ret at print line number : 60
- <<< check_variable_scope :: Variable ret is in scope at print line number : 60 | scope begin = 58 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable inputC at print line number : 891
+ <<< check_variable_scope :: Variable inputC is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
 check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable x at print line number : 60
- <<< check_variable_scope :: Variable x is not in scope at line number : 60>>> 
- check_variable_scope :: Checking scope of variable y at print line number : 60
- <<< check_variable_scope :: Variable y is not in scope at line number : 60>>> 
- check_variable_scope :: Checking scope of variable yy at print line number : 60
- <<< check_variable_scope :: Variable yy is in scope at print line number : 60 | scope begin = 56 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable inputD at print line number : 891
+ <<< check_variable_scope :: Variable inputD is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
 check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable z at print line number : 60
- <<< check_variable_scope :: Variable z is in scope at print line number : 60 | scope begin = 57 | scope end = 92 >>> 
+check_variable_scope :: Checking scope of variable inputE at print line number : 891
+ <<< check_variable_scope :: Variable inputE is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable inputF at print line number : 891
+ <<< check_variable_scope :: Variable inputF is in scope at print line number : 891 | scope begin = 0 | scope end = 0 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable output at print line number : 891
+ <<< check_variable_scope :: Variable output is in scope at print line number : 891 | scope begin = 887 | scope end = 900 >>> 
 check_alloca_map :: Printing alloca map
 Begin inscope_var_pairs :: Printing CBMC scope map
-a => int
-b => float
-funcp => char *
-h => int
-i => int
-m => int
-ret => int
-yy => float
+a12 => int
+a15 => int
+a21 => int
+a24 => int
+inputA => int
+inputB => int
+inputC => int
+inputD => int
+inputE => int
+inputF => int
+output => int
 End inscope_var_pairs :: Printing CBMC scope map
-eqStrAnd = oa==a && 
-eqStrAnd = oa==a && ob==b && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && oret==ret && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && oret==ret && oyy==yy
-VisitCompoundStmt :: CompoundStmt at line 60 and column 21 to line 83 and column 2
-VisitCompoundStmt :: Substmt is BinaryOperator at line 61
+eqStrAnd = oa12==a12 && 
+eqStrAnd = oa12==a12 && oa15==a15 && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && oa24==a24 && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && oa24==a24 && oinputA==inputA && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && oa24==a24 && oinputA==inputA && oinputB==inputB && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && oa24==a24 && oinputA==inputA && oinputB==inputB && oinputC==inputC && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && oa24==a24 && oinputA==inputA && oinputB==inputB && oinputC==inputC && oinputD==inputD && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && oa24==a24 && oinputA==inputA && oinputB==inputB && oinputC==inputC && oinputD==inputD && oinputE==inputE && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && oa24==a24 && oinputA==inputA && oinputB==inputB && oinputC==inputC && oinputD==inputD && oinputE==inputE && oinputF==inputF && 
+eqStrAnd = oa12==a12 && oa15==a15 && oa21==a21 && oa24==a24 && oinputA==inputA && oinputB==inputB && oinputC==inputC && oinputD==inputD && oinputE==inputE && oinputF==inputF && ooutput==output
+VisitCompoundStmt :: CompoundStmt at line 891 and column 5 to line 899 and column 5
+VisitCompoundStmt :: Substmt is DeclStmt at line 893
+VisitCompoundStmt :: Variable (SingleDecl) input of type int declared at line 893 and column 9
+VisitCompoundStmt :: Substmt is BinaryOperator at line 894
+VisitCompoundStmt :: Substmt is IfStmt at line 895
+VisitCompoundStmt :: Substmt is BinaryOperator at line 898
 show_scope_map :: Printing scope map
-a => a 54 92
-array => array 17 50
-arrayindex => arrayindex 18 50
-b => b 54 92
-funcp => funcp 54 92
-h => h 55 92
-i => i 59 92
-loopi => loopi 23 25
-loopi => loopi 33 36
-loopj => loopj 23 25
-loopj => loopj 33 36
-m => m 55 92
-pc => pc 14 50
-ret => ret 58 92
-x => x 15 50
-y => y 16 50
-yy => yy 56 92
-z => z 57 92
-VisitStmt :: Do-While Statement Found
-getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 87 is BinaryOperator
-getArrayUseInLoop :: LHS at 87 is DeclRefExpr
-getArrayUseInLoop :: RHS at 87 is BinaryOperator
-hasArrayAccessInExpression :: BinaryOperator at line 87
-Instrumentation flag = 2
-check_variable_scope :: Checking scope of variable a at print line number : 86
- <<< check_variable_scope :: Variable a is in scope at print line number : 86 | scope begin = 54 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable array at print line number : 86
- <<< check_variable_scope :: Variable array is not in scope at line number : 86>>> 
- check_variable_scope :: Checking scope of variable arrayindex at print line number : 86
- <<< check_variable_scope :: Variable arrayindex is not in scope at line number : 86>>> 
- check_variable_scope :: Checking scope of variable b at print line number : 86
- <<< check_variable_scope :: Variable b is in scope at print line number : 86 | scope begin = 54 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable funcp at print line number : 86
- <<< check_variable_scope :: Variable funcp is in scope at print line number : 86 | scope begin = 54 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable h at print line number : 86
- <<< check_variable_scope :: Variable h is in scope at print line number : 86 | scope begin = 55 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable i at print line number : 86
- <<< check_variable_scope :: Variable i is in scope at print line number : 86 | scope begin = 59 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable loopi at print line number : 86
- <<< check_variable_scope :: Variable loopi is not in scope at line number : 86>>> 
- check_variable_scope :: Checking scope of variable loopj at print line number : 86
- <<< check_variable_scope :: Variable loopj is not in scope at line number : 86>>> 
- check_variable_scope :: Checking scope of variable m at print line number : 86
- <<< check_variable_scope :: Variable m is in scope at print line number : 86 | scope begin = 55 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable pc at print line number : 86
- <<< check_variable_scope :: Variable pc is not in scope at line number : 86>>> 
- check_variable_scope :: Checking scope of variable ret at print line number : 86
- <<< check_variable_scope :: Variable ret is in scope at print line number : 86 | scope begin = 58 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable x at print line number : 86
- <<< check_variable_scope :: Variable x is not in scope at line number : 86>>> 
- check_variable_scope :: Checking scope of variable y at print line number : 86
- <<< check_variable_scope :: Variable y is not in scope at line number : 86>>> 
- check_variable_scope :: Checking scope of variable yy at print line number : 86
- <<< check_variable_scope :: Variable yy is in scope at print line number : 86 | scope begin = 56 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-check_variable_scope :: Checking scope of variable z at print line number : 86
- <<< check_variable_scope :: Variable z is in scope at print line number : 86 | scope begin = 57 | scope end = 92 >>> 
-check_alloca_map :: Printing alloca map
-Begin inscope_var_pairs :: Printing CBMC scope map
-a => int
-b => float
-funcp => char *
-h => int
-i => int
-m => int
-ret => int
-yy => float
-End inscope_var_pairs :: Printing CBMC scope map
-eqStrAnd = oa==a && 
-eqStrAnd = oa==a && ob==b && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && oret==ret && 
-eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && oret==ret && oyy==yy
-VisitCompoundStmt :: CompoundStmt at line 86 and column 1 to line 88 and column 1
-VisitCompoundStmt :: Substmt is BinaryOperator at line 87
-show_scope_map :: Printing scope map
-a => a 54 92
-array => array 17 50
-arrayindex => arrayindex 18 50
-b => b 54 92
-funcp => funcp 54 92
-h => h 55 92
-i => i 59 92
-loopi => loopi 23 25
-loopi => loopi 33 36
-loopj => loopj 23 25
-loopj => loopj 33 36
-m => m 55 92
-pc => pc 14 50
-ret => ret 58 92
-x => x 15 50
-y => y 16 50
-yy => yy 56 92
-z => z 57 92
+a12 => a12 0 0
+a15 => a15 0 0
+a21 => a21 0 0
+a24 => a24 0 0
+input => input 30 882
+input => input 893 899
+inputA => inputA 0 0
+inputB => inputB 0 0
+inputC => inputC 0 0
+inputD => inputD 0 0
+inputE => inputE 0 0
+inputF => inputF 0 0
+output => output 887 900
+VisitVarDecl :: Found VarDecl at line = 893
+VisitStmt :: If Statement Found at line 895
 
 Finished call to function ParseAST   
 
