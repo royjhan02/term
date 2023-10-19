@@ -1340,51 +1340,6 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
     std::pair<std::string, AVInfo::assignment_info> av_pair;
     std::string insertStr = "";
 
-    // std::cout << "Stmt Class Name : " << s->getStmtClassName() << "\n";
-
-    // if (auto *v_binop = clang::dyn_cast<clang::BinaryOperator>(s))
-    // {
-    //     // if (auto *v_compassign = clang::dyn_cast<clang::CompoundAssignOperator>(v_binop))
-    //     // std::cerr << "Stmt Class Name : " << s->getStmtClassName() << "\t";
-    //     if (v_binop->isAssignmentOp() || v_binop->isCompoundAssignmentOp())
-    //     {
-    //         if (v_binop->getOpcode() == clang::BO_Assign)
-    //         {
-    //             lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(s->getBeginLoc());
-    //             clang::Expr *lhs = v_binop->getLHS();
-    //             if (clang::DeclRefExpr *refExpr = llvm::dyn_cast<clang::DeclRefExpr>(lhs))
-    //             {
-    //                 std::string t_typ = clang::QualType::getAsString(refExpr->getType().split(), clang::PrintingPolicy(
-    //                                                                                                  visitor_CompilerInstance->getLangOpts()));
-    //                 clang::ValueDecl *decl = refExpr->getDecl();
-
-    //                 std::string varName = decl->getNameAsString();
-
-    //                 llvm::StringRef text_ref = clang::Lexer::getSourceText(
-    //                     clang::CharSourceRange::getTokenRange(s->getSourceRange()),
-    //                     visitor_CompilerInstance->getSourceManager(),
-    //                     visitor_CompilerInstance->getLangOpts());
-    //                 std::string stmt_str = text_ref.str();
-
-    //                 freopen(visitor_OutFile, "a+", stderr);
-    //                 std::cerr << "VisitStmt :: Statement String : " << stmt_str << "\n";
-    //                 std::cerr << "VisitStmt :: Line Number of Binary Assignment : " << lineNum << "\n";
-    //                 std::cerr << "VisitStmt :: Name, Type of LHS : " << varName << "," << t_typ << "\n\n";
-    //                 fclose(stderr);
-
-    //                 vd.nam = varName; // Name of the variable added to the vector
-    //                 vd.typ = t_typ;   // Type of the variable added to the vector
-    //                 vd.lin = lineNum; // Line number of the variable added to the vector
-    //                 clang::SourceLocation stmtEndloc = v_binop->getRHS()->getEndLoc();
-    //                 av_map_contains(varName, vd, stmtEndloc);
-    //             }
-    //         }
-    //     }
-    // }
-    // else
-    // {
-    //     // std::cout << "Not a Binary Operator" << std::endl;
-    // }
 
     if (strcmp(s->getStmtClassName(), "WhileStmt") == 0)
     {
@@ -1407,7 +1362,7 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
 
         clang::SourceLocation beforeWhilePrintSourceLoc = whileStmt->getBeginLoc();
-        beforeWhilePrintSourceLoc = beforeWhilePrintSourceLoc.getLocWithOffset(-5); //Offset to print before the while loop
+        beforeWhilePrintSourceLoc = beforeWhilePrintSourceLoc.getLocWithOffset(-1); //Offset to print before the while loop
 
         //Get the source location before the while loop
         //clang::SourceLocation whileSourceLoc = whileStmt->getBeginLoc();
@@ -1418,19 +1373,6 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
         // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
         // print_map(nextSourceLoc, lineNum, "");
-
-        // if (!getArrayUseInLoop(s, "WhileStmt"))
-        // {
-        //     freopen(visitor_OutFile, "a+", stderr);
-        //     std::cerr << "VisitStmt :: Array not used in While loop\n";
-        //     fclose(stderr);
-        // }
-        // else
-        // {
-        //     freopen(visitor_OutFile, "a+", stderr);
-        //     std::cerr << "VisitStmt :: Array used in While loop\n";
-        //     fclose(stderr);
-        // }
 
         // Check if there is an array use in the body of the loop and only then instrument
         if (!getArrayUseInLoop(s, "WhileStmt"))
@@ -1476,22 +1418,9 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         
         clang::SourceLocation beforeForPrintSourceLoc = forStmt->getBeginLoc();
-        beforeForPrintSourceLoc = beforeForPrintSourceLoc.getLocWithOffset(-3); //Offset to print before the for loop
+        beforeForPrintSourceLoc = beforeForPrintSourceLoc.getLocWithOffset(-1); //Offset to print before the for loop
 
         // print_map(nextSourceLoc, lineNum, "");
-        // Check if there is an array use in the body of the loop
-        // if (!getArrayUseInLoop(s, "ForStmt"))
-        // {
-        //     freopen(visitor_OutFile, "a+", stderr);
-        //     std::cerr << "VisitStmt :: Array not used in For loop\n";
-        //     fclose(stderr);
-        // }
-        // else
-        // {
-        //     freopen(visitor_OutFile, "a+", stderr);
-        //     std::cerr << "VisitStmt :: Array used in For loop\n";
-        //     fclose(stderr);
-        // }
 
         // Check if there is an array use in the body of the loop and only then instrument
         if (!getArrayUseInLoop(s, "ForStmt"))
@@ -1527,22 +1456,9 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
         
         clang::SourceLocation beforeDoWhilePrintSourceLoc = doStmt->getBeginLoc();
-        beforeDoWhilePrintSourceLoc = beforeDoWhilePrintSourceLoc.getLocWithOffset(-2); //Offset to print before the while loop
+        beforeDoWhilePrintSourceLoc = beforeDoWhilePrintSourceLoc.getLocWithOffset(-1); //Offset to print before the while loop
         // print_map(nextSourceLoc, lineNum, "");
 
-        // Check if there is an array use in the body of the loop
-        // if (!getArrayUseInLoop(s, "DoStmt"))
-        // {
-        //     freopen(visitor_OutFile, "a+", stderr);
-        //     std::cerr << "VisitStmt :: Array not used in Do While loop\n";
-        //     fclose(stderr);
-        // }
-        // else
-        // {
-        //     freopen(visitor_OutFile, "a+", stderr);
-        //     std::cerr << "VisitStmt :: Array used in Do While loop\n";
-        //     fclose(stderr);
-        // }
 
         // Check if there is an array use in the body of the loop and only then instrument
         if (!getArrayUseInLoop(s, "DoStmt"))
@@ -1561,5 +1477,53 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             print_other(printSourceLoc, printlineNum, "ArrayFound");
         }
     }
+
+
+    if (strcmp(s->getStmtClassName(), "IfStmt") == 0)
+    {
+        #ifdef DEBUG_INST
+        freopen(visitor_OutFile, "a+", stderr);
+        std::cerr << "VisitStmt :: If Statement Found\n";
+        fclose(stderr);
+        #endif
+        
+        clang::IfStmt *ifStmt = clang::dyn_cast<clang::IfStmt>(s);
+        clang::SourceLocation nextSourceLoc = ifStmt->getBeginLoc();
+        lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
+        
+        clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
+        printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
+
+        clang::SourceLocation beforeIfPrintSourceLoc = ifStmt->getBeginLoc();
+        beforeIfPrintSourceLoc = beforeIfPrintSourceLoc.getLocWithOffset(-1); //Offset to print before the If statement
+        
+        unsigned int printthenLineNum;
+        unsigned int printelseLineNum;
+        clang::SourceLocation thenSourceLoc;
+        clang::SourceLocation elseSourceLoc;
+
+        if (ifStmt->getThen())
+        {
+            thenSourceLoc = ifStmt->getThen()->getBeginLoc();
+            printthenLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(thenSourceLoc);
+        }
+        
+        if (ifStmt->getElse())
+        {
+            elseSourceLoc = ifStmt->getElse()->getBeginLoc();
+            printelseLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(elseSourceLoc);
+        }
+
+        if (instrumentation_flag == 2)
+        {
+            print_trace(beforeIfPrintSourceLoc, printlineNum, "reached_control");
+            print_trace(thenSourceLoc, printthenLineNum, "control_true");
+            print_trace(elseSourceLoc, printelseLineNum, "control_false");
+        }
+    }
+
+
+
+
     return true;
 }

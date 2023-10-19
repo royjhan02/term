@@ -7,7 +7,8 @@ int main() {
     i = __VERIFIER_nondet_int();
     
     while (i > 10) {
-        if (i == 25) {
+        if (i == 25) 
+	{
             i = 30;
         }
         if (i <= 30) {

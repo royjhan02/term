@@ -24,8 +24,10 @@ int main()
     x = __VERIFIER_nondet_int();
     y = __VERIFIER_nondet_int();
 
-	if (y >= 0) { __VERIFIER_reached_control(23, " ");
+ __VERIFIER_reached_control(22, " ");
+	if (y >= 0) { __VERIFIER_control_true(22, " ");
 
+ __VERIFIER_reached_control(23, " ");
 	for (int loopi, loopj;loopi<10;loopi++){printf("CBMC Instrumentation @ line23");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oarrayindex;static int oloopi;static int oloopj;static char * opc;static int ox;static int oy;if(pStored){__CPROVER_assert(!(oarrayindex==arrayindex && oloopi==loopi && oloopj==loopj && opc==pc && ox==x && oy==y),"recurrent state found");} if(flag){oarrayindex=arrayindex;oloopi=loopi;oloopj=loopj;opc=pc;ox=x;oy=y;pStored=myTrue;}  __VERIFIER_loop_head(23, " ");
 
 		x=loopi;
@@ -42,8 +44,8 @@ int main()
 		array[arrayindex]=1;
 		}
 
- __VERIFIER_reached_control(38, " ");
-	    while (x >= 0) {printf("CBMC Instrumentation @ line38");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oarrayindex;static char * opc;static int ox;static int oy;if(pStored){__CPROVER_assert(!(oarrayindex==arrayindex && opc==pc && ox==x && oy==y),"recurrent state found");} if(flag){oarrayindex=arrayindex;opc=pc;ox=x;oy=y;pStored=myTrue;}  __VERIFIER_loop_head(38, " ");
+	    __VERIFIER_reached_control(38, " ");
+ while (x >= 0) {printf("CBMC Instrumentation @ line38");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oarrayindex;static char * opc;static int ox;static int oy;if(pStored){__CPROVER_assert(!(oarrayindex==arrayindex && opc==pc && ox==x && oy==y),"recurrent state found");} if(flag){oarrayindex=arrayindex;opc=pc;ox=x;oy=y;pStored=myTrue;}  __VERIFIER_loop_head(38, " ");
 
 	    	x = x - y;
 	}
@@ -66,8 +68,8 @@ float yy;
 int z[10];
 int ret;
 int i;
- __VERIFIER_reached_control(60, " ");
-	    while (a >= 0) {printf("CBMC Instrumentation @ line60");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oa;static float ob;static char * ofuncp;static int oh;static int oi;static int om;static int oret;static float oyy;if(pStored){__CPROVER_assert(!(oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && oret==ret && oyy==yy),"recurrent state found");} if(flag){oa=a;ob=b;ofuncp=funcp;oh=h;oi=i;om=m;oret=ret;oyy=yy;pStored=myTrue;}  __VERIFIER_loop_head(60, " ");
+	    __VERIFIER_reached_control(60, " ");
+ while (a >= 0) {printf("CBMC Instrumentation @ line60");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oa;static float ob;static char * ofuncp;static int oh;static int oi;static int om;static int oret;static float oyy;if(pStored){__CPROVER_assert(!(oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && oret==ret && oyy==yy),"recurrent state found");} if(flag){oa=a;ob=b;ofuncp=funcp;oh=h;oi=i;om=m;oret=ret;oyy=yy;pStored=myTrue;}  __VERIFIER_loop_head(60, " ");
 
 	    	a = a - b;
 		//b = a + b + z[1];
@@ -91,8 +93,8 @@ int i;
 		//ret = ret < z[i]?ret:ret;
 
 
-	} __VERIFIER_reached_control(86, " ");
-
+	}
+ __VERIFIER_reached_control(86, " ");
 
 do
 {printf("CBMC Instrumentation @ line86");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int oa;static float ob;static char * ofuncp;static int oh;static int oi;static int om;static int oret;static float oyy;if(pStored){__CPROVER_assert(!(oa==a && ob==b && ofuncp==funcp && oh==h && oi==i && om==m && oret==ret && oyy==yy),"recurrent state found");} if(flag){oa=a;ob=b;ofuncp=funcp;oh=h;oi=i;om=m;oret=ret;oyy=yy;pStored=myTrue;}  __VERIFIER_loop_head(86, " ");

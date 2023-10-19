@@ -42,7 +42,8 @@ void displayBits(unsigned int value) {
 
     putchar(value & displayMask ? '1' : '0');
     value <<=1;  //shift left by 1
-    if (c % 8 == 0) {
+   __VERIFIER_reached_control(38, " ");
+  if (c % 8 == 0) {
       putchar(' ');
     }
     mask = mask & 1;
