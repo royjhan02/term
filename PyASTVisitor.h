@@ -62,12 +62,14 @@ namespace AVInfo
         unsigned int scopeEndLine;
     };
 
+
 }
 
 class PyASTVisitor : public clang::RecursiveASTVisitor<PyASTVisitor>
 {
 public:
     PyASTVisitor(clang::Rewriter &vRw) : vRewriter(vRw) { std::cout << "\nRewriter Init\n"; }
+
     // PyASTVisitor() : v_cfg(std::make_unique<clang::CFG>()){}
     void set_VisitorCompilerInstance(clang::CompilerInstance *pyASTVisitorCI, const char *o_file, const char *i_file);
 
@@ -97,6 +99,7 @@ public:
     bool check_variable_scope(std::string varName, clang::SourceLocation loc);
     bool check_alloca_map(std::string varName, clang::SourceLocation loc);
     bool hasArrayAccessInExpression(clang::Expr *expr);
+    bool check_visit_stmt(clang::Stmt *s);
 
     //bool computeVariableScope(clang::VarDecl *v_varDecl);
     // void printLivenessInfo(clang::FunctionDecl* liveness_fd);
@@ -113,11 +116,14 @@ private:
     std::vector<AVInfo::assignment_info> assignedVariablesInfo;
     std::vector<std::string> assignedVariables;
 
+
     std::map<std::string, AVInfo::assignment_info> av_map;
     std::multimap<std::string, AVInfo::scope_info> scope_map;
 
 
     std::multimap<std::string, AVInfo::alloca_scope_info> alloca_map;
+
+    std::map<clang::Stmt *, int> stmt_visit_count;
 
 
     //std::list<std::string> scope_list;

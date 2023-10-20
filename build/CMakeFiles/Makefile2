@@ -74,6 +74,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/instrumenter.dir/clean
 clean: CMakeFiles/instCore.dir/clean
+clean: CMakeFiles/clean_instrumented.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -127,6 +128,32 @@ instCore: CMakeFiles/instCore.dir/rule
 CMakeFiles/instCore.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/instCore.dir/build.make CMakeFiles/instCore.dir/clean
 .PHONY : CMakeFiles/instCore.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/clean_instrumented.dir
+
+# All Build rule for target.
+CMakeFiles/clean_instrumented.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_instrumented.dir/build.make CMakeFiles/clean_instrumented.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_instrumented.dir/build.make CMakeFiles/clean_instrumented.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hrishik/Repos/GitHub/term/build/CMakeFiles --progress-num= "Built target clean_instrumented"
+.PHONY : CMakeFiles/clean_instrumented.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/clean_instrumented.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hrishik/Repos/GitHub/term/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/clean_instrumented.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hrishik/Repos/GitHub/term/build/CMakeFiles 0
+.PHONY : CMakeFiles/clean_instrumented.dir/rule
+
+# Convenience name for target.
+clean_instrumented: CMakeFiles/clean_instrumented.dir/rule
+.PHONY : clean_instrumented
+
+# clean rule for target.
+CMakeFiles/clean_instrumented.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_instrumented.dir/build.make CMakeFiles/clean_instrumented.dir/clean
+.PHONY : CMakeFiles/clean_instrumented.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

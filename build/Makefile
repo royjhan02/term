@@ -142,6 +142,19 @@ instCore/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/instCore.dir/build.make CMakeFiles/instCore.dir/build
 .PHONY : instCore/fast
 
+#=============================================================================
+# Target rules for targets named clean_instrumented
+
+# Build rule for target.
+clean_instrumented: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean_instrumented
+.PHONY : clean_instrumented
+
+# fast build rule for target.
+clean_instrumented/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_instrumented.dir/build.make CMakeFiles/clean_instrumented.dir/build
+.PHONY : clean_instrumented/fast
+
 PyASTConsumer.o: PyASTConsumer.cpp.o
 .PHONY : PyASTConsumer.o
 
@@ -225,6 +238,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... clean_instrumented"
 	@echo "... instCore"
 	@echo "... instrumenter"
 	@echo "... PyASTConsumer.o"

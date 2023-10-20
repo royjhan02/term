@@ -46,4 +46,10 @@ target_link_libraries(instrumenter PUBLIC instCore clangTooling clangFrontendToo
 #add_custom_target(instrumenter COMMAND make -C ${instrumenter_SOURCE_DIR}
 #        CLION_EXE_DIR=${PROJECT_BINARY_DIR})
 
+# Add a custom clean target
+add_custom_target(clean_instrumented
+    COMMAND ${CMAKE_COMMAND} -E remove *.c_instrumented.c
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
 

@@ -237,15 +237,18 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
 
             defStr = defStr + "static " + scope_t_typ + " " + oinstvarName + ";";
             eqStrSemi = eqStrSemi + oinstvarName + "=" + scope_instvarName + ";";
+
             if (scope_t_typ=="int *")
             {
                 eqStrSemi = eqStrSemi + allocaoinstvarName + "=" + allocainstvarName + ";";
             }
+
             // eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName + " && ";
             eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName;
+
             if (scope_t_typ=="int *")
             {
-                eqStrAnd = eqStrAnd + allocaoinstvarName + "=" + allocainstvarName + ";";
+                eqStrAnd = eqStrAnd + " && " + allocaoinstvarName + "==" + allocainstvarName;
             }
 
             if (vec_loc != inscope_vars_pair.size() - 1)
@@ -1331,6 +1334,14 @@ bool PyASTVisitor::getDeclInForStmt(clang::ForStmt *v_forStmt)
     return true;
 }
 
+
+bool PyASTVisitor::check_visit_stmt(clang::Stmt *vs)
+{
+    //Check if stmt_visit_count
+
+    return false;
+}
+
 bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 {
     unsigned int lineNum;
@@ -1340,56 +1351,77 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
     std::pair<std::string, AVInfo::assignment_info> av_pair;
     std::string insertStr = "";
 
+    //If s is not found in stmt_visit_count, insert s with count 1
+    //If s is found in stmt_visit_count, increment count by 1
+    // if (stmt_visit_count.find(s) != stmt_visit_count.end())
+    // {
+    //     stmt_visit_count[s] += 1;
+    // }
+    // else
+    // {
+    //     stmt_visit_count.insert(std::make_pair(s, 1));
+    // }
+
+    // #ifdef DEBUG_INST
+    // freopen(visitor_OutFile, "a+", stderr);
+    // std::cerr << "VisitStmt :: Visiting " << s->getStmtClassName() << "at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(s->getBeginLoc()) << "\n";
+    // std::cerr << "Count of " << s->getStmtClassName() << " is " << stmt_visit_count[s] << "\n";
+    // fclose(stderr);
+    // #endif
+
+    // clang::SourceLocation StmtBeginSourceLoc = s->getBeginLoc();
+    // clang::SourceLocation StmtEndSourceLoc = s->getEndLoc();
+    // clang::SourceLocation BraceBeginSourceLoc = StmtBeginSourceLoc.getLocWithOffset(0);
+    // clang::SourceLocation BraceEndSourceLoc = StmtEndSourceLoc.getLocWithOffset(0);
+
+    // vRewriter.InsertTextBefore(BraceBeginSourceLoc, "{");
+    // vRewriter.InsertTextAfter(BraceEndSourceLoc, "}");
 
     if (strcmp(s->getStmtClassName(), "WhileStmt") == 0)
     {
-        #ifdef DEBUG_INST
-        freopen(visitor_OutFile, "a+", stderr);
-        std::cerr << "VisitStmt :: While Statement Found\n";
-        fclose(stderr);
-        #endif
+    #ifdef DEBUG_INST
+    freopen(visitor_OutFile, "a+", stderr);
+    std::cerr << "VisitStmt :: While Statement Found\n";
+    fclose(stderr);
+    #endif
 
-        clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
-        
-        
+    clang::WhileStmt *whileStmt = clang::dyn_cast<clang::WhileStmt>(s);
 
-        clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
-        clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
-        printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
-        // Uncomment the following two lines and comment the above two lines to print at the end of the while loop
-        // clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getEndLoc();
-        // clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(-1);
+    clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getBeginLoc();
+    clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(0);
+    printlineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(printSourceLoc);
+    // Uncomment the following two lines and comment the above two lines to print at the end of the while loop
+    // clang::SourceLocation nextSourceLoc = whileStmt->getBody()->getEndLoc();
+    // clang::SourceLocation printSourceLoc = nextSourceLoc.getLocWithOffset(-1);
 
+    clang::SourceLocation beforeWhilePrintSourceLoc = whileStmt->getBeginLoc();
+    beforeWhilePrintSourceLoc = beforeWhilePrintSourceLoc.getLocWithOffset(-1); // Offset to print before the while loop
 
-        clang::SourceLocation beforeWhilePrintSourceLoc = whileStmt->getBeginLoc();
-        beforeWhilePrintSourceLoc = beforeWhilePrintSourceLoc.getLocWithOffset(-1); //Offset to print before the while loop
+    // Get the source location before the while loop
+    // clang::SourceLocation whileSourceLoc = whileStmt->getBeginLoc();
+    // clang::SourceLocation whileSourceLoc = whileStmt->getBeginLoc();
+    // clang::SourceLocation beforeWhilePrintSourceLoc = nextSourceLoc.getLocWithOffset(-1);
+    // clang::SourceLocation beforeWhilePrintSourceLoc = whileStmt->getSourceRange().getBegin();
 
-        //Get the source location before the while loop
-        //clang::SourceLocation whileSourceLoc = whileStmt->getBeginLoc();
-        //clang::SourceLocation whileSourceLoc = whileStmt->getBeginLoc();
-        //clang::SourceLocation beforeWhilePrintSourceLoc = nextSourceLoc.getLocWithOffset(-1);
-        //clang::SourceLocation beforeWhilePrintSourceLoc = whileStmt->getSourceRange().getBegin();
+    // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
+    // print_map(nextSourceLoc, lineNum, "");
 
-
-        // lineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(nextSourceLoc);
-        // print_map(nextSourceLoc, lineNum, "");
-
-        // Check if there is an array use in the body of the loop and only then instrument
-        if (!getArrayUseInLoop(s, "WhileStmt"))
+    // Check if there is an array use in the body of the loop and only then instrument
+    if (!getArrayUseInLoop(s, "WhileStmt"))
+    {
+        if (instrumentation_flag == 1)
+            print_map(printSourceLoc, printlineNum, "");
+        else if (instrumentation_flag == 2)
         {
-            if (instrumentation_flag == 1)
-                print_map(printSourceLoc, printlineNum, "");
-            else if (instrumentation_flag == 2)
-            {
-                print_cbmc(printSourceLoc, printlineNum, "");
-                print_trace(printSourceLoc, printlineNum, "loop_head");
-                print_trace(beforeWhilePrintSourceLoc, printlineNum, "reached_control");
-            }
+            print_cbmc(printSourceLoc, printlineNum, "");
+            print_trace(printSourceLoc, printlineNum, "loop_head");
+            print_trace(beforeWhilePrintSourceLoc, printlineNum, "reached_control");
         }
-        else
-        {
-            print_other(printSourceLoc, printlineNum, "ArrayFound");
-        }
+    }
+    else
+    {
+        print_other(printSourceLoc, printlineNum, "ArrayFound");
+    }
     }
 
     if (strcmp(s->getStmtClassName(), "ForStmt") == 0)
@@ -1510,12 +1542,12 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
         if (ifStmt->getElse())
         {
-            if (clang::IfStmt *elseIfStmt = clang::dyn_cast<clang::IfStmt>(ifStmt->getElse()))
-            {
-                //thenSourceLoc = ifStmt->getThen()->getBeginLoc();
-                //printthenLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(thenSourceLoc);
-            }
-            else
+            // if (clang::IfStmt *elseIfStmt = clang::dyn_cast<clang::IfStmt>(ifStmt->getElse()))
+            // {
+            //     //thenSourceLoc = ifStmt->getThen()->getBeginLoc();
+            //     //printthenLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(thenSourceLoc);
+            // }
+            // else
             {
                 elseSourceLoc = ifStmt->getElse()->getBeginLoc();
                 printelseLineNum = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(elseSourceLoc);
@@ -1525,7 +1557,7 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
 
         if (instrumentation_flag == 2)
         {
-            //print_trace(beforeIfPrintSourceLoc, printlineNum, "reached_control");
+            print_trace(beforeIfPrintSourceLoc, printlineNum, "reached_control");
             print_trace(thenSourceLoc, printthenLineNum, "control_true");
             print_trace(elseSourceLoc, printelseLineNum, "control_false");
         }

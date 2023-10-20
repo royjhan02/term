@@ -48,4 +48,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/instrumenter.dir/DependInfo.cmake"
   "CMakeFiles/instCore.dir/DependInfo.cmake"
+  "CMakeFiles/clean_instrumented.dir/DependInfo.cmake"
   )
