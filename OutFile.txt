@@ -1,10 +1,10 @@
 
-Found Input File To Parse on disk = input/test2.c
+Found Input File To Parse on disk = input/test2_braced.c
 Output File = OutFile.txt
 
-Function name is foo
+Function name is main
 Function body begins at line number = 3
-Function body ends at line number = 22
+Function body ends at line number = 44
 Number of function arguments = 3
 Argument 0 name = a
 Argument 0 type = int
@@ -15,9 +15,7 @@ Argument 2 type = char *
 VisitVarDecl :: Found VarDecl at line = 2
 VisitVarDecl :: Found VarDecl at line = 2
 VisitVarDecl :: Found VarDecl at line = 2
-VisitStmt :: Visiting CompoundStmtat line 3
-Count of CompoundStmt is 1
-VisitCompoundStmt :: CompoundStmt at line 3 and column 1 to line 22 and column 1
+VisitCompoundStmt :: CompoundStmt at line 3 and column 1 to line 44 and column 1
 VisitCompoundStmt :: Substmt is DeclStmt at line 4
 Decl is Var
 VisitCompoundStmt :: Variable (Not SingleDecl) h of type int declared at line 4 and column 1
@@ -26,24 +24,22 @@ VisitCompoundStmt :: Variable (Not SingleDecl) m of type int declared at line 4 
 VisitCompoundStmt :: Substmt is DeclStmt at line 5
 VisitCompoundStmt :: Variable (SingleDecl) yy of type float declared at line 5 and column 1
 VisitCompoundStmt :: Substmt is WhileStmt at line 6
-VisitCompoundStmt :: Substmt is IfStmt at line 10
-VisitCompoundStmt :: Substmt is ReturnStmt at line 20
+VisitCompoundStmt :: Substmt is CompoundStmt at line 10
+VisitCompoundStmt :: Substmt is WhileStmt at line 26
+VisitCompoundStmt :: Substmt is WhileStmt at line 29
+VisitCompoundStmt :: Substmt is ForStmt at line 36
+VisitCompoundStmt :: Substmt is ForStmt at line 38
+VisitCompoundStmt :: Substmt is ReturnStmt at line 42
 show_scope_map :: Printing scope map
-a => a 3 22
-b => b 3 22
-funcp => funcp 3 22
-h => h 4 22
-m => m 4 22
-yy => yy 5 22
-VisitStmt :: Visiting DeclStmtat line 4
-Count of DeclStmt is 1
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
 VisitVarDecl :: Found VarDecl at line = 4
 VisitVarDecl :: Found VarDecl at line = 4
-VisitStmt :: Visiting DeclStmtat line 5
-Count of DeclStmt is 1
 VisitVarDecl :: Found VarDecl at line = 5
-VisitStmt :: Visiting WhileStmtat line 6
-Count of WhileStmt is 1
 VisitStmt :: While Statement Found
 getArrayUseInLoop :: Stmt Body of CompoundStmt
 getArrayUseInLoop :: Stmt at line 7 is BinaryOperator
@@ -53,22 +49,22 @@ hasArrayAccessInExpression :: ImplicitCast :: BinaryOperator at line 7
 LHS is ImplicitCastExpr RHS is ImplicitCastExpr
 Instrumentation flag = 2
 check_variable_scope :: Checking scope of variable a at print line number : 6
- <<< check_variable_scope :: Variable a is in scope at print line number : 6 | scope begin = 3 | scope end = 22 >>> 
+ <<< check_variable_scope :: Variable a is in scope at print line number : 6 | scope begin = 3 | scope end = 44 >>> 
 check_alloca_map :: Printing alloca map
 check_variable_scope :: Checking scope of variable b at print line number : 6
- <<< check_variable_scope :: Variable b is in scope at print line number : 6 | scope begin = 3 | scope end = 22 >>> 
+ <<< check_variable_scope :: Variable b is in scope at print line number : 6 | scope begin = 3 | scope end = 44 >>> 
 check_alloca_map :: Printing alloca map
 check_variable_scope :: Checking scope of variable funcp at print line number : 6
- <<< check_variable_scope :: Variable funcp is in scope at print line number : 6 | scope begin = 3 | scope end = 22 >>> 
+ <<< check_variable_scope :: Variable funcp is in scope at print line number : 6 | scope begin = 3 | scope end = 44 >>> 
 check_alloca_map :: Printing alloca map
 check_variable_scope :: Checking scope of variable h at print line number : 6
- <<< check_variable_scope :: Variable h is in scope at print line number : 6 | scope begin = 4 | scope end = 22 >>> 
+ <<< check_variable_scope :: Variable h is in scope at print line number : 6 | scope begin = 4 | scope end = 44 >>> 
 check_alloca_map :: Printing alloca map
 check_variable_scope :: Checking scope of variable m at print line number : 6
- <<< check_variable_scope :: Variable m is in scope at print line number : 6 | scope begin = 4 | scope end = 22 >>> 
+ <<< check_variable_scope :: Variable m is in scope at print line number : 6 | scope begin = 4 | scope end = 44 >>> 
 check_alloca_map :: Printing alloca map
 check_variable_scope :: Checking scope of variable yy at print line number : 6
- <<< check_variable_scope :: Variable yy is in scope at print line number : 6 | scope begin = 5 | scope end = 22 >>> 
+ <<< check_variable_scope :: Variable yy is in scope at print line number : 6 | scope begin = 5 | scope end = 44 >>> 
 check_alloca_map :: Printing alloca map
 Begin inscope_var_pairs :: Printing CBMC scope map
 a => int
@@ -84,113 +80,329 @@ eqStrAnd = oa==a && ob==b && ofuncp==funcp &&
 eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && 
 eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && 
 eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && oyy==yy
-VisitStmt :: Visiting BinaryOperatorat line 6
-Count of BinaryOperator is 1
-VisitStmt :: Visiting ImplicitCastExprat line 6
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting DeclRefExprat line 6
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IntegerLiteralat line 6
-Count of IntegerLiteral is 1
-VisitStmt :: Visiting CompoundStmtat line 6
-Count of CompoundStmt is 1
 VisitCompoundStmt :: CompoundStmt at line 6 and column 21 to line 8 and column 2
 VisitCompoundStmt :: Substmt is BinaryOperator at line 7
 show_scope_map :: Printing scope map
-a => a 3 22
-b => b 3 22
-funcp => funcp 3 22
-h => h 4 22
-m => m 4 22
-yy => yy 5 22
-VisitStmt :: Visiting BinaryOperatorat line 7
-Count of BinaryOperator is 1
-VisitStmt :: Visiting DeclRefExprat line 7
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting ImplicitCastExprat line 7
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting BinaryOperatorat line 7
-Count of BinaryOperator is 1
-VisitStmt :: Visiting ImplicitCastExprat line 7
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting ImplicitCastExprat line 7
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting DeclRefExprat line 7
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting ImplicitCastExprat line 7
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting DeclRefExprat line 7
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IfStmtat line 10
-Count of IfStmt is 1
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 10 and column 2 to line 18 and column 13
+VisitCompoundStmt :: Substmt is IfStmt at line 10
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
 VisitStmt :: If Statement Found at line 10
-VisitStmt :: Visiting BinaryOperatorat line 10
-Count of BinaryOperator is 1
-VisitStmt :: Visiting ImplicitCastExprat line 10
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting DeclRefExprat line 10
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IntegerLiteralat line 10
-Count of IntegerLiteral is 1
-VisitStmt :: Visiting UnaryOperatorat line 11
-Count of UnaryOperator is 1
-VisitStmt :: Visiting DeclRefExprat line 11
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IfStmtat line 13
-Count of IfStmt is 1
+VisitCompoundStmt :: CompoundStmt at line 11 and column 3 to line 11 and column 8
+VisitCompoundStmt :: Substmt is UnaryOperator at line 11
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 13 and column 14 to line 18 and column 12
+VisitCompoundStmt :: Substmt is CompoundStmt at line 13
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 13 and column 15 to line 18 and column 11
+VisitCompoundStmt :: Substmt is IfStmt at line 13
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
 VisitStmt :: If Statement Found at line 13
-VisitStmt :: Visiting BinaryOperatorat line 13
-Count of BinaryOperator is 1
-VisitStmt :: Visiting ImplicitCastExprat line 13
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting DeclRefExprat line 13
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IntegerLiteralat line 13
-Count of IntegerLiteral is 1
-VisitStmt :: Visiting CompoundStmtat line 13
-Count of CompoundStmt is 1
-VisitCompoundStmt :: CompoundStmt at line 13 and column 22 to line 14 and column 7
+VisitCompoundStmt :: CompoundStmt at line 13 and column 24 to line 14 and column 8
+VisitCompoundStmt :: Substmt is CompoundStmt at line 13
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 13 and column 25 to line 14 and column 7
 VisitCompoundStmt :: Substmt is UnaryOperator at line 14
 show_scope_map :: Printing scope map
-a => a 3 22
-b => b 3 22
-funcp => funcp 3 22
-h => h 4 22
-m => m 4 22
-yy => yy 5 22
-VisitStmt :: Visiting UnaryOperatorat line 14
-Count of UnaryOperator is 1
-VisitStmt :: Visiting DeclRefExprat line 14
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IfStmtat line 15
-Count of IfStmt is 1
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 15 and column 14 to line 18 and column 10
+VisitCompoundStmt :: Substmt is CompoundStmt at line 15
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 15 and column 15 to line 18 and column 9
+VisitCompoundStmt :: Substmt is IfStmt at line 15
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
 VisitStmt :: If Statement Found at line 15
-VisitStmt :: Visiting BinaryOperatorat line 15
-Count of BinaryOperator is 1
-VisitStmt :: Visiting ImplicitCastExprat line 15
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting DeclRefExprat line 15
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IntegerLiteralat line 15
-Count of IntegerLiteral is 1
-VisitStmt :: Visiting BinaryOperatorat line 16
-Count of BinaryOperator is 1
-VisitStmt :: Visiting DeclRefExprat line 16
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IntegerLiteralat line 16
-Count of IntegerLiteral is 1
-VisitStmt :: Visiting BinaryOperatorat line 18
-Count of BinaryOperator is 1
-VisitStmt :: Visiting DeclRefExprat line 18
-Count of DeclRefExpr is 1
-VisitStmt :: Visiting IntegerLiteralat line 18
-Count of IntegerLiteral is 1
-VisitStmt :: Visiting ReturnStmtat line 20
-Count of ReturnStmt is 1
-VisitStmt :: Visiting ImplicitCastExprat line 20
-Count of ImplicitCastExpr is 1
-VisitStmt :: Visiting DeclRefExprat line 20
-Count of DeclRefExpr is 1
+VisitCompoundStmt :: CompoundStmt at line 16 and column 3 to line 16 and column 8
+VisitCompoundStmt :: Substmt is BinaryOperator at line 16
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 17 and column 7 to line 18 and column 8
+VisitCompoundStmt :: Substmt is CompoundStmt at line 17
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 17 and column 8 to line 18 and column 7
+VisitCompoundStmt :: Substmt is BinaryOperator at line 18
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitStmt :: While Statement Found
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 27 is UnaryOperator
+Instrumentation flag = 2
+check_variable_scope :: Checking scope of variable a at print line number : 27
+ <<< check_variable_scope :: Variable a is in scope at print line number : 27 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable b at print line number : 27
+ <<< check_variable_scope :: Variable b is in scope at print line number : 27 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable funcp at print line number : 27
+ <<< check_variable_scope :: Variable funcp is in scope at print line number : 27 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable h at print line number : 27
+ <<< check_variable_scope :: Variable h is in scope at print line number : 27 | scope begin = 4 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable m at print line number : 27
+ <<< check_variable_scope :: Variable m is in scope at print line number : 27 | scope begin = 4 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable yy at print line number : 27
+ <<< check_variable_scope :: Variable yy is in scope at print line number : 27 | scope begin = 5 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+Begin inscope_var_pairs :: Printing CBMC scope map
+a => int
+b => float
+funcp => char *
+h => int
+m => int
+yy => float
+End inscope_var_pairs :: Printing CBMC scope map
+eqStrAnd = oa==a && 
+eqStrAnd = oa==a && ob==b && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && oyy==yy
+VisitCompoundStmt :: CompoundStmt at line 27 and column 9 to line 27 and column 14
+VisitCompoundStmt :: Substmt is UnaryOperator at line 27
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitStmt :: While Statement Found
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 31 is CompoundStmt
+getArrayUseInLoop :: Stmt at line 33 is BinaryOperator
+getArrayUseInLoop :: LHS at 33 is DeclRefExpr
+getArrayUseInLoop :: RHS at 33 is BinaryOperator
+hasArrayAccessInExpression :: BinaryOperator at line 33
+Instrumentation flag = 2
+check_variable_scope :: Checking scope of variable a at print line number : 30
+ <<< check_variable_scope :: Variable a is in scope at print line number : 30 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable b at print line number : 30
+ <<< check_variable_scope :: Variable b is in scope at print line number : 30 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable funcp at print line number : 30
+ <<< check_variable_scope :: Variable funcp is in scope at print line number : 30 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable h at print line number : 30
+ <<< check_variable_scope :: Variable h is in scope at print line number : 30 | scope begin = 4 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable m at print line number : 30
+ <<< check_variable_scope :: Variable m is in scope at print line number : 30 | scope begin = 4 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable yy at print line number : 30
+ <<< check_variable_scope :: Variable yy is in scope at print line number : 30 | scope begin = 5 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+Begin inscope_var_pairs :: Printing CBMC scope map
+a => int
+b => float
+funcp => char *
+h => int
+m => int
+yy => float
+End inscope_var_pairs :: Printing CBMC scope map
+eqStrAnd = oa==a && 
+eqStrAnd = oa==a && ob==b && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && oyy==yy
+VisitCompoundStmt :: CompoundStmt at line 30 and column 2 to line 34 and column 1
+VisitCompoundStmt :: Substmt is CompoundStmt at line 31
+VisitCompoundStmt :: Substmt is BinaryOperator at line 33
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitCompoundStmt :: CompoundStmt at line 31 and column 2 to line 32 and column 11
+VisitCompoundStmt :: Substmt is IfStmt at line 31
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitStmt :: If Statement Found at line 31
+VisitCompoundStmt :: CompoundStmt at line 32 and column 3 to line 32 and column 10
+VisitCompoundStmt :: Substmt is BinaryOperator at line 32
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitStmt :: For Statement Found
+VisitForStmt :: No Decl Stmt found in Init
+VisitForStmt :: Decl Stmt found in Init and added to scope_map
+Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 37 is UnaryOperator
+Instrumentation flag = 2
+check_variable_scope :: Checking scope of variable a at print line number : 37
+ <<< check_variable_scope :: Variable a is in scope at print line number : 37 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable b at print line number : 37
+ <<< check_variable_scope :: Variable b is in scope at print line number : 37 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable funcp at print line number : 37
+ <<< check_variable_scope :: Variable funcp is in scope at print line number : 37 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable h at print line number : 37
+ <<< check_variable_scope :: Variable h is in scope at print line number : 37 | scope begin = 4 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable m at print line number : 37
+ <<< check_variable_scope :: Variable m is in scope at print line number : 37 | scope begin = 4 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable yy at print line number : 37
+ <<< check_variable_scope :: Variable yy is in scope at print line number : 37 | scope begin = 5 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+Begin inscope_var_pairs :: Printing CBMC scope map
+a => int
+b => float
+funcp => char *
+h => int
+m => int
+yy => float
+End inscope_var_pairs :: Printing CBMC scope map
+eqStrAnd = oa==a && 
+eqStrAnd = oa==a && ob==b && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && oyy==yy
+VisitCompoundStmt :: CompoundStmt at line 37 and column 2 to line 37 and column 7
+VisitCompoundStmt :: Substmt is UnaryOperator at line 37
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
+VisitStmt :: For Statement Found
+VisitForStmt :: No Decl Stmt found in Init
+VisitForStmt :: Decl Stmt found in Init and added to scope_map
+Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 39 is BinaryOperator
+getArrayUseInLoop :: LHS at 39 is DeclRefExpr
+getArrayUseInLoop :: RHS at 40 is CStyleCastExpr
+Instrumentation flag = 2
+check_variable_scope :: Checking scope of variable a at print line number : 39
+ <<< check_variable_scope :: Variable a is in scope at print line number : 39 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable b at print line number : 39
+ <<< check_variable_scope :: Variable b is in scope at print line number : 39 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable funcp at print line number : 39
+ <<< check_variable_scope :: Variable funcp is in scope at print line number : 39 | scope begin = 3 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable h at print line number : 39
+ <<< check_variable_scope :: Variable h is in scope at print line number : 39 | scope begin = 4 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable m at print line number : 39
+ <<< check_variable_scope :: Variable m is in scope at print line number : 39 | scope begin = 4 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+check_variable_scope :: Checking scope of variable yy at print line number : 39
+ <<< check_variable_scope :: Variable yy is in scope at print line number : 39 | scope begin = 5 | scope end = 44 >>> 
+check_alloca_map :: Printing alloca map
+Begin inscope_var_pairs :: Printing CBMC scope map
+a => int
+b => float
+funcp => char *
+h => int
+m => int
+yy => float
+End inscope_var_pairs :: Printing CBMC scope map
+eqStrAnd = oa==a && 
+eqStrAnd = oa==a && ob==b && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && 
+eqStrAnd = oa==a && ob==b && ofuncp==funcp && oh==h && om==m && oyy==yy
+VisitCompoundStmt :: CompoundStmt at line 39 and column 2 to line 40 and column 13
+VisitCompoundStmt :: Substmt is BinaryOperator at line 39
+show_scope_map :: Printing scope map
+a => a 3 44
+b => b 3 44
+funcp => funcp 3 44
+h => h 4 44
+m => m 4 44
+yy => yy 5 44
 
 Finished call to function ParseAST   
 
