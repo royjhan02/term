@@ -415,10 +415,51 @@ bool PyASTVisitor::print_map(clang::SourceLocation srcLoc, unsigned int lineNum,
 
 bool PyASTVisitor::VisitCompoundStmt(clang::CompoundStmt *v_compoundStmt)
 {
+    //Check if Compound statement has braces {}
+
     unsigned int cmpndBeginLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_compoundStmt->getBeginLoc());
     unsigned int cmpndEndLine = visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(v_compoundStmt->getEndLoc());
     unsigned int cmpndBeginCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_compoundStmt->getBeginLoc());
     unsigned int cmpndEndCol = visitor_CompilerInstance->getSourceManager().getExpansionColumnNumber(v_compoundStmt->getEndLoc());
+
+    clang::SourceRange originalRange = v_compoundStmt->getSourceRange();
+    clang::CharSourceRange originalCharRange = clang::CharSourceRange::getCharRange(originalRange);
+
+    llvm::StringRef originalBodyCode = clang::Lexer::getSourceText(originalCharRange, visitor_CompilerInstance->getSourceManager(), visitor_CompilerInstance->getLangOpts());
+    #ifdef DEBUG_INST
+    freopen(visitor_OutFile, "a+", stderr);
+    std::cerr << "####################### CompoundStmt Code Range #######################\n";
+    std::cerr << "VisitCompoundStmt :: CompoundStmt Begin line = " << cmpndBeginLine << " and column = " << cmpndBeginCol << "\n";
+    std::cerr << "VisitCompoundStmt :: CompoundStmt End line = " << cmpndEndLine << " and column = " << cmpndEndCol << "\n";
+    std::cerr << "Original body code is " << originalBodyCode.str() << "\n";
+    std::cerr << "####################### CompoundStmt Code Range #######################\n";
+    fclose(stderr);
+    #endif
+
+    if (cmpndBeginLine == cmpndEndLine)
+    {
+        // clang::SourceRange originalRange = v_compoundStmt->getSourceRange();
+        // clang::CharSourceRange originalCharRange = clang::CharSourceRange::getCharRange(originalRange);
+
+        // llvm::StringRef originalBodyCode = clang::Lexer::getSourceText(originalCharRange, visitor_CompilerInstance->getSourceManager(), visitor_CompilerInstance->getLangOpts());
+        // #ifdef DEBUG_INST
+        // freopen(visitor_OutFile, "a+", stderr);
+        // std::cerr << "####################### CompoundStmt is on one line Code Range #######################\n";
+        // std::cerr << "VisitCompoundStmt :: CompoundStmt Begin line = " << cmpndBeginLine << " and column = " << cmpndBeginCol << "\n";
+        // std::cerr << "VisitCompoundStmt :: CompoundStmt End line = " << cmpndEndLine << " and column = " << cmpndEndCol << "\n";
+        // std::cerr << "Original body code is " << originalBodyCode.str() << "\n";
+        // std::cerr << "####################### CompoundStmt is on one line Code Range #######################\n";
+        // fclose(stderr);
+        // #endif
+        // #ifdef DEBUG_INST
+        // freopen(visitor_OutFile, "a+", stderr);
+        // std::cerr << "####################### CompoundStmt is on one line #######################\n";
+        // std::cerr << "VisitCompoundStmt :: CompoundStmt Begin line = " << cmpndBeginLine << " and column = " << cmpndBeginCol << "\n";
+        // std::cerr << "VisitCompoundStmt :: CompoundStmt End line = " << cmpndEndLine << " and column = " << cmpndEndCol << "\n";
+        // std::cerr << "####################### CompoundStmt is on one line #######################\n";
+        // fclose(stderr);
+        // #endif
+    }
 
     std::pair<std::string, AVInfo::scope_info> scope_pair;
     AVInfo::scope_info scope_info;

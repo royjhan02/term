@@ -12,6 +12,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fbracket-depth=1024")
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(/usr/include/llvm-14)
@@ -42,6 +43,7 @@ target_link_libraries(instrumenter PUBLIC instCore clangTooling clangFrontendToo
 
 
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+
 
 #add_custom_target(instrumenter COMMAND make -C ${instrumenter_SOURCE_DIR}
 #        CLION_EXE_DIR=${PROJECT_BINARY_DIR})

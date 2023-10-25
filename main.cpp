@@ -166,45 +166,59 @@ int main(int argc, const char **argv)
     clang::ParseAST(pyCI.getPreprocessor(), &pyCI.getASTConsumer(), pyCI.getASTContext());
 
     freopen(myOutputFile, "a+", stderr);
-    std::cerr << "\nFinished call to function ParseAST  "
-              << " "
-              << "\n";
+    std::cerr << "\nFinished call to function ParseAST  \n";
     fclose(stderr);
 
-    // std::cout << "\nFinished call to function ParseAST  " << " "<< "\n";
+    std::cout << "\nFinished call to function ParseAST  " << " "<< "\n";
     pyRewriter.InsertTextAfterToken(mainEndLoc, missingFunctions);
 
     const clang::RewriteBuffer *RewriteBuf =
         pyRewriter.getRewriteBufferFor(pyCI.getSourceManager().getMainFileID());
-    if (RewriteBuf)
+
+    if (RewriteBuf!=NULL)
+    {
+        freopen(myOutputFile, "a+", stderr);
+        std::cerr << "\n Rewrite Buffer is Not NULL \n";
+        fclose(stderr);
+        std::cout << "\n Rewrite Buffer is Not NULL \n";
+
         llvm::outs() << std::string(RewriteBuf->begin(), RewriteBuf->end());
+        std::string modFileStem = std::filesystem::path(argv[2]).stem();
+    // std::cout << "\n" << modFileStem << "\n";
+        std::string modFile = modFileStem + "_instrumented.c";
+        std::ofstream modOut(modFile);
+        modOut << std::string(RewriteBuf->begin(), RewriteBuf->end());
+
+        freopen(myOutputFile, "a+", stderr);
+        std::cerr << "\nFinished Rewriting \n";
+        fclose(stderr);
+        std::cout << "\nFinished Rewriting \n";
+
+    }
+    else
+    {
+        freopen(myOutputFile, "a+", stderr);
+        std::cerr << "\nRewrite Buffer is NULL\n";
+        fclose(stderr);
+        std::cout << "\nRewrite Buffer is NULL\n";
+    }
 
     // std::cout << "\n" << argv[2] << "\n";
     // std::string modFileName =  std::filesystem::path(argv[2]).filename();
-    std::string modFileStem = std::filesystem::path(argv[2]).stem();
-    // std::cout << "\n" << modFileStem << "\n";
-    std::string modFile = modFileStem + "_instrumented.c";
-    std::ofstream modOut(modFile);
-    modOut << std::string(RewriteBuf->begin(), RewriteBuf->end());
+        freopen(myOutputFile, "a+", stderr);
+        std::cerr << "\n End Main \n";
+        fclose(stderr);
 
-    freopen(myOutputFile, "a+", stderr);
-    std::cerr << "\nFinished Rewriting  "
-              << " "
-              << "\n";
-    fclose(stderr);
+        std::cout << "\nEnd Main \n ";
 
-    std::cout << "\nEnd Main  "
-              << " "
-              << "\n";
-
-    // std::cout << "Printing Variable Information\n";
-    // std::cout << "Size of vector = " << visitor_var_type_name->size() <<"\n";
-    // for (auto it_var_counter = visitor_var_type_name->begin();
-    //      it_var_counter != visitor_var_type_name->end(); it_var_counter++) {
-    //     variable_triple l_vt = *it_var_counter;
-    //     freopen(myOutputFile,"a+",stderr);
-    //     //std::cerr << "\nvar_counter size = " << PyVisitorTree::var_counter.size();
-    //     std::cerr << "<" << l_vt.nam << "," << l_vt.typ <<"," << l_vt.scop << ">\n";
-    //     fclose(stderr);
-    // }
+        // std::cout << "Printing Variable Information\n";
+        // std::cout << "Size of vector = " << visitor_var_type_name->size() <<"\n";
+        // for (auto it_var_counter = visitor_var_type_name->begin();
+        //      it_var_counter != visitor_var_type_name->end(); it_var_counter++) {
+        //     variable_triple l_vt = *it_var_counter;
+        //     freopen(myOutputFile,"a+",stderr);
+        //     //std::cerr << "\nvar_counter size = " << PyVisitorTree::var_counter.size();
+        //     std::cerr << "<" << l_vt.nam << "," << l_vt.typ <<"," << l_vt.scop << ">\n";
+        //     fclose(stderr);
+        // }
 }
