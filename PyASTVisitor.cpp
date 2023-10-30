@@ -146,6 +146,8 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
     fclose(stderr);
     #endif
 
+    // std::cout << "pStored Counter = " << pStoredCounter << "\n";
+
 
     if (instrumentation_flag == 2)
     {
@@ -167,22 +169,6 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
 
             if (check_variable_scope(instvarName, srcLoc))
             {
-
-                // if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" || t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long")
-                //     insertStr = insertStr + "printf(\"" + instvarName + "=%d,\"," + instvarName + ");";
-                // else if (t_typ == "float" || t_typ == "double" || t_typ == "long double")
-                //     insertStr = insertStr + "printf(\"" + instvarName + "=%f,\"," + instvarName + ");";
-                // else if (t_typ == "char")
-                //     insertStr = insertStr + "printf(\"" + instvarName + "=%c,\"," + instvarName + ");";
-                // insertStr = insertStr + "static " + t_typ + " " + instvarName + ";";
-
-                // Only instrument for CBMC if the types are one of the following. If a variable is in scope AND has one of the
-                // following types add it to the vector of variables to be instrumented
-                // Aeroplane
-
-                // if (t_typ == "int" || t_typ == "long" || t_typ == "short" || t_typ == "long long" || t_typ == "unsigned int" ||
-                //     t_typ == "unsigned long" || t_typ == "unsigned short" || t_typ == "unsigned long long" ||
-                //     t_typ == "float" || t_typ == "double" || t_typ == "long double" || t_typ == "char")
 
                 // Checking if variable type belongs to list of types to be instrumented
                 if (check_variable_type_list(t_typ) == 1)
@@ -234,13 +220,21 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             std::string oinstvarName = "o" + scope_instvarName;
             std::string allocainstvarName = "*" + scope_instvarName;
             std::string allocaoinstvarName = "*" +  oinstvarName;
+            std::string allocaoinstvarNameVal = oinstvarName + "_val"; //To store the old value pointed by int * for alloca
 
             defStr = defStr + "static " + scope_t_typ + " " + oinstvarName + ";";
+
+            if (scope_t_typ=="int *")
+            {
+                defStr = defStr + "static int" + " " + allocaoinstvarNameVal + ";"; //To store the old value pointed by int * for alloca
+            }
+
             eqStrSemi = eqStrSemi + oinstvarName + "=" + scope_instvarName + ";";
 
             if (scope_t_typ=="int *")
             {
                 eqStrSemi = eqStrSemi + allocaoinstvarName + "=" + allocainstvarName + ";";
+                eqStrSemi = eqStrSemi + allocaoinstvarNameVal + "=" + allocainstvarName + ";";
             }
 
             // eqStrAnd = eqStrAnd + oinstvarName + "==" + scope_instvarName + " && ";
@@ -249,6 +243,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             if (scope_t_typ=="int *")
             {
                 eqStrAnd = eqStrAnd + " && " + allocaoinstvarName + "==" + allocainstvarName;
+                eqStrAnd = eqStrAnd + " && " + allocaoinstvarNameVal + "==" + allocainstvarName;
             }
 
             if (vec_loc != inscope_vars_pair.size() - 1)
@@ -273,7 +268,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         {
             #ifdef DEBUG_INST
             freopen(visitor_OutFile, "a+", stderr);
-            std::cout << "Instrumentation flag = " << instrumentation_flag << "\n";
+            std::cerr << "Instrumentation flag = " << instrumentation_flag << "\n";
             fclose(stderr);
             #endif
 

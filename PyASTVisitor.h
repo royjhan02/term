@@ -130,6 +130,7 @@ private:
     int scope_counter;
 
     int decl_counter;
+    int pStoredCounter=0;
 };
 
 #endif
