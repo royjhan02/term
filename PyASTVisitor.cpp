@@ -203,7 +203,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
         std::string eqStrAlloca = "";
 
         insertStr = insertStr + "printf(\"CBMC Instrumentation @ line" + std::to_string(lineNum) + "\");";
-        insertStr = insertStr + "static myBool pStored = myFalse;";
+        //insertStr = insertStr + "static myBool pStored = myFalse;"; // Moved pStored out of loop with counter and non-static type
         insertStr = insertStr + "myBool flag=__VERIFIER_nondet_myBool();";
 
         std::string scope_t_typ;
@@ -260,7 +260,14 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             vec_loc++;
         }
         insertStr = insertStr + defStr;
-        insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi + "pStored=myTrue;} ";
+
+        //Convert pStoredCounter to string
+        std::string pStored_counter_str = "pStored"+std::to_string(pStoredCounter);
+
+        //insertStr = insertStr + "if(pStored){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi + "pStored=myTrue;} ";
+
+        //Changed insertStr to include pStoredCounter
+        insertStr = insertStr + "if(" + pStored_counter_str + "){__CPROVER_assert(!(" + eqStrAnd + "),\"recurrent state found\");} if(flag){" + eqStrSemi + pStored_counter_str + "=myTrue;} ";
 
         // clang::SourceLocation nextSourceLoc = stmtEndloc;
         // if (!scope_map.empty())
@@ -281,8 +288,23 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             }
         }
     }
+    //Increment pStoredCounter of the class for next print_cbmc and print_pstored
+    pStoredCounter++;
+
     return true;
 }
+
+bool PyASTVisitor::print_pstored(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
+{
+        std::string insertStr = "";
+        std::string pStored_Counter_str = std::to_string(pStoredCounter); 
+        insertStr = insertStr + "myBool pStored" + pStored_Counter_str + " = myFalse;";
+        vRewriter.InsertTextAfterToken(srcLoc, insertStr);
+
+        return true;
+}
+
+
 
 bool PyASTVisitor::print_other(clang::SourceLocation srcLoc, unsigned int lineNum, std::string message)
 {
@@ -292,7 +314,6 @@ bool PyASTVisitor::print_other(clang::SourceLocation srcLoc, unsigned int lineNu
         insertStr = insertStr + "printf(\"ArrayNT State @ line" + std::to_string(lineNum) + ": Array Found\\n\");";
         vRewriter.InsertTextAfterToken(srcLoc, insertStr);
     }
-
     return true;
 }
 
@@ -1449,6 +1470,7 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             print_map(printSourceLoc, printlineNum, "");
         else if (instrumentation_flag == 2)
         {
+            print_pstored(beforeWhilePrintSourceLoc, printlineNum, ""); //For pStored
             print_cbmc(printSourceLoc, printlineNum, "");
             print_trace(printSourceLoc, printlineNum, "loop_head");
             print_trace(beforeWhilePrintSourceLoc, printlineNum, "reached_control");
@@ -1497,6 +1519,7 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
                 print_map(printSourceLoc, printlineNum, "");
             else if (instrumentation_flag == 2)
             {
+                print_pstored(beforeForPrintSourceLoc, printlineNum, ""); //For pStored
                 print_cbmc(printSourceLoc, printlineNum, "");
                 print_trace(printSourceLoc, printlineNum, "loop_head");
                 print_trace(beforeForPrintSourceLoc, printlineNum, "reached_control");
@@ -1535,6 +1558,7 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
                 print_map(printSourceLoc, printlineNum, "");
             else if (instrumentation_flag == 2)
             {
+                print_pstored(beforeDoWhilePrintSourceLoc, printlineNum, "");
                 print_cbmc(printSourceLoc, printlineNum, "");
                 print_trace(printSourceLoc, printlineNum, "loop_head");
                 print_trace(beforeDoWhilePrintSourceLoc, printlineNum, "reached_control");

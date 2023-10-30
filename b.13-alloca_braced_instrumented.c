@@ -559,8 +559,8 @@ int test_fun(int x, int y, int z)
     *y_ref = y;
     *z_ref = z;
     *c = 0;
-    __VERIFIER_reached_control(557, " ");
- while ((*x_ref > *z_ref) || (*y_ref > *z_ref)) {printf("CBMC Instrumentation @ line557");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static int * oc;static int oc_val;static int ox;static int * ox_ref;static int ox_ref_val;static int oy;static int * oy_ref;static int oy_ref_val;static int oz;static int * oz_ref;static int oz_ref_val;if(pStored){__CPROVER_assert(!(oc==c && *oc==*c && oc_val==*c && ox==x && ox_ref==x_ref && *ox_ref==*x_ref && ox_ref_val==*x_ref && oy==y && oy_ref==y_ref && *oy_ref==*y_ref && oy_ref_val==*y_ref && oz==z && oz_ref==z_ref && *oz_ref==*z_ref && oz_ref_val==*z_ref),"recurrent state found");} if(flag){oc=c;*oc=*c;oc_val=*c;ox=x;ox_ref=x_ref;*ox_ref=*x_ref;ox_ref_val=*x_ref;oy=y;oy_ref=y_ref;*oy_ref=*y_ref;oy_ref_val=*y_ref;oz=z;oz_ref=z_ref;*oz_ref=*z_ref;oz_ref_val=*z_ref;pStored=myTrue;}  __VERIFIER_loop_head(557, " ");
+   myBool pStored0 = myFalse; __VERIFIER_reached_control(557, " ");
+ while ((*x_ref > *z_ref) || (*y_ref > *z_ref)) {printf("CBMC Instrumentation @ line557");myBool flag=__VERIFIER_nondet_myBool();static int * oc;static int oc_val;static int ox;static int * ox_ref;static int ox_ref_val;static int oy;static int * oy_ref;static int oy_ref_val;static int oz;static int * oz_ref;static int oz_ref_val;if(pStored0){__CPROVER_assert(!(oc==c && *oc==*c && oc_val==*c && ox==x && ox_ref==x_ref && *ox_ref==*x_ref && ox_ref_val==*x_ref && oy==y && oy_ref==y_ref && *oy_ref==*y_ref && oy_ref_val==*y_ref && oz==z && oz_ref==z_ref && *oz_ref==*z_ref && oz_ref_val==*z_ref),"recurrent state found");} if(flag){oc=c;*oc=*c;oc_val=*c;ox=x;ox_ref=x_ref;*ox_ref=*x_ref;ox_ref_val=*x_ref;oy=y;oy_ref=y_ref;*oy_ref=*y_ref;oy_ref_val=*y_ref;oz=z;oz_ref=z_ref;*oz_ref=*z_ref;oz_ref_val=*z_ref;pStored0=myTrue;}  __VERIFIER_loop_head(557, " ");
 
         { __VERIFIER_reached_control(558, " ");
 if (*x_ref > *z_ref) { __VERIFIER_control_true(558, " ");

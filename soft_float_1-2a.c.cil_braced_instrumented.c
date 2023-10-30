@@ -47,8 +47,8 @@ if (! m) { __VERIFIER_control_true(30, " ");
 if (m < 1U << 24U) { __VERIFIER_control_true(36, " ");
 
     {
-    __VERIFIER_reached_control(38, " ");
- while (1) {printf("CBMC Instrumentation @ line38");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static unsigned int o__retres4;static int oe;static unsigned int om;static unsigned int ores;if(pStored){__CPROVER_assert(!(o__retres4==__retres4 && oe==e && om==m && ores==res),"recurrent state found");} if(flag){o__retres4=__retres4;oe=e;om=m;ores=res;pStored=myTrue;}  __VERIFIER_loop_head(38, " ");
+   myBool pStored0 = myFalse; __VERIFIER_reached_control(38, " ");
+ while (1) {printf("CBMC Instrumentation @ line38");myBool flag=__VERIFIER_nondet_myBool();static unsigned int o__retres4;static int oe;static unsigned int om;static unsigned int ores;if(pStored0){__CPROVER_assert(!(o__retres4==__retres4 && oe==e && om==m && ores==res),"recurrent state found");} if(flag){o__retres4=__retres4;oe=e;om=m;ores=res;pStored0=myTrue;}  __VERIFIER_loop_head(38, " ");
 
       while_0_continue: /* CIL Label */ ;
       { __VERIFIER_reached_control(40, " ");
@@ -76,8 +76,8 @@ if (m < 1U << 24U) { __VERIFIER_control_true(48, " ");
   } else { __VERIFIER_control_false(56, " ");
 
     {
-    __VERIFIER_reached_control(58, " ");
- while (1) {printf("CBMC Instrumentation @ line58");static myBool pStored = myFalse;myBool flag=__VERIFIER_nondet_myBool();static unsigned int o__retres4;static int oe;static unsigned int om;static unsigned int ores;if(pStored){__CPROVER_assert(!(o__retres4==__retres4 && oe==e && om==m && ores==res),"recurrent state found");} if(flag){o__retres4=__retres4;oe=e;om=m;ores=res;pStored=myTrue;}  __VERIFIER_loop_head(58, " ");
+   myBool pStored1 = myFalse; __VERIFIER_reached_control(58, " ");
+ while (1) {printf("CBMC Instrumentation @ line58");myBool flag=__VERIFIER_nondet_myBool();static unsigned int o__retres4;static int oe;static unsigned int om;static unsigned int ores;if(pStored1){__CPROVER_assert(!(o__retres4==__retres4 && oe==e && om==m && ores==res),"recurrent state found");} if(flag){o__retres4=__retres4;oe=e;om=m;ores=res;pStored1=myTrue;}  __VERIFIER_loop_head(58, " ");
 
       while_1_continue: /* CIL Label */ ;
       { __VERIFIER_reached_control(60, " ");
