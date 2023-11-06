@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/hrishik/Repos/GitHub/term -I/usr/include/llvm-14 -I/usr/lib/llvm-14/include -I/usr/include/c++/12
 
-CXX_FLAGS =  -fbracket-depth=1024 -g -std=gnu++17
+CXX_FLAGS =  -fbracket-depth=1024 -std=c++17 -g -std=gnu++17
 

@@ -1256,6 +1256,31 @@ bool PyASTVisitor::getArrayUseInLoop(clang::Stmt *s, std::string loopType)
                     return true;
                 }
             }
+
+            if (strcmp(stmt->getStmtClassName(), "UnaryOperator") == 0)
+            {
+                #ifdef DEBUG_INST
+                freopen(visitor_OutFile, "a+", stderr);
+                std::cerr << "getArrayUseInLoop :: UnaryOperator at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(stmt->getBeginLoc()) << "\n";
+                fclose(stderr);
+                #endif
+                //Get the subexpression of the unary operator
+                clang::UnaryOperator *unOp = clang::dyn_cast<clang::UnaryOperator>(stmt);
+                clang::Expr *subExpr = unOp->getSubExpr();
+                if (hasArrayAccessInExpression(subExpr))
+                {
+                    #ifdef DEBUG_INST
+                    freopen(visitor_OutFile, "a+", stderr);
+                    std::cerr << "ArraySubscriptExpr in rhs\n";
+                    //std::cerr << "getArrayUseInLoop :: hasArrayAccessInExpression:: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(rImpCastExpr->getBeginLoc()) << "\n";
+                    std::cerr << "getArrayUseInLoop :: hasArrayAccessInExpression:: ArraySubscriptExpr at line " << visitor_CompilerInstance->getSourceManager().getExpansionLineNumber(subExpr->getBeginLoc()) << "\n";
+                    fclose(stderr);
+                    #endif
+
+                    return true;
+                }
+
+            }
         }
     }
     return false;

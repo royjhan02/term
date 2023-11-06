@@ -22,7 +22,7 @@
 #include "clang/AST/DeclBase.h"
 #include "clang/Analysis/AnalysisDeclContext.h"
 #include "clang/Analysis/Analyses/LiveVariables.h"
-#include "clang-c/Index.h"
+//#include "clang-c/Index.h"
 #include "llvm/Support/Casting.h"
 
 #include "llvm/ADT/PostOrderIterator.h"

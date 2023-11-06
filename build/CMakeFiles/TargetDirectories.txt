@@ -1,5 +1,4 @@
 /home/hrishik/Repos/GitHub/term/build/CMakeFiles/instrumenter.dir
 /home/hrishik/Repos/GitHub/term/build/CMakeFiles/instCore.dir
-/home/hrishik/Repos/GitHub/term/build/CMakeFiles/clean_instrumented.dir
 /home/hrishik/Repos/GitHub/term/build/CMakeFiles/edit_cache.dir
 /home/hrishik/Repos/GitHub/term/build/CMakeFiles/rebuild_cache.dir

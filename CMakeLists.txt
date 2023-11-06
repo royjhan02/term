@@ -12,7 +12,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fbracket-depth=1024")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fbracket-depth=1024 -std=c++17")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fbracket-depth=1024 -std=c++17 -static")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -static")
+# set(LLVM_ENABLE_RTTI ON CACHE BOOL "Enable run-time type information")
+# set(LLVM_ENABLE_TERMINFO OFF CACHE BOOL "Enable terminfo handling")
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(/usr/include/llvm-14)
@@ -21,9 +25,11 @@ include_directories(/usr/include/c++/12)
 include_directories(/usr/include/)
 
 link_directories(/usr/lib/llvm-14/lib)
+link_directories(/usr/lib/llvm-14)
 link_directories(/usr/lib)
 link_directories(/usr/lib64)
 link_directories(/usr/lib/gcc/x86_64-linux-gnu/12/)
+link_directories(/usr/lib/gcc/x86_64-linux-gnu/)
 
 
 add_executable(instrumenter main.cpp)
@@ -35,23 +41,40 @@ target_link_libraries(instrumenter PUBLIC instCore clangTooling clangFrontendToo
  clangSerialization  clangCodeGen  clangParse  clangSema
  clangStaticAnalyzerFrontend  clangStaticAnalyzerCheckers  clangStaticAnalyzerCore
  clangAnalysis  clangARCMigrate  clangRewrite  clangRewriteFrontend
- clangEdit  clangAST  clangLex  clangBasic LLVM-14 z3)
+ clangEdit  clangAST  clangLex  clangBasic LLVM)
+
+#set(ZLIB_LIBRARIES /usr/lib/x86_64-linux-gnu/libz.a)
+#set(LIBSDTC /usr/lib/gcc/x86_64-linux-gnu/12/libstdc++.a)
+#set(GLIBC /usr/lib/x86_64-linux-gnu/libc.a)
 
 
 
+# # Get LLVM libraries using llvm-config --libs
+# execute_process(
+#     COMMAND llvm-config-14 --libs --link-static --system-libs
+#     OUTPUT_VARIABLE LLVM_LIBS
+#     OUTPUT_STRIP_TRAILING_WHITESPACE
+# )
+
+# #print the llvm libs
+# message(STATUS "LLVM_LIBS: ${LLVM_LIBS}")
+
+# target_link_libraries(instrumenter PUBLIC 
+# instCore 
+# clangTooling clangFrontendTool clangFrontend  clangDriver
+# clangSerialization  clangCodeGen  clangParse  clangSema
+# clangStaticAnalyzerFrontend  clangStaticAnalyzerCheckers  clangStaticAnalyzerCore
+# clangAnalysis  clangARCMigrate  clangRewrite  clangRewriteFrontend
+# clangEdit  clangAST  clangLex  clangBasic 
+# ${LLVM_LIBS}
+# )
 
 
 
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+#Add static flags
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -ltinfo")
 
 
-#add_custom_target(instrumenter COMMAND make -C ${instrumenter_SOURCE_DIR}
-#        CLION_EXE_DIR=${PROJECT_BINARY_DIR})
 
-# Add a custom clean target
-add_custom_target(clean_instrumented
-    COMMAND ${CMAKE_COMMAND} -E remove *.c_instrumented.c
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-)
 
 
