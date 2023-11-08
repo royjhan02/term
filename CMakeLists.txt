@@ -28,7 +28,7 @@ link_directories(/usr/lib/llvm-14/lib)
 link_directories(/usr/lib/llvm-14)
 link_directories(/usr/lib)
 link_directories(/usr/lib64)
-link_directories(/usr/lib/gcc/x86_64-linux-gnu/12/)
+#link_directories(/usr/lib/gcc/x86_64-linux-gnu/12/)
 link_directories(/usr/lib/gcc/x86_64-linux-gnu/)
 
 
