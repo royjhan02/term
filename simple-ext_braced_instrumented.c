@@ -545,7 +545,7 @@ myexit(1);}}
   List p = a;
   int i = 0;
  myBool pStored0 = myFalse; __VERIFIER_reached_control(537, " ");
- while (i < 30 && __VERIFIER_nondet_int()) {printf("CBMC Instrumentation @ line537");myBool flag=__VERIFIER_nondet_myBool();static int oi;if(pStored0){__CPROVER_assert(!(oi==i),"recurrent state found");} if(flag){oi=i;pStored0=myTrue;}  __VERIFIER_loop_head(537, " ");
+ while (i < 30 && __VERIFIER_nondet_int()) { __VERIFIER_loop_head(537, " ");
 
     p->h = i;
     t = (List) malloc(sizeof(struct node));
@@ -560,8 +560,8 @@ myexit(1);}}
   p->n = 0;
   p = a;
   i = 0;
- myBool pStored1 = myFalse; __VERIFIER_reached_control(549, " ");
- while (p!=0) {printf("CBMC Instrumentation @ line549");myBool flag=__VERIFIER_nondet_myBool();static int oi;if(pStored1){__CPROVER_assert(!(oi==i),"recurrent state found");} if(flag){oi=i;pStored1=myTrue;}  __VERIFIER_loop_head(549, " ");
+ myBool pStored0 = myFalse; __VERIFIER_reached_control(549, " ");
+ while (p!=0) { __VERIFIER_loop_head(549, " ");
 
     { __VERIFIER_reached_control(550, " ");
 if (p->h != 1) { __VERIFIER_control_true(550, " ");
@@ -572,8 +572,8 @@ if (p->h != 1) { __VERIFIER_control_true(550, " ");
     i++;
   }
   p = a;
- myBool pStored2 = myFalse; __VERIFIER_reached_control(557, " ");
- while (p!=0) {printf("CBMC Instrumentation @ line557");myBool flag=__VERIFIER_nondet_myBool();static int oi;if(pStored2){__CPROVER_assert(!(oi==i),"recurrent state found");} if(flag){oi=i;pStored2=myTrue;}  __VERIFIER_loop_head(557, " ");
+ myBool pStored0 = myFalse; __VERIFIER_reached_control(557, " ");
+ while (p!=0) { __VERIFIER_loop_head(557, " ");
 
     struct node *tmp = p->n;
     free(p);

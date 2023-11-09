@@ -166,9 +166,9 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             // freopen(visitor_OutFile, "a+", stderr);
             // std::cerr << "print_cbmc :: Checking scope of  " << instvarName << " of type " << t_typ << "\n";
             // fclose(stderr);
-
+            
             //Check if type of variable is node_t*. If yes, return.
-            if (t_typ == "node_t *")
+            if (t_typ == "node_t *" || t_typ == "List")
             {
                 if (check_variable_scope(instvarName, srcLoc))
                 {

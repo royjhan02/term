@@ -1,655 +1,852 @@
 
-Found Input File To Parse on disk = cll_search-alloca-1_braced.c
+Found Input File To Parse on disk = simple-ext_braced.c
 Output File = OutFile.txt
 
+Function name is abort
+Function name is __assert_fail
+VisitVarDecl :: Found VarDecl at line = 3
+VisitVarDecl :: Found VarDecl at line = 3
+VisitVarDecl :: Found VarDecl at line = 4
+VisitVarDecl :: Found VarDecl at line = 4
+Function name is __assert_perror_fail
+VisitVarDecl :: Found VarDecl at line = 6
+VisitVarDecl :: Found VarDecl at line = 6
+VisitVarDecl :: Found VarDecl at line = 7
+VisitVarDecl :: Found VarDecl at line = 7
+Function name is __assert
+VisitVarDecl :: Found VarDecl at line = 9
+VisitVarDecl :: Found VarDecl at line = 9
+VisitVarDecl :: Found VarDecl at line = 9
+Function name is reach_error
+Function body begins at line number = 12
+Function body ends at line number = 12
+Number of function arguments = 0
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 12 and column = 20
+VisitCompoundStmt :: CompoundStmt End line = 12 and column = 169
+Original body code is { ((void) sizeof ((0) ? 1 : 0), __extension__ ({ {if (0) {;} else {__assert_fail ("0", "simple-ext.c", 3, __extension__ __PRETTY_FUNCTION__);}} })); 
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 12 and column 20 to line 12 and column 169
+VisitCompoundStmt :: Substmt is ParenExpr at line 12
+show_scope_map :: Printing scope map
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 12 and column = 67
+VisitCompoundStmt :: CompoundStmt End line = 12 and column = 164
+Original body code is { {if (0) {;} else {__assert_fail ("0", "simple-ext.c", 3, __extension__ __PRETTY_FUNCTION__);}} 
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 12 and column 67 to line 12 and column 164
+VisitCompoundStmt :: Substmt is CompoundStmt at line 12
+show_scope_map :: Printing scope map
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 12 and column = 69
+VisitCompoundStmt :: CompoundStmt End line = 12 and column = 162
+Original body code is {if (0) {;} else {__assert_fail ("0", "simple-ext.c", 3, __extension__ __PRETTY_FUNCTION__);}
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 12 and column 69 to line 12 and column 162
+VisitCompoundStmt :: Substmt is IfStmt at line 12
+show_scope_map :: Printing scope map
+VisitStmt :: If Statement Found at line 12
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 12 and column = 77
+VisitCompoundStmt :: CompoundStmt End line = 12 and column = 79
+Original body code is {;
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 12 and column 77 to line 12 and column 79
+VisitCompoundStmt :: Substmt is NullStmt at line 12
+show_scope_map :: Printing scope map
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 12 and column = 86
+VisitCompoundStmt :: CompoundStmt End line = 12 and column = 161
+Original body code is {__assert_fail ("0", "simple-ext.c", 3, __extension__ __PRETTY_FUNCTION__);
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 12 and column 86 to line 12 and column 161
+VisitCompoundStmt :: Substmt is CallExpr at line 12
+show_scope_map :: Printing scope map
+Function name is __VERIFIER_nondet_int
+Function name is __ctype_get_mb_cur_max
+Function name is atof
+VisitVarDecl :: Found VarDecl at line = 39
+Function name is atoi
+VisitVarDecl :: Found VarDecl at line = 41
+Function name is atol
+VisitVarDecl :: Found VarDecl at line = 43
+Function name is atoll
+VisitVarDecl :: Found VarDecl at line = 45
+Function name is strtod
+VisitVarDecl :: Found VarDecl at line = 47
+VisitVarDecl :: Found VarDecl at line = 48
+Function name is strtof
+VisitVarDecl :: Found VarDecl at line = 50
+VisitVarDecl :: Found VarDecl at line = 51
+Function name is strtold
+VisitVarDecl :: Found VarDecl at line = 52
+VisitVarDecl :: Found VarDecl at line = 53
+Function name is strtol
+VisitVarDecl :: Found VarDecl at line = 55
+VisitVarDecl :: Found VarDecl at line = 56
+VisitVarDecl :: Found VarDecl at line = 56
+Function name is strtoul
+VisitVarDecl :: Found VarDecl at line = 58
+VisitVarDecl :: Found VarDecl at line = 59
+VisitVarDecl :: Found VarDecl at line = 59
+Function name is strtoq
+VisitVarDecl :: Found VarDecl at line = 62
+VisitVarDecl :: Found VarDecl at line = 63
+VisitVarDecl :: Found VarDecl at line = 63
+Function name is strtouq
+VisitVarDecl :: Found VarDecl at line = 66
+VisitVarDecl :: Found VarDecl at line = 67
+VisitVarDecl :: Found VarDecl at line = 67
+Function name is strtoll
+VisitVarDecl :: Found VarDecl at line = 70
+VisitVarDecl :: Found VarDecl at line = 71
+VisitVarDecl :: Found VarDecl at line = 71
+Function name is strtoull
+VisitVarDecl :: Found VarDecl at line = 74
+VisitVarDecl :: Found VarDecl at line = 75
+VisitVarDecl :: Found VarDecl at line = 75
+Function name is l64a
+VisitVarDecl :: Found VarDecl at line = 77
+Function name is a64l
+VisitVarDecl :: Found VarDecl at line = 78
 Function name is __bswap_32
-Function body begins at line number = 58
-Function body ends at line number = 60
+Function body begins at line number = 174
+Function body ends at line number = 176
 Number of function arguments = 1
 Argument 0 name = __bsx
 Argument 0 type = unsigned int
-VisitVarDecl :: Found VarDecl at line = 57
+VisitVarDecl :: Found VarDecl at line = 173
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 58 and column = 1
-VisitCompoundStmt :: CompoundStmt End line = 60 and column = 1
+VisitCompoundStmt :: CompoundStmt Begin line = 174 and column = 1
+VisitCompoundStmt :: CompoundStmt End line = 176 and column = 1
 Original body code is {
   return __builtin_bswap32 (__bsx);
 
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 58 and column 1 to line 60 and column 1
-VisitCompoundStmt :: Substmt is ReturnStmt at line 59
+VisitCompoundStmt :: CompoundStmt at line 174 and column 1 to line 176 and column 1
+VisitCompoundStmt :: Substmt is ReturnStmt at line 175
 show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
+__bsx => __bsx 174 176
 Function name is __bswap_64
-Function body begins at line number = 63
-Function body ends at line number = 65
+Function body begins at line number = 179
+Function body ends at line number = 181
 Number of function arguments = 1
 Argument 0 name = __bsx
 Argument 0 type = __uint64_t
-VisitVarDecl :: Found VarDecl at line = 62
+VisitVarDecl :: Found VarDecl at line = 178
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 63 and column = 1
-VisitCompoundStmt :: CompoundStmt End line = 65 and column = 1
+VisitCompoundStmt :: CompoundStmt Begin line = 179 and column = 1
+VisitCompoundStmt :: CompoundStmt End line = 181 and column = 1
 Original body code is {
   return __builtin_bswap64 (__bsx);
 
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 63 and column 1 to line 65 and column 1
-VisitCompoundStmt :: Substmt is ReturnStmt at line 64
+VisitCompoundStmt :: CompoundStmt at line 179 and column 1 to line 181 and column 1
+VisitCompoundStmt :: Substmt is ReturnStmt at line 180
 show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-Function name is __ctype_get_mb_cur_max
-Function name is atof
-VisitVarDecl :: Found VarDecl at line = 109
-Function name is atoi
-VisitVarDecl :: Found VarDecl at line = 111
-Function name is atol
-VisitVarDecl :: Found VarDecl at line = 113
-Function name is atoll
-VisitVarDecl :: Found VarDecl at line = 117
-Function name is strtod
-VisitVarDecl :: Found VarDecl at line = 121
-VisitVarDecl :: Found VarDecl at line = 122
-Function name is strtof
-VisitVarDecl :: Found VarDecl at line = 126
-VisitVarDecl :: Found VarDecl at line = 127
-Function name is strtold
-VisitVarDecl :: Found VarDecl at line = 128
-VisitVarDecl :: Found VarDecl at line = 129
-Function name is strtol
-VisitVarDecl :: Found VarDecl at line = 133
-VisitVarDecl :: Found VarDecl at line = 134
-VisitVarDecl :: Found VarDecl at line = 134
-Function name is strtoul
-VisitVarDecl :: Found VarDecl at line = 136
-VisitVarDecl :: Found VarDecl at line = 137
-VisitVarDecl :: Found VarDecl at line = 137
-Function name is strtoq
-VisitVarDecl :: Found VarDecl at line = 141
-VisitVarDecl :: Found VarDecl at line = 142
-VisitVarDecl :: Found VarDecl at line = 142
-Function name is strtouq
-VisitVarDecl :: Found VarDecl at line = 145
-VisitVarDecl :: Found VarDecl at line = 146
-VisitVarDecl :: Found VarDecl at line = 146
-Function name is strtoll
-VisitVarDecl :: Found VarDecl at line = 150
-VisitVarDecl :: Found VarDecl at line = 151
-VisitVarDecl :: Found VarDecl at line = 151
-Function name is strtoull
-VisitVarDecl :: Found VarDecl at line = 154
-VisitVarDecl :: Found VarDecl at line = 155
-VisitVarDecl :: Found VarDecl at line = 155
-Function name is l64a
-VisitVarDecl :: Found VarDecl at line = 158
-Function name is a64l
-VisitVarDecl :: Found VarDecl at line = 159
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+Function name is __uint16_identity
+Function body begins at line number = 184
+Function body ends at line number = 186
+Number of function arguments = 1
+Argument 0 name = __x
+Argument 0 type = __uint16_t
+VisitVarDecl :: Found VarDecl at line = 183
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 184 and column = 1
+VisitCompoundStmt :: CompoundStmt End line = 186 and column = 1
+Original body code is {
+  return __x;
+
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 184 and column 1 to line 186 and column 1
+VisitCompoundStmt :: Substmt is ReturnStmt at line 185
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+Function name is __uint32_identity
+Function body begins at line number = 189
+Function body ends at line number = 191
+Number of function arguments = 1
+Argument 0 name = __x
+Argument 0 type = __uint32_t
+VisitVarDecl :: Found VarDecl at line = 188
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 189 and column = 1
+VisitCompoundStmt :: CompoundStmt End line = 191 and column = 1
+Original body code is {
+  return __x;
+
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 189 and column 1 to line 191 and column 1
+VisitCompoundStmt :: Substmt is ReturnStmt at line 190
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+Function name is __uint64_identity
+Function body begins at line number = 194
+Function body ends at line number = 196
+Number of function arguments = 1
+Argument 0 name = __x
+Argument 0 type = __uint64_t
+VisitVarDecl :: Found VarDecl at line = 193
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 194 and column = 1
+VisitCompoundStmt :: CompoundStmt End line = 196 and column = 1
+Original body code is {
+  return __x;
+
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 194 and column 1 to line 196 and column 1
+VisitCompoundStmt :: Substmt is ReturnStmt at line 195
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
 Function name is select
-VisitVarDecl :: Found VarDecl at line = 229
-VisitVarDecl :: Found VarDecl at line = 229
-VisitVarDecl :: Found VarDecl at line = 230
-VisitVarDecl :: Found VarDecl at line = 231
-VisitVarDecl :: Found VarDecl at line = 232
+VisitVarDecl :: Found VarDecl at line = 220
+VisitVarDecl :: Found VarDecl at line = 220
+VisitVarDecl :: Found VarDecl at line = 221
+VisitVarDecl :: Found VarDecl at line = 222
+VisitVarDecl :: Found VarDecl at line = 223
 Function name is pselect
-VisitVarDecl :: Found VarDecl at line = 233
-VisitVarDecl :: Found VarDecl at line = 233
-VisitVarDecl :: Found VarDecl at line = 234
-VisitVarDecl :: Found VarDecl at line = 235
-VisitVarDecl :: Found VarDecl at line = 236
-VisitVarDecl :: Found VarDecl at line = 237
+VisitVarDecl :: Found VarDecl at line = 224
+VisitVarDecl :: Found VarDecl at line = 224
+VisitVarDecl :: Found VarDecl at line = 225
+VisitVarDecl :: Found VarDecl at line = 226
+VisitVarDecl :: Found VarDecl at line = 227
+VisitVarDecl :: Found VarDecl at line = 228
 Function name is gnu_dev_major
-VisitVarDecl :: Found VarDecl at line = 241
+VisitVarDecl :: Found VarDecl at line = 231
 Function name is gnu_dev_minor
-VisitVarDecl :: Found VarDecl at line = 244
+VisitVarDecl :: Found VarDecl at line = 232
 Function name is gnu_dev_makedev
-VisitVarDecl :: Found VarDecl at line = 247
-VisitVarDecl :: Found VarDecl at line = 248
+VisitVarDecl :: Found VarDecl at line = 233
+VisitVarDecl :: Found VarDecl at line = 233
 Function name is random
 Function name is srandom
-VisitVarDecl :: Found VarDecl at line = 349
+VisitVarDecl :: Found VarDecl at line = 353
 Function name is initstate
-VisitVarDecl :: Found VarDecl at line = 350
-VisitVarDecl :: Found VarDecl at line = 350
-VisitVarDecl :: Found VarDecl at line = 351
+VisitVarDecl :: Found VarDecl at line = 354
+VisitVarDecl :: Found VarDecl at line = 354
+VisitVarDecl :: Found VarDecl at line = 355
 Function name is setstate
-VisitVarDecl :: Found VarDecl at line = 352
+VisitVarDecl :: Found VarDecl at line = 356
 Function name is random_r
-VisitVarDecl :: Found VarDecl at line = 363
-VisitVarDecl :: Found VarDecl at line = 364
-Function name is srandom_r
-VisitVarDecl :: Found VarDecl at line = 365
-VisitVarDecl :: Found VarDecl at line = 365
-Function name is initstate_r
-VisitVarDecl :: Found VarDecl at line = 367
 VisitVarDecl :: Found VarDecl at line = 367
 VisitVarDecl :: Found VarDecl at line = 368
+Function name is srandom_r
 VisitVarDecl :: Found VarDecl at line = 369
-Function name is setstate_r
+VisitVarDecl :: Found VarDecl at line = 369
+Function name is initstate_r
+VisitVarDecl :: Found VarDecl at line = 371
 VisitVarDecl :: Found VarDecl at line = 371
 VisitVarDecl :: Found VarDecl at line = 372
+VisitVarDecl :: Found VarDecl at line = 373
+Function name is setstate_r
+VisitVarDecl :: Found VarDecl at line = 375
+VisitVarDecl :: Found VarDecl at line = 376
 Function name is rand
 Function name is srand
-VisitVarDecl :: Found VarDecl at line = 376
+VisitVarDecl :: Found VarDecl at line = 379
 Function name is rand_r
-VisitVarDecl :: Found VarDecl at line = 378
+VisitVarDecl :: Found VarDecl at line = 380
 Function name is drand48
 Function name is erand48
-VisitVarDecl :: Found VarDecl at line = 380
+VisitVarDecl :: Found VarDecl at line = 382
 Function name is lrand48
 Function name is nrand48
-VisitVarDecl :: Found VarDecl at line = 382
+VisitVarDecl :: Found VarDecl at line = 384
 Function name is mrand48
 Function name is jrand48
-VisitVarDecl :: Found VarDecl at line = 385
-Function name is srand48
 VisitVarDecl :: Found VarDecl at line = 387
+Function name is srand48
+VisitVarDecl :: Found VarDecl at line = 389
 Function name is seed48
-VisitVarDecl :: Found VarDecl at line = 388
-Function name is lcong48
 VisitVarDecl :: Found VarDecl at line = 390
+Function name is lcong48
+VisitVarDecl :: Found VarDecl at line = 392
 Function name is drand48_r
-VisitVarDecl :: Found VarDecl at line = 399
-VisitVarDecl :: Found VarDecl at line = 400
-Function name is erand48_r
 VisitVarDecl :: Found VarDecl at line = 401
 VisitVarDecl :: Found VarDecl at line = 402
+Function name is erand48_r
 VisitVarDecl :: Found VarDecl at line = 403
-Function name is lrand48_r
 VisitVarDecl :: Found VarDecl at line = 404
 VisitVarDecl :: Found VarDecl at line = 405
-Function name is nrand48_r
+Function name is lrand48_r
+VisitVarDecl :: Found VarDecl at line = 406
 VisitVarDecl :: Found VarDecl at line = 407
-VisitVarDecl :: Found VarDecl at line = 408
+Function name is nrand48_r
 VisitVarDecl :: Found VarDecl at line = 409
-Function name is mrand48_r
+VisitVarDecl :: Found VarDecl at line = 410
 VisitVarDecl :: Found VarDecl at line = 411
-VisitVarDecl :: Found VarDecl at line = 412
-Function name is jrand48_r
+Function name is mrand48_r
+VisitVarDecl :: Found VarDecl at line = 413
 VisitVarDecl :: Found VarDecl at line = 414
-VisitVarDecl :: Found VarDecl at line = 415
+Function name is jrand48_r
 VisitVarDecl :: Found VarDecl at line = 416
+VisitVarDecl :: Found VarDecl at line = 417
+VisitVarDecl :: Found VarDecl at line = 418
 Function name is srand48_r
-VisitVarDecl :: Found VarDecl at line = 418
-VisitVarDecl :: Found VarDecl at line = 418
-Function name is seed48_r
 VisitVarDecl :: Found VarDecl at line = 420
-VisitVarDecl :: Found VarDecl at line = 421
-Function name is lcong48_r
+VisitVarDecl :: Found VarDecl at line = 420
+Function name is seed48_r
 VisitVarDecl :: Found VarDecl at line = 422
 VisitVarDecl :: Found VarDecl at line = 423
+Function name is lcong48_r
+VisitVarDecl :: Found VarDecl at line = 424
+VisitVarDecl :: Found VarDecl at line = 425
 Function name is malloc
-VisitVarDecl :: Found VarDecl at line = 426
+VisitVarDecl :: Found VarDecl at line = 427
 Function name is calloc
-VisitVarDecl :: Found VarDecl at line = 427
-VisitVarDecl :: Found VarDecl at line = 427
+VisitVarDecl :: Found VarDecl at line = 428
+VisitVarDecl :: Found VarDecl at line = 428
 Function name is realloc
-VisitVarDecl :: Found VarDecl at line = 431
-VisitVarDecl :: Found VarDecl at line = 431
+VisitVarDecl :: Found VarDecl at line = 430
+VisitVarDecl :: Found VarDecl at line = 430
 Function name is free
-VisitVarDecl :: Found VarDecl at line = 433
-Function name is cfree
-VisitVarDecl :: Found VarDecl at line = 435
+VisitVarDecl :: Found VarDecl at line = 432
 Function name is alloca
-VisitVarDecl :: Found VarDecl at line = 437
+VisitVarDecl :: Found VarDecl at line = 434
 Function name is valloc
-VisitVarDecl :: Found VarDecl at line = 439
+VisitVarDecl :: Found VarDecl at line = 436
 Function name is posix_memalign
-VisitVarDecl :: Found VarDecl at line = 440
-VisitVarDecl :: Found VarDecl at line = 440
-VisitVarDecl :: Found VarDecl at line = 440
+VisitVarDecl :: Found VarDecl at line = 437
+VisitVarDecl :: Found VarDecl at line = 437
+VisitVarDecl :: Found VarDecl at line = 437
+Function name is aligned_alloc
+VisitVarDecl :: Found VarDecl at line = 439
+VisitVarDecl :: Found VarDecl at line = 439
 Function name is abort
 Function name is atexit
-VisitVarDecl :: Found VarDecl at line = 444
+VisitVarDecl :: Found VarDecl at line = 442
+Function name is at_quick_exit
+VisitVarDecl :: Found VarDecl at line = 443
 Function name is on_exit
-VisitVarDecl :: Found VarDecl at line = 446
-VisitVarDecl :: Found VarDecl at line = 446
-VisitVarDecl :: Found VarDecl at line = 446
-VisitVarDecl :: Found VarDecl at line = 446
+VisitVarDecl :: Found VarDecl at line = 444
+VisitVarDecl :: Found VarDecl at line = 444
+VisitVarDecl :: Found VarDecl at line = 444
+VisitVarDecl :: Found VarDecl at line = 444
 Function name is exit
-VisitVarDecl :: Found VarDecl at line = 449
+VisitVarDecl :: Found VarDecl at line = 446
+Function name is quick_exit
+VisitVarDecl :: Found VarDecl at line = 447
 Function name is _Exit
-VisitVarDecl :: Found VarDecl at line = 452
+VisitVarDecl :: Found VarDecl at line = 448
 Function name is getenv
-VisitVarDecl :: Found VarDecl at line = 455
+VisitVarDecl :: Found VarDecl at line = 449
 Function name is putenv
-VisitVarDecl :: Found VarDecl at line = 457
+VisitVarDecl :: Found VarDecl at line = 450
 Function name is setenv
-VisitVarDecl :: Found VarDecl at line = 458
-VisitVarDecl :: Found VarDecl at line = 458
-VisitVarDecl :: Found VarDecl at line = 458
+VisitVarDecl :: Found VarDecl at line = 451
+VisitVarDecl :: Found VarDecl at line = 451
+VisitVarDecl :: Found VarDecl at line = 451
 Function name is unsetenv
-VisitVarDecl :: Found VarDecl at line = 460
+VisitVarDecl :: Found VarDecl at line = 453
 Function name is clearenv
 Function name is mktemp
-VisitVarDecl :: Found VarDecl at line = 462
+VisitVarDecl :: Found VarDecl at line = 455
 Function name is mkstemp
-VisitVarDecl :: Found VarDecl at line = 463
+VisitVarDecl :: Found VarDecl at line = 456
 Function name is mkstemps
-VisitVarDecl :: Found VarDecl at line = 464
-VisitVarDecl :: Found VarDecl at line = 464
+VisitVarDecl :: Found VarDecl at line = 457
+VisitVarDecl :: Found VarDecl at line = 457
 Function name is mkdtemp
-VisitVarDecl :: Found VarDecl at line = 465
+VisitVarDecl :: Found VarDecl at line = 458
 Function name is system
-VisitVarDecl :: Found VarDecl at line = 467
+VisitVarDecl :: Found VarDecl at line = 459
 Function name is realpath
-VisitVarDecl :: Found VarDecl at line = 469
-VisitVarDecl :: Found VarDecl at line = 470
-VisitVarDecl :: Found VarDecl at line = 471
-VisitVarDecl :: Found VarDecl at line = 471
+VisitVarDecl :: Found VarDecl at line = 460
+VisitVarDecl :: Found VarDecl at line = 461
+VisitVarDecl :: Found VarDecl at line = 462
+VisitVarDecl :: Found VarDecl at line = 462
 Function name is bsearch
-VisitVarDecl :: Found VarDecl at line = 473
-VisitVarDecl :: Found VarDecl at line = 473
-VisitVarDecl :: Found VarDecl at line = 474
-VisitVarDecl :: Found VarDecl at line = 474
-VisitVarDecl :: Found VarDecl at line = 474
+VisitVarDecl :: Found VarDecl at line = 463
+VisitVarDecl :: Found VarDecl at line = 463
+VisitVarDecl :: Found VarDecl at line = 464
+VisitVarDecl :: Found VarDecl at line = 464
+VisitVarDecl :: Found VarDecl at line = 464
 Function name is qsort
-VisitVarDecl :: Found VarDecl at line = 476
-VisitVarDecl :: Found VarDecl at line = 476
+VisitVarDecl :: Found VarDecl at line = 466
+VisitVarDecl :: Found VarDecl at line = 466
+VisitVarDecl :: Found VarDecl at line = 466
+VisitVarDecl :: Found VarDecl at line = 467
+Function name is abs
+VisitVarDecl :: Found VarDecl at line = 468
+Function name is labs
+VisitVarDecl :: Found VarDecl at line = 469
+Function name is llabs
+VisitVarDecl :: Found VarDecl at line = 470
+Function name is div
+VisitVarDecl :: Found VarDecl at line = 472
+VisitVarDecl :: Found VarDecl at line = 472
+Function name is ldiv
+VisitVarDecl :: Found VarDecl at line = 474
+VisitVarDecl :: Found VarDecl at line = 474
+Function name is lldiv
 VisitVarDecl :: Found VarDecl at line = 476
 VisitVarDecl :: Found VarDecl at line = 477
-Function name is abs
-VisitVarDecl :: Found VarDecl at line = 478
-Function name is labs
-VisitVarDecl :: Found VarDecl at line = 479
-Function name is llabs
-VisitVarDecl :: Found VarDecl at line = 481
-Function name is div
-VisitVarDecl :: Found VarDecl at line = 484
-VisitVarDecl :: Found VarDecl at line = 484
-Function name is ldiv
-VisitVarDecl :: Found VarDecl at line = 486
-VisitVarDecl :: Found VarDecl at line = 486
-Function name is lldiv
-VisitVarDecl :: Found VarDecl at line = 490
-VisitVarDecl :: Found VarDecl at line = 491
 Function name is ecvt
-VisitVarDecl :: Found VarDecl at line = 494
+VisitVarDecl :: Found VarDecl at line = 479
+VisitVarDecl :: Found VarDecl at line = 479
+VisitVarDecl :: Found VarDecl at line = 479
+VisitVarDecl :: Found VarDecl at line = 480
+Function name is fcvt
+VisitVarDecl :: Found VarDecl at line = 481
+VisitVarDecl :: Found VarDecl at line = 481
+VisitVarDecl :: Found VarDecl at line = 481
+VisitVarDecl :: Found VarDecl at line = 482
+Function name is gcvt
+VisitVarDecl :: Found VarDecl at line = 483
+VisitVarDecl :: Found VarDecl at line = 483
+VisitVarDecl :: Found VarDecl at line = 483
+Function name is qecvt
+VisitVarDecl :: Found VarDecl at line = 485
+VisitVarDecl :: Found VarDecl at line = 485
+VisitVarDecl :: Found VarDecl at line = 486
+VisitVarDecl :: Found VarDecl at line = 486
+Function name is qfcvt
+VisitVarDecl :: Found VarDecl at line = 488
+VisitVarDecl :: Found VarDecl at line = 488
+VisitVarDecl :: Found VarDecl at line = 489
+VisitVarDecl :: Found VarDecl at line = 489
+Function name is qgcvt
+VisitVarDecl :: Found VarDecl at line = 491
+VisitVarDecl :: Found VarDecl at line = 491
+VisitVarDecl :: Found VarDecl at line = 491
+Function name is ecvt_r
+VisitVarDecl :: Found VarDecl at line = 493
+VisitVarDecl :: Found VarDecl at line = 493
+VisitVarDecl :: Found VarDecl at line = 493
 VisitVarDecl :: Found VarDecl at line = 494
 VisitVarDecl :: Found VarDecl at line = 494
 VisitVarDecl :: Found VarDecl at line = 495
-Function name is fcvt
+Function name is fcvt_r
 VisitVarDecl :: Found VarDecl at line = 496
 VisitVarDecl :: Found VarDecl at line = 496
 VisitVarDecl :: Found VarDecl at line = 496
 VisitVarDecl :: Found VarDecl at line = 497
-Function name is gcvt
+VisitVarDecl :: Found VarDecl at line = 497
 VisitVarDecl :: Found VarDecl at line = 498
-VisitVarDecl :: Found VarDecl at line = 498
-VisitVarDecl :: Found VarDecl at line = 498
-Function name is qecvt
-VisitVarDecl :: Found VarDecl at line = 500
-VisitVarDecl :: Found VarDecl at line = 500
-VisitVarDecl :: Found VarDecl at line = 501
-VisitVarDecl :: Found VarDecl at line = 501
-Function name is qfcvt
-VisitVarDecl :: Found VarDecl at line = 503
-VisitVarDecl :: Found VarDecl at line = 503
-VisitVarDecl :: Found VarDecl at line = 504
-VisitVarDecl :: Found VarDecl at line = 504
-Function name is qgcvt
-VisitVarDecl :: Found VarDecl at line = 506
-VisitVarDecl :: Found VarDecl at line = 506
-VisitVarDecl :: Found VarDecl at line = 506
-Function name is ecvt_r
-VisitVarDecl :: Found VarDecl at line = 508
-VisitVarDecl :: Found VarDecl at line = 508
-VisitVarDecl :: Found VarDecl at line = 508
-VisitVarDecl :: Found VarDecl at line = 509
-VisitVarDecl :: Found VarDecl at line = 509
-VisitVarDecl :: Found VarDecl at line = 510
-Function name is fcvt_r
-VisitVarDecl :: Found VarDecl at line = 511
-VisitVarDecl :: Found VarDecl at line = 511
-VisitVarDecl :: Found VarDecl at line = 511
-VisitVarDecl :: Found VarDecl at line = 512
-VisitVarDecl :: Found VarDecl at line = 512
-VisitVarDecl :: Found VarDecl at line = 513
 Function name is qecvt_r
-VisitVarDecl :: Found VarDecl at line = 514
-VisitVarDecl :: Found VarDecl at line = 514
-VisitVarDecl :: Found VarDecl at line = 515
-VisitVarDecl :: Found VarDecl at line = 515
-VisitVarDecl :: Found VarDecl at line = 516
-VisitVarDecl :: Found VarDecl at line = 516
+VisitVarDecl :: Found VarDecl at line = 499
+VisitVarDecl :: Found VarDecl at line = 499
+VisitVarDecl :: Found VarDecl at line = 500
+VisitVarDecl :: Found VarDecl at line = 500
+VisitVarDecl :: Found VarDecl at line = 501
+VisitVarDecl :: Found VarDecl at line = 501
 Function name is qfcvt_r
-VisitVarDecl :: Found VarDecl at line = 518
-VisitVarDecl :: Found VarDecl at line = 518
-VisitVarDecl :: Found VarDecl at line = 519
-VisitVarDecl :: Found VarDecl at line = 519
-VisitVarDecl :: Found VarDecl at line = 520
-VisitVarDecl :: Found VarDecl at line = 520
+VisitVarDecl :: Found VarDecl at line = 503
+VisitVarDecl :: Found VarDecl at line = 503
+VisitVarDecl :: Found VarDecl at line = 504
+VisitVarDecl :: Found VarDecl at line = 504
+VisitVarDecl :: Found VarDecl at line = 505
+VisitVarDecl :: Found VarDecl at line = 505
 Function name is mblen
-VisitVarDecl :: Found VarDecl at line = 523
-VisitVarDecl :: Found VarDecl at line = 523
+VisitVarDecl :: Found VarDecl at line = 507
+VisitVarDecl :: Found VarDecl at line = 507
 Function name is mbtowc
-VisitVarDecl :: Found VarDecl at line = 524
-VisitVarDecl :: Found VarDecl at line = 525
-VisitVarDecl :: Found VarDecl at line = 525
+VisitVarDecl :: Found VarDecl at line = 508
+VisitVarDecl :: Found VarDecl at line = 509
+VisitVarDecl :: Found VarDecl at line = 509
 Function name is wctomb
-VisitVarDecl :: Found VarDecl at line = 526
-VisitVarDecl :: Found VarDecl at line = 526
+VisitVarDecl :: Found VarDecl at line = 510
+VisitVarDecl :: Found VarDecl at line = 510
 Function name is mbstowcs
-VisitVarDecl :: Found VarDecl at line = 527
-VisitVarDecl :: Found VarDecl at line = 528
-VisitVarDecl :: Found VarDecl at line = 528
+VisitVarDecl :: Found VarDecl at line = 511
+VisitVarDecl :: Found VarDecl at line = 512
+VisitVarDecl :: Found VarDecl at line = 512
 Function name is wcstombs
-VisitVarDecl :: Found VarDecl at line = 529
-VisitVarDecl :: Found VarDecl at line = 530
-VisitVarDecl :: Found VarDecl at line = 530
+VisitVarDecl :: Found VarDecl at line = 513
+VisitVarDecl :: Found VarDecl at line = 514
+VisitVarDecl :: Found VarDecl at line = 514
 Function name is rpmatch
-VisitVarDecl :: Found VarDecl at line = 533
+VisitVarDecl :: Found VarDecl at line = 516
 Function name is getsubopt
-VisitVarDecl :: Found VarDecl at line = 534
-VisitVarDecl :: Found VarDecl at line = 535
-VisitVarDecl :: Found VarDecl at line = 536
+VisitVarDecl :: Found VarDecl at line = 517
+VisitVarDecl :: Found VarDecl at line = 518
+VisitVarDecl :: Found VarDecl at line = 519
 Function name is getloadavg
-VisitVarDecl :: Found VarDecl at line = 538
-VisitVarDecl :: Found VarDecl at line = 538
-Function name is __VERIFIER_nondet_int
-Function name is init_cll
-Function body begins at line number = 547
-Function body ends at line number = 560
+VisitVarDecl :: Found VarDecl at line = 521
+VisitVarDecl :: Found VarDecl at line = 521
+Function name is myexit
+Function body begins at line number = 524
+Function body ends at line number = 526
 Number of function arguments = 1
-Argument 0 name = n
+Argument 0 name = s
 Argument 0 type = int
-VisitVarDecl :: Found VarDecl at line = 546
+VisitVarDecl :: Found VarDecl at line = 524
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 547 and column = 1
-VisitCompoundStmt :: CompoundStmt End line = 560 and column = 1
+VisitCompoundStmt :: CompoundStmt Begin line = 524 and column = 20
+VisitCompoundStmt :: CompoundStmt End line = 526 and column = 1
 Original body code is {
-  node_t* head;
-  node_t* curr = malloc(sizeof(node_t));
-  curr->val = 0;
-  head = curr;
-  for (int i = 1; i < n; i++) {
-    node_t* next_node = malloc(sizeof(node_t));
-    next_node->val = i;
-    curr->next = next_node;
-    curr = next_node;
-  }
-  curr->next = head;
-  return head;
+ _EXIT: goto _EXIT;
 
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 547 and column 1 to line 560 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 548
-Pointer type is node_t * :: Variable name is head
-VisitCompoundStmt :: Variable (SingleDecl) head of type node_t * declared at line 548 and column 3
-VisitCompoundStmt :: Substmt is DeclStmt at line 549
-Pointer type is node_t * :: Variable name is curr
-VisitCompoundStmt :: Variable (SingleDecl) curr of type node_t * declared at line 549 and column 3
-VisitCompoundStmt :: Substmt is BinaryOperator at line 550
-VisitCompoundStmt :: Substmt is BinaryOperator at line 551
-VisitCompoundStmt :: Substmt is ForStmt at line 552
-VisitCompoundStmt :: Substmt is BinaryOperator at line 558
-VisitCompoundStmt :: Substmt is ReturnStmt at line 559
+VisitCompoundStmt :: CompoundStmt at line 524 and column 20 to line 526 and column 1
+VisitCompoundStmt :: Substmt is LabelStmt at line 525
 show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-head => head 548 560
-n => n 547 560
-VisitVarDecl :: Found VarDecl at line = 548
-VisitVarDecl :: Found VarDecl at line = 549
-VisitStmt :: For Statement Found
-VisitForStmt :: Variable (SingleDecl) i of type int declared at line 552 and column 8
-VisitForStmt :: Decl Stmt found in Init and added to scope_map
-Added variable in For Stmt to scope map if it exists and Returned from getDeclInForStmt()
-getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 553 is DeclStmt
-getArrayUseInLoop :: Stmt at line 554 is BinaryOperator
-getArrayUseInLoop :: LHS at 554 is MemberExpr
-getArrayUseInLoop :: RHS at 554 is ImplicitCastExpr
-getArrayUseInLoop :: Stmt at line 555 is BinaryOperator
-getArrayUseInLoop :: LHS at 555 is MemberExpr
-getArrayUseInLoop :: RHS at 555 is ImplicitCastExpr
-getArrayUseInLoop :: Stmt at line 556 is BinaryOperator
-getArrayUseInLoop :: LHS at 556 is DeclRefExpr
-getArrayUseInLoop :: RHS at 556 is ImplicitCastExpr
-Instrumentation flag = 2
-check_variable_scope :: Checking scope of variable __bsx at print line number : 552
- <<< check_variable_scope :: Variable __bsx is not in scope at line number : 552>>> 
- check_variable_scope :: Checking scope of variable curr at print line number : 552
- <<< check_variable_scope :: Variable curr is in scope at print line number : 552 | scope begin = 549 | scope end = 560 >>> 
-VisitVarDecl :: Found VarDecl at line = 552
-####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 552 and column = 31
-VisitCompoundStmt :: CompoundStmt End line = 557 and column = 3
-Original body code is {
-    node_t* next_node = malloc(sizeof(node_t));
-    next_node->val = i;
-    curr->next = next_node;
-    curr = next_node;
-  
-####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 552 and column 31 to line 557 and column 3
-VisitCompoundStmt :: Substmt is DeclStmt at line 553
-Pointer type is node_t * :: Variable name is next_node
-VisitCompoundStmt :: Variable (SingleDecl) next_node of type node_t * declared at line 553 and column 5
-VisitCompoundStmt :: Substmt is BinaryOperator at line 554
-VisitCompoundStmt :: Substmt is BinaryOperator at line 555
-VisitCompoundStmt :: Substmt is BinaryOperator at line 556
-show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-head => head 548 560
-i => i 552 557
-n => n 547 560
-next_node => next_node 553 557
-VisitVarDecl :: Found VarDecl at line = 553
-Function name is search
-Function body begins at line number = 562
-Function body ends at line number = 567
-Number of function arguments = 2
-Argument 0 name = head
-Argument 0 type = node_t *
-Argument 1 name = i
-Argument 1 type = int
-VisitVarDecl :: Found VarDecl at line = 561
-VisitVarDecl :: Found VarDecl at line = 561
-####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 562 and column = 1
-VisitCompoundStmt :: CompoundStmt End line = 567 and column = 1
-Original body code is {
-  node_t* curr = head;
-  while (curr->val != i) {
-    curr = curr->next;
-  }
-
-####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 562 and column 1 to line 567 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 563
-Pointer type is node_t * :: Variable name is curr
-VisitCompoundStmt :: Variable (SingleDecl) curr of type node_t * declared at line 563 and column 3
-VisitCompoundStmt :: Substmt is WhileStmt at line 564
-show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-curr => curr 563 567
-head => head 548 560
-head => head 562 567
-i => i 552 557
-i => i 562 567
-n => n 547 560
-next_node => next_node 553 557
-VisitVarDecl :: Found VarDecl at line = 563
-VisitStmt :: While Statement Found
-getArrayUseInLoop :: Stmt Body of CompoundStmt
-getArrayUseInLoop :: Stmt at line 565 is BinaryOperator
-getArrayUseInLoop :: LHS at 565 is DeclRefExpr
-getArrayUseInLoop :: RHS at 565 is ImplicitCastExpr
-Instrumentation flag = 2
-check_variable_scope :: Checking scope of variable __bsx at print line number : 564
- <<< check_variable_scope :: Variable __bsx is not in scope at line number : 564>>> 
- check_variable_scope :: Checking scope of variable curr at print line number : 564
- <<< check_variable_scope :: Variable curr is in scope at print line number : 564 | scope begin = 563 | scope end = 567 >>> 
-####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 564 and column = 26
-VisitCompoundStmt :: CompoundStmt End line = 566 and column = 3
-Original body code is {
-    curr = curr->next;
-  
-####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 564 and column 26 to line 566 and column 3
-VisitCompoundStmt :: Substmt is BinaryOperator at line 565
-show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-curr => curr 563 567
-head => head 548 560
-head => head 562 567
-i => i 552 557
-i => i 562 567
-n => n 547 560
-next_node => next_node 553 557
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+s => s 524 526
 Function name is main
-Function body begins at line number = 569
-Function body ends at line number = 581
+Function body begins at line number = 531
+Function body ends at line number = 563
 Number of function arguments = 0
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 569 and column = 1
-VisitCompoundStmt :: CompoundStmt End line = 581 and column = 1
+VisitCompoundStmt :: CompoundStmt Begin line = 531 and column = 12
+VisitCompoundStmt :: CompoundStmt End line = 563 and column = 1
 Original body code is {
-  int n = __VERIFIER_nondet_int();
-  {if (n < 1) {
-    return 0;
-  }}
-  node_t* head = init_cll(n);
-  int m = __VERIFIER_nondet_int();
-  {if (m < 0) {
-    return 0;
-  }}
-  search(head, m % n);
+  List a = (List) malloc(sizeof(struct node));
+  {if (a == 0) {myexit(1);}}
+  List t;
+  List p = a;
+  int i = 0;
+  while (i < 30 && __VERIFIER_nondet_int()) {
+    p->h = i;
+    t = (List) malloc(sizeof(struct node));
+    {if (t == 0) {myexit(1);}}
+    p->n = t;
+    p = p->n;
+    i++;
+  }
+  p->h = i;
+  p->n = 0;
+  p = a;
+  i = 0;
+  while (p!=0) {
+    {if (p->h != 1) {
+      ERROR: {reach_error();abort();}
+    }}
+    p = p->n;
+    i++;
+  }
+  p = a;
+  while (p!=0) {
+    struct node *tmp = p->n;
+    free(p);
+    p = tmp;
+  }
   return 0;
 
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 569 and column 1 to line 581 and column 1
-VisitCompoundStmt :: Substmt is DeclStmt at line 570
-VisitCompoundStmt :: Variable (SingleDecl) n of type int declared at line 570 and column 3
-VisitCompoundStmt :: Substmt is CompoundStmt at line 571
-VisitCompoundStmt :: Substmt is DeclStmt at line 574
-Pointer type is node_t * :: Variable name is head
-VisitCompoundStmt :: Variable (SingleDecl) head of type node_t * declared at line 574 and column 3
-VisitCompoundStmt :: Substmt is DeclStmt at line 575
-VisitCompoundStmt :: Variable (SingleDecl) m of type int declared at line 575 and column 3
-VisitCompoundStmt :: Substmt is CompoundStmt at line 576
-VisitCompoundStmt :: Substmt is CallExpr at line 579
-VisitCompoundStmt :: Substmt is ReturnStmt at line 580
+VisitCompoundStmt :: CompoundStmt at line 531 and column 12 to line 563 and column 1
+VisitCompoundStmt :: Substmt is DeclStmt at line 532
+Pointer type is List :: Variable name is a
+VisitCompoundStmt :: Variable (SingleDecl) a of type List declared at line 532 and column 3
+VisitCompoundStmt :: Substmt is CompoundStmt at line 533
+VisitCompoundStmt :: Substmt is DeclStmt at line 534
+Pointer type is List :: Variable name is t
+VisitCompoundStmt :: Variable (SingleDecl) t of type List declared at line 534 and column 3
+VisitCompoundStmt :: Substmt is DeclStmt at line 535
+Pointer type is List :: Variable name is p
+VisitCompoundStmt :: Variable (SingleDecl) p of type List declared at line 535 and column 3
+VisitCompoundStmt :: Substmt is DeclStmt at line 536
+VisitCompoundStmt :: Variable (SingleDecl) i of type int declared at line 536 and column 3
+VisitCompoundStmt :: Substmt is WhileStmt at line 537
+VisitCompoundStmt :: Substmt is BinaryOperator at line 545
+VisitCompoundStmt :: Substmt is BinaryOperator at line 546
+VisitCompoundStmt :: Substmt is BinaryOperator at line 547
+VisitCompoundStmt :: Substmt is BinaryOperator at line 548
+VisitCompoundStmt :: Substmt is WhileStmt at line 549
+VisitCompoundStmt :: Substmt is BinaryOperator at line 556
+VisitCompoundStmt :: Substmt is WhileStmt at line 557
+VisitCompoundStmt :: Substmt is ReturnStmt at line 562
 show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-curr => curr 563 567
-head => head 548 560
-head => head 562 567
-head => head 574 581
-i => i 552 557
-i => i 562 567
-m => m 575 581
-n => n 547 560
-n => n 570 581
-next_node => next_node 553 557
-VisitVarDecl :: Found VarDecl at line = 570
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+VisitVarDecl :: Found VarDecl at line = 532
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 571 and column = 3
-VisitCompoundStmt :: CompoundStmt End line = 573 and column = 4
-Original body code is {if (n < 1) {
-    return 0;
-  }
+VisitCompoundStmt :: CompoundStmt Begin line = 533 and column = 3
+VisitCompoundStmt :: CompoundStmt End line = 533 and column = 28
+Original body code is {if (a == 0) {myexit(1);}
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 571 and column 3 to line 573 and column 4
-VisitCompoundStmt :: Substmt is IfStmt at line 571
+VisitCompoundStmt :: CompoundStmt at line 533 and column 3 to line 533 and column 28
+VisitCompoundStmt :: Substmt is IfStmt at line 533
 show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-curr => curr 563 567
-head => head 548 560
-head => head 562 567
-head => head 574 581
-i => i 552 557
-i => i 562 567
-m => m 575 581
-n => n 547 560
-n => n 570 581
-next_node => next_node 553 557
-VisitStmt :: If Statement Found at line 571
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+VisitStmt :: If Statement Found at line 533
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 571 and column = 15
-VisitCompoundStmt :: CompoundStmt End line = 573 and column = 3
+VisitCompoundStmt :: CompoundStmt Begin line = 533 and column = 16
+VisitCompoundStmt :: CompoundStmt End line = 533 and column = 27
+Original body code is {myexit(1);
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 533 and column 16 to line 533 and column 27
+VisitCompoundStmt :: Substmt is CallExpr at line 533
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+VisitVarDecl :: Found VarDecl at line = 534
+VisitVarDecl :: Found VarDecl at line = 535
+VisitVarDecl :: Found VarDecl at line = 536
+VisitStmt :: While Statement Found
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 538 is BinaryOperator
+getArrayUseInLoop :: LHS at 538 is MemberExpr
+getArrayUseInLoop :: RHS at 538 is ImplicitCastExpr
+getArrayUseInLoop :: Stmt at line 539 is BinaryOperator
+getArrayUseInLoop :: LHS at 539 is DeclRefExpr
+getArrayUseInLoop :: RHS at 539 is CStyleCastExpr
+getArrayUseInLoop :: Stmt at line 540 is CompoundStmt
+getArrayUseInLoop :: Stmt at line 541 is BinaryOperator
+getArrayUseInLoop :: LHS at 541 is MemberExpr
+getArrayUseInLoop :: RHS at 541 is ImplicitCastExpr
+getArrayUseInLoop :: Stmt at line 542 is BinaryOperator
+getArrayUseInLoop :: LHS at 542 is DeclRefExpr
+getArrayUseInLoop :: RHS at 542 is ImplicitCastExpr
+getArrayUseInLoop :: Stmt at line 543 is UnaryOperator
+getArrayUseInLoop :: UnaryOperator at line 543
+Instrumentation flag = 2
+check_variable_scope :: Checking scope of variable __bsx at print line number : 537
+ <<< check_variable_scope :: Variable __bsx is not in scope at line number : 537>>> 
+ check_variable_scope :: Checking scope of variable __x at print line number : 537
+ <<< check_variable_scope :: Variable __x is not in scope at line number : 537>>> 
+ check_variable_scope :: Checking scope of variable a at print line number : 537
+ <<< check_variable_scope :: Variable a is in scope at print line number : 537 | scope begin = 532 | scope end = 563 >>> 
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 537 and column = 45
+VisitCompoundStmt :: CompoundStmt End line = 544 and column = 3
 Original body code is {
-    return 0;
+    p->h = i;
+    t = (List) malloc(sizeof(struct node));
+    {if (t == 0) {myexit(1);}}
+    p->n = t;
+    p = p->n;
+    i++;
   
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 571 and column 15 to line 573 and column 3
-VisitCompoundStmt :: Substmt is ReturnStmt at line 572
+VisitCompoundStmt :: CompoundStmt at line 537 and column 45 to line 544 and column 3
+VisitCompoundStmt :: Substmt is BinaryOperator at line 538
+VisitCompoundStmt :: Substmt is BinaryOperator at line 539
+VisitCompoundStmt :: Substmt is CompoundStmt at line 540
+VisitCompoundStmt :: Substmt is BinaryOperator at line 541
+VisitCompoundStmt :: Substmt is BinaryOperator at line 542
+VisitCompoundStmt :: Substmt is UnaryOperator at line 543
 show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-curr => curr 563 567
-head => head 548 560
-head => head 562 567
-head => head 574 581
-i => i 552 557
-i => i 562 567
-m => m 575 581
-n => n 547 560
-n => n 570 581
-next_node => next_node 553 557
-VisitVarDecl :: Found VarDecl at line = 574
-VisitVarDecl :: Found VarDecl at line = 575
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 576 and column = 3
-VisitCompoundStmt :: CompoundStmt End line = 578 and column = 4
-Original body code is {if (m < 0) {
-    return 0;
-  }
+VisitCompoundStmt :: CompoundStmt Begin line = 540 and column = 5
+VisitCompoundStmt :: CompoundStmt End line = 540 and column = 30
+Original body code is {if (t == 0) {myexit(1);}
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 576 and column 3 to line 578 and column 4
-VisitCompoundStmt :: Substmt is IfStmt at line 576
+VisitCompoundStmt :: CompoundStmt at line 540 and column 5 to line 540 and column 30
+VisitCompoundStmt :: Substmt is IfStmt at line 540
 show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-curr => curr 563 567
-head => head 548 560
-head => head 562 567
-head => head 574 581
-i => i 552 557
-i => i 562 567
-m => m 575 581
-n => n 547 560
-n => n 570 581
-next_node => next_node 553 557
-VisitStmt :: If Statement Found at line 576
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+VisitStmt :: If Statement Found at line 540
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt Begin line = 576 and column = 15
-VisitCompoundStmt :: CompoundStmt End line = 578 and column = 3
+VisitCompoundStmt :: CompoundStmt Begin line = 540 and column = 18
+VisitCompoundStmt :: CompoundStmt End line = 540 and column = 29
+Original body code is {myexit(1);
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 540 and column 18 to line 540 and column 29
+VisitCompoundStmt :: Substmt is CallExpr at line 540
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+VisitStmt :: While Statement Found
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 550 is CompoundStmt
+getArrayUseInLoop :: Stmt at line 553 is BinaryOperator
+getArrayUseInLoop :: LHS at 553 is DeclRefExpr
+getArrayUseInLoop :: RHS at 553 is ImplicitCastExpr
+getArrayUseInLoop :: Stmt at line 554 is UnaryOperator
+getArrayUseInLoop :: UnaryOperator at line 554
+Instrumentation flag = 2
+check_variable_scope :: Checking scope of variable __bsx at print line number : 549
+ <<< check_variable_scope :: Variable __bsx is not in scope at line number : 549>>> 
+ check_variable_scope :: Checking scope of variable __x at print line number : 549
+ <<< check_variable_scope :: Variable __x is not in scope at line number : 549>>> 
+ check_variable_scope :: Checking scope of variable a at print line number : 549
+ <<< check_variable_scope :: Variable a is in scope at print line number : 549 | scope begin = 532 | scope end = 563 >>> 
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 549 and column = 16
+VisitCompoundStmt :: CompoundStmt End line = 555 and column = 3
 Original body code is {
-    return 0;
+    {if (p->h != 1) {
+      ERROR: {reach_error();abort();}
+    }}
+    p = p->n;
+    i++;
   
 ####################### CompoundStmt Code Range #######################
-VisitCompoundStmt :: CompoundStmt at line 576 and column 15 to line 578 and column 3
-VisitCompoundStmt :: Substmt is ReturnStmt at line 577
+VisitCompoundStmt :: CompoundStmt at line 549 and column 16 to line 555 and column 3
+VisitCompoundStmt :: Substmt is CompoundStmt at line 550
+VisitCompoundStmt :: Substmt is BinaryOperator at line 553
+VisitCompoundStmt :: Substmt is UnaryOperator at line 554
 show_scope_map :: Printing scope map
-__bsx => __bsx 58 60
-__bsx => __bsx 63 65
-curr => curr 549 560
-curr => curr 563 567
-head => head 548 560
-head => head 562 567
-head => head 574 581
-i => i 552 557
-i => i 562 567
-m => m 575 581
-n => n 547 560
-n => n 570 581
-next_node => next_node 553 557
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 550 and column = 5
+VisitCompoundStmt :: CompoundStmt End line = 552 and column = 6
+Original body code is {if (p->h != 1) {
+      ERROR: {reach_error();abort();}
+    }
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 550 and column 5 to line 552 and column 6
+VisitCompoundStmt :: Substmt is IfStmt at line 550
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+VisitStmt :: If Statement Found at line 550
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 550 and column = 21
+VisitCompoundStmt :: CompoundStmt End line = 552 and column = 5
+Original body code is {
+      ERROR: {reach_error();abort();}
+    
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 550 and column 21 to line 552 and column 5
+VisitCompoundStmt :: Substmt is LabelStmt at line 551
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 551 and column = 14
+VisitCompoundStmt :: CompoundStmt End line = 551 and column = 37
+Original body code is {reach_error();abort();
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 551 and column 14 to line 551 and column 37
+VisitCompoundStmt :: Substmt is CallExpr at line 551
+VisitCompoundStmt :: Substmt is CallExpr at line 551
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+VisitStmt :: While Statement Found
+getArrayUseInLoop :: Stmt Body of CompoundStmt
+getArrayUseInLoop :: Stmt at line 558 is DeclStmt
+getArrayUseInLoop :: Stmt at line 559 is CallExpr
+getArrayUseInLoop :: Stmt at line 560 is BinaryOperator
+getArrayUseInLoop :: LHS at 560 is DeclRefExpr
+getArrayUseInLoop :: RHS at 560 is ImplicitCastExpr
+Instrumentation flag = 2
+check_variable_scope :: Checking scope of variable __bsx at print line number : 557
+ <<< check_variable_scope :: Variable __bsx is not in scope at line number : 557>>> 
+ check_variable_scope :: Checking scope of variable __x at print line number : 557
+ <<< check_variable_scope :: Variable __x is not in scope at line number : 557>>> 
+ check_variable_scope :: Checking scope of variable a at print line number : 557
+ <<< check_variable_scope :: Variable a is in scope at print line number : 557 | scope begin = 532 | scope end = 563 >>> 
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt Begin line = 557 and column = 16
+VisitCompoundStmt :: CompoundStmt End line = 561 and column = 3
+Original body code is {
+    struct node *tmp = p->n;
+    free(p);
+    p = tmp;
+  
+####################### CompoundStmt Code Range #######################
+VisitCompoundStmt :: CompoundStmt at line 557 and column 16 to line 561 and column 3
+VisitCompoundStmt :: Substmt is DeclStmt at line 558
+Pointer type is struct node * :: Variable name is tmp
+VisitCompoundStmt :: Variable (SingleDecl) tmp of type struct node * declared at line 558 and column 5
+VisitCompoundStmt :: Substmt is CallExpr at line 559
+VisitCompoundStmt :: Substmt is BinaryOperator at line 560
+show_scope_map :: Printing scope map
+__bsx => __bsx 174 176
+__bsx => __bsx 179 181
+__x => __x 184 186
+__x => __x 189 191
+__x => __x 194 196
+a => a 532 563
+i => i 536 563
+p => p 535 563
+s => s 524 526
+t => t 534 563
+tmp => tmp 558 561
+VisitVarDecl :: Found VarDecl at line = 558
 
 Finished call to function ParseAST  
 
