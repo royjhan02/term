@@ -40,7 +40,8 @@ bool PyASTVisitor::show_scope_map(std::multimap<std::string, AVInfo::scope_info>
     std::cerr << "show_scope_map :: Printing scope map\n";
     for (auto it = scope_map.begin(); it != scope_map.end(); ++it)
     {
-        std::cerr << it->first << " => " << it->second.vnam << " " << it->second.scopeBeginLine << " " << it->second.scopeEndLine << "\n";
+        std::cerr << it->first << " => " << it->second.vnam << " " << it->second.scopeBeginLine << " " << it->second.scopeEndLine 
+                  << " " << it->second.vtyp << "\n";
     }
     fclose(stderr);
     #endif
@@ -237,6 +238,7 @@ bool PyASTVisitor::print_cbmc(clang::SourceLocation srcLoc, unsigned int lineNum
             {
                 defStr = defStr + "static int" + " " + allocaoinstvarNameVal + ";"; //To store the old value pointed by int * for alloca
             }
+            
 
             eqStrSemi = eqStrSemi + oinstvarName + "=" + scope_instvarName + ";";
 
@@ -331,19 +333,20 @@ bool PyASTVisitor::print_trace(clang::SourceLocation srcLoc, unsigned int lineNu
     std::string insertStr = "";
     if (message == "reached_control")
     {
-        insertStr = insertStr + " __VERIFIER_reached_control(" + std::to_string(lineNum) + ", \" \");\n";
+        //insertStr = insertStr + " __VERIFIER_reached_control(" + std::to_string(lineNum) + ", \" \");\n";
+        insertStr = insertStr + " __VERIFIER_reached_control(" + std::to_string(lineNum) + ", __func__);\n";
     }
     else if (message == "loop_head")
     {
-        insertStr = insertStr + " __VERIFIER_loop_head(" + std::to_string(lineNum) + ", \" \");\n";
+        insertStr = insertStr + " __VERIFIER_loop_head(" + std::to_string(lineNum) + ", __func__);\n";
     }
     else if (message == "control_true")
     {
-        insertStr = insertStr + " __VERIFIER_control_true(" + std::to_string(lineNum) + ", \" \");\n";
+        insertStr = insertStr + " __VERIFIER_control_true(" + std::to_string(lineNum) + ", __func__);\n";
     }
     else if (message == "control_false")
     {
-        insertStr = insertStr + " __VERIFIER_control_false(" + std::to_string(lineNum) + ", \" \");\n";
+        insertStr = insertStr + " __VERIFIER_control_false(" + std::to_string(lineNum) + ", __func__);\n";
     }
     vRewriter.InsertTextAfterToken(srcLoc, insertStr);
 
