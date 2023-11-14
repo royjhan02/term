@@ -1508,8 +1508,8 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
         else if (instrumentation_flag == 2)
         {
             print_pstored(beforeWhilePrintSourceLoc, printlineNum, ""); //For pStored
+            print_trace(printSourceLoc, printlineNum, "loop_head"); //Changed order of loop_head and print_cbmc
             print_cbmc(printSourceLoc, printlineNum, "");
-            print_trace(printSourceLoc, printlineNum, "loop_head");
             print_trace(beforeWhilePrintSourceLoc, printlineNum, "reached_control");
         }
     }
@@ -1557,8 +1557,8 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             else if (instrumentation_flag == 2)
             {
                 print_pstored(beforeForPrintSourceLoc, printlineNum, ""); //For pStored
+                print_trace(printSourceLoc, printlineNum, "loop_head"); //Changed order of loop_head and print_cbmc
                 print_cbmc(printSourceLoc, printlineNum, "");
-                print_trace(printSourceLoc, printlineNum, "loop_head");
                 print_trace(beforeForPrintSourceLoc, printlineNum, "reached_control");
             }
         }
@@ -1596,8 +1596,8 @@ bool PyASTVisitor::VisitStmt(clang::Stmt *s)
             else if (instrumentation_flag == 2)
             {
                 print_pstored(beforeDoWhilePrintSourceLoc, printlineNum, "");
+                print_trace(printSourceLoc, printlineNum, "loop_head"); //Changed order of loop_head and print_cbmc
                 print_cbmc(printSourceLoc, printlineNum, "");
-                print_trace(printSourceLoc, printlineNum, "loop_head");
                 print_trace(beforeDoWhilePrintSourceLoc, printlineNum, "reached_control");
             }
         }
