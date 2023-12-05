@@ -1,2 +1,0 @@
-/usr/bin/llvm-ar-14 qc ../lib/libinstCore.a CMakeFiles/instCore.dir/main.cpp.o CMakeFiles/instCore.dir/PyASTVisitor.cpp.o CMakeFiles/instCore.dir/PyASTConsumer.cpp.o
-/usr/bin/llvm-ranlib-14 ../lib/libinstCore.a
