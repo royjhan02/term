@@ -1,0 +1,51 @@
+PROTON is a tool for termination and non-termination analysis of software. While, we don't have a website for this yet, we intend to make this open source soon.
+
+This archive contains the following files:
+
+- bracer: this adds braces to input files 
+
+- instrumenter: instruments braced input files with assertions for checking recurrent states using CBMC
+
+- cbmc: this is the cbmc version XXX taken from the cbmc website
+
+- tinputs.c: a C file with implementation for the various __VERIFIER_nondet implementations constraining the nondet inputs
+
+- parse_trace_vf.py (and dependent py files):  generates witness.graphml, parsing non-termination trace produced by cbmc
+
+- proton: this wrapper script invokes bracer, instrumenter, and cbmc parsing the property file to pass the correct flags to cbmc and returning the correct return codes for SV-COMP.
+
+- proton.py: this is benchexec tool definition module for proton
+
+DEPENDENCIES
+============
+The binaries were compiled on Ubuntu 22.04 LTS; the binaries
+should be self-hosting on similar operating systems, if the
+following package dependencies are satisfied:-
+   - gcc
+   - libc6-dev-i386
+   - clang-14
+   - llvm-14
+   - g++-12
+   - python3
+
+If the tool still does not run, please contact us.
+
+Note:- please ensure that clang-14 and g++-12 are the "default" compilers on UBUNTU 22.04. Otherwise, the tool-chain may not work.
+
+
+Usage and SV-COMP
+=================
+To use the tool, run the tool passing a source file as argument. For C source
+code, and as only installation requirement, make sure a C compiler (such as GCC)
+is installed.
+
+For SV-COMP, use the wrapper script provided in this distribution, which takes
+the following options:
+  <path(s)> to sources
+  --32, --64, 32, 64: set the bit width
+  --propertyFile <file>: read SV-COMP property specification from <file>
+  --graphml-witness <file>: write SV-COMP witness to <file>
+
+
+A sample command to run proton is :-
+     proton --graphml-witness witness.graphml --propertyfile termination.prp –64 example.c.
