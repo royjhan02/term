@@ -1,12 +1,7 @@
 #!/bin/bash
 # tool
 
-PROTON_T_CHECK=./t-check.sh
-PROTON_NT_CHECK=./nt-check.sh
-PROTON_BRACER=./bracer
-PROTON_INSTRUMENTER=./instrumenter
-CBMC_BINARY=./cbmc
-TOOL_NAME=PROTON
+TOOL_NAME=BOUNTY
 FIND_OPTIONS=""
 
 
@@ -55,7 +50,8 @@ run()
   fi
 
   echo NTFILE is $NTFILE
-  run-gl-and-z3.sh $NTFILE $FILE_NAME
+  #  OLD run-nt-gl-and-z3.sh $NTFILE $FILE_NAME
+  run-one-bounty.sh $NTFILE $FILE_NAME
   EC=$?
   cd $TOOL_DIR
   #echo CURRENT DIR is $PWD
@@ -166,7 +162,7 @@ run
 case $EC in
   0)
      EC=0
-     echo "TRUE"
+     echo "UNKNOWN"
      ;;
   1)
      EC=0
@@ -179,6 +175,14 @@ case $EC in
   3)
      EC=10
      echo "INCONCLUSIVE"
+     ;;
+  124)
+     EC=10
+     echo "OUT OF TIME"
+     ;;
+  137)
+     EC=10
+     echo "OUT OF MEMORY"
      ;;
   *)
      EC=10
