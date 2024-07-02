@@ -1,0 +1,52 @@
+BOUNTY is a tool for termination and non-termination analysis of software. While, we don't have a website for this yet, we intend to make this open source soon.
+
+This archive contains the following files:
+
+- bracer: this adds braces to input files 
+
+- instrumenter: instruments braced input files with assertions for checking recurrent states using CBMC
+
+- cbmc: this is the cbmc version 5.95.0 taken from the cbmc website
+
+- Z3 : the Z3 SMT solver available at https://github.com/Z3Prover/z3
+
+- bounty.sh: this wrapper script invokes bracer, instrumenter, and cbmc parsing the property file to pass the correct flags to cbmc and returning the correct return codes for SV-COMP.
+
+- bounty-noinstr.sh: a shell script that all glues all the above, except bracer and instrumenter
+
+- termination.prp: SV-COMP's termination property file.
+
+
+DEPENDENCIES
+============
+The binaries were compiled on Ubuntu 22.04 LTS; the binaries
+should be self-hosting on similar operating systems, if the
+following package dependencies are satisfied:-
+   - gcc
+   - libc6-dev-i386
+   - clang-14
+   - llvm-14
+   - g++-12
+   - python3
+
+If the tool still does not run, please contact us.
+
+Note:- please ensure that clang-14 and g++-12 are the "default" compilers on UBUNTU 22.04. Otherwise, the tool-chain may not work.
+
+
+Usage
+=====
+bounty.sh is the main script you should be using. Feel free to customize it as suits your need. And, would you mind sharing your bounty updates with us?
+
+bounty.sh takes the following options:
+  <path(s)> to sources
+  --32, --64, 32, 64: set the bit width
+  --propertyFile <file>: we expect it to be the SV-COMP termination property file (same as the one supplied in this distribution). 
+  --graphml-witness <file>: write witness to this file
+
+A sample command to run bounty is :-
+     bounty.sh --graphml-witness witness.graphml --propertyfile termination.prp –64 example.c.
+
+Note:-
+- even though bounty supports only termination property at the moment, it may be extended to more properties in future, and hence takes property file also as an input.
+- bounty-noinstr.sh is not nicely done, and will be removed soon. Instead, bounty.sh will be re-implemented in a language like C++ with better option control and, hopefully, better strategies.  

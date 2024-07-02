@@ -9,8 +9,9 @@ BOUNTY consists of the following tools:-
 4. Z3 : the Z3 SMT solver available at https://github.com/Z3Prover/z3
 5. Glucose : the Glucose SAT solver available at https://github.com/audemard/glucose
 6. bounty.sh: a shell script that all glues all the above for non-termination checking.
+7. bounty-noinstr.sh: a shell script that all glues all the above, but does not run the instrumenter
 
-Of the above, 1 , 2, and 6 are our contributions, and we use MIT license for them just like CBMC. The other tools (CBMC, Z3 and Glucose) are bound by their respective licenses.
+Of the above, 1 , 2, 6, and 7 are our contributions, and we use MIT license for them just like CBMC. The other tools (CBMC, Z3 and Glucose) are bound by their respective licenses.
 
 
 Copyright 2024. Dr. Kumar Madhukar
