@@ -39,7 +39,8 @@ The below files are added for a new termination checking via ranking functions g
 
 - utils.py: utilities, such as logging, for llm-t-check
 
-- Llama-iproton.gguf: this is our variant of Llama for guessing ranking functions
+- Llama-iproton.gguf: this is our variant of Llama for guessing ranking functions. Due to restrictions on uploading large files to GitHub, we 
+host this file at the following URL : https://drive.google.com/file/d/1uhdALGoFgS_z2qBhA2PecwILe89Oqv2o/view
 
 - config.py: configuration of cbmc-options, timeouts, etc., for llm-t-check
 
