@@ -1,0 +1,90 @@
+PROTON is a tool for termination and non-termination analysis of software.
+
+This archive contains the following:
+
+- bracer: this adds braces to input files 
+
+- instrumenter: instruments braced input files with assertions for checking recurrent states using CBMC
+
+- cbmc: this is the cbmc version XXX taken from the cbmc website
+
+- tinputs.c: a C file with implementation for the various __VERIFIER_nondet implementations constraining the nondet inputs
+
+- parse_trace_vf.py (and dependent py files):  generates witness.graphml, parsing non-termination trace produced by cbmc
+
+- proton: this wrapper script invokes bracer, instrumenter, and cbmc parsing the property file to pass the correct flags to cbmc and returning the correct return codes for SV-COMP.
+
+- proton.py: this is benchexec tool definition module for proton
+
+
+==============================
+Built with Llama
+
+New additions on 20-Nov-2024
+==============================
+
+The below files are added for a new termination checking via ranking functions guessed by a llm (a custom variant of Llama3.2-1b-instruct)
+
+- llm-dependencies.LICENSE: contains the licenses of Llamma3.2-1b-instruct, and all our dependennt software including Llama.cpp and llama-cpp-python.
+
+- llm-t-check.sh: main wrapper script for invoking LLM based termination check (llm-t-check)
+
+- promptlibrary.py: repository of our LLM-prompt templates
+
+- virtualenv_tools.py: fixes python depdency paths llm-t-check
+
+- venvs: python dependencies for llm-t-check. Supports Python3.12 only (llama-cpp-python needs to be built with python, which is version specific)
+
+- validate_test.py: checks if a variant guessed by llm is correct
+
+- utils.py: utilities, such as logging, for llm-t-check
+
+- Llama-iproton.gguf: this is our variant of Llama for guessing ranking functions
+
+- config.py: configuration of cbmc-options, timeouts, etc., for llm-t-check
+
+- check_ter.py: main python script for running llm for t-check
+
+- bin: contains bracer and instrumenter for llm-t-check
+
+- tmp: an empty tmp directory
+
+- logs: an empty directory for storing logs
+
+- include/instrumenter.h: definitions of various VERIFIER_nondet functions
+
+
+SOFTWARE DEPENDENCIES
+=====================
+The binaries were compiled on Ubuntu 22.04 LTS; the binaries
+should be self-hosting on similar operating systems, if the
+following package dependencies are satisfied:-
+   - gcc
+   - libc6-dev-i386
+   - clang-14
+   - llvm-14
+   - g++-12
+   - python3
+   - python3.12 is neeed for the lama llm based termination checking (llm-t-check.sh)
+
+If the tool still does not run, please contact us.
+
+Note:- please ensure that clang-14 and g++-12 are the "default" compilers on UBUNTU 22.04. Otherwise, the tool-chain may not work.
+
+
+Usage and SV-COMP
+=================
+To use the tool, run the tool passing a source file as argument. For C source
+code, and as only installation requirement, make sure a C compiler (such as GCC)
+is installed.
+
+For SV-COMP, use the wrapper script provided in this distribution, which takes
+the following options:
+  <path(s)> to sources
+  --32, --64, 32, 64: set the bit width
+  --propertyFile <file>: read SV-COMP property specification from <file>
+  --graphml-witness <file>: write SV-COMP witness to <file>
+
+
+A sample command to run proton is :-
+     proton --graphml-witness witness.graphml --propertyfile termination.prp –64 example.c.
