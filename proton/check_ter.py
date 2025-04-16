@@ -10,9 +10,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 from collections import namedtuple
 
-# pytype: disable=import-error
-import llama_cpp
-# pytype: enable=import-error
+import requests
 
 import utils as u
 from config import Config as c
@@ -148,14 +146,13 @@ def extract_sanitize_llm_response( response_text, begintag, endtag ):
     return u.Result( santized_response, None )
 
 
-def llm_generate_variant_invariant( gguf_fpath, loop_data ):
+def llm_generate_variant_invariant(model_name, loop_data):
     """
-    Loads an llm (as a gguf file) for local inference and attempts to generate
-    variant and invariant
+    Uses Ollama API to generate variant and invariant
     
     Arguments:
     
-    gguf_path   -   Path to gguf model
+    model_name  -   Name of the Ollama model to use
     loop_data   -   Data with loop details, dict like each entry in return of
                     extract_loops.
 
@@ -167,22 +164,10 @@ def llm_generate_variant_invariant( gguf_fpath, loop_data ):
                         being interpreted. Includes tags not being present,
                         contents inside being empty, etc.
     LLM_GAVE_UP     -   Contents inside tag is 'UNK', ie, llm gave up
-    TOKENS_EXCEEDED -   Token count has been exceeded
+    API_ERROR       -   Error communicating with Ollama API
     """
-    if not os.path.exists( gguf_fpath ):
-        l.error("Can't find gguf file at {}".format( gguf_fpath ))
-        raise ValueError("Can't find gguf file at {}".format( gguf_fpath ))
-
-    # Load gguf via llamacpp via langchain
-    n_ctx = c.CONTEXT_SIZE
-    max_tokens = c.MAX_NEW_TOKENS
-    model = llama_cpp.Llama( 
-        model_path = gguf_fpath,
-        n_ctx = n_ctx,
-        n_threads = c.N_THREADS,
-        n_threads_batch = c.N_THREADS,
-    )
-    token_budget = n_ctx - max_tokens
+    # Configure Ollama API endpoint
+    OLLAMA_API = "http://localhost:11434/api/generate"
 
     # Assemble prompt
     dyn_prompt = "<sourcecode> " \
@@ -199,30 +184,29 @@ def llm_generate_variant_invariant( gguf_fpath, loop_data ):
     )
     l.debug( "Generated prompt: {}".format( prompt_text ))
 
-    # Count tokens
-    token_count = len( model.tokenize( 
-        prompt_text.encode( 'utf-8' ), add_bos = False ))
-    if token_count > token_budget:
-        l.error( "Exceeded token counts {} > {}".format( 
-            token_count, token_budget ))
-        return u.Status( False, 'TOKENS_EXCEEDED' )
-
-    # Call llm via llamacpp via langchain
-    l.info( "Invoking model with {} tokens: ".format( token_count ))
-    response = model( prompt_text, 
-            max_tokens = max_tokens, 
-        )[ 'choices' ][ 0 ][ 'text' ]
-    l.debug( "Response from llm: {}".format( response ))
+    # Call Ollama API
+    try:
+        response = requests.post(OLLAMA_API, json={
+            "model": model_name,
+            "prompt": prompt_text,
+            "stream": False
+        })
+        response.raise_for_status()
+        response_text = response.json()["response"]
+        l.debug("Response from Ollama: {}".format(response_text))
+    except Exception as e:
+        l.error("Failed to generate response: {}".format(e))
+        return u.Status(False, 'API_ERROR')
 
     # Extract assigns, variant and invariant
     variant = extract_sanitize_llm_response(
-        response, "<variant>", "</variant>" )
+        response_text, "<variant>", "</variant>" )
     if variant.result is None: return u.Status( False, variant.failure_reason )
     invariant = extract_sanitize_llm_response(
-        response, "<invariant>", "</invariant>" )
+        response_text, "<invariant>", "</invariant>" )
     if invariant.result is None: return u.Status( False, invariant.failure_reason )
     assigns = extract_sanitize_llm_response(
-        response, "<assigns>", "</assigns>" )
+        response_text, "<assigns>", "</assigns>" )
     if assigns.result is None: return u.Status( False, assigns.failure_reason )
 
     # Write loop data and return
@@ -232,9 +216,9 @@ def llm_generate_variant_invariant( gguf_fpath, loop_data ):
     return u.Status( True, None )
 
 
-def check_ter( c_fpath, gguf_path ):
+def check_ter(c_fpath, model_name):
     """
-    Check termination of given c program using model at given gguf path
+    Check termination of given c program using specified Ollama model
 
     Returns: A Status that is True if the program is believed to be terminating,
         False if it may be non-terminating. Reports many reasonsss for
@@ -265,7 +249,7 @@ def check_ter( c_fpath, gguf_path ):
     # Generate variant, inv etc for each loop
     for loop_data in loops:
         status = llm_generate_variant_invariant(
-            gguf_fpath = gguf_path, loop_data = loop_data )
+            model_name=model_name, loop_data=loop_data)
         l.debug("Extracted data for first loop, loop data: {}, status: {}".format(
             loop_data, status ))
         if not status.success:
@@ -293,8 +277,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument( '--in-file', type=str, required=True,
         help = "Path to c file to check" )
-    parser.add_argument( '--gguf', type=str, required=True,
-        help = "Path to gguf model file" )
+    parser.add_argument('--model', type=str, required=True,
+        help="Name of the Ollama model to use")
     parser.add_argument('--log-level', type=str, default='info',
         choices = log_levels.keys(),
         help = "Log level")
@@ -304,7 +288,7 @@ if __name__ == "__main__":
     u.init_logging()
     logging.getLogger( __name__ ).setLevel( log_levels[ args.log_level ] )
 
-    ret = check_ter( args.in_file, args.gguf )
+    ret = check_ter(args.in_file, args.model)
     
     # Set exit code
     if ret.success: sys.exit( 0 )

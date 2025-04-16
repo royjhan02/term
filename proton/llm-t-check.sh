@@ -14,7 +14,7 @@ chmod -R 777 tmp
 mkdir logs
 chmod -R 777 logs
 
-LLM_GGUF=Llama-iproton.gguf # Where the model is stored
+LLM_MODEL="llama3.2" # Name of the Ollama model to use
 VENV_DIR=venv
 
 # Delete symlinks if exist
@@ -51,7 +51,7 @@ then
     echo "Python not found even after sourcing activate script"
     exit 24
 fi 
-python3 check_ter.py --in-file $BM_DIR/$1 --gguf $LLM_GGUF >& /dev/null
+python3 check_ter.py --in-file $BM_DIR/$1 --model $LLM_MODEL >& /dev/null
 
 # Exit with code from last call
 exit $?
