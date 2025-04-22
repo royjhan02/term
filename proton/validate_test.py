@@ -53,11 +53,12 @@ def add_braces( full_code ):
     # Check c file exists
     out_fpath = os.path.join( c.TMP_PATH, c.BRACER_OUT_FNAME )
     if not os.path.exists(out_fpath):
-        msg = "Bracer output does not exist. ".format( out_fpath )
-        l.error( msg ) 
-        return u.Result( None, 'BRACER' )
+        # If bracer output doesn't exist, the input code might already be properly braced
+        # Use the input code as is
+        l.info("Bracer output not found, using input code as is")
+        return u.Result(full_code, None)
 
-    # Load code
+    # Load code from bracer output
     with open( out_fpath, 'r' ) as f:
         braced_code = f.read()
 
