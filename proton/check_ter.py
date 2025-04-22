@@ -10,9 +10,7 @@ import subprocess
 import xml.etree.ElementTree as ET
 from collections import namedtuple
 
-# pytype: disable=import-error
-import llama_cpp
-# pytype: enable=import-error
+from model_handler import create_model_handler
 
 import utils as u
 from config import Config as c
@@ -148,14 +146,13 @@ def extract_sanitize_llm_response( response_text, begintag, endtag ):
     return u.Result( santized_response, None )
 
 
-def llm_generate_variant_invariant( gguf_fpath, loop_data ):
+def llm_generate_variant_invariant(model_path, loop_data):
     """
-    Loads an llm (as a gguf file) for local inference and attempts to generate
-    variant and invariant
+    Use the configured model to generate variant and invariant
     
     Arguments:
     
-    gguf_path   -   Path to gguf model
+    model_path  -   Path to model file (for llama) or None for OpenAI
     loop_data   -   Data with loop details, dict like each entry in return of
                     extract_loops.
 
@@ -169,50 +166,46 @@ def llm_generate_variant_invariant( gguf_fpath, loop_data ):
     LLM_GAVE_UP     -   Contents inside tag is 'UNK', ie, llm gave up
     TOKENS_EXCEEDED -   Token count has been exceeded
     """
-    if not os.path.exists( gguf_fpath ):
-        l.error("Can't find gguf file at {}".format( gguf_fpath ))
-        raise ValueError("Can't find gguf file at {}".format( gguf_fpath ))
+    try:
+        # Create appropriate model handler based on config
+        if c.MODEL_TYPE == "llama":
+            model = create_model_handler("llama", model_path=model_path)
+        else:
+            model = create_model_handler("openai",
+                api_key=c.OPENAI_API_KEY,
+                model=c.OPENAI_MODEL)
 
-    # Load gguf via llamacpp via langchain
-    n_ctx = c.CONTEXT_SIZE
-    max_tokens = c.MAX_NEW_TOKENS
-    model = llama_cpp.Llama( 
-        model_path = gguf_fpath,
-        n_ctx = n_ctx,
-        n_threads = c.N_THREADS,
-        n_threads_batch = c.N_THREADS,
-    )
-    token_budget = n_ctx - max_tokens
+        token_budget = c.CONTEXT_SIZE - c.MAX_NEW_TOKENS
 
-    # Assemble prompt
-    dyn_prompt = "<sourcecode> " \
-        + loop_data.full_code \
-        + "</sourcecode> " \
-        + "<loopcode> " \
-        + loop_data.loop_code \
-        + "</loopcode> " \
-        + "<loopid> " \
-        + loop_data.loop_id \
-        + "</loopid>"
-    prompt_text = (
-        pl[ c.PROMPT ] + " " + dyn_prompt
-    )
-    l.debug( "Generated prompt: {}".format( prompt_text ))
+        # Assemble prompt
+        dyn_prompt = "<sourcecode> " \
+            + loop_data.full_code \
+            + "</sourcecode> " \
+            + "<loopcode> " \
+            + loop_data.loop_code \
+            + "</loopcode> " \
+            + "<loopid> " \
+            + loop_data.loop_id \
+            + "</loopid>"
+        prompt_text = (
+            pl[ c.PROMPT ] + " " + dyn_prompt
+        )
+        l.debug( "Generated prompt: {}".format( prompt_text ))
 
-    # Count tokens
-    token_count = len( model.tokenize( 
-        prompt_text.encode( 'utf-8' ), add_bos = False ))
-    if token_count > token_budget:
-        l.error( "Exceeded token counts {} > {}".format( 
-            token_count, token_budget ))
-        return u.Status( False, 'TOKENS_EXCEEDED' )
+        # Count tokens
+        token_count = model.count_tokens(prompt_text)
+        if token_count > token_budget:
+            l.error("Exceeded token counts {} > {}".format(
+                token_count, token_budget))
+            return u.Status(False, 'TOKENS_EXCEEDED')
 
-    # Call llm via llamacpp via langchain
-    l.info( "Invoking model with {} tokens: ".format( token_count ))
-    response = model( prompt_text, 
-            max_tokens = max_tokens, 
-        )[ 'choices' ][ 0 ][ 'text' ]
-    l.debug( "Response from llm: {}".format( response ))
+        # Generate response using the model
+        l.info("Invoking model with {} tokens".format(token_count))
+        response = model.generate(prompt_text)
+        l.debug("Response from model: {}".format(response))
+    except Exception as e:
+        l.error(f"Model error: {str(e)}")
+        return u.Status(False, 'LLM_FAILED')
 
     # Extract assigns, variant and invariant
     variant = extract_sanitize_llm_response(
@@ -232,7 +225,7 @@ def llm_generate_variant_invariant( gguf_fpath, loop_data ):
     return u.Status( True, None )
 
 
-def check_ter( c_fpath, gguf_path ):
+def check_ter(c_fpath, model_path=None):
     """
     Check termination of given c program using model at given gguf path
 
@@ -261,15 +254,16 @@ def check_ter( c_fpath, gguf_path ):
     except RuntimeError:
         return u.Status( False, 'LOOP_EXTRACTION' )
 
-    
-    # Generate variant, inv etc for each loop
+    # For each loop, get model to generate variant and invariant
     for loop_data in loops:
-        status = llm_generate_variant_invariant(
-            gguf_fpath = gguf_path, loop_data = loop_data )
+        l.info("Generating variant and invariant for loop {}".format(
+            loop_data.loop_id))
+        llm_res = llm_generate_variant_invariant(
+            model_path=model_path, loop_data=loop_data)
         l.debug("Extracted data for first loop, loop data: {}, status: {}".format(
-            loop_data, status ))
-        if not status.success:
-            return status
+            loop_data, llm_res ))
+        if not llm_res.success:
+            return llm_res
 
         # Validate each loop separately - that is the only way the instrumenter
         # will work
@@ -293,8 +287,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument( '--in-file', type=str, required=True,
         help = "Path to c file to check" )
-    parser.add_argument( '--gguf', type=str, required=True,
-        help = "Path to gguf model file" )
+    parser.add_argument('--model-path', type=str, required=False,
+        help="Path to model file (required for llama, ignored for OpenAI)")
     parser.add_argument('--log-level', type=str, default='info',
         choices = log_levels.keys(),
         help = "Log level")
@@ -304,7 +298,7 @@ if __name__ == "__main__":
     u.init_logging()
     logging.getLogger( __name__ ).setLevel( log_levels[ args.log_level ] )
 
-    ret = check_ter( args.in_file, args.gguf )
+    ret = check_ter(args.in_file, args.model_path)
     
     # Set exit code
     if ret.success: sys.exit( 0 )

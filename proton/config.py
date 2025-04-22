@@ -26,6 +26,11 @@ class Config:
     MAX_NEW_TOKENS = 64
     N_THREADS = 1
     
+    # Model settings
+    MODEL_TYPE = "llama"  # "llama" or "openai"
+    OPENAI_MODEL = "o3-mini"  # Only used if MODEL_TYPE is "openai"
+    OPENAI_API_KEY = "KtwL2VARfRuTTXPwZCw0tjngGyeXkplM"  # Set this to your API key if using OpenAI
+    OPENAI_API_BASE = "https://go.apis.huit.harvard.edu/ais-openai-direct-limited-schools/v1"  # Harvard OpenAI API endpoint
     # Prompting settings
     PROMPT = 'lib_prompt_co_inv_assigns_variant_2'
 
