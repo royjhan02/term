@@ -52,9 +52,9 @@ class LlamaHandler(ModelHandler):
 class OpenAIHandler(ModelHandler):
     """Handler for OpenAI API models"""
     
-    def __init__(self, api_key=None, model="o3-mini"):
+    def __init__(self, model="o3-mini"):
         self.model = model
-        self.api_key = api_key
+        self.api_key = c.OPENAI_API_KEY
         self.url = f"{c.OPENAI_API_BASE}/chat/completions"
 
     def generate(self, prompt_text):
@@ -89,7 +89,6 @@ def create_model_handler(model_type="llama", **kwargs):
         return LlamaHandler(kwargs.get("model_path"))
     elif model_type == "openai":
         return OpenAIHandler(
-            api_key=kwargs.get("api_key"),
             model=kwargs.get("model", "o3-mini")
         )
     else:
