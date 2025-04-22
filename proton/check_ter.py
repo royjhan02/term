@@ -225,13 +225,13 @@ def llm_generate_variant_invariant(model_path, loop_data):
     return u.Status( True, None )
 
 
-def check_ter(c_fpath, model_path=None):
+def check_ter( c_fpath, model_path ):
     """
     Check termination of given c program using model at given gguf path
 
     Returns: A Status that is True if the program is believed to be terminating,
-        False if it may be non-terminating. Reports many reasonsss for
-        failure, see docs of  llm_generate_variant_invaraint() and
+        False if it may be non-terminating. Reports many reasons for
+        failure, see docs of llm_generate_variant_invariant() and
         validate(). Other than that:
 
     LOOP_EXTRACTION -   Loop extraction failed, check logs.
@@ -240,7 +240,7 @@ def check_ter(c_fpath, model_path=None):
     """
     u.clear_tmp()
 
-    # Load code, do early check for presense of loops
+    # Load code, do early check for presence of loops
     with open( c_fpath, 'r' ) as code_file:
         full_code = code_file.read()
     if not ('for' in full_code or 'while' in full_code or 'do' in full_code):
@@ -249,34 +249,118 @@ def check_ter(c_fpath, model_path=None):
         return u.Status( False, 'NO_LOOPS' )
 
     # Extract loops
-    try: 
+    try:
         loops = extract_loops( c_fpath )
     except RuntimeError:
         return u.Status( False, 'LOOP_EXTRACTION' )
 
-    # For each loop, get model to generate variant and invariant
+    # Generate variant, inv etc for each loop
     for loop_data in loops:
-        l.info("Generating variant and invariant for loop {}".format(
-            loop_data.loop_id))
-        llm_res = llm_generate_variant_invariant(
-            model_path=model_path, loop_data=loop_data)
-        l.debug("Extracted data for first loop, loop data: {}, status: {}".format(
-            loop_data, llm_res ))
-        if not llm_res.success:
-            return llm_res
+        # Initialize retry counter
+        loop_data.retry_count = 0
+        
+        # First attempt
+        status = llm_generate_variant_invariant(
+            model_path = model_path, loop_data = loop_data )
+        loop_data.retry_count += 1
+        l.debug("Attempt {} for loop: {}, status: {}".format(
+            loop_data.retry_count, loop_data, status ))
+        
+        if not status.success:
+            # If first attempt failed, try again with failure context
+            failure_context = f"Previous attempt failed with reason: {status.failure_reason}. "
+            if status.failure_reason == 'LLM_FAILED':
+                failure_context += "Please ensure the response is properly formatted. "
+            elif status.failure_reason == 'LLM_GAVE_UP':
+                failure_context += "Please try to generate a simpler variant or invariant. "
+            elif status.failure_reason == 'TOKENS_EXCEEDED':
+                failure_context += "Please generate a more concise response. "
+            
+            # Retry with additional context
+            loop_data.additional_context = failure_context + f"\nThis is attempt {loop_data.retry_count + 1}."
+            status = llm_generate_variant_invariant(
+                model_path = model_path, loop_data = loop_data )
+            loop_data.retry_count += 1
+            l.debug("Attempt {} for loop: {}, status: {}".format(
+                loop_data.retry_count, loop_data, status))
+            
+            if not status.success:
+                return status
 
-        # Validate each loop separately - that is the only way the instrumenter
-        # will work
+        # Validate each loop separately
         status = validate( loop_data )
         l.debug( "Validate returned: {}".format( status ))
+        
         if not status.success:
-            return status
+            # If validation failed, try again with validation failure context
+            failure_context = f"Previous validation failed with reason: {status.failure_reason}. "
+            
+            if status.failure_reason == 'INSTRUMENTER':
+                failure_context += "Please ensure the variant is compatible with the code structure. Check that all variables used in the variant are in scope. "
+                failure_context += f"Loop code:\n{loop_data.loop_code}\n"
+            
+            elif status.failure_reason == 'COMPILATION':
+                failure_context += "Please ensure the variant uses valid C syntax and all variables are properly declared. "
+                failure_context += f"Current variant: {loop_data.variant}\n"
+            
+            elif status.failure_reason == 'TEST_ASSERT_NOT_DECREASING':
+                debug = status.debug_info
+                failure_context += f"The variant increased from {debug['previous_val']} to {debug['current_val']}. "
+                failure_context += "The variant must strictly decrease in each loop iteration. "
+                failure_context += f"\nLoop type: {debug['loop_type']}\nLoop code:\n{debug['loop_code']}\n"
+                failure_context += "\nCurrent variant: " + debug['variant'] + "\n"
+                
+                # Add specific guidance based on loop type
+                if debug['loop_type'] == 'ForStmt':
+                    failure_context += "For 'for' loops, consider using the loop counter or loop bound minus the counter. "
+                elif debug['loop_type'] == 'WhileStmt':
+                    failure_context += "For 'while' loops, look for a value that decreases in the loop body or condition. "
+                elif debug['loop_type'] == 'DoStmt':
+                    failure_context += "For 'do-while' loops, identify a value that must decrease before the next iteration. "
+            
+            elif status.failure_reason == 'TEST_ASSERT_NEGATIVE':
+                debug = status.debug_info
+                failure_context += f"The variant became negative with value: {debug['negative_val']}. "
+                failure_context += "The variant must stay non-negative throughout the loop execution. "
+                failure_context += f"\nLoop type: {debug['loop_type']}\nLoop code:\n{debug['loop_code']}\n"
+                failure_context += "\nCurrent variant: " + debug['variant'] + "\n"
+                
+                # Add specific guidance for negative values
+                if debug['loop_type'] == 'ForStmt':
+                    failure_context += "For 'for' loops, ensure loop bounds prevent the variant from going negative. "
+                else:
+                    failure_context += "Consider adding a max() with 0 or using absolute values if the variant might go negative. "
+            
+            elif status.failure_reason == 'TEST_ASSERT':
+                failure_context += "An assertion failed during validation. Please ensure the variant strictly decreases and stays non-negative. "
+                failure_context += f"Loop code:\n{loop_data.loop_code}\n"
+            
+            elif status.failure_reason == 'TEST_TIMEOUT':
+                failure_context += "Please generate a simpler variant that can be validated more quickly. "
+                failure_context += "Consider using fewer operations or variables. "
+                failure_context += f"Current variant: {loop_data.variant}\n"
+            
+            # Retry variant generation with validation failure context
+            loop_data.additional_context = failure_context + f"\nThis is attempt {loop_data.retry_count + 1}."
+            status = llm_generate_variant_invariant(
+                model_path = model_path, loop_data = loop_data )
+            loop_data.retry_count += 1
+            l.debug("Attempt {} for loop: {}, status: {}".format(
+                loop_data.retry_count, loop_data, status))
+            
+            if not status.success:
+                return status
+                
+            # Try validation again
+            status = validate( loop_data )
+            l.debug( "Retry validation returned: {}".format( status ))
+            if not status.success:
+                return status
 
     return u.Status( True, None )
 
     
 if __name__ == "__main__":
-    
     import argparse
     import sys
 
@@ -285,22 +369,23 @@ if __name__ == "__main__":
         'info'  : logging.INFO,
     }
     parser = argparse.ArgumentParser()
-    parser.add_argument( '--in-file', type=str, required=True,
-        help = "Path to c file to check" )
+    parser.add_argument('--in-file', type=str, required=True,
+        help="Path to c file to check")
     parser.add_argument('--model-path', type=str, required=False,
         help="Path to model file (required for llama, ignored for OpenAI)")
     parser.add_argument('--log-level', type=str, default='info',
-        choices = log_levels.keys(),
-        help = "Log level")
+        choices=log_levels.keys(),
+        help="Log level")
     args = parser.parse_args()
-    
 
     u.init_logging()
-    logging.getLogger( __name__ ).setLevel( log_levels[ args.log_level ] )
+    logging.getLogger(__name__).setLevel(log_levels[args.log_level])
 
     ret = check_ter(args.in_file, args.model_path)
     
     # Set exit code
-    if ret.success: sys.exit( 0 )
-    else: sys.exit( 1 )
+    if ret.success:
+        sys.exit(0)
+    else:
+        sys.exit(1)
 

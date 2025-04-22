@@ -97,10 +97,19 @@ def validate_test( loop_data ):
     loop_type = loop_data.loop_type
 
     # Code to instrument with
+    # Add debug prints to capture values
     var_init = "int oldVal = 2147483647;"
-    var_assert = "__IPROTON_test( " + loop_variant + " < oldVal);" + \
-            "__IPROTON_test( " + loop_variant + " >= 0 );" + \
-            "oldVal = " + loop_variant + ";" 
+    var_assert = (
+        # First check if variant decreased
+        "fprintf(stderr, \"DEBUG_VAL:%d:%d\\n\", " + loop_variant + ", oldVal);" +
+        "__IPROTON_test( " + loop_variant + " < oldVal);" +
+        "oldVal = " + loop_variant + ";" +
+        # Then check if variant is non-negative
+        "if (" + loop_variant + " < 0) {" +
+        "    fprintf(stderr, \"DEBUG_NEG:%d\\n\", " + loop_variant + ");" +
+        "}" +
+        "__IPROTON_test( " + loop_variant + " >= 0 );"
+    ) 
 
     l.debug("Loop variant: {}".format( loop_variant ))
 
@@ -230,8 +239,49 @@ def validate_test( loop_data ):
         # If test failed
         if (    ret.returncode == c.TEST_FAILED_EXCODE and 
                 c.TEST_FAILED_ERRMSG in ret.stderr          ):
-            l.warning( "Assert failed" )
-            return u.Status( False, 'TEST_ASSERT' )
+            l.warning("Assert failed")
+            # Extract debug values from stderr
+            debug_vals = {}
+            for line in ret.stderr.split('\n'):
+                try:
+                    if line.startswith('DEBUG_VAL:'):
+                        _, curr_val, old_val = line.split(':')
+                        debug_vals['current'] = int(curr_val)
+                        debug_vals['previous'] = int(old_val)
+                    elif line.startswith('DEBUG_NEG:'):
+                        _, val = line.split(':')
+                        debug_vals['negative_val'] = int(val)
+                except (ValueError, IndexError) as e:
+                    l.warning(f"Failed to parse debug value from line: {line}")
+                    continue
+
+            # Determine failure type with specific values
+            if 'current' in debug_vals and 'previous' in debug_vals:
+                if debug_vals['current'] >= debug_vals['previous']:
+                    return u.Status(
+                        False,
+                        'TEST_ASSERT_NOT_DECREASING',
+                        {
+                            'current_val': debug_vals['current'],
+                            'previous_val': debug_vals['previous'],
+                            'loop_type': loop_data.loop_type,
+                            'loop_code': loop_data.loop_code,
+                            'variant': loop_data.variant
+                        }
+                    )
+            if 'negative_val' in debug_vals and debug_vals['negative_val'] < 0:
+                return u.Status(
+                    False,
+                    'TEST_ASSERT_NEGATIVE',
+                    {
+                        'negative_val': debug_vals['negative_val'],
+                        'loop_type': loop_data.loop_type,
+                        'loop_code': loop_data.loop_code,
+                        'variant': loop_data.variant
+                    }
+                )
+            
+            return u.Status(False, 'TEST_ASSERT')
         
         # Some other error, report and continue
         if ret.returncode != 0:
@@ -276,12 +326,29 @@ def validate_cbmc( loop_data ):
     # Code to instrument with
     var_init = "int oldVal = 2147483647;"
     var_assert = """
-        __CPROVER_assert( {0} < oldVal, "{1}" );
-        __CPROVER_assert( {0} >= 0, "{2}" );
-        oldVal = {0};
-    """.format( loop_variant, c.CBMC_DEC_ASSERT, c.CBMC_POS_ASSERT )
+        // Store values for counterexample trace
+        int prev_variant = oldVal;
+        int curr_variant = {0};
+        
+        // Check if variant is decreasing
+        __CPROVER_assert(
+            curr_variant < prev_variant,
+            "{1}: Variant '{0}' increased from %d to %d",
+            prev_variant,
+            curr_variant
+        );
+        
+        // Check if variant is non-negative
+        __CPROVER_assert(
+            curr_variant >= 0,
+            "{2}: Variant '{0}' became negative with value %d",
+            curr_variant
+        );
+        
+        oldVal = curr_variant;
+    """.format(loop_variant, c.CBMC_DEC_ASSERT, c.CBMC_POS_ASSERT)
 
-    l.debug("Loop variant: {}".format( loop_variant ))
+    l.debug("Loop variant: {}".format(loop_variant))
 
     # Get index of start of loop
     if (loop_code in full_code):
@@ -353,13 +420,15 @@ def validate_cbmc( loop_data ):
     with open( c_fpath, 'w' ) as f:
         f.write( instrumented_code )
 
-    # Call cbmc
-    try :
+    # Call cbmc with trace
+    try:
         ret = subprocess.run(
-            args = [  
+            args = [
                 'cbmc',
                 '--unwind', str(c.CBMC_NUM_UNWIND),
                 '--z3',
+                '--trace',  # Get counterexample trace
+                '--xml-ui',  # Output in XML for easier parsing
                 c_fpath,
             ],
             check = False,
@@ -376,47 +445,73 @@ def validate_cbmc( loop_data ):
         else: 
             return u.Status( False, 'CBMC_TIMEOUT' )
 
-    # Look at output for dec
-    res_idx = ret.stdout.find( c.CBMC_DEC_ASSERT )
-    if res_idx == -1:
-        l.error( "CBMC did not have result" )
-        return u.Status( False, 'CBMC_ERROR' )
-    line_end_idx = ret.stdout.find( '\n', res_idx )
-    res_str = ret.stdout[ res_idx : line_end_idx ]
-    if c.CBMC_RES_PASS in res_str:
-        l.info( "DEC check did not fail" )
-    elif c.CBMC_RES_FAIL in res_str:
-        l.warning( "DEC check failed" )
-        return u.Status( False, 'CBMC_ASSERT' )
-    else:
-        l.error( "No result from cbmc, line is: {}".format( res_str ))
-        return u.Status( False, 'CBMC_ERROR' )
-
-    # Look at output for pos
-    res_idx = ret.stdout.find( c.CBMC_POS_ASSERT )
-    if res_idx == -1:
-        l.error( "CBMC did not have result" )
-        return u.Status( False, 'CBMC_ERROR' )
-    line_end_idx = ret.stdout.find( '\n', res_idx )
-    res_str = ret.stdout[ res_idx : line_end_idx ]
-    if c.CBMC_RES_PASS in res_str:
-        l.info( "POS check did not fail" )
-    elif c.CBMC_RES_FAIL in res_str:
-        l.warning( "POS check failed" )
-        return u.Status( False, 'CBMC_ASSERT' )
-    else:
-        l.error( "No result from cbmc, line is: {}".format( res_str ))
-        return u.Status( False, 'CBMC_ERROR' )
-
-    # Some other error, report
-    if ret.returncode != 0:
-        l.error( 
-            "Running cbmc failed with return code {} stdout {} stderr {}".format( 
+    # Parse XML output to get failure details
+    if ret.returncode != 0 and ret.returncode != 10:  # 10 is CBMC's code for property violation
+        l.error(
+            "Running cbmc failed with return code {} stdout {} stderr {}".format(
                 ret.returncode, ret.stdout, ret.stderr
-        ))
-        return u.Status( False, 'CBMC_ERROR' )
+            )
+        )
+        return u.Status(False, 'CBMC_ERROR')
 
-    return u.Status( True, None )
+    try:
+        root = ET.fromstring(ret.stdout)
+        failure_nodes = root.findall('.//failure')
+        
+        for failure in failure_nodes:
+            # Get the assertion message and trace
+            message = failure.find('message')
+            if message is None:
+                continue
+            message_text = message.text
+            trace = failure.find('trace')
+            
+            debug_info = {
+                'loop_type': loop_type,
+                'loop_code': loop_code,
+                'variant': loop_variant
+            }
+            
+            # Extract values from trace
+            if trace is not None:
+                values = {}
+                for step in trace.findall('.//assignment'):
+                    var_name = step.get('variable')
+                    var_value = step.get('value')
+                    if var_name == 'prev_variant' and var_value is not None:
+                        try:
+                            values['previous'] = int(var_value)
+                        except ValueError:
+                            l.warning(f"Could not parse previous variant value: {var_value}")
+                    elif var_name == 'curr_variant' and var_value is not None:
+                        try:
+                            values['current'] = int(var_value)
+                        except ValueError:
+                            l.warning(f"Could not parse current variant value: {var_value}")
+                debug_info.update(values)
+            
+            # Check which assertion failed
+            if c.CBMC_DEC_ASSERT in message_text:
+                return u.Status(
+                    False,
+                    'CBMC_ASSERT_NOT_DECREASING',
+                    debug_info=debug_info
+                )
+            elif c.CBMC_POS_ASSERT in message_text:
+                return u.Status(
+                    False,
+                    'CBMC_ASSERT_NEGATIVE',
+                    debug_info=debug_info
+                )
+        
+        # If we got here, no assertion failures were found
+        return u.Status(True, None)
+        
+    except ET.ParseError as e:
+        l.error(f"Failed to parse CBMC XML output: {str(e)}")
+        return u.Status(False, 'CBMC_ERROR')
+
+    return u.Status(True, None) 
 
 
 def validate( loop_data ):
