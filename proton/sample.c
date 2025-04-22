@@ -1,13 +1,12 @@
-#include <stdio.h>
-
 int main() {
-    int i = 0;
-    
-    // Loop: prints a message for each iteration until i reaches 10
-    while (i < 10) {
-        printf("Iteration %d\n", i);
-        i++;
-    }
-
-    return 0;
+int x = 0;
+int y = 500000;
+while (x < 1000000) 
+// if (x < 500000) {
+x = x + 1;
+// } else {
+// x = x + 1;
+// y = y + 1;
+// }
+return 0;
 }
