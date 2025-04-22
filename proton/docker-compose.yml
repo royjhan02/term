@@ -10,6 +10,8 @@ services:
     working_dir: /app
     environment:
       - PYTHONUNBUFFERED=1
-    command: python proton.py  # Adjust this to your development command
+    command: ["/usr/bin/python3.12", "check_ter.py", "--in-file", "sample.c", "--gguf", "Llama-iproton.gguf", "--log-level", "info"]
     ports:
       - "8000:8000"  # Adjust ports as needed
+
+# docker-compose up --build
