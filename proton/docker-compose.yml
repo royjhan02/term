@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  proton:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app  # Bind mount the current directory to /app in the container
+    working_dir: /app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python proton.py  # Adjust this to your development command
+    ports:
+      - "8000:8000"  # Adjust ports as needed
