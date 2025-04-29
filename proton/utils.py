@@ -86,7 +86,8 @@ class LoopData:
 Status = namedtuple( 'Status', [
     'success',          # Did operation succeed
     'failure_reason',   # Why did operation fail, None if it didn't fail
-])
+    'debug_info',       # Additional debug information about the failure
+], defaults=(None, None, None))
 
 """ Represents Result of operations that may fail """
 Result = namedtuple( 'Result', [
