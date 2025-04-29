@@ -521,6 +521,7 @@ def validate_cbmc(loop_data):
         '--unwind', str(c.CBMC_NUM_UNWIND),
         '--z3',
         '--trace', # not producing counter-example
+        '--verbosity', '10', # machine step-by-step
         c_fpath,
     ]
     l.info(f"Running CBMC with arguments: {cbmc_args}")
