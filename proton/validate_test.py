@@ -244,182 +244,356 @@ def validate_test( loop_data ):
     return u.Status( True, None )
 
 
-def validate_cbmc( loop_data ):
-    """
-    Validate variant in loop_data via cbmc. 
+# def validate_cbmc( loop_data ):
+#     """
+#     Validate variant in loop_data via cbmc. 
     
+#     Returns: Status that is true if validation succeeded. Failure reasons may be:
+    
+#     INSTRUMENTER    -   Instrumenter for adding asserts for validation
+#                         failed.
+#     CBMC_ASSERT     -   CBMC detected assertion violation
+#     CBMC_TIMEOUT    -   CBMC timed out 
+#     CBMC_ERROR      -   CBMC threw an error
+#     """
+#     # TODO Add check for invariant being positive 
+#     if c.ASSERTS:
+#         assert loop_data.variant is not None
+#         assert loop_data.invariant is not None
+#         assert loop_data.assigns is not None
+#         assert loop_data.loop_code is not None
+#         assert loop_data.full_code is not None
+#         assert loop_data.invariant is not None
+#         assert loop_data.loop_type is not None
+#         assert loop_data.variant is not None
+
+#     Ccondition = ""
+
+#     loop_code = loop_data.loop_code.strip() # Idk why we need strip, was from before
+#     full_code = loop_data.full_code
+#     loop_variant = loop_data.variant
+#     loop_type = loop_data.loop_type
+
+#     # Code to instrument with
+#     var_init = "int oldVal = 2147483647;"
+#     var_assert = """
+#         __CPROVER_assert( {0} < oldVal, "{1}" );
+#         __CPROVER_assert( {0} >= 0, "{2}" );
+#         oldVal = {0};
+#     """.format( loop_variant, c.CBMC_DEC_ASSERT, c.CBMC_POS_ASSERT )
+
+#     l.debug("Loop variant: {}".format( loop_variant ))
+
+#     # Get index of start of loop
+#     if (loop_code in full_code):
+#         loop_start_idx = full_code.find(loop_code)
+#         # Get the index at the end of loop_code
+#         before_loop = full_code[:loop_start_idx]
+#         after_loop = full_code[loop_start_idx:]
+#     else:
+#         l.warning( "Couldn't find loop code in full code" )
+#         return u.Status( False, 'INSTRUMENTER' )
+
+#     # Mark start of loop
+#     loop_mark = "/* __IPROTON_LOOP_START__ */"
+#     loop_marked_code = before_loop + loop_mark + after_loop
+
+#     # Brace the code
+#     res = add_braces( loop_marked_code )
+#     if res.result is None:
+#         return u.Status( False, res.failure_reason )
+#     braced_code = res.result
+#     l.debug("Braced code: ".format( braced_code ))
+
+#     # Get back start of loop and pieces
+#     loop_start_idx = braced_code.find( loop_mark )
+#     if loop_start_idx == '-1':
+#         l.error( "Couldn't find loop start marker in braced code" )
+#         return u.Status( False, 'INSTRUMENTER' )
+#     before_loop = braced_code[:loop_start_idx]
+#     after_loop  = braced_code[loop_start_idx:]
+    
+#     # Add initialization for variant
+#     code_with_init = before_loop + var_init + after_loop
+
+#     # Find beginning of loop keyword 
+#     if (loop_type == "WhileStmt"):
+#         loop_kwd_start = code_with_init.find("while", loop_start_idx)
+#     elif (loop_type == "ForStmt"):
+#         loop_kwd_start = code_with_init.find("for", loop_start_idx)
+#     elif (loop_type == "DoStmt"):
+#         loop_kwd_start = code_with_init.find("do", loop_start_idx)
+#     else:
+#         l.warning( "Loop has unkown loop type" )
+#         return u.Status( False, 'INSTRUMENTER' )
+#     l.debug( "Loop keyword at: {}".format( loop_kwd_start )) 
+#     if loop_kwd_start == -1:
+#         l.warning("loop keyword not found")
+#         return u.Status( False, 'INSTRUMENTER' )
+
+#     # l.debug("Index of 'while': {}".format( loop_kwd_start))
+#     body_start_index = code_with_init.find(
+#         "{", loop_kwd_start) + 1
+#     l.debug( "body_start: {}".format( body_start_index )) 
+#     if body_start_index == -1:
+#         l.warning("Brace not found after loop start")
+#         return u.Status( False, 'INSTRUMENTER' )
+#     before_body_start = code_with_init[:body_start_index]
+#     after_body_start = code_with_init[body_start_index:]
+#     instrumented_code = before_body_start + var_assert + after_body_start
+
+#     # Add headers
+#     instrumented_code = (
+#         """
+#             /* Instrumented for llm-ter-check */
+#         """ +
+#         instrumented_code 
+#     )
+
+#     # Write c code
+#     c_fpath = os.path.join( c.TMP_PATH, c.TEST_C_FNAME )
+#     with open( c_fpath, 'w' ) as f:
+#         f.write( instrumented_code )
+
+#     # Call cbmc
+#     try :
+#         ret = subprocess.run(
+#             args = [  
+#                 'cbmc',
+#                 '--unwind', str(c.CBMC_NUM_UNWIND),
+#                 '--z3',
+#                 c_fpath,
+#             ],
+#             check = False,
+#             timeout = c.CBMC_TIMEOUT,
+#             capture_output = True,
+#             text = True,
+#         )
+
+#     # If timeout, assume terminates since assert not triggered
+#     except subprocess.TimeoutExpired:
+#         l.warning( "cbmc timed out" )
+#         if c.CBMC_TO_CONSIDER_TERM:
+#             return u.Status( True, None )
+#         else: 
+#             return u.Status( False, 'CBMC_TIMEOUT' )
+
+#     # Look at output for dec
+#     res_idx = ret.stdout.find( c.CBMC_DEC_ASSERT )
+#     if res_idx == -1:
+#         l.error( "CBMC did not have result" )
+#         return u.Status( False, 'CBMC_ERROR' )
+#     line_end_idx = ret.stdout.find( '\n', res_idx )
+#     res_str = ret.stdout[ res_idx : line_end_idx ]
+#     if c.CBMC_RES_PASS in res_str:
+#         l.info( "DEC check did not fail" )
+#     elif c.CBMC_RES_FAIL in res_str:
+#         l.warning( "DEC check failed" )
+#         return u.Status( False, 'CBMC_ASSERT' )
+#     else:
+#         l.error( "No result from cbmc, line is: {}".format( res_str ))
+#         return u.Status( False, 'CBMC_ERROR' )
+
+#     # Look at output for pos
+#     res_idx = ret.stdout.find( c.CBMC_POS_ASSERT )
+#     if res_idx == -1:
+#         l.error( "CBMC did not have result" )
+#         return u.Status( False, 'CBMC_ERROR' )
+#     line_end_idx = ret.stdout.find( '\n', res_idx )
+#     res_str = ret.stdout[ res_idx : line_end_idx ]
+#     if c.CBMC_RES_PASS in res_str:
+#         l.info( "POS check did not fail" )
+#     elif c.CBMC_RES_FAIL in res_str:
+#         l.warning( "POS check failed" )
+#         return u.Status( False, 'CBMC_ASSERT' )
+#     else:
+#         l.error( "No result from cbmc, line is: {}".format( res_str ))
+#         return u.Status( False, 'CBMC_ERROR' )
+
+#     # Some other error, report
+#     if ret.returncode != 0:
+#         l.error( 
+#             "Running cbmc failed with return code {} stdout {} stderr {}".format( 
+#                 ret.returncode, ret.stdout, ret.stderr
+#         ))
+#         return u.Status( False, 'CBMC_ERROR' )
+
+#     return u.Status( True, None )
+
+def validate_cbmc(loop_data):
+    """
+    Validate variant in loop_data via CBMC.
+
     Returns: Status that is true if validation succeeded. Failure reasons may be:
-    
-    INSTRUMENTER    -   Instrumenter for adding asserts for validation
-                        failed.
-    CBMC_ASSERT     -   CBMC detected assertion violation
-    CBMC_TIMEOUT    -   CBMC timed out 
-    CBMC_ERROR      -   CBMC threw an error
+    INSTRUMENTER - Instrumenter for adding asserts for validation failed.
+    CBMC_ASSERT  - CBMC detected assertion violation
+    CBMC_TIMEOUT - CBMC timed out
+    CBMC_ERROR   - CBMC threw an error
     """
-    # TODO Add check for invariant being positive 
+
     if c.ASSERTS:
         assert loop_data.variant is not None
         assert loop_data.invariant is not None
         assert loop_data.assigns is not None
         assert loop_data.loop_code is not None
         assert loop_data.full_code is not None
-        assert loop_data.invariant is not None
         assert loop_data.loop_type is not None
-        assert loop_data.variant is not None
 
-    Ccondition = ""
-
-    loop_code = loop_data.loop_code.strip() # Idk why we need strip, was from before
+    loop_code = loop_data.loop_code.strip()
     full_code = loop_data.full_code
     loop_variant = loop_data.variant
     loop_type = loop_data.loop_type
 
-    # Code to instrument with
     var_init = "int oldVal = 2147483647;"
-    var_assert = """
-        __CPROVER_assert( {0} < oldVal, "{1}" );
-        __CPROVER_assert( {0} >= 0, "{2}" );
-        oldVal = {0};
-    """.format( loop_variant, c.CBMC_DEC_ASSERT, c.CBMC_POS_ASSERT )
+    var_assert = f"""
+        __CPROVER_assert({loop_variant} < oldVal, "{c.CBMC_DEC_ASSERT}");
+        __CPROVER_assert({loop_variant} >= 0, "{c.CBMC_POS_ASSERT}");
+        oldVal = {loop_variant};
+    """
 
-    l.debug("Loop variant: {}".format( loop_variant ))
+    l.debug(f"Loop variant: {loop_variant}")
 
-    # Get index of start of loop
-    if (loop_code in full_code):
-        loop_start_idx = full_code.find(loop_code)
-        # Get the index at the end of loop_code
-        before_loop = full_code[:loop_start_idx]
-        after_loop = full_code[loop_start_idx:]
-    else:
-        l.warning( "Couldn't find loop code in full code" )
-        return u.Status( False, 'INSTRUMENTER' )
+    if loop_code not in full_code:
+        l.warning("Couldn't find loop code in full code")
+        return u.Status(False, 'INSTRUMENTER')
+    loop_start_idx = full_code.find(loop_code)
+    before_loop = full_code[:loop_start_idx]
+    after_loop = full_code[loop_start_idx:]
 
-    # Mark start of loop
     loop_mark = "/* __IPROTON_LOOP_START__ */"
     loop_marked_code = before_loop + loop_mark + after_loop
 
-    # Brace the code
-    res = add_braces( loop_marked_code )
+    res = add_braces(loop_marked_code)
     if res.result is None:
-        return u.Status( False, res.failure_reason )
+        l.error(f"Failed to add braces: {res.failure_reason}")
+        return u.Status(False, res.failure_reason)
     braced_code = res.result
-    l.debug("Braced code: ".format( braced_code ))
 
-    # Get back start of loop and pieces
-    loop_start_idx = braced_code.find( loop_mark )
-    if loop_start_idx == '-1':
-        l.error( "Couldn't find loop start marker in braced code" )
-        return u.Status( False, 'INSTRUMENTER' )
+    loop_start_idx = braced_code.find(loop_mark)
+    if loop_start_idx == -1:
+        l.error("Couldn't find loop start marker after bracing")
+        return u.Status(False, 'INSTRUMENTER')
     before_loop = braced_code[:loop_start_idx]
-    after_loop  = braced_code[loop_start_idx:]
-    
-    # Add initialization for variant
+    after_loop = braced_code[loop_start_idx:]
+
     code_with_init = before_loop + var_init + after_loop
 
-    # Find beginning of loop keyword 
-    if (loop_type == "WhileStmt"):
+    if loop_type == "WhileStmt":
         loop_kwd_start = code_with_init.find("while", loop_start_idx)
-    elif (loop_type == "ForStmt"):
+    elif loop_type == "ForStmt":
         loop_kwd_start = code_with_init.find("for", loop_start_idx)
-    elif (loop_type == "DoStmt"):
+    elif loop_type == "DoStmt":
         loop_kwd_start = code_with_init.find("do", loop_start_idx)
     else:
-        l.warning( "Loop has unkown loop type" )
-        return u.Status( False, 'INSTRUMENTER' )
-    l.debug( "Loop keyword at: {}".format( loop_kwd_start )) 
-    if loop_kwd_start == -1:
-        l.warning("loop keyword not found")
-        return u.Status( False, 'INSTRUMENTER' )
+        l.warning(f"Unknown loop type: {loop_type}")
+        return u.Status(False, 'INSTRUMENTER')
 
-    # l.debug("Index of 'while': {}".format( loop_kwd_start))
-    body_start_index = code_with_init.find(
-        "{", loop_kwd_start) + 1
-    l.debug( "body_start: {}".format( body_start_index )) 
+    if loop_kwd_start == -1:
+        l.warning("Loop keyword not found after bracing and init insertion")
+        return u.Status(False, 'INSTRUMENTER')
+
+    body_start_index = code_with_init.find("{", loop_kwd_start)
     if body_start_index == -1:
-        l.warning("Brace not found after loop start")
-        return u.Status( False, 'INSTRUMENTER' )
+        l.warning("Opening brace '{' not found after loop keyword")
+        return u.Status(False, 'INSTRUMENTER')
+
+    body_start_index += 1
     before_body_start = code_with_init[:body_start_index]
     after_body_start = code_with_init[body_start_index:]
     instrumented_code = before_body_start + var_assert + after_body_start
 
-    # Add headers
     instrumented_code = (
-        """
-            /* Instrumented for llm-ter-check */
-        """ +
-        instrumented_code 
+        "/* Instrumented for llm-ter-check */\n"
+        + instrumented_code
     )
 
-    # Write c code
-    c_fpath = os.path.join( c.TMP_PATH, c.TEST_C_FNAME )
-    with open( c_fpath, 'w' ) as f:
-        f.write( instrumented_code )
+    # Write instrumented C code
+    c_fpath = os.path.join(c.TMP_PATH, c.TEST_C_FNAME)
+    with open(c_fpath, 'w') as f:
+        f.write(instrumented_code)
 
-    # Call cbmc
-    try :
+    l.info(f"Instrumented C code written to: {c_fpath}")
+    l.debug(f"===== Instrumented C Code =====\n{instrumented_code}\n===== End Instrumented C Code =====")
+
+    # Prepare CBMC call
+    cbmc_args = [
+        'cbmc',
+        '--unwind', str(c.CBMC_NUM_UNWIND),
+        '--z3',
+        '--trace',
+        '--show-properties',
+        '--verbosity', '10',
+        c_fpath,
+    ]
+    l.info(f"Running CBMC with arguments: {cbmc_args}")
+
+    try:
         ret = subprocess.run(
-            args = [  
-                'cbmc',
-                '--unwind', str(c.CBMC_NUM_UNWIND),
-                '--z3',
-                c_fpath,
-            ],
-            check = False,
-            timeout = c.CBMC_TIMEOUT,
-            capture_output = True,
-            text = True,
+            args=cbmc_args,
+            check=False,
+            timeout=c.CBMC_TIMEOUT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
         )
+    except subprocess.TimeoutExpired as e:
+        l.warning("CBMC execution timed out")
+        return u.Status(False, 'CBMC_TIMEOUT') if not c.CBMC_TO_CONSIDER_TERM else u.Status(True, None)
 
-    # If timeout, assume terminates since assert not triggered
-    except subprocess.TimeoutExpired:
-        l.warning( "cbmc timed out" )
-        if c.CBMC_TO_CONSIDER_TERM:
-            return u.Status( True, None )
-        else: 
-            return u.Status( False, 'CBMC_TIMEOUT' )
+    # Full logging of outputs
+    l.info(f"CBMC return code: {ret.returncode}")
+    l.debug(f"===== CBMC STDOUT =====\n{ret.stdout}\n===== End CBMC STDOUT =====")
+    l.debug(f"===== CBMC STDERR =====\n{ret.stderr}\n===== End CBMC STDERR =====")
 
-    # Look at output for dec
-    res_idx = ret.stdout.find( c.CBMC_DEC_ASSERT )
+    # Check DEC assertion
+    res_idx = ret.stdout.find(c.CBMC_DEC_ASSERT)
     if res_idx == -1:
-        l.error( "CBMC did not have result" )
-        return u.Status( False, 'CBMC_ERROR' )
-    line_end_idx = ret.stdout.find( '\n', res_idx )
-    res_str = ret.stdout[ res_idx : line_end_idx ]
-    if c.CBMC_RES_PASS in res_str:
-        l.info( "DEC check did not fail" )
-    elif c.CBMC_RES_FAIL in res_str:
-        l.warning( "DEC check failed" )
-        return u.Status( False, 'CBMC_ASSERT' )
-    else:
-        l.error( "No result from cbmc, line is: {}".format( res_str ))
-        return u.Status( False, 'CBMC_ERROR' )
+        l.error("CBMC DEC_ASSERT marker not found in output")
+        return u.Status(False, 'CBMC_ERROR')
 
-    # Look at output for pos
-    res_idx = ret.stdout.find( c.CBMC_POS_ASSERT )
+    line_end_idx = ret.stdout.find('\n', res_idx)
+    dec_result_line = ret.stdout[res_idx:line_end_idx]
+    l.info(f"DEC assertion result line: {dec_result_line}")
+
+    if c.CBMC_RES_PASS in dec_result_line:
+        l.info("DEC check passed")
+    elif c.CBMC_RES_FAIL in dec_result_line:
+        l.warning("DEC check failed")
+        return u.Status(False, 'CBMC_ASSERT')
+    else:
+        l.error(f"Unexpected DEC result line: {dec_result_line}")
+        return u.Status(False, 'CBMC_ERROR')
+
+    # Check POS assertion
+    res_idx = ret.stdout.find(c.CBMC_POS_ASSERT)
     if res_idx == -1:
-        l.error( "CBMC did not have result" )
-        return u.Status( False, 'CBMC_ERROR' )
-    line_end_idx = ret.stdout.find( '\n', res_idx )
-    res_str = ret.stdout[ res_idx : line_end_idx ]
-    if c.CBMC_RES_PASS in res_str:
-        l.info( "POS check did not fail" )
-    elif c.CBMC_RES_FAIL in res_str:
-        l.warning( "POS check failed" )
-        return u.Status( False, 'CBMC_ASSERT' )
-    else:
-        l.error( "No result from cbmc, line is: {}".format( res_str ))
-        return u.Status( False, 'CBMC_ERROR' )
+        l.error("CBMC POS_ASSERT marker not found in output")
+        return u.Status(False, 'CBMC_ERROR')
 
-    # Some other error, report
+    line_end_idx = ret.stdout.find('\n', res_idx)
+    pos_result_line = ret.stdout[res_idx:line_end_idx]
+    l.info(f"POS assertion result line: {pos_result_line}")
+
+    if c.CBMC_RES_PASS in pos_result_line:
+        l.info("POS check passed")
+    elif c.CBMC_RES_FAIL in pos_result_line:
+        l.warning("POS check failed")
+        return u.Status(False, 'CBMC_ASSERT')
+    else:
+        l.error(f"Unexpected POS result line: {pos_result_line}")
+        return u.Status(False, 'CBMC_ERROR')
+
+    # General CBMC error handling
     if ret.returncode != 0:
-        l.error( 
-            "Running cbmc failed with return code {} stdout {} stderr {}".format( 
-                ret.returncode, ret.stdout, ret.stderr
-        ))
-        return u.Status( False, 'CBMC_ERROR' )
+        l.error(
+            f"CBMC returned non-zero exit code: {ret.returncode}\n"
+            f"STDOUT:\n{ret.stdout}\n"
+            f"STDERR:\n{ret.stderr}"
+        )
+        return u.Status(False, 'CBMC_ERROR')
 
-    return u.Status( True, None )
-
+    return u.Status(True, None)
 
 def validate( loop_data ):
     """ Perform validation steps. see validate_* methods above """
