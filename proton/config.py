@@ -35,7 +35,7 @@ class Config:
     PROMPT = 'lib_prompt_co_inv_assigns_variant_2'
 
     # Settings for validation via testing -- deprecated
-    DO_TESTS = True                 
+    DO_TESTS = False               
     NUM_RUNS = 60
     RUN_TIMEOUT = 1
     TEST_FAILED_EXCODE = 22             # Exit code for when test failed
