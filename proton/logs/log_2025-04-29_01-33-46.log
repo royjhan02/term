@@ -1,0 +1,880 @@
+
+[611.6559505462646 utils.py:init_logging:54] INFO - 
+	 Logging to logs/log_2025-04-29_01-33-46.log
+
+[612.3247146606445 utils.py:init_logging:57] INFO - 
+	 Config has: [('LOG_PATH', 'logs/'), ('TMP_PATH', 'tmp/'), ('INSTRUMENTER_PATH', 'bin/instrumenter'), ('BRACER_PATH', 'bin/bracer'), ('BRACER_IN_FNAME', 'code.c'), ('BRACER_OUT_FNAME', 'code_braced.c'), ('TEST_C_FNAME', 'test.c'), ('TEST_BIN_FNAME', 'test'), ('INCLUDES_DIR', 'include/'), ('INSTR_HEADER', 'instrumenter.h'), ('IGNORE_EXTRACTOR_RET_CODE', True), ('CONTEXT_SIZE', 2048), ('MAX_NEW_TOKENS', 64), ('N_THREADS', 1), ('MODEL_TYPE', 'openai'), ('OPENAI_MODEL', 'o3-mini'), ('OPENAI_API_KEY', 'KtwL2VARfRuTTXPwZCw0tjngGyeXkplM'), ('OPENAI_API_BASE', 'https://go.apis.huit.harvard.edu/ais-openai-direct-limited-schools/v1'), ('PROMPT', 'lib_prompt_co_inv_assigns_variant_2'), ('DO_TESTS', True), ('NUM_RUNS', 60), ('RUN_TIMEOUT', 1), ('TEST_FAILED_EXCODE', 22), ('TEST_FAILED_ERRMSG', 'TEST FAILED'), ('TEST_TO_CONSIDER_TERM', True), ('DO_CBMC', True), ('CBMC_NUM_UNWIND', 3), ('CBMC_TIMEOUT', 60), ('CBMC_TO_CONSIDER_TERM', False), ('CBMC_DEC_ASSERT', 'IPROTON_VAR_DEC'), ('CBMC_POS_ASSERT', 'IPROTON_VAR_POS'), ('CBMC_RES_PASS', 'SUCCESS'), ('CBMC_RES_FAIL', 'ERROR'), ('DEBUG', True), ('ASSERTS', True)]
+
+[617.7961826324463 check_ter.py:extract_loops:35] INFO - 
+	 Extracting loops from sample.c
+
+[738.4834289550781 check_ter.py:extract_loops:64] INFO - 
+	 insrumenter bin succeeded for sample.c
+
+[760.5171203613281 check_ter.py:llm_generate_variant_invariant:203] INFO - 
+	 Invoking model with 577.2 tokens
+
+[6303.415775299072 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[6303.861856460571 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[6304.22830581665 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[6305.066823959351 validate_test.py:validate_test:114] DEBUG - 
+	 Loop variant: 1000000 - x
+
+[6411.096811294556 validate_test.py:add_braces:51] INFO - 
+	 Bracer succeeded
+
+[6414.892673492432 validate_test.py:validate_test:157] DEBUG - 
+	 Loop keyword at: 92
+
+[6415.539264678955 validate_test.py:validate_test:165] DEBUG - 
+	 body_start: 114
+
+[6418.867111206055 validate_test.py:validate_test:203] DEBUG - 
+	 Include path: include/
+
+[6950.894832611084 validate_test.py:validate_test:215] DEBUG - 
+	 Compilation succeeded
+
+[6960.724592208862 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[7995.571613311768 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[8002.004861831665 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[9043.52355003357 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[9048.718690872192 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[10061.11764907837 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[10067.466259002686 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[11077.221632003784 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[11081.892728805542 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[12093.764305114746 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[12098.259687423706 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[13111.504077911377 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[13118.012189865112 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[14125.970125198364 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[14130.164384841919 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[15143.807649612427 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[15149.202346801758 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[16171.731948852539 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[16183.465003967285 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[17211.70973777771 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[17218.014001846313 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[18231.674909591675 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[18237.21194267273 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[19247.453212738037 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[19250.66328048706 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[20346.584796905518 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[20355.6170463562 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[21375.936269760132 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[21381.271839141846 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[22411.666870117188 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[22416.882038116455 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[23428.25698852539 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[23451.668739318848 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[24459.571361541748 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[24465.280771255493 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[25488.40093612671 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[25491.997241973877 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[26515.222787857056 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[26522.4187374115 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[27542.057514190674 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[27550.020933151245 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[28603.154182434082 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[28609.357595443726 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[29620.17297744751 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[29624.178409576416 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[30635.584831237793 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[30641.963243484497 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[31655.129194259644 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[31663.30051422119 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[32695.645570755005 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[32710.771799087524 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[33727.452993392944 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[33731.68635368347 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[34740.37146568298 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[34744.28963661194 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[35758.12792778015 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[35771.286487579346 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[36761.20972633362 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[36766.31712913513 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[37780.58981895447 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[37788.11812400818 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[38802.52289772034 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[38806.59532546997 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[39824.424505233765 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[39829.017877578735 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[40852.69212722778 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[40863.23308944702 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[41873.70705604553 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[41878.14950942993 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[42900.211811065674 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[42911.78011894226 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[43920.98689079285 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[43925.708532333374 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[44934.98158454895 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[44940.417528152466 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[45977.01621055603 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[45981.82702064514 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[46989.19367790222 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[46994.21286582947 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[48003.74531745911 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[48007.017612457275 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[49018.21565628052 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[49026.64923667908 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[50038.86532783508 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[50042.717695236206 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[51055.52887916565 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[51064.25476074219 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[52083.574295043945 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[52093.636989593506 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[53102.74624824524 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[53108.96873474121 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[54123.0902671814 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[54129.79292869568 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[55149.61576461792 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[55159.24143791199 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[56169.13676261902 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[56176.809310913086 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[57197.79276847839 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[57204.43892478943 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[58214.98775482178 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[58220.216274261475 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[59234.78651046753 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[59240.51928520203 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[60254.91762161255 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[60262.44235038757 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[61278.99241447449 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[61283.86378288269 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[62315.91463088989 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[62324.96666908264 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[63334.678649902344 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[63338.20152282715 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[64348.58274459839 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[64353.42597961426 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[65364.62926864624 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[65368.92032623291 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[66377.44235992432 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[66381.72125816345 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[67426.34892463684 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[67432.08980560303 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[68456.57682418823 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[68463.33479881287 validate_test.py:validate_cbmc:351] DEBUG - 
+	 Loop variant: 1000000 - x
+
+[68577.02231407166 validate_test.py:add_braces:51] INFO - 
+	 Bracer succeeded
+
+[68579.40697669983 validate_test.py:validate_cbmc:394] DEBUG - 
+	 Loop keyword at: 92
+
+[68579.98633384705 validate_test.py:validate_cbmc:402] DEBUG - 
+	 body_start: 114
+
+[68854.71177101135 validate_test.py:validate_cbmc:450] ERROR - 
+	 Running cbmc failed with return code 6 stdout <?xml version="1.0" encoding="UTF-8"?>
+<cprover>
+<program>CBMC 5.12 (cbmc-5.12)</program>
+<message type="STATUS-MESSAGE">
+  <text>CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux</text>
+</message>
+
+<message type="STATUS-MESSAGE">
+  <text>Parsing tmp/test.c</text>
+</message>
+
+<message type="STATUS-MESSAGE">
+  <text>Converting</text>
+</message>
+
+<message type="STATUS-MESSAGE">
+  <text>Type-checking test</text>
+</message>
+
+<message type="ERROR">
+  <location file="tmp/test.c" function="main" line="13" working-directory="/project"/>
+  <text>wrong number of function arguments: expected 2, but got 4</text>
+</message>
+
+<message type="ERROR">
+  <text>CONVERSION ERROR</text>
+</message>
+
+</cprover>
+ stderr 
+
+[68855.34596443176 check_ter.py:llm_generate_variant_invariant:203] INFO - 
+	 Invoking model with 577.2 tokens
+
+[75721.45962715149 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[75721.93050384521 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[75722.45669364929 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[75723.00577163696 validate_test.py:validate_test:114] DEBUG - 
+	 Loop variant: 1000000 - x
+
+[75827.14653015137 validate_test.py:add_braces:51] INFO - 
+	 Bracer succeeded
+
+[75829.67710494995 validate_test.py:validate_test:157] DEBUG - 
+	 Loop keyword at: 92
+
+[75830.36231994629 validate_test.py:validate_test:165] DEBUG - 
+	 body_start: 114
+
+[75834.33270454407 validate_test.py:validate_test:203] DEBUG - 
+	 Include path: include/
+
+[75975.51107406616 validate_test.py:validate_test:215] DEBUG - 
+	 Compilation succeeded
+
+[75977.84972190857 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[77005.3780078888 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[77022.44567871094 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[78044.28195953369 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[78049.62611198425 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[79087.74971961975 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[79097.08595275879 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[80108.52026939392 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[80117.12455749512 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[81127.84790992737 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[81131.2153339386 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[82172.37758636475 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[82177.75559425354 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[83189.83244895935 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[83197.62635231018 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[84207.28540420532 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[84220.51477432251 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[85234.45963859558 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[85239.59994316101 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[86258.92663002014 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[86268.4097290039 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[87298.73275756836 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[87304.2962551117 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[88319.43798065186 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[88324.25856590271 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[89333.48631858826 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[89338.7942314148 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[90348.61874580383 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[90352.65636444092 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[91360.0058555603 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[91364.93515968323 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[92385.11514663696 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[92389.56832885742 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[93411.4191532135 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[93416.21708869934 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[94430.1438331604 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[94435.68015098572 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[95453.10735702515 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[95464.3361568451 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[96480.0431728363 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[96485.01586914062 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[97506.73007965088 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[97512.91251182556 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[98524.49655532837 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[98529.56438064575 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[99540.8456325531 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[99546.41795158386 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[100556.3850402832 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[100561.0704421997 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[101570.86491584778 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[101575.68335533142 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[102589.9498462677 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[102594.92707252502 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[103605.9181690216 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[103610.07642745972 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[104630.83672523499 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[104635.7090473175 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[105652.95386314392 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[105659.93881225586 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[106677.13975906372 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[106684.90552902222 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[107703.00555229187 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[107712.70704269409 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[108727.92053222656 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[108734.06481742859 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[109744.86589431763 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[109749.5641708374 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[110765.84649085999 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[110774.73378181458 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[111784.66176986694 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[111789.45755958557 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[112805.93156814575 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[112811.22183799744 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[113822.88837432861 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[113830.52444458008 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[114847.86605834961 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[114855.04269599915 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[115871.97828292847 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[115878.2422542572 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[116890.6934261322 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[116898.8344669342 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[117914.70670700073 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[117926.56087875366 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[118947.93725013733 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[118955.42693138123 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[119985.2044582367 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[119989.74633216858 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[120999.84979629517 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[121004.44054603577 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[122020.66254615784 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[122028.5050868988 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[123050.861120224 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[123055.36770820618 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[124080.95479011536 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[124085.75987815857 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[125097.900390625 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[125103.27935218811 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[126115.43011665344 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[126120.31888961792 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[127128.2970905304 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[127132.6150894165 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[128153.99694442749 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[128162.54830360413 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[129176.96595191956 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[129180.79566955566 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[130188.93647193909 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[130192.86775588989 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[131202.86512374878 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[131206.18414878845 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[132227.6120185852 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[132232.6021194458 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[133251.3656616211 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[133257.6220035553 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[134280.53951263428 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[134284.60335731506 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[135300.22621154785 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[135305.96590042114 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[136320.66011428833 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[136326.41124725342 validate_test.py:validate_test:222] DEBUG - 
+	 Running bin
+
+[137340.50250053406 validate_test.py:validate_test:233] WARNING - 
+	 Run timed out
+
+[137345.13688087463 validate_test.py:validate_cbmc:351] DEBUG - 
+	 Loop variant: 1000000 - x
+
+[137711.96675300598 validate_test.py:add_braces:51] INFO - 
+	 Bracer succeeded
+
+[137715.722322464 validate_test.py:validate_cbmc:394] DEBUG - 
+	 Loop keyword at: 92
+
+[137716.90726280212 validate_test.py:validate_cbmc:402] DEBUG - 
+	 body_start: 114
+
+[137785.93468666077 validate_test.py:validate_cbmc:450] ERROR - 
+	 Running cbmc failed with return code 6 stdout <?xml version="1.0" encoding="UTF-8"?>
+<cprover>
+<program>CBMC 5.12 (cbmc-5.12)</program>
+<message type="STATUS-MESSAGE">
+  <text>CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux</text>
+</message>
+
+<message type="STATUS-MESSAGE">
+  <text>Parsing tmp/test.c</text>
+</message>
+
+<message type="STATUS-MESSAGE">
+  <text>Converting</text>
+</message>
+
+<message type="STATUS-MESSAGE">
+  <text>Type-checking test</text>
+</message>
+
+<message type="ERROR">
+  <location file="tmp/test.c" function="main" line="13" working-directory="/project"/>
+  <text>wrong number of function arguments: expected 2, but got 4</text>
+</message>
+
+<message type="ERROR">
+  <text>CONVERSION ERROR</text>
+</message>
+
+</cprover>
+ stderr 

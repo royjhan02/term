@@ -1,0 +1,249 @@
+
+[712.3699188232422 utils.py:init_logging:54] INFO - 
+	 Logging to logs/log_2025-04-29_01-40-09.log
+
+[712.8984928131104 utils.py:init_logging:57] INFO - 
+	 Config has: [('LOG_PATH', 'logs/'), ('TMP_PATH', 'tmp/'), ('INSTRUMENTER_PATH', 'bin/instrumenter'), ('BRACER_PATH', 'bin/bracer'), ('BRACER_IN_FNAME', 'code.c'), ('BRACER_OUT_FNAME', 'code_braced.c'), ('TEST_C_FNAME', 'test.c'), ('TEST_BIN_FNAME', 'test'), ('INCLUDES_DIR', 'include/'), ('INSTR_HEADER', 'instrumenter.h'), ('IGNORE_EXTRACTOR_RET_CODE', True), ('CONTEXT_SIZE', 2048), ('MAX_NEW_TOKENS', 64), ('N_THREADS', 1), ('MODEL_TYPE', 'openai'), ('OPENAI_MODEL', 'o3-mini'), ('OPENAI_API_KEY', 'KtwL2VARfRuTTXPwZCw0tjngGyeXkplM'), ('OPENAI_API_BASE', 'https://go.apis.huit.harvard.edu/ais-openai-direct-limited-schools/v1'), ('PROMPT', 'lib_prompt_co_inv_assigns_variant_2'), ('DO_TESTS', True), ('NUM_RUNS', 60), ('RUN_TIMEOUT', 1), ('TEST_FAILED_EXCODE', 22), ('TEST_FAILED_ERRMSG', 'TEST FAILED'), ('TEST_TO_CONSIDER_TERM', True), ('DO_CBMC', True), ('CBMC_NUM_UNWIND', 3), ('CBMC_TIMEOUT', 60), ('CBMC_TO_CONSIDER_TERM', False), ('CBMC_DEC_ASSERT', 'IPROTON_VAR_DEC'), ('CBMC_POS_ASSERT', 'IPROTON_VAR_POS'), ('CBMC_RES_PASS', 'SUCCESS'), ('CBMC_RES_FAIL', 'ERROR'), ('DEBUG', True), ('ASSERTS', True)]
+
+[719.1736698150635 check_ter.py:extract_loops:35] INFO - 
+	 Extracting loops from sample.c
+
+[806.4711093902588 check_ter.py:extract_loops:64] INFO - 
+	 insrumenter bin succeeded for sample.c
+
+[812.7081394195557 check_ter.py:check_ter:259] INFO - 
+	 Generating variant and invariant for loop  0 
+
+[813.3113384246826 check_ter.py:llm_generate_variant_invariant:203] INFO - 
+	 Invoking model with 577.2 tokens
+
+[8653.34439277649 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[8653.77950668335 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[8654.178380966187 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[8654.762983322144 validate_test.py:validate_test:105] DEBUG - 
+	 Loop variant: 1000000 - x
+
+[8756.214141845703 validate_test.py:add_braces:51] INFO - 
+	 Bracer succeeded
+
+[8760.081052780151 validate_test.py:validate_test:126] DEBUG - 
+	 Braced code: 
+
+[8760.80298423767 validate_test.py:validate_test:149] DEBUG - 
+	 Loop keyword at: 92
+
+[8762.092113494873 validate_test.py:validate_test:157] DEBUG - 
+	 body_start: 114
+
+[8765.2108669281 validate_test.py:validate_test:195] DEBUG - 
+	 Include path: include/
+
+[8876.37734413147 validate_test.py:validate_test:207] DEBUG - 
+	 Compilation succeeded
+
+[8883.166551589966 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[8901.299953460693 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[8913.867473602295 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[8928.867816925049 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[8942.988634109497 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[8956.793785095215 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[8971.118927001953 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[8987.357139587402 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9000.001668930054 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9014.58716392517 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9027.350425720215 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9042.02651977539 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9055.774450302124 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9067.164897918701 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9080.903053283691 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9094.600915908813 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9107.779741287231 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9126.933813095093 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9148.3633518219 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9170.847415924072 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9186.177015304565 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9207.795858383179 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9222.975730895996 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9234.335899353027 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9280.519008636475 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9324.60641860962 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9342.897891998291 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9357.97119140625 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9373.337745666504 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9389.77599143982 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9405.417919158936 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9420.526027679443 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9435.928344726562 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9448.280811309814 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9460.98518371582 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9474.145889282227 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9494.967222213745 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9516.149282455444 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9533.94603729248 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9553.50947380066 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9567.614555358887 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9581.822156906128 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9596.800327301025 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9626.88398361206 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9705.51085472107 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9721.219539642334 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9737.171173095703 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9753.347873687744 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9766.584396362305 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9784.332990646362 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9797.812700271606 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9814.037322998047 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9826.96795463562 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9840.819120407104 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9855.303525924683 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9878.347158432007 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9895.96152305603 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[9995.065689086914 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[10027.279615402222 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[10045.073986053467 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[10067.758798599243 validate_test.py:validate_cbmc:285] DEBUG - 
+	 Loop variant: 1000000 - x
+
+[10274.998188018799 validate_test.py:add_braces:51] INFO - 
+	 Bracer succeeded
+
+[10278.207540512085 validate_test.py:validate_cbmc:306] DEBUG - 
+	 Braced code: 
+
+[10279.289960861206 validate_test.py:validate_cbmc:329] DEBUG - 
+	 Loop keyword at: 92
+
+[10279.746770858765 validate_test.py:validate_cbmc:337] DEBUG - 
+	 body_start: 114
+
+[10364.814519882202 validate_test.py:validate_cbmc:389] INFO - 
+	 DEC check did not fail
+
+[10365.182399749756 validate_test.py:validate_cbmc:405] INFO - 
+	 POS check did not fail
