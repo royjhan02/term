@@ -520,22 +520,18 @@ def validate_cbmc(loop_data):
         'cbmc',
         '--unwind', str(c.CBMC_NUM_UNWIND),
         '--z3',
-        '--trace',
-        '--show-properties',
-        '--verbosity', '10',
+        '--trace', # not producing counter-example
         c_fpath,
     ]
     l.info(f"Running CBMC with arguments: {cbmc_args}")
 
-    try:
+    try :
         ret = subprocess.run(
-            args=cbmc_args,
-            check=False,
-            timeout=c.CBMC_TIMEOUT,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-            errors="replace",
+            cbmc_args,
+            check = False,
+            timeout = c.CBMC_TIMEOUT,
+            capture_output = True,
+            text = True,
         )
     except subprocess.TimeoutExpired as e:
         l.warning("CBMC execution timed out")
