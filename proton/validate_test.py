@@ -557,16 +557,16 @@ def validate_cbmc(loop_data):
         l.info("DEC check passed")
     elif c.CBMC_RES_FAIL in dec_result_line:
         l.warning("DEC check failed")
-        return u.Status(False, 'CBMC_ASSERT')
+        return u.Status(False, 'CBMC_ASSERT', ret.stdout)
     else:
         l.error(f"Unexpected DEC result line: {dec_result_line}")
-        return u.Status(False, 'CBMC_ERROR')
+        return u.Status(False, 'CBMC_ERROR', ret.stdout)
 
     # Check POS assertion
     res_idx = ret.stdout.find(c.CBMC_POS_ASSERT)
     if res_idx == -1:
         l.error("CBMC POS_ASSERT marker not found in output")
-        return u.Status(False, 'CBMC_ERROR')
+        return u.Status(False, 'CBMC_ERROR', ret.stdout)
 
     line_end_idx = ret.stdout.find('\n', res_idx)
     pos_result_line = ret.stdout[res_idx:line_end_idx]
@@ -576,10 +576,10 @@ def validate_cbmc(loop_data):
         l.info("POS check passed")
     elif c.CBMC_RES_FAIL in pos_result_line:
         l.warning("POS check failed")
-        return u.Status(False, 'CBMC_ASSERT')
+        return u.Status(False, 'CBMC_ASSERT', ret.stdout)
     else:
         l.error(f"Unexpected POS result line: {pos_result_line}")
-        return u.Status(False, 'CBMC_ERROR')
+        return u.Status(False, 'CBMC_ERROR', ret.stdout)
 
     # General CBMC error handling
     if ret.returncode != 0:

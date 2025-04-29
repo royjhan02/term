@@ -146,7 +146,7 @@ def extract_sanitize_llm_response( response_text, begintag, endtag ):
     return u.Result( santized_response, None )
 
 
-def llm_generate_variant_invariant(model_path, loop_data):
+def llm_generate_variant_invariant(model_path, loop_data, feedback=""):
     """
     Use the configured model to generate variant and invariant
     
@@ -188,7 +188,7 @@ def llm_generate_variant_invariant(model_path, loop_data):
             + loop_data.loop_id \
             + "</loopid>"
         prompt_text = (
-            pl[ c.PROMPT ] + " " + dyn_prompt
+            pl[ c.PROMPT ] + " " + dyn_prompt + feedback
         )
         l.debug( "Generated prompt: {}".format( prompt_text ))
 
@@ -256,21 +256,28 @@ def check_ter(c_fpath, model_path=None):
 
     # For each loop, get model to generate variant and invariant
     for loop_data in loops:
-        l.info("Generating variant and invariant for loop {}".format(
-            loop_data.loop_id))
-        llm_res = llm_generate_variant_invariant(
-            model_path=model_path, loop_data=loop_data)
-        l.debug("Extracted data for first loop, loop data: {}, status: {}".format(
-            loop_data, llm_res ))
-        if not llm_res.success:
-            return llm_res
+        feedback = ""
+        for i in range ( 5 ): # try 5 times
+            l.info("Attempt {}: Generating variant and invariant for loop {}".format(
+                i, loop_data.loop_id))
+            llm_res = llm_generate_variant_invariant(
+                model_path=model_path, loop_data=loop_data, feedback=feedback)
+            l.debug("Extracted data for first loop, loop data: {}, status: {}".format(
+                loop_data, llm_res ))
+            if not llm_res.success:
+                return llm_res
 
-        # Validate each loop separately - that is the only way the instrumenter
-        # will work
-        status = validate( loop_data )
-        l.debug( "Validate returned: {}".format( status ))
-        if not status.success:
-            return status
+            # Validate each loop separately - that is the only way the instrumenter
+            # will work
+            status = validate( loop_data )
+            l.debug( "Validate returned: {}".format( status ))
+            if status.success:
+                break
+            if i == 4:
+                l.error( "Validation failed for loop {}: {}".format(
+                    loop_data.loop_id, status.failure_reason ))
+                return u.Status( False, status.failure_reason )
+            feedback = "Feedback: " + status.feedback + "\n"
 
     return u.Status( True, None )
 
