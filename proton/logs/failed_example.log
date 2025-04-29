@@ -1,0 +1,345 @@
+
+[451.7488479614258 utils.py:init_logging:54] INFO - 
+	 Logging to logs/log_2025-04-24_05-36-27.log
+
+[452.5468349456787 utils.py:init_logging:57] INFO - 
+	 Config has: [('LOG_PATH', 'logs/'), ('TMP_PATH', 'tmp/'), ('INSTRUMENTER_PATH', 'bin/instrumenter'), ('BRACER_PATH', 'bin/bracer'), ('BRACER_IN_FNAME', 'code.c'), ('BRACER_OUT_FNAME', 'code_braced.c'), ('TEST_C_FNAME', 'test.c'), ('TEST_BIN_FNAME', 'test'), ('INCLUDES_DIR', 'include/'), ('INSTR_HEADER', 'instrumenter.h'), ('IGNORE_EXTRACTOR_RET_CODE', True), ('CONTEXT_SIZE', 2048), ('MAX_NEW_TOKENS', 64), ('N_THREADS', 1), ('MODEL_TYPE', 'llama'), ('OPENAI_MODEL', 'o3-mini'), ('OPENAI_API_KEY', 'KtwL2VARfRuTTXPwZCw0tjngGyeXkplM'), ('OPENAI_API_BASE', 'https://go.apis.huit.harvard.edu/ais-openai-direct-limited-schools/v1'), ('PROMPT', 'lib_prompt_co_inv_assigns_variant_2'), ('DO_TESTS', True), ('NUM_RUNS', 60), ('RUN_TIMEOUT', 1), ('TEST_FAILED_EXCODE', 22), ('TEST_FAILED_ERRMSG', 'TEST FAILED'), ('TEST_TO_CONSIDER_TERM', True), ('DO_CBMC', True), ('CBMC_NUM_UNWIND', 3), ('CBMC_TIMEOUT', 60), ('CBMC_TO_CONSIDER_TERM', False), ('CBMC_DEC_ASSERT', 'IPROTON_VAR_DEC'), ('CBMC_POS_ASSERT', 'IPROTON_VAR_POS'), ('CBMC_RES_PASS', 'SUCCESS'), ('CBMC_RES_FAIL', 'ERROR'), ('DEBUG', True), ('ASSERTS', True)]
+
+[458.2962989807129 check_ter.py:extract_loops:35] INFO - 
+	 Extracting loops from sample.c
+
+[643.2094573974609 check_ter.py:extract_loops:60] WARNING - 
+	 Instrumenter failed for sample.c. XML may not be generated
+
+[644.3326473236084 check_ter.py:extract_loops:64] INFO - 
+	 insrumenter bin succeeded for sample.c
+
+[650.6083011627197 check_ter.py:check_ter:259] INFO - 
+	 Generating variant and invariant for loop  0 
+
+[3848.639965057373 check_ter.py:llm_generate_variant_invariant:203] INFO - 
+	 Invoking model with 813 tokens
+
+[46914.11876678467 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[46915.289878845215 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[46915.735483169556 check_ter.py:extract_sanitize_llm_response:128] INFO - 
+	 Tags present, extracting
+
+[47036.60798072815 validate_test.py:validate_test:105] DEBUG - 
+	 Loop variant: length - i
+
+[47277.12535858154 validate_test.py:add_braces:47] WARNING - 
+	 Bracer failed
+
+[47278.07927131653 validate_test.py:add_braces:51] INFO - 
+	 Bracer succeeded
+
+[47281.44645690918 validate_test.py:validate_test:126] DEBUG - 
+	 Braced code: 
+
+[47281.85153007507 validate_test.py:validate_test:149] DEBUG - 
+	 Loop keyword at: 354
+
+[47282.262086868286 validate_test.py:validate_test:157] DEBUG - 
+	 body_start: 380
+
+[47286.62967681885 validate_test.py:validate_test:195] DEBUG - 
+	 Include path: include/
+
+[47433.09950828552 validate_test.py:validate_test:207] DEBUG - 
+	 Compilation succeeded
+
+[47441.71118736267 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47458.41693878174 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47459.104776382446 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47471.747159957886 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47472.32389450073 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47478.41548919678 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47483.39772224426 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47487.88118362427 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47498.33631515503 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47498.812675476074 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47512.77709007263 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47513.40985298157 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47516.75605773926 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47522.621393203735 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47530.32565116882 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47535.492181777954 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47541.773319244385 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47555.88459968567 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47556.70666694641 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47569.47207450867 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47569.94938850403 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47582.72385597229 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47583.449363708496 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47590.471029281616 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47602.71239280701 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47603.32727432251 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47606.57048225403 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47609.69042778015 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47613.78073692322 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47620.75448036194 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47630.34987449646 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47630.7737827301 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47644.3555355072 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47644.792795181274 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47656.38470649719 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47657.103061676025 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47672.672748565674 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47673.29716682434 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47684.56292152405 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47685.874462127686 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47689.324617385864 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47703.349351882935 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47704.05721664429 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47716.52340888977 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47717.310667037964 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47721.91143035889 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47729.5503616333 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47741.27388000488 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47741.78194999695 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47745.63550949097 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47755.45811653137 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47761.60287857056 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47774.62434768677 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47775.672912597656 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47780.328035354614 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47790.300369262695 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47790.698528289795 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47801.90348625183 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47802.92892456055 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47809.59367752075 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47821.943044662476 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47822.484254837036 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47833.41979980469 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47834.24234390259 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47841.57466888428 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47851.792335510254 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47852.54430770874 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47865.498542785645 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47866.05525016785 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47870.428800582886 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47876.72734260559 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47882.49182701111 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47897.3970413208 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47897.932052612305 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47909.48176383972 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47910.33625602722 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47924.38340187073 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47925.03309249878 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47931.49471282959 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47936.20467185974 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47942.256450653076 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47947.314977645874 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47960.405111312866 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47961.08102798462 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47973.381996154785 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47974.000453948975 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47980.836391448975 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[47995.50819396973 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[47996.00386619568 validate_test.py:validate_test:214] DEBUG - 
+	 Running bin
+
+[48011.52205467224 validate_test.py:validate_test:239] WARNING - 
+	 Running failed with return code -11 stdout  stderr 
+
+[48012.69793510437 validate_test.py:validate_cbmc:285] DEBUG - 
+	 Loop variant: length - i
+
+[48175.48060417175 validate_test.py:add_braces:47] WARNING - 
+	 Bracer failed
+
+[48176.34892463684 validate_test.py:add_braces:51] INFO - 
+	 Bracer succeeded
+
+[48178.48706245422 validate_test.py:validate_cbmc:306] DEBUG - 
+	 Braced code: 
+
+[48178.97439002991 validate_test.py:validate_cbmc:329] DEBUG - 
+	 Loop keyword at: 354
+
+[48179.351568222046 validate_test.py:validate_cbmc:337] DEBUG - 
+	 body_start: 380
+
+[48398.49305152893 validate_test.py:validate_cbmc:391] WARNING - 
+	 DEC check failed
