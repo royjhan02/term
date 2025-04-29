@@ -170,12 +170,12 @@ def llm_generate_variant_invariant(model_path, loop_data, feedback=""):
         # Create appropriate model handler based on config
         if c.MODEL_TYPE == "llama":
             model = create_model_handler("llama", model_path=model_path)
+            token_budget = c.LLAMA_CONTEXT_SIZE - c.MAX_NEW_TOKENS
         else:
             model = create_model_handler("openai",
                 api_key=c.OPENAI_API_KEY,
                 model=c.OPENAI_MODEL)
-
-        token_budget = c.CONTEXT_SIZE - c.MAX_NEW_TOKENS
+            token_budget = c.OPENAI_CONTEXT_SIZE - c.MAX_NEW_TOKENS
 
         # Assemble prompt
         dyn_prompt = "<sourcecode> " \
@@ -195,9 +195,14 @@ def llm_generate_variant_invariant(model_path, loop_data, feedback=""):
         # Count tokens
         token_count = model.count_tokens(prompt_text)
         if token_count > token_budget:
-            l.error("Exceeded token counts {} > {}".format(
-                token_count, token_budget))
-            return u.Status(False, 'TOKENS_EXCEEDED')
+            l.warning(f"Prompt exceeds token budget: {token_count} > {token_budget}, truncating.")
+
+            # Calculate how many tokens to keep
+            tokens = model.tokenize(prompt_text)
+            tokens_to_keep = tokens[-token_budget:]  # Keep the *last* tokens (truncate front)
+
+            # Detokenize back to text
+            prompt_text = model.detokenize(tokens_to_keep)
 
         # Generate response using the model
         l.info("Invoking model with {} tokens".format(token_count))

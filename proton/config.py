@@ -22,7 +22,8 @@ class Config:
     IGNORE_EXTRACTOR_RET_CODE = True    # Ignore return code from instrumenter bin
 
     # Generation settings
-    CONTEXT_SIZE = 2048
+    LLAMA_CONTEXT_SIZE = 2048
+    OPENAI_CONTEXT_SIZE = 16000
     MAX_NEW_TOKENS = 64
     N_THREADS = 1
     

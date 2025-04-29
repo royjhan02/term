@@ -34,7 +34,7 @@ class LlamaHandler(ModelHandler):
             
         self.model = llama_cpp.Llama(
             model_path=model_path,
-            n_ctx=c.CONTEXT_SIZE,
+            n_ctx=c.LLAMA_CONTEXT_SIZE,
             n_threads=c.N_THREADS,
             n_threads_batch=c.N_THREADS,
         )
