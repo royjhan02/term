@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  dev:
+    image: termination-checker
+    volumes:
+      - ./:/project
+    working_dir: /project
+    tty: true

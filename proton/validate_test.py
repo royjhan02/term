@@ -132,6 +132,7 @@ def validate_test( loop_data ):
     if res.result is None:
         return u.Status( False, res.failure_reason )
     braced_code = res.result
+    l.debug("Braced code: ".format( braced_code ))
 
     # Get back start of loop and pieces
     loop_start_idx = braced_code.find( loop_mark )
@@ -369,6 +370,7 @@ def validate_cbmc( loop_data ):
     if res.result is None:
         return u.Status( False, res.failure_reason )
     braced_code = res.result
+    l.debug("Braced code: ".format( braced_code ))
 
     # Get back start of loop and pieces
     loop_start_idx = braced_code.find( loop_mark )
