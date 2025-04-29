@@ -64,7 +64,6 @@ class OpenAIHandler(ModelHandler):
                 "messages": [
                     {"role": "user", "content": prompt_text}
                 ],
-                "max_tokens": c.MAX_NEW_TOKENS,
             })
             headers = {
                 'Content-Type': 'application/json',
