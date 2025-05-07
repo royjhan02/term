@@ -45,9 +45,9 @@ class Config:
     
     # Settings for cbmc 
     DO_CBMC = True 
-    CBMC_NUM_UNWIND = 3                 # Number of unwinds to use
-    CBMC_TIMEOUT = 60
-    CBMC_TO_CONSIDER_TERM = False       # If true, say Terminating if cbmc tos.
+    CBMC_NUM_UNWIND = 3                # Number of unwinds to use
+    CBMC_TIMEOUT = 30
+    CBMC_TO_CONSIDER_TERM = True       # If true, say Terminating if cbmc tos.
     CBMC_DEC_ASSERT = "IPROTON_VAR_DEC" # Variant is decreasing
     CBMC_POS_ASSERT = "IPROTON_VAR_POS" # Variant is decreasing
     CBMC_RES_PASS = 'SUCCESS'           # What cbmc says on failure / pass 

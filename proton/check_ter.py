@@ -11,10 +11,11 @@ import xml.etree.ElementTree as ET
 from collections import namedtuple
 
 from model_handler import create_model_handler
+from instrumenter import extract_loops
 
 import utils as u
 from config import Config as c
-from validate_test import validate
+from validate_test import validate, get_instrumented_code
 
 
 import logging
@@ -26,84 +27,84 @@ pl = vars( promptlibrary )
 
 
 
-def extract_loops( code_fpath ):
-    """
-    Extract loops for given code path.
+# def extract_loops( code_fpath ):
+#     """
+#     Extract loops for given code path.
     
-    Returns: A list of partially filled LoopData entries.
-    """
-    l.info( "Extracting loops from {}".format( code_fpath ))
+#     Returns: A list of partially filled LoopData entries.
+#     """
+#     l.info( "Extracting loops from {}".format( code_fpath ))
 
-    # Check extension
-    if not (os.path.splitext( code_fpath )[1] == '.c' or
-            os.path.splitext( code_fpath )[1] == '.i' ):
-        l.warning( "Given file {} does not have .c or .i extension".format(
-            code_fpath ))
+#     # Check extension
+#     if not (os.path.splitext( code_fpath )[1] == '.c' or
+#             os.path.splitext( code_fpath )[1] == '.i' ):
+#         l.warning( "Given file {} does not have .c or .i extension".format(
+#             code_fpath ))
 
-    # Run command
-    u.clear_tmp()
-    instrumenter_res = subprocess.run( 
-        args = [ 
-            os.path.relpath( c.INSTRUMENTER_PATH, c.TMP_PATH ),
-            '-in', 
-            os.path.relpath( code_fpath, c.TMP_PATH ),
-            '-le', ],
-        check = False,
-        cwd = c.TMP_PATH,
-    )
+#     # Run command
+#     u.clear_tmp()
+#     instrumenter_res = subprocess.run( 
+#         args = [ 
+#             os.path.relpath( c.INSTRUMENTER_PATH, c.TMP_PATH ),
+#             '-in', 
+#             os.path.relpath( code_fpath, c.TMP_PATH ),
+#             '-le', ],
+#         check = False,
+#         cwd = c.TMP_PATH,
+#     )
 
-    # Check status
-    if instrumenter_res.returncode != 0:
-        msg = ( "Instrumenter failed for {}. XML may not be generated".format(
-            code_fpath ))
-        if c.IGNORE_EXTRACTOR_RET_CODE:
-            l.warning( msg )
-        else:
-            l.error( msg )
-            raise RuntimeError( msg )
-    l.info( "insrumenter bin succeeded for {}".format( code_fpath ))
+#     # Check status
+#     if instrumenter_res.returncode != 0:
+#         msg = ( "Instrumenter failed for {}. XML may not be generated".format(
+#             code_fpath ))
+#         if c.IGNORE_EXTRACTOR_RET_CODE:
+#             l.warning( msg )
+#         else:
+#             l.error( msg )
+#             raise RuntimeError( msg )
+#     l.info( "insrumenter bin succeeded for {}".format( code_fpath ))
 
-    # Check xml file exists
-    xml_fpath = os.path.join( 
-        c.TMP_PATH,
-        os.path.basename( os.path.splitext( code_fpath )[0] ) + ".xml" )
-    if not os.path.exists(xml_fpath):
-        msg = "{} does not exist. ".format( xml_fpath )
-        l.error( msg ) 
-        raise RuntimeError( msg )
+#     # Check xml file exists
+#     xml_fpath = os.path.join( 
+#         c.TMP_PATH,
+#         os.path.basename( os.path.splitext( code_fpath )[0] ) + ".xml" )
+#     if not os.path.exists(xml_fpath):
+#         msg = "{} does not exist. ".format( xml_fpath )
+#         l.error( msg ) 
+#         raise RuntimeError( msg )
 
-    # Add root tag to xml file
-    with open( xml_fpath, 'r' ) as xml_file:
-        xml_content = xml_file.read()
-        l.debug("Extracted xml content: {}".format( xml_content ))
-        xml_content = "<root>" + xml_content + "</root>"
-    with open( xml_fpath, 'w') as xml_file:
-        xml_file.write(xml_content)
+#     # Add root tag to xml file
+#     with open( xml_fpath, 'r' ) as xml_file:
+#         xml_content = xml_file.read()
+#         l.debug("Extracted xml content: {}".format( xml_content ))
+#         xml_content = "<root>" + xml_content + "</root>"
+#     with open( xml_fpath, 'w') as xml_file:
+#         xml_file.write(xml_content)
 
-    # Parse xml file
-    tree = ET.parse( xml_fpath )
-    root = tree.getroot()
+#     # Parse xml file
+#     tree = ET.parse( xml_fpath )
+#     root = tree.getroot()
 
-    # Source code
-    with open( code_fpath, 'r' ) as f:
-        full_code = f.read()
+#     # Source code
+#     with open( code_fpath, 'r' ) as f:
+#         full_code = f.read()
 
-    # For each loop in program, extract and store
-    loops = []
-    for loopinfo in root.findall("loopinfo"):
-        l.debug("Found loop!")
-        # pytype: disable=attribute-error
-        loops.append( u.LoopData(
-            loop_id = loopinfo.find("loopID").text, 
-            loop_code = loopinfo.find("fullBodyCode").text,
-            beg_line = loopinfo.find("beginLineNum").text,
-            end_line = loopinfo.find("endLineNum").text,
-            loop_type = loopinfo.find("loopType").text,
-            full_code = full_code,
-        ))
-        # pytype: enable=attribute-error
+#     # For each loop in program, extract and store
+#     loops = []
+#     for loopinfo in root.findall("loopinfo"):
+#         l.debug("Found loop!")
+#         # pytype: disable=attribute-error
+#         loops.append( u.LoopData(
+#             loop_id = loopinfo.find("loopID").text, 
+#             loop_code = loopinfo.find("fullBodyCode").text,
+#             beg_line = loopinfo.find("beginLineNum").text,
+#             end_line = loopinfo.find("endLineNum").text,
+#             loop_type = loopinfo.find("loopType").text,
+#             full_code = full_code,
+#         ))
+#         # pytype: enable=attribute-error
 
-    return loops
+#     return loops
 
 
 def extract_sanitize_llm_response( response_text, begintag, endtag ):
@@ -230,7 +231,7 @@ def llm_generate_variant_invariant(model_path, loop_data, feedback=""):
     return u.Status( True, None )
 
 
-def check_ter(c_fpath, model_path=None):
+def check_ter(c_fpath, num_iteration=1, model_path=None):
     """
     Check termination of given c program using model at given gguf path
 
@@ -260,9 +261,11 @@ def check_ter(c_fpath, model_path=None):
         return u.Status( False, 'LOOP_EXTRACTION' )
 
     # For each loop, get model to generate variant and invariant
+    l.info(loops)
+    validated = False
     for loop_data in loops:
         feedback = ""
-        for i in range ( 5 ): # try 5 times
+        for i in range (  num_iteration ): 
             l.info("Attempt {}: Generating variant and invariant for loop {}".format(
                 i, loop_data.loop_id))
             llm_res = llm_generate_variant_invariant(
@@ -274,17 +277,20 @@ def check_ter(c_fpath, model_path=None):
 
             # Validate each loop separately - that is the only way the instrumenter
             # will work
+            
             status = validate( loop_data )
             l.debug( "Validate returned: {}".format( status ))
             if status.success:
+                validated = True
                 break
-            if i == 4:
+            if i == num_iteration - 1:
                 l.error( "Validation failed for loop {}: {}".format(
                     loop_data.loop_id, status.failure_reason ))
                 return u.Status( False, status.failure_reason )
-            feedback = "Feedback: " + status.feedback + "\n"
+            res = status.feedback if status.feedback else ''
+            feedback = "\nFeedback from previous iteration: " + res + "\n"
 
-    return u.Status( True, None )
+    return u.Status( validated, None )
 
     
 if __name__ == "__main__":
@@ -301,6 +307,8 @@ if __name__ == "__main__":
         help = "Path to c file to check" )
     parser.add_argument('--model-path', type=str, required=False,
         help="Path to model file (required for llama, ignored for OpenAI)")
+    parser.add_argument('--num-iterations', type=str, required=False,
+        help="Number of refinement iterations")
     parser.add_argument('--log-level', type=str, default='info',
         choices = log_levels.keys(),
         help = "Log level")
@@ -309,8 +317,11 @@ if __name__ == "__main__":
 
     u.init_logging()
     logging.getLogger( __name__ ).setLevel( log_levels[ args.log_level ] )
+    num_iter = 5
+    if args.num_iterations:
+        num_iter = int(args.num_iterations)
 
-    ret = check_ter(args.in_file, args.model_path)
+    ret = check_ter(args.in_file, num_iter, args.model_path)
     
     # Set exit code
     if ret.success: sys.exit( 0 )
