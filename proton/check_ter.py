@@ -263,6 +263,10 @@ def check_ter(c_fpath, num_iteration=1, model_path=None):
     # For each loop, get model to generate variant and invariant
     l.info(loops)
     validated = False
+    if not loops:
+        l.warning( "Given file {} does not have loops returning True".format(
+            c_fpath ))
+        return u.Status( False, 'NO_LOOPS' )
     for loop_data in loops:
         feedback = ""
         for i in range (  num_iteration ): 
