@@ -16,8 +16,8 @@ import yaml
 # Categories under sv-benchmarks/c to include
 CATEGORIES = [
     # "termination-crafted",
-    "termination-crafted-lit",
-    # "termination-numeric",
+    # "termination-crafted-lit",
+    "termination-numeric",
     # "termination-restricted-15",
     # "termination-nla",
     # "termination-dietlibc", 
@@ -119,6 +119,7 @@ def run_benchmarks(benchmarks_root, check_ter_script, model_path="placeholder", 
     false_neg = 0
     num_recursion = 0
     num_arrays = 0
+    num_no_loop = 0
     for yml_path in find_yamls(benchmarks_root):
         c_file, expected = parse_yaml(yml_path, benchmarks_root)
         if c_file is None or expected is None:
@@ -141,6 +142,9 @@ def run_benchmarks(benchmarks_root, check_ter_script, model_path="placeholder", 
             cmd.extend(['--num-iterations', num_iterations])
         # Run tool
         proc = subprocess.run(cmd, capture_output=True)
+        if proc.returncode == 2:
+            if not (any(k in fname.lower() for k in rec)) and not ('array' in fname.lower()):
+                num_no_loop += 1
         tool_ret = proc.returncode == 0
         correct = (tool_ret == bool(expected))
         false_pos += (1 if (tool_ret and not bool(expected)) else 0)
@@ -161,7 +165,7 @@ def run_benchmarks(benchmarks_root, check_ter_script, model_path="placeholder", 
     passed = sum(1 for r in results if r['correct'])
     print(f"\nSummary: {passed}/{total} correct ({passed/total:.1%})")
     print(f"\nSummary: {false_pos} total false positives, {false_neg} total false negatives")
-    print(f"\nSummary: {num_recursion} total recursions, {num_arrays} total arrays")
+    print(f"\nSummary: {num_recursion} total recursions, {num_arrays} total arrays, {num_no_loop} total no loops")
 
 
 def main():

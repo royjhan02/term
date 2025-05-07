@@ -325,5 +325,6 @@ if __name__ == "__main__":
     
     # Set exit code
     if ret.success: sys.exit( 0 )
+    elif ret.failure_reason == 'NO_LOOPS': sys.exit( 2 )
     else: sys.exit( 1 )
 
