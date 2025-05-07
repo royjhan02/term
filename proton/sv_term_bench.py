@@ -17,7 +17,7 @@ import yaml
 CATEGORIES = [
     # "termination-crafted",
     # "termination-crafted-lit",
-    "termination-numeric",
+    # "termination-numeric",
     # "termination-restricted-15",
     # "termination-nla",
     # "termination-dietlibc", 
@@ -70,14 +70,14 @@ CATEGORIES = [
     # "recursified_loop-simple"
 ]
 
-
-def find_yamls(root_dir):
+def find_yamls(root_dir, categories):
     """
     Yield full paths to all .yml files in the selected categories.
     """
-    for cat in CATEGORIES:
+    for cat in categories:
         cat_dir = os.path.join(root_dir, 'c', cat)
         if not os.path.isdir(cat_dir):
+            print(f"[WARN] Category directory not found: {cat_dir}")
             continue
         for dirpath, _, files in os.walk(cat_dir):
             for fname in files:
@@ -85,7 +85,7 @@ def find_yamls(root_dir):
                     yield os.path.join(dirpath, fname)
 
 
-def parse_yaml(yml_path, root_dir):
+def parse_yaml(yml_path):
     """
     Parse a benchmark YAML to extract the C source path and expected result.
     Returns tuple (c_file_path, expected_bool).
@@ -95,60 +95,52 @@ def parse_yaml(yml_path, root_dir):
 
     term_verdict = None
     for prop in data.get('properties', []):
-        pf = prop.get('property_file', '')
-        # Look for termination property
-        if pf.endswith('termination.prp'):
+        if prop.get('property_file', '').endswith('termination.prp'):
             term_verdict = bool(prop.get('expected_verdict', True))
             break
     if term_verdict is None:
         return None, None
 
-    # Get input file reference
     inp = data.get('input_files') or data.get('input')
     if isinstance(inp, list):
         inp = inp[0]
-    # Source .c path is relative to the YAML directory
     c_file = os.path.join(os.path.dirname(yml_path), inp)
-
     return c_file, term_verdict
 
 
-def run_benchmarks(benchmarks_root, check_ter_script, model_path="placeholder", num_iterations='1'):
+def run_benchmarks(benchmarks_root, categories, check_ter_script, model_path=None, num_iterations='1'):
     results = []
-    false_pos = 0
-    false_neg = 0
-    num_recursion = 0
-    num_arrays = 0
-    num_no_loop = 0
-    for yml_path in find_yamls(benchmarks_root):
-        c_file, expected = parse_yaml(yml_path, benchmarks_root)
+    false_pos = false_neg = num_recursion = num_arrays = num_no_loop = 0
+
+    for yml_path in find_yamls(benchmarks_root, categories):
+        c_file, expected = parse_yaml(yml_path)
         if c_file is None or expected is None:
             continue
-        fname = os.path.basename(c_file)
-        rec = ['recursion', 'recurs', 'recursive']
-        if any(k in fname.lower() for k in rec):
+
+        fname = os.path.basename(c_file).lower()
+        if any(k in fname for k in ['recursion', 'recurs', 'recursive']):
             num_recursion += 1
-        if 'array' in fname.lower():
+        if 'array' in fname:
             num_arrays += 1
-        # Skip if .c not found
+
         if not os.path.isfile(c_file):
             print(f"[WARN] C file not found for {yml_path}: {c_file}")
             continue
-        # Build command
+
         cmd = ['python3', check_ter_script, '--in-file', c_file]
         if model_path:
-            cmd.extend(['--model-path', model_path])
+            cmd += ['--model-path', model_path]
         if num_iterations:
-            cmd.extend(['--num-iterations', num_iterations])
-        # Run tool
+            cmd += ['--num-iterations', num_iterations]
+
         proc = subprocess.run(cmd, capture_output=True)
-        if proc.returncode == 2:
-            if not (any(k in fname.lower() for k in rec)) and not ('array' in fname.lower()):
-                num_no_loop += 1
-        tool_ret = proc.returncode == 0
-        correct = (tool_ret == bool(expected))
-        false_pos += (1 if (tool_ret and not bool(expected)) else 0)
-        false_neg += (1 if (not tool_ret and bool(expected)) else 0)
+        if proc.returncode == 2 and 'loop' not in fname and 'array' not in fname:
+            num_no_loop += 1
+        tool_ret = (proc.returncode == 0)
+        correct = (tool_ret == expected)
+        false_pos += int(tool_ret and not expected)
+        false_neg += int(not tool_ret and expected)
+
         results.append({
             'benchmark': yml_path,
             'c_file': c_file,
@@ -157,15 +149,13 @@ def run_benchmarks(benchmarks_root, check_ter_script, model_path="placeholder", 
             'correct': correct,
             'return_code': proc.returncode,
         })
-        status = 'PASS' if correct else 'FAIL'
-        print(f"{status}: {yml_path} => expected={expected}, got={tool_ret}")
+        print(f"{'PASS' if correct else 'FAIL'}: {yml_path} => expected={expected}, got={tool_ret}")
 
-    # Summary
     total = len(results)
-    passed = sum(1 for r in results if r['correct'])
+    passed = sum(r['correct'] for r in results)
     print(f"\nSummary: {passed}/{total} correct ({passed/total:.1%})")
-    print(f"\nSummary: {false_pos} total false positives, {false_neg} total false negatives")
-    print(f"\nSummary: {num_recursion} total recursions, {num_arrays} total arrays, {num_no_loop} total no loops")
+    print(f"False positives: {false_pos}, False negatives: {false_neg}")
+    print(f"Recursion: {num_recursion}, Arrays: {num_arrays}, No loops: {num_no_loop}")
 
 
 def main():
@@ -180,15 +170,17 @@ def main():
                         help='Optional path to LLAMA model file')
     parser.add_argument('--num-iterations', required=False,
                         help='Number of iterations for refinement loop')
+    parser.add_argument('--categories', required=True, nargs='+',
+                        help='SV-COMP C benchmark categories to include')
     args = parser.parse_args()
 
     run_benchmarks(
         benchmarks_root=args.benchmarks_root,
+        categories=args.categories,
         check_ter_script=args.check_ter_script,
-        model_path=args.model_path, 
+        model_path=args.model_path,
         num_iterations=args.num_iterations
     )
-
 
 if __name__ == '__main__':
     main()
